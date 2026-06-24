@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIR4 NFT Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1117;color:#e6edf3;min-height:100vh}
+  header{background:#161b22;border-bottom:1px solid #30363d;padding:1rem 2rem;display:flex;align-items:center;gap:1rem}
+  header h1{font-size:1.2rem;font-weight:600;color:#f0f6fc}
+  header span{font-size:12px;color:#8b949e;background:#21262d;padding:3px 8px;border-radius:12px}
+  #updated{font-size:11px;color:#8b949e;margin-left:auto}
+  main{padding:1.5rem 2rem;max-width:1400px;margin:0 auto}
+
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:1.5rem}
+  .metric{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1rem}
+  .metric label{font-size:11px;color:#8b949e;display:block;margin-bottom:4px}
+  .metric value{font-size:22px;font-weight:600;color:#f0f6fc}
+  .metric sub{font-size:11px;color:#8b949e}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1rem}
+  @media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+
+  .card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1rem}
+  .card h3{font-size:13px;color:#8b949e;margin-bottom:1rem;font-weight:500}
+
+  .chart-wrap{position:relative;height:220px}
+
+  table{width:100%;border-collapse:collapse;font-size:12px}
+  th{text-align:left;padding:6px 8px;color:#8b949e;border-bottom:1px solid #30363d;font-weight:500}
+  td{padding:6px 8px;border-bottom:1px solid #21262d;color:#e6edf3}
+  tr:hover td{background:#21262d}
+  .badge{display:inline-block;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:600}
+  .b-warrior{background:#1f3d6e;color:#79b8ff}
+  .b-sorcerer{background:#3d1f6e;color:#c79bff}
+  .b-taoist{background:#1f6e3d;color:#7ee787}
+  .b-arbalist{background:#6e3d1f;color:#ffa657}
+  .b-lancer{background:#6e1f1f;color:#ff7b72}
+  .b-darkist{background:#3d3d1f;color:#e3b341}
+  .b-default{background:#21262d;color:#8b949e}
+
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+  .legend span{display:flex;align-items:center;gap:4px;font-size:11px;color:#8b949e}
+  .legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
+
+  .item-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;border-bottom:1px solid #21262d;font-size:12px}
+  .item-row:last-child{border-bottom:none}
+  .item-name{color:#e6edf3;flex:1}
+  .item-count{color:#f0f6fc;font-weight:600;background:#21262d;padding:1px 6px;border-radius:4px}
+
+  .loading{text-align:center;padding:3rem;color:#8b949e}
+  .tag-lend{color:#e3b341;font-size:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>MIR4 NFT Dashboard</h1>
+  <span>xDraco</span>
+  <span id="updated">A carregar...</span>
+</header>
+
+<main>
+  <div class="metrics" id="metrics">
+    <div class="metric"><label>Total histórico</label><value id="m-total">—</value></div>
+    <div class="metric"><label>Preço médio</label><value id="m-media">—</value><sub>DRACO</sub></div>
+    <div class="metric"><label>Preço mediano</label><value id="m-mediana">—</value><sub>DRACO</sub></div>
+    <div class="metric"><label>Classe top</label><value id="m-classe">—</value></div>
+    <div class="metric"><label>Nível mais activo</label><value id="m-nivel">—</value></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Preço mediano por classe</h3>
+      <div class="chart-wrap"><canvas id="chartClasse" role="img" aria-label="Preço por classe"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Preço mediano por Power Score</h3>
+      <div class="chart-wrap"><canvas id="chartPS" role="img" aria-label="Preço por Power Score"></canvas></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:1rem">
+    <h3>Preço mediano por nível</h3>
+    <div class="chart-wrap" style="height:180px"><canvas id="chartNivel" role="img" aria-label="Preço por nível"></canvas></div>
+  </div>
+
+  <div class="grid2" style="margin-bottom:1rem">
+    <div class="card">
+      <h3>Itens lendários mais frequentes (top NFTs)</h3>
+      <div id="legendary-list"><div class="loading">A carregar...</div></div>
+    </div>
+    <div class="card">
+      <h3>Distribuição de classes</h3>
+      <div class="chart-wrap"><canvas id="chartPie" role="img" aria-label="Distribuição de classes"></canvas></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Últimas vendas</h3>
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th><th>Classe</th><th>Nível</th><th>Power Score</th>
+            <th>Itens Lend.</th><th>Preço DRACO</th><th>Data</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<script>
+const BASE = 'https://raw.githubusercontent.com/SEU_USER/SEU_REPO/main/data/';
+// SUBSTITUI SEU_USER e SEU_REPO pelo teu utilizador e nome do repositório GitHub
+
+const CLASS_COLORS = {
+  Warrior:'#79b8ff', Sorcerer:'#c79bff', Taoist:'#7ee787',
+  Arbalist:'#ffa657', Lancer:'#ff7b72', Darkist:'#e3b341'
+};
+const BADGE = c => `b-${(c||'').toLowerCase()}` in {
+  'b-warrior':1,'b-sorcerer':1,'b-taoist':1,'b-arbalist':1,'b-lancer':1,'b-darkist':1
+} ? `b-${c.toLowerCase()}` : 'b-default';
+
+const chartDefaults = {
+  responsive:true, maintainAspectRatio:false,
+  plugins:{legend:{display:false}},
+  scales:{
+    x:{ticks:{color:'#8b949e',font:{size:11}},grid:{color:'rgba(255,255,255,0.05)'}},
+    y:{ticks:{color:'#8b949e',font:{size:11},callback:v=>v.toLocaleString()},grid:{color:'rgba(255,255,255,0.05)'}}
+  }
+};
+
+async function load() {
+  const [stats, recent] = await Promise.all([
+    fetch(BASE+'stats.json').then(r=>r.json()),
+    fetch(BASE+'recent.json').then(r=>r.json())
+  ]);
+
+  // Métricas
+  document.getElementById('updated').textContent = 'Atualizado: ' + new Date(stats.updated_at).toLocaleString('pt-PT');
+  document.getElementById('m-total').textContent = stats.total?.toLocaleString() || '—';
+  document.getElementById('m-media').textContent = (stats.preco_medio_global||0).toLocaleString();
+  document.getElementById('m-mediana').textContent = (stats.preco_mediano_global||0).toLocaleString();
+
+  // Classe top
+  const classes = stats.por_classe || {};
+  const topClasse = Object.entries(classes).sort((a,b)=>b[1].mediana-a[1].mediana)[0];
+  if(topClasse) document.getElementById('m-classe').textContent = topClasse[0];
+
+  // Nível mais activo
+  const niveis = stats.por_nivel || {};
+  const topNivel = Object.entries(niveis).sort((a,b)=>b[1].count-a[1].count)[0];
+  if(topNivel) document.getElementById('m-nivel').textContent = 'Nv'+topNivel[0]+'-'+(+topNivel[0]+9);
+
+  // Chart classes
+  const classeLabels = Object.keys(classes);
+  const classeData = classeLabels.map(c=>classes[c].mediana);
+  new Chart(document.getElementById('chartClasse'), {
+    type:'bar',
+    data:{
+      labels:classeLabels,
+      datasets:[{data:classeData,backgroundColor:classeLabels.map(c=>CLASS_COLORS[c]||'#8b949e'),borderRadius:4}]
+    },
+    options:chartDefaults
+  });
+
+  // Chart PS
+  const psLabels = Object.keys(stats.por_ps||{}).map(k=>(+k/1000)+'k');
+  const psData = Object.values(stats.por_ps||{}).map(v=>v.mediana);
+  new Chart(document.getElementById('chartPS'), {
+    type:'bar',
+    data:{labels:psLabels,datasets:[{data:psData,backgroundColor:'#378ADD',borderRadius:4}]},
+    options:chartDefaults
+  });
+
+  // Chart Nível
+  const nivelLabels = Object.keys(niveis).map(k=>'Nv'+k);
+  const nivelData = Object.values(niveis).map(v=>v.mediana);
+  new Chart(document.getElementById('chartNivel'), {
+    type:'line',
+    data:{labels:nivelLabels,datasets:[{data:nivelData,borderColor:'#7ee787',backgroundColor:'rgba(126,231,135,0.1)',tension:0.4,fill:true,pointRadius:4}]},
+    options:{...chartDefaults,scales:{...chartDefaults.scales}}
+  });
+
+  // Chart Pie
+  const pieLabels = classeLabels;
+  const pieCounts = pieLabels.map(c=>classes[c].count);
+  new Chart(document.getElementById('chartPie'), {
+    type:'doughnut',
+    data:{labels:pieLabels,datasets:[{data:pieCounts,backgroundColor:pieLabels.map(c=>CLASS_COLORS[c]||'#8b949e')}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#8b949e',font:{size:11}}}}}
+  });
+
+  // Legendary items
+  const legItems = stats.top_legendary_items || {};
+  const legHTML = Object.entries(legItems).map(([name,count])=>
+    `<div class="item-row"><span class="item-name">${name}</span><span class="item-count">${count}x</span></div>`
+  ).join('') || '<p style="color:#8b949e;font-size:12px">Sem dados</p>';
+  document.getElementById('legendary-list').innerHTML = legHTML;
+
+  // Tabela recentes
+  const tbody = document.getElementById('tbody');
+  tbody.innerHTML = recent.slice(0,100).map(r=>`
+    <tr>
+      <td>${r.nome||'—'}</td>
+      <td><span class="badge ${BADGE(r.classe)}">${r.classe||'?'}</span></td>
+      <td>${r.nivel||'—'}</td>
+      <td>${(r.power_score||0).toLocaleString()}</td>
+      <td>${r.legendary_count||0} <span class="tag-lend">${(r.legendary_items||[]).slice(0,1).join(', ')}</span></td>
+      <td><strong>${(r.preco_draco||0).toLocaleString()}</strong></td>
+      <td>${r.data_venda||'—'}</td>
+    </tr>
+  `).join('');
+}
+
+load().catch(e=>{
+  document.querySelector('main').innerHTML = '<div class="loading">Erro ao carregar dados. Verifica o URL base no script.</div>';
+  console.error(e);
+});
+</script>
+</body>
+</html>

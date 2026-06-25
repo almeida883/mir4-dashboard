@@ -221,7 +221,7 @@ tr:hover td{background:#21262d}
           <th onclick="sortListings('preco_draco')">Preço DRACO ↕</th>
           <th onclick="sortListings('preco_justo')">Preço Justo ↕</th>
           <th onclick="sortListings('vs_mercado')">vs Mercado ↕</th>
-          <th onclick="sortListings('data_venda')">Selado em ↕</th>
+          <th onclick="sortListings('row_id')">Listagem ↕</th>
           <th></th>
         </tr></thead>
         <tbody id="tbody-listings"></tbody>
@@ -311,6 +311,7 @@ async function loadListings() {
     allListings = results.map(item => {
         const r = item.info || item;
         const nft = {
+          row_id: r.rowID || 0,
           seq: r.seq,
           nft_id: r.nftID,
           transport_id: r.transportID,
@@ -453,7 +454,7 @@ function nftRowListing(r) {
     <td><strong>${(r.preco_draco||0).toLocaleString()}</strong></td>
     <td style="color:#8b949e">${pj}</td>
     <td>${vsMercadoBadge(r.vs_mercado, r)}</td>
-    <td style="color:#8b949e;font-size:11px">${r.data_venda||'—'}</td>
+    <td style="color:#8b949e;font-size:11px">#${r.row_id||'—'}</td>
     <td style="display:flex;gap:4px"><button class="btn-sm" onclick="event.stopPropagation();openModal(${JSON.stringify(r).replace(/\"/g,'&quot;')})">Ver</button><a href="https://www.xdraco.com/nft/trade/${r.seq}" target="_blank" onclick="event.stopPropagation()" style="background:#1f6feb;color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;text-decoration:none;font-weight:500">Comprar</a></td>
   </tr>`;
 }

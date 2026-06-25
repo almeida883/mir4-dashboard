@@ -318,19 +318,25 @@ async function loadListings() {
       if(!items.length) break;
       results = results.concat(items);
     }
+    const CLASS_MAP = {1:'Warrior',2:'Sorcerer',3:'Taoist',4:'Arbalist',5:'Lancer',6:'Darkist'};
     allListings = results.map(item => {
-        const info = item.info || {};
-        const CLASS_MAP = {1:'Warrior',2:'Sorcerer',3:'Taoist',4:'Arbalist',5:'Lancer',6:'Darkist'};
+        // endpoint sale: dados directamente no item (sem .info)
+        const r = item.info || item;
         return {
-          seq: info.seq,
-          nome: info.characterName || '',
-          classe: CLASS_MAP[info.class] || '?',
-          nivel: info.lv,
-          power_score: info.powerScore,
-          preco_draco: info.price,
+          seq: r.seq,
+          nft_id: r.nftID,
+          transport_id: r.transportID,
+          nome: r.characterName || '',
+          classe: CLASS_MAP[r.class] || '?',
+          nivel: r.lv,
+          power_score: r.powerScore,
+          preco_draco: r.price,
+          mirage_score: r.MirageScore || 0,
+          mira_x: r.MiraX || 0,
           legendary_count: 0,
           legendary_items: [],
-          data_venda: info.listDT ? new Date(info.listDT*1000).toLocaleString('pt-PT') : '—'
+          mainstats: Object.fromEntries((r.stat||[]).map(s=>[s.statName, s.statValue])),
+          data_venda: r.sealedDT ? new Date(r.sealedDT*1000).toLocaleString('pt-PT') : '—'
         };
       });
     document.getElementById('fl-count').textContent = allListings.length + ' listings';

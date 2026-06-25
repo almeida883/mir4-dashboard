@@ -87,6 +87,10 @@ tr:hover td{background:#21262d}
 
 .page{display:none}
 .page.active{display:block}
+.filters-bar{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:.8rem;align-items:center}
+.filters-bar select,.filters-bar input[type=number],.filters-bar input[type=text]{background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px;width:auto;min-width:80px}
+.filters-bar select{min-width:140px}
+.filters-bar input[type=text]{min-width:140px}
 .loading{text-align:center;padding:3rem;color:#8b949e;font-size:14px}
 .empty{text-align:center;padding:2rem;color:#8b949e;font-size:13px}
 
@@ -113,9 +117,9 @@ tr:hover td{background:#21262d}
 
 <nav>
   <button class="active" onclick="showPage('overview')">📊 Overview</button>
-  <button onclick="showPage('recentes')">🕐 Recentes</button>
-  <button onclick="showPage('historico')">📋 Histórico</button>
-  <button onclick="showPage('listings')">🏪 Listings</button>
+  <button onclick="showPage('recentes')">🕐 Vendas Recentes</button>
+  <button onclick="showPage('historico')">📋 Histórico de Vendas</button>
+  <button onclick="showPage('listings')">🏪 NFTs à Venda</button>
   <button onclick="showPage('comparador')">🔍 Comparador</button>
 </nav>
 
@@ -178,19 +182,15 @@ tr:hover td{background:#21262d}
 <!-- HISTÓRICO -->
 <div id="page-historico" class="page">
   <div class="card">
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:.8rem;align-items:center">
-      <select id="f-classe" onchange="renderHistorico()" style="background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-        <option value="">Todas as classes</option>
-        <option>Warrior</option><option>Sorcerer</option><option>Taoist</option>
-        <option>Arbalist</option><option>Lancer</option><option>Darkist</option>
-      </select>
-      <input id="f-nivel-min" type="number" placeholder="Nv min" onchange="renderHistorico()" style="width:80px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-      <input id="f-nivel-max" type="number" placeholder="Nv max" onchange="renderHistorico()" style="width:80px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-      <input id="f-ps-min" type="number" placeholder="PS min" onchange="renderHistorico()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-      <input id="f-ps-max" type="number" placeholder="PS max" onchange="renderHistorico()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-      <input id="f-preco-min" type="number" placeholder="Preço min" onchange="renderHistorico()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-      <input id="f-preco-max" type="number" placeholder="Preço max" onchange="renderHistorico()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-      <input id="f-item" type="text" placeholder="Item lendário..." onchange="renderHistorico()" style="background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+    <div class="filters-bar">
+      <select id="f-classe" onchange="renderHistorico()"><option value="">Todas as classes</option><option>Warrior</option><option>Sorcerer</option><option>Taoist</option><option>Arbalist</option><option>Lancer</option><option>Darkist</option></select>
+      <input id="f-nivel-min" type="number" placeholder="Nv min" onchange="renderHistorico()">
+      <input id="f-nivel-max" type="number" placeholder="Nv max" onchange="renderHistorico()">
+      <input id="f-ps-min" type="number" placeholder="PS min" onchange="renderHistorico()">
+      <input id="f-ps-max" type="number" placeholder="PS max" onchange="renderHistorico()">
+      <input id="f-preco-min" type="number" placeholder="Preço min" onchange="renderHistorico()">
+      <input id="f-preco-max" type="number" placeholder="Preço max" onchange="renderHistorico()">
+      <input id="f-item" type="text" placeholder="Item lendário..." onchange="renderHistorico()">
       <button class="btn-sm" onclick="clearFilters()">Limpar</button>
       <span id="f-count" style="font-size:12px;color:#8b949e;margin-left:auto"></span>
     </div>
@@ -216,24 +216,29 @@ tr:hover td{background:#21262d}
 <!-- LISTINGS -->
 <div id="page-listings" class="page">
   <div class="card">
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:.8rem;align-items:center">
-      <select id="fl-classe" onchange="renderListings()" style="background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-        <option value="">Todas as classes</option>
-        <option>Warrior</option><option>Sorcerer</option><option>Taoist</option>
-        <option>Arbalist</option><option>Lancer</option><option>Darkist</option>
-      </select>
-      <input id="fl-ps-min" type="number" placeholder="PS min" onchange="renderListings()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-      <input id="fl-ps-max" type="number" placeholder="PS max" onchange="renderListings()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-      <input id="fl-preco-min" type="number" placeholder="Preço min" onchange="renderListings()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-      <input id="fl-preco-max" type="number" placeholder="Preço max" onchange="renderListings()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+    <div class="filters-bar">
+      <select id="fl-classe" onchange="renderListings()"><option value="">Todas as classes</option><option>Warrior</option><option>Sorcerer</option><option>Taoist</option><option>Arbalist</option><option>Lancer</option><option>Darkist</option></select>
+      <input id="fl-nivel-min" type="number" placeholder="Nv min" onchange="renderListings()">
+      <input id="fl-nivel-max" type="number" placeholder="Nv max" onchange="renderListings()">
+      <input id="fl-ps-min" type="number" placeholder="PS min" onchange="renderListings()">
+      <input id="fl-ps-max" type="number" placeholder="PS max" onchange="renderListings()">
+      <input id="fl-preco-min" type="number" placeholder="Preço min" onchange="renderListings()">
+      <input id="fl-preco-max" type="number" placeholder="Preço max" onchange="renderListings()">
+      <input id="fl-item" type="text" placeholder="Item lendário..." onchange="renderListings()">
       <button class="btn-sm" onclick="loadListings()">🔄 Actualizar</button>
       <span id="fl-count" style="font-size:12px;color:#8b949e;margin-left:auto"></span>
     </div>
     <div class="table-wrap">
       <table>
         <thead><tr>
-          <th>Nome</th><th>Classe</th><th>Nv</th><th>Power Score</th>
-          <th>Itens Lend.</th><th>Preço DRACO</th><th>Listado</th><th></th>
+          <th onclick="sortListings('nome')">Nome ↕</th>
+          <th onclick="sortListings('classe')">Classe ↕</th>
+          <th onclick="sortListings('nivel')">Nv ↕</th>
+          <th onclick="sortListings('power_score')">Power Score ↕</th>
+          <th>Itens Lend.</th>
+          <th onclick="sortListings('preco_draco')">Preço DRACO ↕</th>
+          <th onclick="sortListings('data_venda')">Listado ↕</th>
+          <th></th>
         </tr></thead>
         <tbody id="tbody-listings"></tbody>
       </table>
@@ -346,20 +351,31 @@ async function loadListings() {
   }
 }
 
+let listSortCol='data_venda', listSortDir=-1;
+function sortListings(col){if(listSortCol===col)listSortDir*=-1;else{listSortCol=col;listSortDir=-1;}renderListings();}
+
 function renderListings() {
   const fc = document.getElementById('fl-classe').value;
+  const fnMin = +document.getElementById('fl-nivel-min').value||0;
+  const fnMax = +document.getElementById('fl-nivel-max').value||9999;
   const fpsMin = +document.getElementById('fl-ps-min').value||0;
   const fpsMax = +document.getElementById('fl-ps-max').value||Infinity;
   const fpMin = +document.getElementById('fl-preco-min').value||0;
   const fpMax = +document.getElementById('fl-preco-max').value||Infinity;
+  const fItem = (document.getElementById('fl-item')?.value||'').toLowerCase();
 
   const filtered = allListings.filter(r => {
     if(fc && r.classe!==fc) return false;
+    if(r.nivel<fnMin||r.nivel>fnMax) return false;
     if(r.power_score<fpsMin) return false;
     if(fpsMax<Infinity && r.power_score>fpsMax) return false;
     if(r.preco_draco<fpMin) return false;
     if(r.preco_draco>fpMax) return false;
+    if(fItem && !((r.legendary_items||[]).some(i=>i.toLowerCase().includes(fItem)))) return false;
     return true;
+  }).sort((a,b)=>{
+    const va=a[listSortCol]||0, vb=b[listSortCol]||0;
+    return listSortDir*(va<vb?-1:va>vb?1:0);
   });
 
   const total = filtered.length;

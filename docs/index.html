@@ -345,7 +345,7 @@ function avaliarNFT(nft) {
     const nivDiff = Math.abs((r.nivel||0) - (nft.nivel||0)) / Math.max(nft.nivel||1, 1);
     const sim = 1 - (psDiff * 0.7 + nivDiff * 0.3);
     return { ...r, _sim: Math.round(sim*100) };
-  }).filter(r => r._sim > 75).sort((a,b) => b._sim - a._sim).slice(0, 10);
+  }).filter(r => r._sim > 75 && Math.abs((r.power_score||0) - (nft.power_score||0)) / Math.max(nft.power_score||1,1) <= 0.10).sort((a,b) => b._sim - a._sim).slice(0, 10);
 
   if (!similares.length) return { preco_justo: null, vs_mercado: null, n_similares: 0, _similares: [] };
 
@@ -398,7 +398,7 @@ function openComparacao(nft, event) {
     </div>
 
     <div style="font-size:12px;color:#8b949e;margin-bottom:.5rem;font-weight:500">NFTs do histórico usados na comparação</div>
-    <div style="font-size:11px;color:#8b949e;margin-bottom:.5rem">Critérios: mesma classe · Power Score ±30% · Nível similar (peso PS: 70%, Nível: 30%)</div>
+    <div style="font-size:11px;color:#8b949e;margin-bottom:.5rem">Critérios: mesma classe · Power Score ±10% · Nível similar (peso PS: 70%, Nível: 30%)</div>
     ${sim.length ? `
     <table style="width:100%;border-collapse:collapse;font-size:12px">
       <thead><tr>

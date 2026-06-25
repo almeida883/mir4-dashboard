@@ -117,7 +117,6 @@ tr:hover td{background:#21262d}
 
 <nav>
   <button class="active" onclick="showPage('overview')">📊 Overview</button>
-  <button onclick="showPage('recentes')">🕐 Vendas Recentes</button>
   <button onclick="showPage('historico')">📋 Histórico de Vendas</button>
   <button onclick="showPage('listings')">🏪 NFTs à Venda</button>
   <button onclick="showPage('comparador')">🔍 Comparador</button>
@@ -159,22 +158,6 @@ tr:hover td{background:#21262d}
     <div class="card">
       <h3>Itens lendários mais frequentes (top NFTs)</h3>
       <div id="leg-list" style="max-height:200px;overflow-y:auto"></div>
-    </div>
-  </div>
-</div>
-
-<!-- RECENTES -->
-<div id="page-recentes" class="page">
-  <div class="card">
-    <h3>Últimas vendas</h3>
-    <div class="table-wrap">
-      <table id="tbl-recentes">
-        <thead><tr>
-          <th>Nome</th><th>Classe</th><th>Nv</th><th>Power Score</th>
-          <th>Lend.</th><th>Preço DRACO</th><th>Data</th><th></th>
-        </tr></thead>
-        <tbody id="tbody-recentes"></tbody>
-      </table>
     </div>
   </div>
 </div>
@@ -235,8 +218,9 @@ tr:hover td{background:#21262d}
           <th onclick="sortListings('classe')">Classe ↕</th>
           <th onclick="sortListings('nivel')">Nv ↕</th>
           <th onclick="sortListings('power_score')">Power Score ↕</th>
-          <th>Itens Lend.</th>
           <th onclick="sortListings('preco_draco')">Preço DRACO ↕</th>
+          <th onclick="sortListings('preco_justo')">Preço Justo ↕</th>
+          <th onclick="sortListings('vs_mercado')">vs Mercado ↕</th>
           <th onclick="sortListings('data_venda')">Listado ↕</th>
           <th></th>
         </tr></thead>
@@ -325,9 +309,8 @@ async function loadListings() {
     }
     const CLASS_MAP = {1:'Warrior',2:'Sorcerer',3:'Taoist',4:'Arbalist',5:'Lancer',6:'Darkist'};
     allListings = results.map(item => {
-        // endpoint sale: dados directamente no item (sem .info)
         const r = item.info || item;
-        return {
+        const nft = {
           seq: r.seq,
           nft_id: r.nftID,
           transport_id: r.transportID,
@@ -343,6 +326,9 @@ async function loadListings() {
           mainstats: Object.fromEntries((r.stat||[]).map(s=>[s.statName, s.statValue])),
           data_venda: r.sealedDT ? new Date(r.sealedDT*1000).toLocaleString('pt-PT') : '—'
         };
+        // Avaliação automática vs histórico
+        const avaliacao = avaliarNFT(nft);
+        return { ...nft, ...avaliacao };
       });
     document.getElementById('fl-count').textContent = allListings.length + ' listings';
     renderListings();
@@ -351,7 +337,54 @@ async function loadListings() {
   }
 }
 
-let listSortCol='data_venda', listSortDir=-1;
+let listSortCol='vs_mercado', listSortDir=1; // default: mais baratos primeiro
+
+function avaliarNFT(nft) {
+  // Encontrar NFTs similares no histórico
+  const similares = allHistory.filter(r => r.preco_draco && r.classe === nft.classe).map(r => {
+    const psDiff = Math.abs((r.power_score||0) - (nft.power_score||0)) / Math.max(nft.power_score||1, 1);
+    const nivDiff = Math.abs((r.nivel||0) - (nft.nivel||0)) / Math.max(nft.nivel||1, 1);
+    const sim = 1 - (psDiff * 0.7 + nivDiff * 0.3);
+    return { ...r, _sim: sim };
+  }).filter(r => r._sim > 0.75).sort((a,b) => b._sim - a._sim).slice(0, 10);
+
+  if (!similares.length) return { preco_justo: null, vs_mercado: null, n_similares: 0 };
+
+  // Média ponderada pela similaridade
+  const totalSim = similares.reduce((s,r) => s + r._sim, 0);
+  const precoJusto = Math.round(similares.reduce((s,r) => s + r.preco_draco * (r._sim/totalSim), 0));
+  const vsMercado = Math.round(((nft.preco_draco - precoJusto) / precoJusto) * 100);
+
+  return { preco_justo: precoJusto, vs_mercado: vsMercado, n_similares: similares.length };
+}
+
+function vsMercadoBadge(vs) {
+  if(vs === null) return '<span style="color:#8b949e;font-size:11px">sem dados</span>';
+  const abs = Math.abs(vs);
+  if(vs <= -15) return `<span style="background:#1f6e3d;color:#7ee787;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:700">🟢 ${vs}%</span>`;
+  if(vs <= -5)  return `<span style="background:#1a4d2e;color:#7ee787;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:600">🟢 ${vs}%</span>`;
+  if(vs <= 5)   return `<span style="background:#3d3200;color:#e3b341;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:600">🟡 ${vs}%</span>`;
+  if(vs <= 20)  return `<span style="background:#4d2a00;color:#ffa657;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:600">🟠 +${vs}%</span>`;
+  return `<span style="background:#4d1a1a;color:#ff7b72;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:600">🔴 +${vs}%</span>`;
+}
+
+function nftRowListing(r) {
+  const legs = (r.legendary_items||[]).slice(0,2).map(i=>`<span class="item-pill lend">${i}</span>`).join('');
+  const pj = r.preco_justo ? r.preco_justo.toLocaleString() : '—';
+  return `<tr onclick="openModal(${JSON.stringify(r).replace(/"/g,'&quot;')})" style="cursor:pointer">
+    <td>${r.nome||'—'}</td>
+    <td><span class="badge ${r.classe||''}">${r.classe||'?'}</span></td>
+    <td>${r.nivel||'—'}</td>
+    <td>${(r.power_score||0).toLocaleString()}</td>
+    <td><strong>${(r.preco_draco||0).toLocaleString()}</strong></td>
+    <td style="color:#8b949e">${pj}</td>
+    <td>${vsMercadoBadge(r.vs_mercado)}</td>
+    <td style="color:#8b949e;font-size:11px">${r.data_venda||'—'}</td>
+    <td><button class="btn-sm" onclick="event.stopPropagation();openModal(${JSON.stringify(r).replace(/"/g,'&quot;')})">Ver</button></td>
+  </tr>`;
+}
+
+
 function sortListings(col){if(listSortCol===col)listSortDir*=-1;else{listSortCol=col;listSortDir=-1;}renderListings();}
 
 function renderListings() {
@@ -384,7 +417,7 @@ function renderListings() {
   const slice = filtered.slice((listPage-1)*PER_PAGE, listPage*PER_PAGE);
 
   document.getElementById('fl-count').textContent = total + ' listings';
-  document.getElementById('tbody-listings').innerHTML = slice.map(r=>nftRow(r)).join('') ||
+  document.getElementById('tbody-listings').innerHTML = slice.map(r=>nftRowListing(r)).join('') ||
     '<tr><td colspan="8" class="empty">Sem resultados</td></tr>';
 
   const pag = document.getElementById('pag-listings');
@@ -405,7 +438,6 @@ function showPage(id) {
   document.getElementById('page-'+id).classList.add('active');
   event.target.classList.add('active');
   if(id==='historico') renderHistorico();
-  if(id==='recentes') renderRecentes();
   if(id==='listings' && !allListings.length) loadListings();
 }
 
@@ -448,13 +480,6 @@ function buildCharts(s) {
     `<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #21262d;font-size:12px">
       <span style="color:#e3b341">${n}</span><span style="color:#f0f6fc;font-weight:600">${c}x</span>
     </div>`).join('') || '<div class="empty">Sem dados</div>';
-}
-
-// ========== RENDER RECENTES ==========
-function renderRecentes() {
-  const tbody = document.getElementById('tbody-recentes');
-  if(!allHistory.length){tbody.innerHTML='<tr><td colspan="8" class="empty">Sem dados</td></tr>';return;}
-  tbody.innerHTML = allHistory.slice(0,50).map(r=>nftRow(r)).join('');
 }
 
 // ========== RENDER HISTÓRICO ==========
@@ -662,7 +687,6 @@ async function load() {
     document.getElementById('m-ps').textContent = (avgPS/1000).toFixed(0)+'k';
 
     buildCharts(stats);
-    renderRecentes();
   } catch(e) {
     console.error(e);
     document.querySelector('main').innerHTML = '<div class="loading">Erro ao carregar. O scraper já correu?</div>';

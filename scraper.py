@@ -196,8 +196,9 @@ def main():
     print("📋 A recolher listas...")
     recent = fetch_list("recent", pages=8)
     top = fetch_list("topTraded", pages=3)
+    recommended = fetch_list("recommended", pages=3)
 
-    all_items = recent + top
+    all_items = recent + top + recommended
     seen = set()
     unique_items = []
     for item in all_items:

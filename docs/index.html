@@ -115,6 +115,7 @@ tr:hover td{background:#21262d}
   <button class="active" onclick="showPage('overview')">📊 Overview</button>
   <button onclick="showPage('recentes')">🕐 Recentes</button>
   <button onclick="showPage('historico')">📋 Histórico</button>
+  <button onclick="showPage('listings')">🏪 Listings</button>
   <button onclick="showPage('comparador')">🔍 Comparador</button>
 </nav>
 
@@ -185,8 +186,10 @@ tr:hover td{background:#21262d}
       </select>
       <input id="f-nivel-min" type="number" placeholder="Nv min" onchange="renderHistorico()" style="width:80px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
       <input id="f-nivel-max" type="number" placeholder="Nv max" onchange="renderHistorico()" style="width:80px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-      <input id="f-ps-min" type="number" placeholder="PS min" onchange="renderHistorico()" style="width:100px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
-      <input id="f-preco-max" type="number" placeholder="Preço max" onchange="renderHistorico()" style="width:100px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <input id="f-ps-min" type="number" placeholder="PS min" onchange="renderHistorico()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <input id="f-ps-max" type="number" placeholder="PS max" onchange="renderHistorico()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <input id="f-preco-min" type="number" placeholder="Preço min" onchange="renderHistorico()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <input id="f-preco-max" type="number" placeholder="Preço max" onchange="renderHistorico()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
       <input id="f-item" type="text" placeholder="Item lendário..." onchange="renderHistorico()" style="background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
       <button class="btn-sm" onclick="clearFilters()">Limpar</button>
       <span id="f-count" style="font-size:12px;color:#8b949e;margin-left:auto"></span>
@@ -207,6 +210,35 @@ tr:hover td{background:#21262d}
       </table>
     </div>
     <div class="pagination" id="pag-historico"></div>
+  </div>
+</div>
+
+<!-- LISTINGS -->
+<div id="page-listings" class="page">
+  <div class="card">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:.8rem;align-items:center">
+      <select id="fl-classe" onchange="renderListings()" style="background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+        <option value="">Todas as classes</option>
+        <option>Warrior</option><option>Sorcerer</option><option>Taoist</option>
+        <option>Arbalist</option><option>Lancer</option><option>Darkist</option>
+      </select>
+      <input id="fl-ps-min" type="number" placeholder="PS min" onchange="renderListings()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <input id="fl-ps-max" type="number" placeholder="PS max" onchange="renderListings()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <input id="fl-preco-min" type="number" placeholder="Preço min" onchange="renderListings()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <input id="fl-preco-max" type="number" placeholder="Preço max" onchange="renderListings()" style="width:95px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <button class="btn-sm" onclick="loadListings()">🔄 Actualizar</button>
+      <span id="fl-count" style="font-size:12px;color:#8b949e;margin-left:auto"></span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th>Nome</th><th>Classe</th><th>Nv</th><th>Power Score</th>
+          <th>Itens Lend.</th><th>Preço DRACO</th><th>Listado</th><th></th>
+        </tr></thead>
+        <tbody id="tbody-listings"></tbody>
+      </table>
+    </div>
+    <div class="pagination" id="pag-listings"></div>
   </div>
 </div>
 
@@ -271,6 +303,80 @@ let allHistory = [], statsData = {}, sortCol = 'data_venda', sortDir = -1, histP
 const PER_PAGE = 50;
 
 // ========== NAVEGAÇÃO ==========
+let allListings = [], listPage = 1;
+
+async function loadListings() {
+  document.getElementById('tbody-listings').innerHTML = '<tr><td colspan="8" class="loading">A carregar listings...</td></tr>';
+  try {
+    const pages = [1,2,3,4,5,6,7,8,9,10];
+    let results = [];
+    for(const p of pages) {
+      const url = `https://webapi.mir4global.com/nft/lists?listType=sale&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&page=${p}&languageCode=pt`;
+      const r = await fetch(url);
+      const data = await r.json();
+      const items = data?.data?.lists || [];
+      if(!items.length) break;
+      results = results.concat(items);
+    }
+    allListings = results.map(item => {
+        const info = item.info || {};
+        const CLASS_MAP = {1:'Warrior',2:'Sorcerer',3:'Taoist',4:'Arbalist',5:'Lancer',6:'Darkist'};
+        return {
+          seq: info.seq,
+          nome: info.characterName || '',
+          classe: CLASS_MAP[info.class] || '?',
+          nivel: info.lv,
+          power_score: info.powerScore,
+          preco_draco: info.price,
+          legendary_count: 0,
+          legendary_items: [],
+          data_venda: info.listDT ? new Date(info.listDT*1000).toLocaleString('pt-PT') : '—'
+        };
+      });
+    document.getElementById('fl-count').textContent = allListings.length + ' listings';
+    renderListings();
+  } catch(e) {
+    document.getElementById('tbody-listings').innerHTML = '<tr><td colspan="8" class="empty">Erro ao carregar listings</td></tr>';
+  }
+}
+
+function renderListings() {
+  const fc = document.getElementById('fl-classe').value;
+  const fpsMin = +document.getElementById('fl-ps-min').value||0;
+  const fpsMax = +document.getElementById('fl-ps-max').value||Infinity;
+  const fpMin = +document.getElementById('fl-preco-min').value||0;
+  const fpMax = +document.getElementById('fl-preco-max').value||Infinity;
+
+  const filtered = allListings.filter(r => {
+    if(fc && r.classe!==fc) return false;
+    if(r.power_score<fpsMin) return false;
+    if(fpsMax<Infinity && r.power_score>fpsMax) return false;
+    if(r.preco_draco<fpMin) return false;
+    if(r.preco_draco>fpMax) return false;
+    return true;
+  });
+
+  const total = filtered.length;
+  const pages = Math.ceil(total/PER_PAGE);
+  listPage = Math.min(listPage, pages||1);
+  const slice = filtered.slice((listPage-1)*PER_PAGE, listPage*PER_PAGE);
+
+  document.getElementById('fl-count').textContent = total + ' listings';
+  document.getElementById('tbody-listings').innerHTML = slice.map(r=>nftRow(r)).join('') ||
+    '<tr><td colspan="8" class="empty">Sem resultados</td></tr>';
+
+  const pag = document.getElementById('pag-listings');
+  pag.innerHTML = '';
+  if(pages>1) {
+    for(let i=1;i<=Math.min(pages,10);i++){
+      const b=document.createElement('button');
+      b.textContent=i; if(i===listPage)b.classList.add('active');
+      b.onclick=()=>{listPage=i;renderListings()};
+      pag.appendChild(b);
+    }
+  }
+}
+
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
@@ -278,6 +384,7 @@ function showPage(id) {
   event.target.classList.add('active');
   if(id==='historico') renderHistorico();
   if(id==='recentes') renderRecentes();
+  if(id==='listings' && !allListings.length) loadListings();
 }
 
 // ========== CHARTS ==========
@@ -334,6 +441,8 @@ function getFiltered() {
   const fnMin = +document.getElementById('f-nivel-min').value||0;
   const fnMax = +document.getElementById('f-nivel-max').value||9999;
   const fpsMin = +document.getElementById('f-ps-min').value||0;
+  const fpsMax = +document.getElementById('f-ps-max').value||Infinity;
+  const fpMin = +document.getElementById('f-preco-min').value||0;
   const fpMax = +document.getElementById('f-preco-max').value||Infinity;
   const fItem = document.getElementById('f-item').value.toLowerCase();
 
@@ -341,6 +450,8 @@ function getFiltered() {
     if(fc && r.classe!==fc) return false;
     if(r.nivel<fnMin||r.nivel>fnMax) return false;
     if(r.power_score<fpsMin) return false;
+    if(fpsMax<Infinity && r.power_score>fpsMax) return false;
+    if(r.preco_draco<fpMin) return false;
     if(r.preco_draco>fpMax) return false;
     if(fItem && !((r.legendary_items||[]).some(i=>i.toLowerCase().includes(fItem)))) return false;
     return true;
@@ -380,7 +491,7 @@ function sortBy(col){
 }
 
 function clearFilters(){
-  ['f-classe','f-nivel-min','f-nivel-max','f-ps-min','f-preco-max','f-item'].forEach(id=>{
+  ['f-classe','f-nivel-min','f-nivel-max','f-ps-min','f-ps-max','f-preco-min','f-preco-max','f-item'].forEach(id=>{
     document.getElementById(id).value='';
   });
   renderHistorico();

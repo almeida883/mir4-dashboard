@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIR4 NFT Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0d1117;color:#e6edf3;min-height:100vh}
+header{background:#161b22;border-bottom:1px solid #30363d;padding:.8rem 1.5rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap}
+header h1{font-size:1.1rem;font-weight:600}
+.tag{font-size:11px;color:#8b949e;background:#21262d;padding:2px 8px;border-radius:10px}
+#updated{font-size:11px;color:#8b949e;margin-left:auto}
+nav{display:flex;gap:4px;background:#161b22;border-bottom:1px solid #30363d;padding:0 1.5rem}
+nav button{background:none;border:none;color:#8b949e;padding:.6rem .9rem;cursor:pointer;font-size:13px;border-bottom:2px solid transparent;transition:.2s}
+nav button.active{color:#f0f6fc;border-bottom-color:#1f6feb}
+main{padding:1.2rem 1.5rem;max-width:1400px;margin:0 auto}
+
+/* MÉTRICAS */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:1.2rem}
+.metric{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:.8rem 1rem}
+.metric label{font-size:11px;color:#8b949e;display:block;margin-bottom:3px}
+.metric value{font-size:20px;font-weight:600;color:#f0f6fc;display:block}
+.metric sub{font-size:10px;color:#8b949e}
+
+/* CARDS */
+.card{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:1rem;margin-bottom:1rem}
+.card h3{font-size:12px;color:#8b949e;margin-bottom:.8rem;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem}
+@media(max-width:800px){.grid2,.grid3{grid-template-columns:1fr}}
+.chart-wrap{position:relative;height:200px}
+
+/* TABELA */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{text-align:left;padding:7px 10px;color:#8b949e;border-bottom:1px solid #30363d;font-weight:500;white-space:nowrap;cursor:pointer;user-select:none}
+th:hover{color:#f0f6fc}
+td{padding:6px 10px;border-bottom:1px solid #21262d;vertical-align:middle}
+tr:hover td{background:#21262d}
+.badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600}
+.Warrior{background:#1f3d6e;color:#79b8ff}
+.Sorcerer{background:#3d1f6e;color:#c79bff}
+.Taoist{background:#1f6e3d;color:#7ee787}
+.Arbalist{background:#6e3d1f;color:#ffa657}
+.Lancer{background:#6e1f1f;color:#ff7b72}
+.Darkist{background:#3d3d1f;color:#e3b341}
+
+/* COMPARADOR */
+.comp-grid{display:grid;grid-template-columns:300px 1fr;gap:1rem}
+@media(max-width:800px){.comp-grid{grid-template-columns:1fr}}
+.form-group{margin-bottom:.8rem}
+.form-group label{font-size:12px;color:#8b949e;display:block;margin-bottom:4px}
+.form-group input,.form-group select{width:100%;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:6px 10px;border-radius:6px;font-size:13px}
+.form-group input:focus,.form-group select:focus{outline:none;border-color:#1f6feb}
+.btn{background:#1f6feb;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;width:100%}
+.btn:hover{background:#388bfd}
+.btn-sm{background:#21262d;color:#e6edf3;border:1px solid #30363d;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:11px}
+.btn-sm:hover{background:#30363d}
+
+/* PESOS */
+.peso-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;font-size:12px}
+.peso-row label{flex:1;color:#e6edf3}
+.peso-row input[type=range]{flex:1;accent-color:#1f6feb}
+.peso-row span{width:30px;text-align:right;color:#8b949e}
+
+/* RESULTADO COMPARADOR */
+.result-box{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:1rem;margin-bottom:1rem}
+.price-estimate{font-size:28px;font-weight:700;color:#7ee787}
+.price-range{font-size:13px;color:#8b949e;margin-top:4px}
+.similar-item{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid #21262d;font-size:12px}
+.similar-item:last-child{border:none}
+.sim-score{display:inline-block;width:36px;height:36px;border-radius:50%;background:#21262d;text-align:center;line-height:36px;font-size:11px;font-weight:600;color:#8b949e;margin-right:8px}
+.sim-score.high{background:#1f6e3d;color:#7ee787}
+.sim-score.med{background:#6e3d1f;color:#ffa657}
+
+/* ITEMS */
+.item-pill{display:inline-block;padding:2px 6px;border-radius:4px;font-size:10px;margin:1px;background:#21262d;color:#8b949e}
+.item-pill.lend{background:#3d3d1f;color:#e3b341}
+.item-pill.epic{background:#3d1f6e;color:#c79bff}
+
+/* PAGINAÇÃO */
+.pagination{display:flex;gap:4px;justify-content:center;margin-top:.8rem}
+.pagination button{background:#21262d;border:1px solid #30363d;color:#8b949e;padding:4px 10px;border-radius:4px;cursor:pointer;font-size:12px}
+.pagination button.active,.pagination button:hover{background:#1f6feb;color:#fff;border-color:#1f6feb}
+
+.page{display:none}
+.page.active{display:block}
+.loading{text-align:center;padding:3rem;color:#8b949e;font-size:14px}
+.empty{text-align:center;padding:2rem;color:#8b949e;font-size:13px}
+
+/* NFT DETAIL MODAL */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:100;overflow-y:auto}
+.modal.open{display:flex;align-items:flex-start;justify-content:center;padding:2rem}
+.modal-box{background:#161b22;border:1px solid #30363d;border-radius:10px;width:100%;max-width:700px;padding:1.5rem}
+.modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.modal-close{background:none;border:none;color:#8b949e;font-size:20px;cursor:pointer}
+.stat-row{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #21262d;font-size:12px}
+.stat-row:last-child{border:none}
+.stat-name{color:#8b949e}
+.stat-val{color:#f0f6fc;font-weight:500}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>⚔️ MIR4 NFT Dashboard</h1>
+  <span class="tag">xDraco</span>
+  <span class="tag" id="total-tag">— NFTs</span>
+  <span id="updated">A carregar...</span>
+</header>
+
+<nav>
+  <button class="active" onclick="showPage('overview')">📊 Overview</button>
+  <button onclick="showPage('recentes')">🕐 Recentes</button>
+  <button onclick="showPage('historico')">📋 Histórico</button>
+  <button onclick="showPage('comparador')">🔍 Comparador</button>
+</nav>
+
+<main>
+
+<!-- OVERVIEW -->
+<div id="page-overview" class="page active">
+  <div class="metrics" id="metrics">
+    <div class="metric"><label>Total histórico</label><value id="m-total">—</value></div>
+    <div class="metric"><label>Preço médio</label><value id="m-media">—</value><sub>DRACO</sub></div>
+    <div class="metric"><label>Preço mediano</label><value id="m-mediana">—</value><sub>DRACO</sub></div>
+    <div class="metric"><label>Classe top</label><value id="m-classe">—</value></div>
+    <div class="metric"><label>PS médio</label><value id="m-ps">—</value></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Preço mediano por classe</h3>
+      <div class="chart-wrap"><canvas id="chartClasse"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Distribuição de classes</h3>
+      <div class="chart-wrap"><canvas id="chartPie"></canvas></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Preço mediano por nível</h3>
+    <div class="chart-wrap" style="height:160px"><canvas id="chartNivel"></canvas></div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Preço por Power Score</h3>
+      <div class="chart-wrap"><canvas id="chartPS"></canvas></div>
+    </div>
+    <div class="card">
+      <h3>Itens lendários mais frequentes (top NFTs)</h3>
+      <div id="leg-list" style="max-height:200px;overflow-y:auto"></div>
+    </div>
+  </div>
+</div>
+
+<!-- RECENTES -->
+<div id="page-recentes" class="page">
+  <div class="card">
+    <h3>Últimas vendas</h3>
+    <div class="table-wrap">
+      <table id="tbl-recentes">
+        <thead><tr>
+          <th>Nome</th><th>Classe</th><th>Nv</th><th>Power Score</th>
+          <th>Lend.</th><th>Preço DRACO</th><th>Data</th><th></th>
+        </tr></thead>
+        <tbody id="tbody-recentes"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- HISTÓRICO -->
+<div id="page-historico" class="page">
+  <div class="card">
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:.8rem;align-items:center">
+      <select id="f-classe" onchange="renderHistorico()" style="background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+        <option value="">Todas as classes</option>
+        <option>Warrior</option><option>Sorcerer</option><option>Taoist</option>
+        <option>Arbalist</option><option>Lancer</option><option>Darkist</option>
+      </select>
+      <input id="f-nivel-min" type="number" placeholder="Nv min" onchange="renderHistorico()" style="width:80px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <input id="f-nivel-max" type="number" placeholder="Nv max" onchange="renderHistorico()" style="width:80px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <input id="f-ps-min" type="number" placeholder="PS min" onchange="renderHistorico()" style="width:100px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <input id="f-preco-max" type="number" placeholder="Preço max" onchange="renderHistorico()" style="width:100px;background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <input id="f-item" type="text" placeholder="Item lendário..." onchange="renderHistorico()" style="background:#21262d;border:1px solid #30363d;color:#e6edf3;padding:5px 8px;border-radius:6px;font-size:12px">
+      <button class="btn-sm" onclick="clearFilters()">Limpar</button>
+      <span id="f-count" style="font-size:12px;color:#8b949e;margin-left:auto"></span>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr>
+          <th onclick="sortBy('nome')">Nome</th>
+          <th onclick="sortBy('classe')">Classe</th>
+          <th onclick="sortBy('nivel')">Nv</th>
+          <th onclick="sortBy('power_score')">Power Score</th>
+          <th>Itens Lend.</th>
+          <th onclick="sortBy('preco_draco')">Preço DRACO</th>
+          <th onclick="sortBy('data_venda')">Data</th>
+          <th></th>
+        </tr></thead>
+        <tbody id="tbody-historico"></tbody>
+      </table>
+    </div>
+    <div class="pagination" id="pag-historico"></div>
+  </div>
+</div>
+
+<!-- COMPARADOR -->
+<div id="page-comparador" class="page">
+  <div class="comp-grid">
+    <div>
+      <div class="card">
+        <h3>NFT a avaliar</h3>
+        <div class="form-group"><label>Classe</label>
+          <select id="c-classe">
+            <option>Warrior</option><option>Sorcerer</option><option>Taoist</option>
+            <option>Arbalist</option><option>Lancer</option><option>Darkist</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Nível</label><input type="number" id="c-nivel" value="160"></div>
+        <div class="form-group"><label>Power Score</label><input type="number" id="c-ps" value="450000"></div>
+        <div class="form-group"><label>Nº itens lendários</label><input type="number" id="c-lend" value="0"></div>
+        <div class="form-group"><label>Nº itens épicos</label><input type="number" id="c-epic" value="0"></div>
+        <div class="form-group"><label>Item lendário específico (opcional)</label>
+          <input type="text" id="c-item" placeholder="ex: Espada Dragão...">
+        </div>
+        <button class="btn" onclick="comparar()">🔍 Avaliar NFT</button>
+      </div>
+
+      <div class="card" style="margin-top:0">
+        <h3>Pesos de comparação</h3>
+        <p style="font-size:11px;color:#8b949e;margin-bottom:.8rem">Ajusta a importância de cada factor</p>
+        <div class="peso-row"><label>Power Score</label><input type="range" id="w-ps" min="0" max="10" value="8" oninput="this.nextElementSibling.textContent=this.value"><span>8</span></div>
+        <div class="peso-row"><label>Nível</label><input type="range" id="w-nivel" min="0" max="10" value="6" oninput="this.nextElementSibling.textContent=this.value"><span>6</span></div>
+        <div class="peso-row"><label>Classe</label><input type="range" id="w-classe" min="0" max="10" value="4" oninput="this.nextElementSibling.textContent=this.value"><span>4</span></div>
+        <div class="peso-row"><label>Itens lendários</label><input type="range" id="w-lend" min="0" max="10" value="5" oninput="this.nextElementSibling.textContent=this.value"><span>5</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div id="comp-result" class="card">
+        <div class="empty">Preenche os dados e clica em Avaliar NFT</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- MODAL DETALHE -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2 id="modal-title" style="font-size:16px"></h2>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+const BASE = 'https://raw.githubusercontent.com/almeida883/mir4-dashboard/main/data/';
+const CLASS_COLORS = {Warrior:'#79b8ff',Sorcerer:'#c79bff',Taoist:'#7ee787',Arbalist:'#ffa657',Lancer:'#ff7b72',Darkist:'#e3b341'};
+
+let allHistory = [], statsData = {}, sortCol = 'data_venda', sortDir = -1, histPage = 1;
+const PER_PAGE = 50;
+
+// ========== NAVEGAÇÃO ==========
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  event.target.classList.add('active');
+  if(id==='historico') renderHistorico();
+  if(id==='recentes') renderRecentes();
+}
+
+// ========== CHARTS ==========
+const cOpts = (extra={}) => ({
+  responsive:true, maintainAspectRatio:false,
+  plugins:{legend:{display:false},...(extra.plugins||{})},
+  scales:{
+    x:{ticks:{color:'#8b949e',font:{size:11}},grid:{color:'rgba(255,255,255,0.04)'}},
+    y:{ticks:{color:'#8b949e',font:{size:11},callback:v=>v.toLocaleString()},grid:{color:'rgba(255,255,255,0.04)'}}
+  },...extra
+});
+
+function buildCharts(s) {
+  const classes = s.por_classe||{};
+  const cl = Object.keys(classes).sort((a,b)=>classes[b].mediana-classes[a].mediana);
+  new Chart(document.getElementById('chartClasse'),{type:'bar',
+    data:{labels:cl,datasets:[{data:cl.map(c=>classes[c].mediana),backgroundColor:cl.map(c=>CLASS_COLORS[c]||'#8b949e'),borderRadius:4}]},
+    options:cOpts()});
+
+  new Chart(document.getElementById('chartPie'),{type:'doughnut',
+    data:{labels:cl,datasets:[{data:cl.map(c=>classes[c].count),backgroundColor:cl.map(c=>CLASS_COLORS[c]||'#8b949e')}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#8b949e',font:{size:11}}}}}});
+
+  const niv = s.por_nivel||{};
+  const nl = Object.keys(niv).sort((a,b)=>+a-+b);
+  new Chart(document.getElementById('chartNivel'),{type:'line',
+    data:{labels:nl.map(k=>'Nv'+k),datasets:[{data:nl.map(k=>niv[k].mediana),borderColor:'#7ee787',backgroundColor:'rgba(126,231,135,0.08)',tension:0.4,fill:true,pointRadius:3}]},
+    options:cOpts()});
+
+  const ps = s.por_ps||{};
+  const pl = Object.keys(ps).sort((a,b)=>+a-+b);
+  new Chart(document.getElementById('chartPS'),{type:'bar',
+    data:{labels:pl.map(k=>(+k/1000)+'k'),datasets:[{data:pl.map(k=>ps[k].mediana),backgroundColor:'#378ADD',borderRadius:4}]},
+    options:cOpts()});
+
+  // Legendary items
+  const leg = s.top_legendary_items||{};
+  document.getElementById('leg-list').innerHTML = Object.entries(leg).slice(0,15).map(([n,c])=>
+    `<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #21262d;font-size:12px">
+      <span style="color:#e3b341">${n}</span><span style="color:#f0f6fc;font-weight:600">${c}x</span>
+    </div>`).join('') || '<div class="empty">Sem dados</div>';
+}
+
+// ========== RENDER RECENTES ==========
+function renderRecentes() {
+  const tbody = document.getElementById('tbody-recentes');
+  if(!allHistory.length){tbody.innerHTML='<tr><td colspan="8" class="empty">Sem dados</td></tr>';return;}
+  tbody.innerHTML = allHistory.slice(0,50).map(r=>nftRow(r)).join('');
+}
+
+// ========== RENDER HISTÓRICO ==========
+function getFiltered() {
+  const fc = document.getElementById('f-classe').value;
+  const fnMin = +document.getElementById('f-nivel-min').value||0;
+  const fnMax = +document.getElementById('f-nivel-max').value||9999;
+  const fpsMin = +document.getElementById('f-ps-min').value||0;
+  const fpMax = +document.getElementById('f-preco-max').value||Infinity;
+  const fItem = document.getElementById('f-item').value.toLowerCase();
+
+  return allHistory.filter(r=>{
+    if(fc && r.classe!==fc) return false;
+    if(r.nivel<fnMin||r.nivel>fnMax) return false;
+    if(r.power_score<fpsMin) return false;
+    if(r.preco_draco>fpMax) return false;
+    if(fItem && !((r.legendary_items||[]).some(i=>i.toLowerCase().includes(fItem)))) return false;
+    return true;
+  }).sort((a,b)=>{
+    const va=a[sortCol]||0, vb=b[sortCol]||0;
+    return sortDir*(va<vb?-1:va>vb?1:0);
+  });
+}
+
+function renderHistorico() {
+  const filtered = getFiltered();
+  const total = filtered.length;
+  const pages = Math.ceil(total/PER_PAGE);
+  histPage = Math.min(histPage, pages||1);
+  const slice = filtered.slice((histPage-1)*PER_PAGE, histPage*PER_PAGE);
+
+  document.getElementById('f-count').textContent = `${total} resultados`;
+  document.getElementById('tbody-historico').innerHTML = slice.map(r=>nftRow(r)).join('') ||
+    '<tr><td colspan="8" class="empty">Sem resultados</td></tr>';
+
+  // Paginação
+  const pag = document.getElementById('pag-historico');
+  pag.innerHTML = '';
+  if(pages>1){
+    for(let i=1;i<=Math.min(pages,10);i++){
+      const b=document.createElement('button');
+      b.textContent=i; if(i===histPage)b.classList.add('active');
+      b.onclick=()=>{histPage=i;renderHistorico()};
+      pag.appendChild(b);
+    }
+  }
+}
+
+function sortBy(col){
+  if(sortCol===col) sortDir*=-1; else {sortCol=col;sortDir=-1;}
+  renderHistorico();
+}
+
+function clearFilters(){
+  ['f-classe','f-nivel-min','f-nivel-max','f-ps-min','f-preco-max','f-item'].forEach(id=>{
+    document.getElementById(id).value='';
+  });
+  renderHistorico();
+}
+
+// ========== ROW ==========
+function nftRow(r) {
+  const legs = (r.legendary_items||[]).slice(0,2).map(i=>`<span class="item-pill lend">${i}</span>`).join('');
+  return `<tr onclick="openModal(${JSON.stringify(r).replace(/"/g,'&quot;')})" style="cursor:pointer">
+    <td>${r.nome||'—'}</td>
+    <td><span class="badge ${r.classe||''}">${r.classe||'?'}</span></td>
+    <td>${r.nivel||'—'}</td>
+    <td>${(r.power_score||0).toLocaleString()}</td>
+    <td>${legs}${r.legendary_count>2?`<span class="item-pill">+${r.legendary_count-2}</span>`:''}</td>
+    <td><strong>${(r.preco_draco||0).toLocaleString()}</strong></td>
+    <td style="color:#8b949e">${r.data_venda||'—'}</td>
+    <td><button class="btn-sm" onclick="event.stopPropagation();openModal(${JSON.stringify(r).replace(/"/g,'&quot;')})">Ver</button></td>
+  </tr>`;
+}
+
+// ========== MODAL ==========
+function openModal(r) {
+  document.getElementById('modal-title').textContent = `${r.nome} — ${r.classe} Nv${r.nivel}`;
+  const legs = (r.legendary_items||[]).map(i=>`<span class="item-pill lend">${i}</span>`).join('');
+  const epics = (r.epic_items||[]).map(i=>`<span class="item-pill epic">${i}</span>`).join('');
+  const skills = Object.entries(r.trained_skills||{}).map(([k,v])=>`<span class="item-pill">${k}: ${v}</span>`).join('');
+  const mainstats = Object.entries(r.mainstats||{}).map(([k,v])=>
+    `<div class="stat-row"><span class="stat-name">${k}</span><span class="stat-val">${typeof v==='number'?v.toLocaleString():v}</span></div>`).join('');
+
+  document.getElementById('modal-body').innerHTML = `
+    <div class="grid2" style="margin-bottom:1rem">
+      <div>
+        <div class="stat-row"><span class="stat-name">Power Score</span><span class="stat-val">${(r.power_score||0).toLocaleString()}</span></div>
+        <div class="stat-row"><span class="stat-name">Preço</span><span class="stat-val" style="color:#7ee787;font-size:18px">${(r.preco_draco||0).toLocaleString()} DRACO</span></div>
+        <div class="stat-row"><span class="stat-name">Servidor</span><span class="stat-val">${r.servidor||'—'}</span></div>
+        <div class="stat-row"><span class="stat-name">Data venda</span><span class="stat-val">${r.data_venda||'—'}</span></div>
+        <div class="stat-row"><span class="stat-name">MirageScore</span><span class="stat-val">${r.mirage_score||0}</span></div>
+      </div>
+      <div>${mainstats}</div>
+    </div>
+    ${legs||epics?`<div style="margin-bottom:.8rem"><p style="font-size:12px;color:#8b949e;margin-bottom:4px">Itens equipados</p>${legs}${epics}</div>`:''}
+    ${skills?`<div><p style="font-size:12px;color:#8b949e;margin-bottom:4px">Skills</p>${skills}</div>`:''}
+  `;
+  document.getElementById('modal').classList.add('open');
+}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+document.getElementById('modal').onclick=e=>{if(e.target===e.currentTarget)closeModal()}
+
+// ========== COMPARADOR ==========
+function comparar() {
+  const classe = document.getElementById('c-classe').value;
+  const nivel = +document.getElementById('c-nivel').value;
+  const ps = +document.getElementById('c-ps').value;
+  const lend = +document.getElementById('c-lend').value;
+  const epic = +document.getElementById('c-epic').value;
+  const item = document.getElementById('c-item').value.toLowerCase();
+
+  const wPS = +document.getElementById('w-ps').value;
+  const wNivel = +document.getElementById('w-nivel').value;
+  const wClasse = +document.getElementById('w-classe').value;
+  const wLend = +document.getElementById('w-lend').value;
+
+  // Calcular similaridade para cada NFT no histórico
+  const scored = allHistory.filter(r=>r.preco_draco).map(r=>{
+    let score = 0, total = wPS+wNivel+wClasse+wLend;
+    if(total===0) total=1;
+
+    // PS similarity (0-1)
+    const psDiff = Math.abs((r.power_score||0)-ps)/Math.max(ps,1);
+    score += wPS*(1-Math.min(psDiff,1));
+
+    // Nível similarity
+    const nivDiff = Math.abs((r.nivel||0)-nivel)/Math.max(nivel,1);
+    score += wNivel*(1-Math.min(nivDiff,1));
+
+    // Classe
+    score += wClasse*(r.classe===classe?1:0);
+
+    // Lendários
+    const lendDiff = Math.abs((r.legendary_count||0)-lend)/Math.max(lend+1,1);
+    score += wLend*(1-Math.min(lendDiff,1));
+
+    // Bonus item específico
+    if(item && (r.legendary_items||[]).some(i=>i.toLowerCase().includes(item))) score += 2;
+
+    return {...r, _sim: Math.round((score/total)*100)};
+  }).sort((a,b)=>b._sim-a._sim).slice(0,10);
+
+  if(!scored.length){
+    document.getElementById('comp-result').innerHTML='<div class="empty">Sem histórico para comparar</div>';
+    return;
+  }
+
+  // Estimativa de preço (média ponderada por similaridade)
+  const top5 = scored.slice(0,5);
+  const totalSim = top5.reduce((s,r)=>s+r._sim,0)||1;
+  const estimated = Math.round(top5.reduce((s,r)=>s+r.preco_draco*(r._sim/totalSim),0));
+  const prices = top5.map(r=>r.preco_draco);
+  const minP = Math.min(...prices), maxP = Math.max(...prices);
+
+  document.getElementById('comp-result').innerHTML = `
+    <h3>Resultado da avaliação</h3>
+    <div class="result-box" style="margin-top:.8rem">
+      <div class="price-estimate">${estimated.toLocaleString()} DRACO</div>
+      <div class="price-range">Intervalo: ${minP.toLocaleString()} — ${maxP.toLocaleString()} DRACO</div>
+      <div class="price-range" style="margin-top:4px">Baseado nos ${top5.length} NFTs mais similares</div>
+    </div>
+    <h3 style="margin-bottom:.5rem">NFTs similares encontrados</h3>
+    ${scored.slice(0,8).map(r=>`
+      <div class="similar-item">
+        <span class="sim-score ${r._sim>=70?'high':r._sim>=40?'med':''}">${r._sim}%</span>
+        <div style="flex:1">
+          <div style="font-weight:500">${r.nome} <span class="badge ${r.classe}">${r.classe}</span></div>
+          <div style="color:#8b949e;font-size:11px">Nv${r.nivel} | PS ${(r.power_score||0).toLocaleString()} | ${r.legendary_count||0} lend. | ${r.data_venda}</div>
+        </div>
+        <strong style="color:#7ee787">${(r.preco_draco||0).toLocaleString()}</strong>
+      </div>
+    `).join('')}
+  `;
+}
+
+// ========== LOAD ==========
+async function load() {
+  try {
+    const [stats, history] = await Promise.all([
+      fetch(BASE+'stats.json').then(r=>r.json()),
+      fetch(BASE+'nft_history.json').then(r=>r.json())
+    ]);
+
+    statsData = stats;
+    allHistory = history;
+
+    document.getElementById('updated').textContent = stats.updated_at
+      ? 'Actualizado: '+new Date(stats.updated_at).toLocaleString('pt-PT') : '';
+    document.getElementById('total-tag').textContent = (stats.total||0)+' NFTs';
+
+    document.getElementById('m-total').textContent = (stats.total||0).toLocaleString();
+    document.getElementById('m-media').textContent = (stats.preco_medio_global||0).toLocaleString();
+    document.getElementById('m-mediana').textContent = (stats.preco_mediano_global||0).toLocaleString();
+
+    const classes = stats.por_classe||{};
+    const topC = Object.entries(classes).sort((a,b)=>b[1].mediana-a[1].mediana)[0];
+    if(topC) document.getElementById('m-classe').textContent = topC[0];
+
+    const avgPS = history.length ? Math.round(history.reduce((s,r)=>s+(r.power_score||0),0)/history.length) : 0;
+    document.getElementById('m-ps').textContent = (avgPS/1000).toFixed(0)+'k';
+
+    buildCharts(stats);
+    renderRecentes();
+  } catch(e) {
+    console.error(e);
+    document.querySelector('main').innerHTML = '<div class="loading">Erro ao carregar. O scraper já correu?</div>';
+  }
+}
+
+load();
+setInterval(load, 5*60*1000); // refresh automático cada 5 min
+</script>
+</body>
+</html>

@@ -1,9 +1,30 @@
 {
-  "updated_at": "2026-06-25T16:44:36.377780+00:00",
-  "total": 282,
-  "preco_medio_global": 3848,
-  "preco_mediano_global": 830,
+  "updated_at": "2026-06-25T18:40:51.771871+00:00",
+  "total": 291,
+  "preco_medio_global": 3739,
+  "preco_mediano_global": 780,
   "por_classe": {
+    "Arbalist": {
+      "media": 4149,
+      "mediana": 987,
+      "min": 1,
+      "max": 48000,
+      "count": 85
+    },
+    "Sorcerer": {
+      "media": 2346,
+      "mediana": 268,
+      "min": 1,
+      "max": 10000,
+      "count": 42
+    },
+    "Lancer": {
+      "media": 4358,
+      "mediana": 745,
+      "min": 1,
+      "max": 22000,
+      "count": 41
+    },
     "Warrior": {
       "media": 3364,
       "mediana": 790,
@@ -18,33 +39,12 @@
       "max": 18799,
       "count": 38
     },
-    "Sorcerer": {
-      "media": 2511,
-      "mediana": 270,
-      "min": 1,
-      "max": 10000,
-      "count": 39
-    },
-    "Arbalist": {
-      "media": 4385,
-      "mediana": 1025,
-      "min": 1,
-      "max": 48000,
-      "count": 80
-    },
     "Darkist": {
       "media": 4784,
       "mediana": 4999,
       "min": 1,
       "max": 27000,
       "count": 29
-    },
-    "Lancer": {
-      "media": 4460,
-      "mediana": 898,
-      "min": 1,
-      "max": 22000,
-      "count": 40
     }
   },
   "por_nivel": {
@@ -54,14 +54,14 @@
       "count": 1
     },
     "90": {
-      "media": 56,
+      "media": 54,
       "mediana": 50,
-      "count": 8
+      "count": 9
     },
     "100": {
-      "media": 88,
-      "mediana": 80,
-      "count": 6
+      "media": 136,
+      "mediana": 110,
+      "count": 9
     },
     "110": {
       "media": 81,
@@ -69,14 +69,14 @@
       "count": 24
     },
     "120": {
-      "media": 182,
-      "mediana": 150,
-      "count": 11
+      "media": 200,
+      "mediana": 168,
+      "count": 12
     },
     "130": {
-      "media": 235,
+      "media": 249,
       "mediana": 260,
-      "count": 45
+      "count": 49
     },
     "140": {
       "media": 577,
@@ -101,14 +101,14 @@
   },
   "por_ps": {
     "100000": {
-      "media": 85,
+      "media": 94,
       "mediana": 75,
-      "count": 43
+      "count": 47
     },
     "200000": {
-      "media": 226,
-      "mediana": 249,
-      "count": 45
+      "media": 244,
+      "mediana": 255,
+      "count": 50
     },
     "300000": {
       "media": 522,

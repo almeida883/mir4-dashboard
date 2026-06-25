@@ -340,32 +340,106 @@ async function loadListings() {
 let listSortCol='vs_mercado', listSortDir=1; // default: mais baratos primeiro
 
 function avaliarNFT(nft) {
-  // Encontrar NFTs similares no histórico
   const similares = allHistory.filter(r => r.preco_draco && r.classe === nft.classe).map(r => {
     const psDiff = Math.abs((r.power_score||0) - (nft.power_score||0)) / Math.max(nft.power_score||1, 1);
     const nivDiff = Math.abs((r.nivel||0) - (nft.nivel||0)) / Math.max(nft.nivel||1, 1);
     const sim = 1 - (psDiff * 0.7 + nivDiff * 0.3);
-    return { ...r, _sim: sim };
-  }).filter(r => r._sim > 0.75).sort((a,b) => b._sim - a._sim).slice(0, 10);
+    return { ...r, _sim: Math.round(sim*100) };
+  }).filter(r => r._sim > 75).sort((a,b) => b._sim - a._sim).slice(0, 10);
 
-  if (!similares.length) return { preco_justo: null, vs_mercado: null, n_similares: 0 };
+  if (!similares.length) return { preco_justo: null, vs_mercado: null, n_similares: 0, _similares: [] };
 
-  // Média ponderada pela similaridade
   const totalSim = similares.reduce((s,r) => s + r._sim, 0);
   const precoJusto = Math.round(similares.reduce((s,r) => s + r.preco_draco * (r._sim/totalSim), 0));
   const vsMercado = Math.round(((nft.preco_draco - precoJusto) / precoJusto) * 100);
 
-  return { preco_justo: precoJusto, vs_mercado: vsMercado, n_similares: similares.length };
+  return { preco_justo: precoJusto, vs_mercado: vsMercado, n_similares: similares.length, _similares: similares };
 }
 
-function vsMercadoBadge(vs) {
-  if(vs === null) return '<span style="color:#8b949e;font-size:11px">sem dados</span>';
-  const abs = Math.abs(vs);
-  if(vs <= -15) return `<span style="background:#1f6e3d;color:#7ee787;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:700">🟢 ${vs}%</span>`;
-  if(vs <= -5)  return `<span style="background:#1a4d2e;color:#7ee787;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:600">🟢 ${vs}%</span>`;
-  if(vs <= 5)   return `<span style="background:#3d3200;color:#e3b341;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:600">🟡 ${vs}%</span>`;
-  if(vs <= 20)  return `<span style="background:#4d2a00;color:#ffa657;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:600">🟠 +${vs}%</span>`;
-  return `<span style="background:#4d1a1a;color:#ff7b72;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:600">🔴 +${vs}%</span>`;
+function openComparacao(nft, event) {
+  event.stopPropagation();
+  const sim = nft._similares || [];
+  const vs = nft.vs_mercado;
+  const pj = nft.preco_justo;
+
+  const cor = vs === null ? '#8b949e' : vs <= -5 ? '#7ee787' : vs <= 5 ? '#e3b341' : '#ff7b72';
+  const veredicto = vs === null ? 'Sem dados suficientes' :
+    vs <= -15 ? '🟢 Oportunidade clara — bem abaixo do mercado' :
+    vs <= -5  ? '🟢 Ligeiramente abaixo da média' :
+    vs <= 5   ? '🟡 Preço justo / na média' :
+    vs <= 20  ? '🟠 Acima da média' :
+                '🔴 Caro — acima do mercado';
+
+  document.getElementById('modal-title').textContent = `Análise de mercado — ${nft.nome}`;
+  document.getElementById('modal-body').innerHTML = `
+    <div style="background:#0d1117;border-radius:8px;padding:1rem;margin-bottom:1rem;text-align:center">
+      <div style="font-size:13px;color:#8b949e;margin-bottom:4px">NFT em análise</div>
+      <div style="font-size:22px;font-weight:700;color:#f0f6fc">${(nft.preco_draco||0).toLocaleString()} DRACO</div>
+      <div style="font-size:13px;color:#8b949e;margin-top:4px">${nft.classe} · Nv${nft.nivel} · PS ${(nft.power_score||0).toLocaleString()}</div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:1rem">
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:.75rem;text-align:center">
+        <div style="font-size:11px;color:#8b949e">Preço justo estimado</div>
+        <div style="font-size:18px;font-weight:700;color:#f0f6fc;margin-top:2px">${pj ? pj.toLocaleString()+' D' : '—'}</div>
+      </div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:.75rem;text-align:center">
+        <div style="font-size:11px;color:#8b949e">vs Mercado</div>
+        <div style="font-size:18px;font-weight:700;color:${cor};margin-top:2px">${vs !== null ? (vs > 0 ? '+' : '')+vs+'%' : '—'}</div>
+      </div>
+      <div style="background:#161b22;border:1px solid #30363d;border-radius:6px;padding:.75rem;text-align:center">
+        <div style="font-size:11px;color:#8b949e">NFTs comparados</div>
+        <div style="font-size:18px;font-weight:700;color:#f0f6fc;margin-top:2px">${sim.length}</div>
+      </div>
+    </div>
+
+    <div style="background:#161b22;border:1px solid ${cor};border-radius:6px;padding:.75rem;margin-bottom:1rem;font-size:13px;color:${cor};text-align:center;font-weight:600">
+      ${veredicto}
+    </div>
+
+    <div style="font-size:12px;color:#8b949e;margin-bottom:.5rem;font-weight:500">NFTs do histórico usados na comparação</div>
+    <div style="font-size:11px;color:#8b949e;margin-bottom:.5rem">Critérios: mesma classe · Power Score ±30% · Nível similar (peso PS: 70%, Nível: 30%)</div>
+    ${sim.length ? `
+    <table style="width:100%;border-collapse:collapse;font-size:12px">
+      <thead><tr>
+        <th style="text-align:left;padding:5px 8px;color:#8b949e;border-bottom:1px solid #30363d">Nome</th>
+        <th style="text-align:left;padding:5px 8px;color:#8b949e;border-bottom:1px solid #30363d">Nv</th>
+        <th style="text-align:left;padding:5px 8px;color:#8b949e;border-bottom:1px solid #30363d">Power Score</th>
+        <th style="text-align:left;padding:5px 8px;color:#8b949e;border-bottom:1px solid #30363d">Preço vendido</th>
+        <th style="text-align:left;padding:5px 8px;color:#8b949e;border-bottom:1px solid #30363d">Similaridade</th>
+        <th style="text-align:left;padding:5px 8px;color:#8b949e;border-bottom:1px solid #30363d">Data</th>
+      </tr></thead>
+      <tbody>
+        ${sim.map(r=>`<tr>
+          <td style="padding:5px 8px;border-bottom:1px solid #21262d;color:#e6edf3">${r.nome||'—'}</td>
+          <td style="padding:5px 8px;border-bottom:1px solid #21262d">${r.nivel||'—'}</td>
+          <td style="padding:5px 8px;border-bottom:1px solid #21262d">${(r.power_score||0).toLocaleString()}</td>
+          <td style="padding:5px 8px;border-bottom:1px solid #21262d;color:#7ee787;font-weight:600">${(r.preco_draco||0).toLocaleString()} D</td>
+          <td style="padding:5px 8px;border-bottom:1px solid #21262d">
+            <div style="display:flex;align-items:center;gap:6px">
+              <div style="background:#30363d;border-radius:3px;height:6px;width:60px;overflow:hidden">
+                <div style="background:#1f6feb;height:100%;width:${r._sim}%"></div>
+              </div>
+              <span style="color:#8b949e">${r._sim}%</span>
+            </div>
+          </td>
+          <td style="padding:5px 8px;border-bottom:1px solid #21262d;color:#8b949e">${r.data_venda||'—'}</td>
+        </tr>`).join('')}
+      </tbody>
+    </table>` : '<div style="text-align:center;padding:1rem;color:#8b949e">Sem NFTs similares no histórico ainda.<br>O scraper precisa de mais tempo a recolher dados.</div>'}
+  `;
+  document.getElementById('modal').classList.add('open');
+}
+
+function vsMercadoBadge(vs, nft) {
+  const nftJson = JSON.stringify(nft).replace(/"/g,"&quot;");
+  const style = "padding:3px 8px;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer;border:none;";
+  if(vs === null) return `<button onclick="openComparacao(JSON.parse(this.dataset.nft),event)" data-nft="${nftJson}" style="${style}background:#21262d;color:#8b949e">sem dados 🔍</button>`;
+  if(vs <= -15) return `<button onclick="openComparacao(JSON.parse(this.dataset.nft),event)" data-nft="${nftJson}" style="${style}background:#1f6e3d;color:#7ee787">🟢 ${vs}% 🔍</button>`;
+  if(vs <= -5)  return `<button onclick="openComparacao(JSON.parse(this.dataset.nft),event)" data-nft="${nftJson}" style="${style}background:#1a4d2e;color:#7ee787">🟢 ${vs}% 🔍</button>`;
+  if(vs <= 5)   return `<button onclick="openComparacao(JSON.parse(this.dataset.nft),event)" data-nft="${nftJson}" style="${style}background:#3d3200;color:#e3b341">🟡 ${vs}% 🔍</button>`;
+  if(vs <= 20)  return `<button onclick="openComparacao(JSON.parse(this.dataset.nft),event)" data-nft="${nftJson}" style="${style}background:#4d2a00;color:#ffa657">🟠 +${vs}% 🔍</button>`;
+  return `<button onclick="openComparacao(JSON.parse(this.dataset.nft),event)" data-nft="${nftJson}" style="${style}background:#4d1a1a;color:#ff7b72">🔴 +${vs}% 🔍</button>`;
 }
 
 function nftRowListing(r) {
@@ -378,7 +452,7 @@ function nftRowListing(r) {
     <td>${(r.power_score||0).toLocaleString()}</td>
     <td><strong>${(r.preco_draco||0).toLocaleString()}</strong></td>
     <td style="color:#8b949e">${pj}</td>
-    <td>${vsMercadoBadge(r.vs_mercado)}</td>
+    <td>${vsMercadoBadge(r.vs_mercado, r)}</td>
     <td style="color:#8b949e;font-size:11px">${r.data_venda||'—'}</td>
     <td><button class="btn-sm" onclick="event.stopPropagation();openModal(${JSON.stringify(r).replace(/"/g,'&quot;')})">Ver</button></td>
   </tr>`;

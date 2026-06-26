@@ -1,15 +1,22 @@
 {
-  "updated_at": "2026-06-26T09:01:41.500701+00:00",
-  "total": 320,
-  "preco_medio_global": 3497,
-  "preco_mediano_global": 705,
+  "updated_at": "2026-06-26T10:58:50.347042+00:00",
+  "total": 323,
+  "preco_medio_global": 3465,
+  "preco_mediano_global": 700,
   "por_classe": {
+    "Arbalist": {
+      "media": 3798,
+      "mediana": 850,
+      "min": 1,
+      "max": 48000,
+      "count": 96
+    },
     "Taoist": {
-      "media": 3585,
-      "mediana": 600,
+      "media": 3508,
+      "mediana": 555,
       "min": 1,
       "max": 18799,
-      "count": 45
+      "count": 46
     },
     "Sorcerer": {
       "media": 2197,
@@ -17,13 +24,6 @@
       "min": 1,
       "max": 10000,
       "count": 46
-    },
-    "Arbalist": {
-      "media": 3878,
-      "mediana": 900,
-      "min": 1,
-      "max": 48000,
-      "count": 94
     },
     "Warrior": {
       "media": 3236,
@@ -49,14 +49,14 @@
   },
   "por_nivel": {
     "80": {
-      "media": 40,
-      "mediana": 40,
-      "count": 1
+      "media": 39,
+      "mediana": 39,
+      "count": 2
     },
     "90": {
-      "media": 56,
+      "media": 51,
       "mediana": 50,
-      "count": 11
+      "count": 13
     },
     "100": {
       "media": 131,
@@ -101,9 +101,9 @@
   },
   "por_ps": {
     "100000": {
-      "media": 94,
-      "mediana": 75,
-      "count": 53
+      "media": 91,
+      "mediana": 72,
+      "count": 56
     },
     "200000": {
       "media": 244,

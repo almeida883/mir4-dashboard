@@ -1,9 +1,23 @@
 {
-  "updated_at": "2026-06-26T05:23:26.211324+00:00",
-  "total": 308,
-  "preco_medio_global": 3604,
-  "preco_mediano_global": 748,
+  "updated_at": "2026-06-26T07:12:41.553971+00:00",
+  "total": 317,
+  "preco_medio_global": 3527,
+  "preco_mediano_global": 720,
   "por_classe": {
+    "Arbalist": {
+      "media": 3878,
+      "mediana": 900,
+      "min": 1,
+      "max": 48000,
+      "count": 94
+    },
+    "Warrior": {
+      "media": 3236,
+      "mediana": 844,
+      "min": 60,
+      "max": 27500,
+      "count": 52
+    },
     "Lancer": {
       "media": 4203,
       "mediana": 745,
@@ -17,20 +31,6 @@
       "min": 1,
       "max": 18799,
       "count": 43
-    },
-    "Arbalist": {
-      "media": 4006,
-      "mediana": 944,
-      "min": 1,
-      "max": 48000,
-      "count": 90
-    },
-    "Warrior": {
-      "media": 3303,
-      "mediana": 785,
-      "min": 60,
-      "max": 27500,
-      "count": 50
     },
     "Darkist": {
       "media": 4627,
@@ -54,9 +54,9 @@
       "count": 1
     },
     "90": {
-      "media": 55,
+      "media": 56,
       "mediana": 50,
-      "count": 10
+      "count": 11
     },
     "100": {
       "media": 131,
@@ -64,29 +64,29 @@
       "count": 11
     },
     "110": {
-      "media": 83,
+      "media": 85,
       "mediana": 75,
-      "count": 25
+      "count": 26
     },
     "120": {
-      "media": 203,
-      "mediana": 190,
-      "count": 14
+      "media": 200,
+      "mediana": 185,
+      "count": 15
     },
     "130": {
-      "media": 249,
+      "media": 251,
       "mediana": 260,
-      "count": 50
-    },
-    "140": {
-      "media": 572,
-      "mediana": 500,
       "count": 51
     },
+    "140": {
+      "media": 579,
+      "mediana": 530,
+      "count": 54
+    },
     "150": {
-      "media": 3309,
+      "media": 3284,
       "mediana": 2400,
-      "count": 65
+      "count": 67
     },
     "160": {
       "media": 9194,
@@ -103,22 +103,22 @@
     "100000": {
       "media": 94,
       "mediana": 75,
-      "count": 51
-    },
-    "200000": {
-      "media": 243,
-      "mediana": 250,
       "count": 53
     },
+    "200000": {
+      "media": 244,
+      "mediana": 250,
+      "count": 55
+    },
     "300000": {
-      "media": 520,
+      "media": 523,
       "mediana": 500,
-      "count": 61
+      "count": 63
     },
     "400000": {
-      "media": 2979,
-      "mediana": 2400,
-      "count": 57
+      "media": 2927,
+      "mediana": 2350,
+      "count": 60
     },
     "500000": {
       "media": 8906,

@@ -1,15 +1,36 @@
 {
-  "updated_at": "2026-06-26T16:37:25.257504+00:00",
-  "total": 344,
-  "preco_medio_global": 3288,
-  "preco_mediano_global": 610,
+  "updated_at": "2026-06-26T18:32:38.904029+00:00",
+  "total": 349,
+  "preco_medio_global": 3254,
+  "preco_mediano_global": 620,
   "por_classe": {
+    "Warrior": {
+      "media": 3140,
+      "mediana": 795,
+      "min": 60,
+      "max": 27500,
+      "count": 54
+    },
+    "Sorcerer": {
+      "media": 2048,
+      "mediana": 270,
+      "min": 1,
+      "max": 10000,
+      "count": 50
+    },
+    "Taoist": {
+      "media": 3254,
+      "mediana": 505,
+      "min": 1,
+      "max": 18799,
+      "count": 50
+    },
     "Arbalist": {
-      "media": 3552,
+      "media": 3510,
       "mediana": 765,
       "min": 1,
       "max": 48000,
-      "count": 104
+      "count": 106
     },
     "Darkist": {
       "media": 4290,
@@ -18,33 +39,12 @@
       "max": 27000,
       "count": 33
     },
-    "Taoist": {
-      "media": 3314,
-      "mediana": 510,
-      "min": 1,
-      "max": 18799,
-      "count": 49
-    },
     "Lancer": {
       "media": 4066,
       "mediana": 745,
       "min": 1,
       "max": 22000,
       "count": 45
-    },
-    "Sorcerer": {
-      "media": 2074,
-      "mediana": 270,
-      "min": 1,
-      "max": 10000,
-      "count": 49
-    },
-    "Warrior": {
-      "media": 3185,
-      "mediana": 790,
-      "min": 60,
-      "max": 27500,
-      "count": 53
     }
   },
   "por_nivel": {
@@ -76,17 +76,17 @@
     "130": {
       "media": 257,
       "mediana": 260,
-      "count": 61
+      "count": 62
     },
     "140": {
-      "media": 602,
+      "media": 603,
       "mediana": 550,
-      "count": 57
+      "count": 59
     },
     "150": {
-      "media": 3145,
-      "mediana": 2278,
-      "count": 72
+      "media": 3101,
+      "mediana": 2228,
+      "count": 74
     },
     "160": {
       "media": 9194,
@@ -111,14 +111,14 @@
       "count": 63
     },
     "300000": {
-      "media": 512,
+      "media": 516,
       "mediana": 499,
-      "count": 71
+      "count": 75
     },
     "400000": {
-      "media": 2859,
-      "mediana": 2228,
-      "count": 64
+      "media": 2849,
+      "mediana": 2200,
+      "count": 65
     },
     "500000": {
       "media": 8906,

@@ -724,7 +724,34 @@ function openComparacao(nft, event){
         </td>
         <td style="padding:5px 8px;border-bottom:1px solid #21262d;color:#8b949e">${r.data_venda||'—'}</td>
       </tr>`).join('')}</tbody>
-    </table>`:'<div class="empty">Sem NFTs similares no histórico ainda</div>'}
+    </table>`:'<div class="empty" style="padding:.5rem 0">Sem vendas similares no histórico ainda</div>'}
+
+    <p style="font-size:12px;color:#8b949e;margin:.8rem 0 .4rem;font-weight:500">🏪 À venda agora com especificações similares</p>
+    ${(()=>{
+      if(!allListings.length) return '<div style="color:#8b949e;font-size:12px;padding:.5rem 0">Carrega a aba "NFTs à Venda" primeiro para ver comparação em tempo real.</div>';
+      const sl=allListings.filter(l=>l.classe===nft.classe&&l.preco_draco>0).map(l=>{
+        const pd=Math.abs((l.power_score||0)-(nft.power_score||0))/Math.max(nft.power_score||1,1);
+        const nd=Math.abs((l.nivel||0)-(nft.nivel||0))/Math.max(nft.nivel||1,1);
+        return {...l,_sim:Math.round((1-(pd*0.7+nd*0.3))*100)};
+      }).filter(l=>l._sim>75&&Math.abs((l.power_score||0)-(nft.power_score||0))/Math.max(nft.power_score||1,1)<=0.10).sort((a,b)=>b._sim-a._sim).slice(0,8);
+      if(!sl.length) return '<div style="color:#8b949e;font-size:12px;padding:.5rem 0">Nenhum listing similar encontrado agora.</div>';
+      return `<table style="width:100%;border-collapse:collapse;font-size:12px"><thead><tr>
+        <th style="text-align:left;padding:5px 8px;color:#8b949e;border-bottom:1px solid #30363d">Nome</th>
+        <th style="text-align:left;padding:5px 8px;color:#8b949e;border-bottom:1px solid #30363d">Nv</th>
+        <th style="text-align:left;padding:5px 8px;color:#8b949e;border-bottom:1px solid #30363d">PS</th>
+        <th style="text-align:left;padding:5px 8px;color:#8b949e;border-bottom:1px solid #30363d">Preço pedido</th>
+        <th style="text-align:left;padding:5px 8px;color:#8b949e;border-bottom:1px solid #30363d">Sim.</th>
+        <th style="text-align:left;padding:5px 8px;color:#8b949e;border-bottom:1px solid #30363d"></th>
+      </tr></thead><tbody>${sl.map(l=>`<tr>
+        <td style="padding:5px 8px;border-bottom:1px solid #21262d">${l.nome||'—'}</td>
+        <td style="padding:5px 8px;border-bottom:1px solid #21262d">${l.nivel}</td>
+        <td style="padding:5px 8px;border-bottom:1px solid #21262d">${(l.power_score||0).toLocaleString()}</td>
+        <td style="padding:5px 8px;border-bottom:1px solid #21262d;color:#ffa657;font-weight:600">${(l.preco_draco||0).toLocaleString()} D</td>
+        <td style="padding:5px 8px;border-bottom:1px solid #21262d"><div style="display:flex;align-items:center;gap:4px"><div style="background:#30363d;border-radius:3px;height:5px;width:40px;overflow:hidden"><div style="background:#378ADD;height:100%;width:${l._sim}%"></div></div><span style="color:#8b949e;font-size:11px">${l._sim}%</span></div></td>
+        <td style="padding:5px 8px;border-bottom:1px solid #21262d"><a class="btn-buy" href="https://www.xdraco.com/nft/trade/${l.seq}" target="_blank">Ver</a></td>
+      </tr>`).join('')}</tbody></table>`;
+    })()
+    }
   `;
   document.getElementById('modal').classList.add('open');
 }

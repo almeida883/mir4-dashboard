@@ -746,9 +746,10 @@ async function load() {
     ]);
 
     statsData = stats;
-    allHistory = history.map(r => {
+    allHistory = history;
+    allHistory = allHistory.map(r => {
       const av = avaliarNFT(r);
-      return { ...r, preco_justo: av.preco_justo, vs_mercado: av.vs_mercado, n_similares: av.n_similares };
+      return { ...r, preco_justo: av.preco_justo, vs_mercado: av.vs_mercado, n_similares: av.n_similares, _similares: av._similares };
     });
 
     document.getElementById('updated').textContent = stats.updated_at

@@ -186,6 +186,7 @@ tr:hover td{background:#21262d}
           <th onclick="sortBy('power_score')">Power Score</th>
           <th>Itens Lend.</th>
           <th onclick="sortBy('preco_draco')">Preço DRACO</th>
+          <th onclick="sortBy('vs_mercado')">vs Mercado</th>
           <th onclick="sortBy('data_venda')">Data</th>
           <th></th>
         </tr></thead>
@@ -297,7 +298,7 @@ let allListings = [], listPage = 1;
 async function loadListings() {
   document.getElementById('tbody-listings').innerHTML = '<tr><td colspan="8" class="loading">A carregar listings...</td></tr>';
   try {
-    const pages = [1,2,3,4,5,6,7,8,9,10];
+    const pages = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
     let results = [];
     for(const p of pages) {
       const url = `https://webapi.mir4global.com/nft/lists?listType=sale&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&page=${p}&languageCode=pt`;
@@ -629,8 +630,9 @@ function nftRow(r) {
     <td>${(r.power_score||0).toLocaleString()}</td>
     <td>${legs}${r.legendary_count>2?`<span class="item-pill">+${r.legendary_count-2}</span>`:''}</td>
     <td><strong>${(r.preco_draco||0).toLocaleString()}</strong></td>
+    <td>${vsMercadoBadge(r.vs_mercado, r)}</td>
     <td style="color:#8b949e">${r.data_venda||'—'}</td>
-    <td><button class="btn-sm" onclick="event.stopPropagation();openModal(${JSON.stringify(r).replace(/"/g,'&quot;')})">Ver</button></td>
+    <td style="display:flex;gap:4px"><button class="btn-sm" onclick="event.stopPropagation();openModal(${JSON.stringify(r).replace(/\"/g,'&quot;')})">Ver</button><a href="https://www.xdraco.com/nft/trade/${r.seq}" target="_blank" onclick="event.stopPropagation()" style="background:#1f6feb;color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;text-decoration:none;font-weight:500">Ver xDraco</a></td>
   </tr>`;
 }
 
@@ -744,7 +746,10 @@ async function load() {
     ]);
 
     statsData = stats;
-    allHistory = history;
+    allHistory = history.map(r => {
+      const av = avaliarNFT(r);
+      return { ...r, preco_justo: av.preco_justo, vs_mercado: av.vs_mercado, n_similares: av.n_similares };
+    });
 
     document.getElementById('updated').textContent = stats.updated_at
       ? 'Actualizado: '+new Date(stats.updated_at).toLocaleString('pt-PT') : '';

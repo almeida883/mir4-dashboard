@@ -1,9 +1,16 @@
 {
-  "updated_at": "2026-06-27T10:38:42.896805+00:00",
-  "total": 392,
-  "preco_medio_global": 3037,
-  "preco_mediano_global": 590,
+  "updated_at": "2026-06-27T12:23:10.343084+00:00",
+  "total": 393,
+  "preco_medio_global": 3031,
+  "preco_mediano_global": 600,
   "por_classe": {
+    "Arbalist": {
+      "media": 3238,
+      "mediana": 765,
+      "min": 1,
+      "max": 48000,
+      "count": 124
+    },
     "Lancer": {
       "media": 3735,
       "mediana": 550,
@@ -17,13 +24,6 @@
       "min": 1,
       "max": 10000,
       "count": 54
-    },
-    "Arbalist": {
-      "media": 3258,
-      "mediana": 780,
-      "min": 1,
-      "max": 48000,
-      "count": 123
     },
     "Darkist": {
       "media": 3929,
@@ -84,9 +84,9 @@
       "count": 61
     },
     "150": {
-      "media": 2910,
+      "media": 2885,
       "mediana": 2150,
-      "count": 83
+      "count": 84
     },
     "160": {
       "media": 8945,
@@ -111,9 +111,9 @@
       "count": 74
     },
     "300000": {
-      "media": 512,
-      "mediana": 490,
-      "count": 82
+      "media": 515,
+      "mediana": 499,
+      "count": 83
     },
     "400000": {
       "media": 2802,

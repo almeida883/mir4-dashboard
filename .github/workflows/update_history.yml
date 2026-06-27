@@ -28,5 +28,4 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --staged --quiet || git commit -m "data: retroactive update"
-          git push
+          git diff --staged --quiet || (git commit -m "data: retroactive update" && git pull --rebase && git push)

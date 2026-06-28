@@ -1,22 +1,29 @@
 {
-  "updated_at": "2026-06-28T22:16:11.251436+00:00",
-  "total": 448,
-  "preco_medio_global": 2732,
-  "preco_mediano_global": 520,
+  "updated_at": "2026-06-28T22:46:24.326961+00:00",
+  "total": 451,
+  "preco_medio_global": 2720,
+  "preco_mediano_global": 510,
   "por_classe": {
+    "Arbalist": {
+      "media": 2963,
+      "mediana": 710,
+      "min": 1,
+      "max": 48000,
+      "count": 139
+    },
+    "Sorcerer": {
+      "media": 1952,
+      "mediana": 260,
+      "min": 1,
+      "max": 10000,
+      "count": 58
+    },
     "Taoist": {
       "media": 2409,
       "mediana": 332,
       "min": 1,
       "max": 18799,
       "count": 71
-    },
-    "Arbalist": {
-      "media": 2964,
-      "mediana": 705,
-      "min": 1,
-      "max": 48000,
-      "count": 138
     },
     "Lancer": {
       "media": 3322,
@@ -31,13 +38,6 @@
       "min": 1,
       "max": 27500,
       "count": 64
-    },
-    "Sorcerer": {
-      "media": 2018,
-      "mediana": 262,
-      "min": 1,
-      "max": 10000,
-      "count": 56
     },
     "Darkist": {
       "media": 3582,
@@ -74,9 +74,9 @@
       "count": 28
     },
     "130": {
-      "media": 261,
+      "media": 260,
       "mediana": 260,
-      "count": 80
+      "count": 81
     },
     "140": {
       "media": 621,
@@ -84,14 +84,14 @@
       "count": 77
     },
     "150": {
-      "media": 2724,
+      "media": 2694,
       "mediana": 2000,
-      "count": 91
+      "count": 92
     },
     "160": {
-      "media": 8861,
-      "mediana": 7999,
-      "count": 79
+      "media": 8786,
+      "mediana": 7888,
+      "count": 80
     },
     "170": {
       "media": 19379,
@@ -108,7 +108,7 @@
     "200000": {
       "media": 236,
       "mediana": 250,
-      "count": 82
+      "count": 83
     },
     "300000": {
       "media": 537,
@@ -116,9 +116,9 @@
       "count": 105
     },
     "400000": {
-      "media": 2664,
+      "media": 2634,
       "mediana": 2150,
-      "count": 81
+      "count": 83
     },
     "500000": {
       "media": 8859,

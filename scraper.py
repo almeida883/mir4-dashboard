@@ -183,9 +183,8 @@ def fetch_detail(transport_id, class_id):
             potencial_total = potential_data.get("total", 0) or potential_data.get("totalPotential", 0)
             potencial_caca = potential_data.get("hunting", 0) or potential_data.get("huntPotential", 0)
             potencial_pvp = potential_data.get("pvp", 0) or potential_data.get("pvpPotential", 0)
-            potencial_total_max = potential_data.get("totalMax", 0)
         else:
-            potencial_total = potencial_caca = potencial_pvp = potencial_total_max = 0
+            potencial_total = potencial_caca = potencial_pvp = 0
 
         # --- SCRIPTURE ---
         scripture_data = scripture.get("data", {})
@@ -301,7 +300,6 @@ def fetch_detail(transport_id, class_id):
             "mystpiece": mystpiece_summary,
             # Potential
             "potencial_total": potencial_total,
-            "potencial_total_max": potencial_total_max,
             "potencial_caca": potencial_caca,
             "potencial_pvp": potencial_pvp,
             # Scripture + Codex
@@ -332,7 +330,7 @@ def fetch_detail(transport_id, class_id):
             "spirits_equipados":[],"spirits_lend":[],"spirits_grade6":[],"spirits_lend_count":0,"spirits_grade6_count":0,"spirits_inven_lend":[],
             "buildings":{},"mina_lv":0,"training":{},"constituicao_lv":0,
             "magicorb":{},"magicstone":{},"mystpiece":{},
-            "potencial_total":0,"potencial_total_max":0,"potencial_caca":0,"potencial_pvp":0,
+            "potencial_total":0,"potencial_caca":0,"potencial_pvp":0,
             "scripture":{},"codex":{},"codex_total_completed":0,
             "antiguidades":{},"antiguidade_max_grade":0,
             "dragon":{},"dragon_max_grade":0,"recursos":{},
@@ -433,6 +431,15 @@ def compute_stats(records):
 
     return stats
 
+def needs_update(r):
+    """NFT precisa de update se não tem dados completos"""
+    return (
+        r.get("transport_id") and
+        not r.get("potencial_total", 0) and
+        not r.get("mina_lv", 0) and
+        not r.get("constituicao_lv", 0)
+    )
+
 def main():
     print("🚀 MIR4 Scraper v3:", datetime.now().strftime("%Y-%m-%d %H:%M"))
 
@@ -446,6 +453,7 @@ def main():
     existing_seqs = {r["seq"] for r in history}
     print(f"📦 Histórico actual: {len(history)} NFTs")
 
+    # --- NOVOS NFTs ---
     print("📋 A recolher listas...")
     recent = fetch_list("recent", pages=8)
     top = fetch_list("topTraded", pages=3)
@@ -461,7 +469,6 @@ def main():
             unique_items.append(item)
 
     print(f"🆕 {len(unique_items)} NFTs novos para processar")
-
     new_records = []
     for i, item in enumerate(unique_items):
         nome = item.get("info",{}).get("characterName","?")
@@ -470,6 +477,22 @@ def main():
         new_records.append(record)
 
     history = (new_records + history)[:MAX_HISTORY]
+
+    # --- ACTUALIZAR NFTs SEM DADOS COMPLETOS (máx 20 por run) ---
+    to_update = [r for r in history if needs_update(r)][:20]
+    if to_update:
+        print(f"\n🔄 A actualizar {len(to_update)} NFTs sem dados completos...")
+        for i, r in enumerate(to_update):
+            print(f"  [{i+1}/{len(to_update)}] {r.get('nome','?')}", end=" ... ")
+            detail = fetch_detail(r["transport_id"], r.get("classe_id", 0))
+            if detail and detail.get("potencial_total", 0) + detail.get("mina_lv", 0) > 0:
+                idx = next((j for j,h in enumerate(history) if h.get("seq") == r.get("seq")), None)
+                if idx is not None:
+                    history[idx].update(detail)
+                    print(f"✅ mina:{detail.get('mina_lv',0)} pot:{detail.get('potencial_total',0)}")
+            else:
+                print("❌ sem dados")
+            time.sleep(0.5)
 
     os.makedirs("data", exist_ok=True)
     with open(history_path, "w", encoding="utf-8") as f:
@@ -482,7 +505,7 @@ def main():
     with open("data/stats.json", "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ +{len(new_records)} novos | Total: {len(history)}")
+    print(f"\n✅ +{len(new_records)} novos | {len(to_update)} actualizados | Total: {len(history)}")
 
 if __name__ == "__main__":
     main()

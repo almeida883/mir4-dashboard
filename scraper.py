@@ -180,11 +180,12 @@ def fetch_detail(transport_id, class_id):
         # --- POTENTIAL ---
         potential_data = potential.get("data", {})
         if isinstance(potential_data, dict):
-            potencial_total = potential_data.get("totalPotential", 0)
-            potencial_caca = potential_data.get("huntPotential", 0)
-            potencial_pvp = potential_data.get("pvpPotential", 0)
+            potencial_total = potential_data.get("total", 0) or potential_data.get("totalPotential", 0)
+            potencial_caca = potential_data.get("hunting", 0) or potential_data.get("huntPotential", 0)
+            potencial_pvp = potential_data.get("pvp", 0) or potential_data.get("pvpPotential", 0)
+            potencial_total_max = potential_data.get("totalMax", 0)
         else:
-            potencial_total = potencial_caca = potencial_pvp = 0
+            potencial_total = potencial_caca = potencial_pvp = potencial_total_max = 0
 
         # --- SCRIPTURE ---
         scripture_data = scripture.get("data", {})
@@ -300,6 +301,7 @@ def fetch_detail(transport_id, class_id):
             "mystpiece": mystpiece_summary,
             # Potential
             "potencial_total": potencial_total,
+            "potencial_total_max": potencial_total_max,
             "potencial_caca": potencial_caca,
             "potencial_pvp": potencial_pvp,
             # Scripture + Codex
@@ -330,7 +332,7 @@ def fetch_detail(transport_id, class_id):
             "spirits_equipados":[],"spirits_lend":[],"spirits_grade6":[],"spirits_lend_count":0,"spirits_grade6_count":0,"spirits_inven_lend":[],
             "buildings":{},"mina_lv":0,"training":{},"constituicao_lv":0,
             "magicorb":{},"magicstone":{},"mystpiece":{},
-            "potencial_total":0,"potencial_caca":0,"potencial_pvp":0,
+            "potencial_total":0,"potencial_total_max":0,"potencial_caca":0,"potencial_pvp":0,
             "scripture":{},"codex":{},"codex_total_completed":0,
             "antiguidades":{},"antiguidade_max_grade":0,
             "dragon":{},"dragon_max_grade":0,"recursos":{},

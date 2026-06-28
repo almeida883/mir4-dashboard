@@ -112,29 +112,43 @@ def fetch_detail(transport_id, class_id):
         spirits_inven_lend = [s.get("petName","") for s in spirits_inven if isinstance(s,dict) and s.get("grade",0) >= 5]
 
         # --- BUILDINGS ---
-        building_data = building.get("data", [])
+        building_data = building.get("data", {})
         buildings = {}
-        if isinstance(building_data, list):
-            for b in building_data:
-                buildings[b.get("buildName","")] = b.get("buildLv",0)
-        elif isinstance(building_data, dict):
-            for k,v in building_data.items():
+        if isinstance(building_data, dict):
+            for k, v in building_data.items():
                 if isinstance(v, dict):
-                    buildings[v.get("buildName", k)] = v.get("buildLv",0)
+                    nome = v.get("buildingName","") or v.get("buildName","")
+                    lv = int(v.get("buildingLevel",0) or v.get("buildLv",0))
+                    if nome: buildings[nome] = lv
+        elif isinstance(building_data, list):
+            for b in building_data:
+                nome = b.get("buildingName","") or b.get("buildName","")
+                lv = int(b.get("buildingLevel",0) or b.get("buildLv",0))
+                if nome: buildings[nome] = lv
         mina_lv = buildings.get("Mina", 0)
 
         # --- TRAINING ---
-        training_data = training.get("data", [])
+        training_data = training.get("data", {})
         training_summary = {}
-        if isinstance(training_data, list):
+        constituicao_lv = 0
+        collect_lv = 0
+        if isinstance(training_data, dict):
+            for k, v in training_data.items():
+                if isinstance(v, dict):
+                    lv = int(v.get("forceLevel", 0) or v.get("trainLv", 0))
+                    nome = v.get("forceName", "") or v.get("trainName", "")
+                    if lv > 0 and nome:
+                        training_summary[nome] = lv
+            constituicao_lv = int(training_data.get("consitutionLevel", 0))
+            collect_lv = int(training_data.get("collectLevel", 0))
+        elif isinstance(training_data, list):
             for t in training_data:
-                if t.get("trainLv",0) > 0:
-                    training_summary[t.get("trainName","")] = t.get("trainLv",0)
-        elif isinstance(training_data, dict):
-            for k,v in training_data.items():
-                if isinstance(v, dict) and v.get("trainLv",0) > 0:
-                    training_summary[v.get("trainName",k)] = v.get("trainLv",0)
-        constituicao_lv = training_summary.get("Constituição", 0)
+                lv = int(t.get("forceLevel", 0) or t.get("trainLv", 0))
+                nome = t.get("forceName", "") or t.get("trainName", "")
+                if lv > 0 and nome:
+                    training_summary[nome] = lv
+            constituicao_lv = training_summary.get("Constituição", 0)
+
 
         # --- MAGIC ORB ---
         magicorb_data = magicorb.get("data", [])
@@ -292,6 +306,7 @@ def fetch_detail(transport_id, class_id):
             # Training
             "training": training_summary,
             "constituicao_lv": constituicao_lv,
+            "collect_lv": collect_lv,
             # Magic Orb
             "magicorb": magicorb_summary,
             # Magic Stone
@@ -328,7 +343,7 @@ def fetch_detail(transport_id, class_id):
             "equipados":[],"legendary_items":[],"epic_items":[],"legendary_count":0,"epic_count":0,
             "trained_skills":{},"max_skill_lv":0,"mainstats":{},"all_stats":{},
             "spirits_equipados":[],"spirits_lend":[],"spirits_grade6":[],"spirits_lend_count":0,"spirits_grade6_count":0,"spirits_inven_lend":[],
-            "buildings":{},"mina_lv":0,"training":{},"constituicao_lv":0,
+            "buildings":{},"mina_lv":0,"training":{},"constituicao_lv":0,"collect_lv":0,
             "magicorb":{},"magicstone":{},"mystpiece":{},
             "potencial_total":0,"potencial_caca":0,"potencial_pvp":0,
             "scripture":{},"codex":{},"codex_total_completed":0,
@@ -432,13 +447,7 @@ def compute_stats(records):
     return stats
 
 def needs_update(r):
-    """NFT precisa de update se não tem dados completos"""
-    return (
-        r.get("transport_id") and
-        not r.get("potencial_total", 0) and
-        not r.get("mina_lv", 0) and
-        not r.get("constituicao_lv", 0)
-    )
+    return bool(r.get("transport_id")) and not r.get("potencial_total", 0) and not r.get("constituicao_lv", 0)
 
 def main():
     print("🚀 MIR4 Scraper v3:", datetime.now().strftime("%Y-%m-%d %H:%M"))
@@ -453,7 +462,6 @@ def main():
     existing_seqs = {r["seq"] for r in history}
     print(f"📦 Histórico actual: {len(history)} NFTs")
 
-    # --- NOVOS NFTs ---
     print("📋 A recolher listas...")
     recent = fetch_list("recent", pages=8)
     top = fetch_list("topTraded", pages=3)
@@ -469,6 +477,7 @@ def main():
             unique_items.append(item)
 
     print(f"🆕 {len(unique_items)} NFTs novos para processar")
+
     new_records = []
     for i, item in enumerate(unique_items):
         nome = item.get("info",{}).get("characterName","?")
@@ -478,20 +487,20 @@ def main():
 
     history = (new_records + history)[:MAX_HISTORY]
 
-    # --- ACTUALIZAR NFTs SEM DADOS COMPLETOS (máx 20 por run) ---
+    # Actualizar NFTs sem dados completos (máx 20 por run)
     to_update = [r for r in history if needs_update(r)][:20]
     if to_update:
-        print(f"\n🔄 A actualizar {len(to_update)} NFTs sem dados completos...")
+        print(f"\n🔄 A actualizar {len(to_update)} NFTs incompletos...")
         for i, r in enumerate(to_update):
             print(f"  [{i+1}/{len(to_update)}] {r.get('nome','?')}", end=" ... ")
             detail = fetch_detail(r["transport_id"], r.get("classe_id", 0))
-            if detail and detail.get("potencial_total", 0) + detail.get("mina_lv", 0) > 0:
+            if detail and (detail.get("potencial_total", 0) > 0 or detail.get("constituicao_lv", 0) > 0):
                 idx = next((j for j,h in enumerate(history) if h.get("seq") == r.get("seq")), None)
                 if idx is not None:
                     history[idx].update(detail)
-                    print(f"✅ mina:{detail.get('mina_lv',0)} pot:{detail.get('potencial_total',0)}")
+                    print(f"✅ pot:{detail.get('potencial_total',0)} const:{detail.get('constituicao_lv',0)}")
             else:
-                print("❌ sem dados")
+                print("❌")
             time.sleep(0.5)
 
     os.makedirs("data", exist_ok=True)
@@ -505,7 +514,7 @@ def main():
     with open("data/stats.json", "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
 
-    print(f"\n✅ +{len(new_records)} novos | {len(to_update)} actualizados | Total: {len(history)}")
+    print(f"✅ +{len(new_records)} novos | Total: {len(history)}")
 
 if __name__ == "__main__":
     main()

@@ -24,8 +24,12 @@ jobs:
         run: python update_history.py
 
       - name: Commit data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
-          git diff --staged --quiet || (git commit -m "data: retroactive update" && git pull --rebase && git push)
+              run: |
+                git config user.name "github-actions[bot]"
+                git config user.email "github-actions[bot]@users.noreply.github.com"
+                git stash
+                git pull --rebase
+                git stash pop
+                git add data/
+                git diff --staged --quiet || git commit -m "data: retroactive update"
+                git push

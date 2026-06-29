@@ -1,9 +1,23 @@
 {
-  "updated_at": "2026-06-29T20:33:41.697262+00:00",
-  "total": 498,
-  "preco_medio_global": 2575,
-  "preco_mediano_global": 505,
+  "updated_at": "2026-06-29T21:10:59.837673+00:00",
+  "total": 501,
+  "preco_medio_global": 2561,
+  "preco_mediano_global": 500,
   "por_classe": {
+    "Sorcerer": {
+      "media": 1820,
+      "mediana": 260,
+      "min": 1,
+      "max": 10000,
+      "count": 65
+    },
+    "Taoist": {
+      "media": 2247,
+      "mediana": 329,
+      "min": 1,
+      "max": 18799,
+      "count": 77
+    },
     "Arbalist": {
       "media": 2711,
       "mediana": 700,
@@ -25,26 +39,12 @@
       "max": 27500,
       "count": 69
     },
-    "Taoist": {
-      "media": 2301,
-      "mediana": 329,
-      "min": 1,
-      "max": 18799,
-      "count": 75
-    },
     "Lancer": {
       "media": 3144,
       "mediana": 550,
       "min": 1,
       "max": 22000,
       "count": 63
-    },
-    "Sorcerer": {
-      "media": 1844,
-      "mediana": 260,
-      "min": 1,
-      "max": 10000,
-      "count": 64
     }
   },
   "por_nivel": {
@@ -59,9 +59,9 @@
       "count": 5
     },
     "90": {
-      "media": 77,
-      "mediana": 56,
-      "count": 26
+      "media": 78,
+      "mediana": 58,
+      "count": 27
     },
     "100": {
       "media": 121,
@@ -74,14 +74,14 @@
       "count": 37
     },
     "120": {
-      "media": 182,
-      "mediana": 165,
-      "count": 31
+      "media": 185,
+      "mediana": 175,
+      "count": 32
     },
     "130": {
-      "media": 266,
+      "media": 267,
       "mediana": 260,
-      "count": 90
+      "count": 91
     },
     "140": {
       "media": 625,
@@ -106,9 +106,9 @@
   },
   "por_ps": {
     "100000": {
-      "media": 105,
+      "media": 106,
       "mediana": 75,
-      "count": 101
+      "count": 103
     },
     "200000": {
       "media": 235,
@@ -116,9 +116,9 @@
       "count": 93
     },
     "300000": {
-      "media": 545,
+      "media": 543,
       "mediana": 550,
-      "count": 114
+      "count": 115
     },
     "400000": {
       "media": 2559,

@@ -1,15 +1,22 @@
 {
-  "updated_at": "2026-06-29T15:04:25.110286+00:00",
-  "total": 484,
-  "preco_medio_global": 2619,
-  "preco_mediano_global": 520,
+  "updated_at": "2026-06-29T16:27:36.296819+00:00",
+  "total": 487,
+  "preco_medio_global": 2606,
+  "preco_mediano_global": 510,
   "por_classe": {
+    "Lancer": {
+      "media": 3237,
+      "mediana": 550,
+      "min": 1,
+      "max": 22000,
+      "count": 61
+    },
     "Arbalist": {
-      "media": 2797,
-      "mediana": 710,
+      "media": 2781,
+      "mediana": 705,
       "min": 1,
       "max": 48000,
-      "count": 153
+      "count": 154
     },
     "Taoist": {
       "media": 2328,
@@ -17,13 +24,6 @@
       "min": 1,
       "max": 18799,
       "count": 74
-    },
-    "Lancer": {
-      "media": 3270,
-      "mediana": 540,
-      "min": 1,
-      "max": 22000,
-      "count": 60
     },
     "Warrior": {
       "media": 2769,
@@ -48,6 +48,11 @@
     }
   },
   "por_nivel": {
+    "70": {
+      "media": 31,
+      "mediana": 31,
+      "count": 1
+    },
     "80": {
       "media": 46,
       "mediana": 44,
@@ -74,9 +79,9 @@
       "count": 31
     },
     "130": {
-      "media": 263,
+      "media": 264,
       "mediana": 260,
-      "count": 86
+      "count": 87
     },
     "140": {
       "media": 622,
@@ -84,9 +89,9 @@
       "count": 79
     },
     "150": {
-      "media": 2625,
+      "media": 2612,
       "mediana": 2000,
-      "count": 104
+      "count": 105
     },
     "160": {
       "media": 8603,
@@ -103,12 +108,12 @@
     "100000": {
       "media": 108,
       "mediana": 76,
-      "count": 97
+      "count": 98
     },
     "200000": {
-      "media": 233,
+      "media": 234,
       "mediana": 250,
-      "count": 90
+      "count": 91
     },
     "300000": {
       "media": 545,
@@ -116,9 +121,9 @@
       "count": 111
     },
     "400000": {
-      "media": 2609,
-      "mediana": 2200,
-      "count": 95
+      "media": 2595,
+      "mediana": 2175,
+      "count": 96
     },
     "500000": {
       "media": 8814,

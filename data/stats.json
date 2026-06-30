@@ -1,9 +1,16 @@
 {
-  "updated_at": "2026-06-30T21:42:51.723750+00:00",
-  "total": 543,
-  "preco_medio_global": 2471,
+  "updated_at": "2026-06-30T22:11:00.966964+00:00",
+  "total": 544,
+  "preco_medio_global": 2468,
   "preco_mediano_global": 500,
   "por_classe": {
+    "Darkist": {
+      "media": 3239,
+      "mediana": 304,
+      "min": 1,
+      "max": 27000,
+      "count": 50
+    },
     "Sorcerer": {
       "media": 1721,
       "mediana": 260,
@@ -38,13 +45,6 @@
       "min": 1,
       "max": 48000,
       "count": 171
-    },
-    "Darkist": {
-      "media": 3280,
-      "mediana": 299,
-      "min": 1,
-      "max": 27000,
-      "count": 49
     }
   },
   "por_nivel": {
@@ -89,9 +89,9 @@
       "count": 93
     },
     "150": {
-      "media": 2478,
-      "mediana": 1850,
-      "count": 119
+      "media": 2468,
+      "mediana": 1826,
+      "count": 120
     },
     "160": {
       "media": 8558,
@@ -121,9 +121,9 @@
       "count": 132
     },
     "400000": {
-      "media": 2495,
-      "mediana": 2150,
-      "count": 109
+      "media": 2484,
+      "mediana": 2125,
+      "count": 110
     },
     "500000": {
       "media": 8811,

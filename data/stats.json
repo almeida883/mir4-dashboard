@@ -1,9 +1,16 @@
 {
-  "updated_at": "2026-06-30T23:10:11.364876+00:00",
-  "total": 545,
-  "preco_medio_global": 2466,
+  "updated_at": "2026-06-30T23:43:04.395511+00:00",
+  "total": 546,
+  "preco_medio_global": 2462,
   "preco_mediano_global": 500,
   "por_classe": {
+    "Arbalist": {
+      "media": 2619,
+      "mediana": 700,
+      "min": 1,
+      "max": 48000,
+      "count": 172
+    },
     "Lancer": {
       "media": 2974,
       "mediana": 550,
@@ -38,13 +45,6 @@
       "min": 1,
       "max": 18799,
       "count": 87
-    },
-    "Arbalist": {
-      "media": 2633,
-      "mediana": 700,
-      "min": 1,
-      "max": 48000,
-      "count": 171
     }
   },
   "por_nivel": {
@@ -81,7 +81,7 @@
     "130": {
       "media": 262,
       "mediana": 260,
-      "count": 98
+      "count": 99
     },
     "140": {
       "media": 623,
@@ -112,8 +112,8 @@
     },
     "200000": {
       "media": 232,
-      "mediana": 247,
-      "count": 100
+      "mediana": 249,
+      "count": 101
     },
     "300000": {
       "media": 549,

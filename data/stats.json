@@ -1,9 +1,16 @@
 {
-  "updated_at": "2026-07-01T17:42:58.560015+00:00",
-  "total": 588,
-  "preco_medio_global": 2396,
-  "preco_mediano_global": 505,
+  "updated_at": "2026-07-01T18:26:56.968055+00:00",
+  "total": 589,
+  "preco_medio_global": 2393,
+  "preco_mediano_global": 500,
   "por_classe": {
+    "Sorcerer": {
+      "media": 1704,
+      "mediana": 262,
+      "min": 1,
+      "max": 10000,
+      "count": 72
+    },
     "Arbalist": {
       "media": 2495,
       "mediana": 700,
@@ -38,13 +45,6 @@
       "min": 1,
       "max": 27500,
       "count": 82
-    },
-    "Sorcerer": {
-      "media": 1721,
-      "mediana": 260,
-      "min": 1,
-      "max": 10000,
-      "count": 71
     }
   },
   "por_nivel": {
@@ -79,9 +79,9 @@
       "count": 35
     },
     "130": {
-      "media": 264,
+      "media": 266,
       "mediana": 260,
-      "count": 104
+      "count": 105
     },
     "140": {
       "media": 621,
@@ -111,9 +111,9 @@
       "count": 115
     },
     "200000": {
-      "media": 233,
+      "media": 235,
       "mediana": 250,
-      "count": 103
+      "count": 104
     },
     "300000": {
       "media": 545,

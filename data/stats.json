@@ -1,22 +1,29 @@
 {
-  "updated_at": "2026-07-01T05:15:35.966924+00:00",
-  "total": 565,
-  "preco_medio_global": 2428,
+  "updated_at": "2026-07-01T06:50:59.883131+00:00",
+  "total": 570,
+  "preco_medio_global": 2429,
   "preco_mediano_global": 500,
   "por_classe": {
+    "Lancer": {
+      "media": 2993,
+      "mediana": 550,
+      "min": 1,
+      "max": 22000,
+      "count": 71
+    },
     "Arbalist": {
-      "media": 2564,
+      "media": 2538,
       "mediana": 700,
       "min": 1,
       "max": 48000,
-      "count": 182
+      "count": 185
     },
     "Taoist": {
-      "media": 2119,
-      "mediana": 354,
+      "media": 2097,
+      "mediana": 332,
       "min": 1,
       "max": 18799,
-      "count": 92
+      "count": 93
     },
     "Darkist": {
       "media": 3249,
@@ -24,13 +31,6 @@
       "min": 1,
       "max": 27000,
       "count": 51
-    },
-    "Lancer": {
-      "media": 2893,
-      "mediana": 540,
-      "min": 1,
-      "max": 22000,
-      "count": 70
     },
     "Warrior": {
       "media": 2738,
@@ -54,9 +54,9 @@
       "count": 2
     },
     "80": {
-      "media": 47,
+      "media": 48,
       "mediana": 50,
-      "count": 7
+      "count": 8
     },
     "90": {
       "media": 74,
@@ -81,7 +81,7 @@
     "130": {
       "media": 262,
       "mediana": 260,
-      "count": 101
+      "count": 102
     },
     "140": {
       "media": 618,
@@ -89,14 +89,14 @@
       "count": 98
     },
     "150": {
-      "media": 2486,
+      "media": 2466,
       "mediana": 1850,
-      "count": 126
+      "count": 128
     },
     "160": {
-      "media": 8367,
-      "mediana": 7600,
-      "count": 91
+      "media": 8385,
+      "mediana": 7688,
+      "count": 92
     },
     "170": {
       "media": 19379,
@@ -106,9 +106,9 @@
   },
   "por_ps": {
     "100000": {
-      "media": 104,
+      "media": 103,
       "mediana": 75,
-      "count": 111
+      "count": 112
     },
     "200000": {
       "media": 232,
@@ -116,19 +116,19 @@
       "count": 102
     },
     "300000": {
-      "media": 545,
-      "mediana": 540,
-      "count": 138
+      "media": 544,
+      "mediana": 530,
+      "count": 139
     },
     "400000": {
-      "media": 2515,
-      "mediana": 2150,
-      "count": 117
+      "media": 2494,
+      "mediana": 2100,
+      "count": 119
     },
     "500000": {
-      "media": 8661,
+      "media": 8676,
       "mediana": 7999,
-      "count": 89
+      "count": 90
     },
     "600000": {
       "media": 24536,
@@ -137,33 +137,37 @@
     }
   },
   "top_spirits": {
-    "Lulu, a Felina Encantada": 6,
-    "Balrog, o Lorde do Fogo": 6,
-    "Drago Ponta de Sangue": 6,
+    "Balrog, o Lorde do Fogo": 12,
+    "Lulu, a Felina Encantada": 10,
+    "Darknyan, o Ressuscitador": 9,
+    "Drago Ponta de Sangue": 9,
+    "Setra Radiante": 5,
     "Wooska, Príncipe Herdeiro das Trevas": 5,
     "Luna, a Vigia": 5,
-    "Darknyan, o Ressuscitador": 4,
-    "Grifavalo, o Garanhão Sombrio": 3,
+    "Grifavalo, o Garanhão Sombrio": 4,
+    "Haeryeong, o Felino Místico": 4,
+    "Pepo, o Rei das Fadas": 4,
+    "Hydra, o Dragão de Três Cabeças": 3,
+    "Styx, o Cavaleiro Fantasma": 3,
     "Vendavalma, o Invocador do Vento": 3,
     "Rocki, o Dragonino Rochoso": 3,
-    "Raryo, o Pequeno Dragão Branco": 2,
-    "Polvuxo Vidente": 2
+    "Raryo, o Pequeno Dragão Branco": 2
   },
   "top_legendary_items": {
-    "Pedra Mágica de Crescimento Lendária": 6,
+    "Pedra Mágica de Ascensão Lendária": 19,
+    "Pedra Mágica de Mana Lendária": 16,
+    "Pedra Mágica de Crescimento Lendária": 12,
+    "Picareta de Tempestade": 9,
+    "Espectromite Lendária": 8,
+    "Pedra Mágica de Vigor Lendária": 8,
+    "Pedra Mágica de Foco Lendária": 8,
+    "Pedra Cintamani da Marta Milenar": 7,
+    "Pedra Mágica de Destruição Lendária": 7,
     "Pedra Mágica Antidemônio Lendária": 6,
-    "Pedra Mágica de Destruição Lendária": 5,
-    "Pedra Mágica de Mana Lendária": 4,
-    "Pedra Mágica de Foco Lendária": 4,
-    "Núcleo do Cristal de Mana": 4,
-    "Picareta de Tempestade": 4,
-    "Pedra Mágica de Vigor Lendária": 3,
-    "Espectromite Lendária": 3,
-    "Pedra Mágica de Mana Lendária II": 3,
-    "Pedra de Afiar do Suíno Supremo": 3,
-    "Pedra Mágica de Força Lendária": 3,
-    "Pedaço de Tesouro da Luz Lendário": 2,
-    "Espada Celestial da Glória Marcial": 2,
-    "Tesouro do Vento": 2
+    "Tesouro do Fogo": 4,
+    "Pedra de Afiar do Suíno Supremo": 4,
+    "Pedaço do Dragão Divino": 4,
+    "Pedra de Sombra Lunar Lendária": 4,
+    "Pequena Pílula de Yang Lendária": 4
   }
 }

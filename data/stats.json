@@ -1,9 +1,30 @@
 {
-  "updated_at": "2026-07-03T14:59:43.912959+00:00",
-  "total": 688,
-  "preco_medio_global": 2197,
-  "preco_mediano_global": 499,
+  "updated_at": "2026-07-03T16:23:25.940024+00:00",
+  "total": 691,
+  "preco_medio_global": 2188,
+  "preco_mediano_global": 495,
   "por_classe": {
+    "Arbalist": {
+      "media": 2388,
+      "mediana": 700,
+      "min": 1,
+      "max": 48000,
+      "count": 223
+    },
+    "Lancer": {
+      "media": 2581,
+      "mediana": 530,
+      "min": 1,
+      "max": 22000,
+      "count": 87
+    },
+    "Taoist": {
+      "media": 1751,
+      "mediana": 300,
+      "min": 1,
+      "max": 18799,
+      "count": 118
+    },
     "Sorcerer": {
       "media": 1632,
       "mediana": 268,
@@ -17,27 +38,6 @@
       "min": 1,
       "max": 27000,
       "count": 61
-    },
-    "Taoist": {
-      "media": 1765,
-      "mediana": 300,
-      "min": 1,
-      "max": 18799,
-      "count": 117
-    },
-    "Arbalist": {
-      "media": 2397,
-      "mediana": 700,
-      "min": 1,
-      "max": 48000,
-      "count": 222
-    },
-    "Lancer": {
-      "media": 2610,
-      "mediana": 540,
-      "min": 1,
-      "max": 22000,
-      "count": 86
     },
     "Warrior": {
       "media": 2475,
@@ -64,14 +64,14 @@
       "count": 42
     },
     "100": {
-      "media": 119,
-      "mediana": 100,
-      "count": 28
+      "media": 117,
+      "mediana": 99,
+      "count": 29
     },
     "110": {
       "media": 115,
-      "mediana": 82,
-      "count": 42
+      "mediana": 85,
+      "count": 43
     },
     "120": {
       "media": 200,
@@ -80,8 +80,8 @@
     },
     "130": {
       "media": 265,
-      "mediana": 260,
-      "count": 119
+      "mediana": 262,
+      "count": 120
     },
     "140": {
       "media": 593,
@@ -108,12 +108,12 @@
     "100000": {
       "media": 100,
       "mediana": 75,
-      "count": 135
+      "count": 137
     },
     "200000": {
       "media": 232,
-      "mediana": 247,
-      "count": 120
+      "mediana": 249,
+      "count": 121
     },
     "300000": {
       "media": 524,

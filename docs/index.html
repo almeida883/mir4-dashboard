@@ -417,6 +417,67 @@ async function fetchDetailLive(transportId){
   };
 }
 
+function openSideBySide(a,b,event){
+  if(event)event.stopPropagation();
+  renderSideBySide(a,b);
+}
+
+function renderSideBySide(a,b){
+  const semDados='<span style="color:#8b949e">sem dados</span>';
+  const compA=dadosCompletos(a),compB=dadosCompletos(b);
+  const val=(nft,completo,field)=>completo?(nft[field]??0):null;
+
+  const row=(label,va,vb,fmt='int')=>{
+    const hasA=va!==null&&va!==undefined,hasB=vb!==null&&vb!==undefined;
+    const fa=hasA?(fmt==='int'?(va||0).toLocaleString():(+va).toFixed(1)):semDados;
+    const fb=hasB?(fmt==='int'?(vb||0).toLocaleString():(+vb).toFixed(1)):semDados;
+    let ca='',cb='';
+    if(hasA&&hasB){
+      const na=parseFloat(va)||0,nb=parseFloat(vb)||0;
+      if(na>nb+0.01){ca='diff-pos';cb='diff-neg';}
+      else if(nb>na+0.01){cb='diff-pos';ca='diff-neg';}
+    }
+    return`<tr><td>${label}</td><td class="${ca}">${fa}</td><td class="${cb}">${fb}</td></tr>`;
+  };
+  const textRow=(label,va,vb)=>`<tr><td>${label}</td><td>${va}</td><td>${vb}</td></tr>`;
+  const pills=(arr,cls)=>(arr&&arr.length)?arr.map(s=>`<span class="item-pill ${cls||''}">${s}</span>`).join(''):'<span style="color:#8b949e;font-size:12px">nenhum</span>';
+
+  const sA=new Set(a.spirits_lend||[]),sB=new Set(b.spirits_lend||[]);
+  const onlyA=[...sA].filter(x=>!sB.has(x)),onlyB=[...sB].filter(x=>!sA.has(x)),comuns=[...sA].filter(x=>sB.has(x));
+
+  const nomeA=a.nome||'NFT A',nomeB=b.nome||'NFT B';
+  document.getElementById('modal-title').textContent='Comparação directa';
+  document.getElementById('modal-subtitle').textContent=`${nomeA} vs ${nomeB}`;
+  document.getElementById('modal-body').innerHTML=`
+    <button class="btn-sm" style="margin-bottom:1rem" onclick="renderComparacaoModal(window._lastAnaliseNFT,false)">← Voltar à análise</button>
+    <table class="diff-table"><thead><tr><th>Atributo</th><th>${nomeA}</th><th>${nomeB}</th></tr></thead><tbody>
+      ${textRow('Classe / Nível',`${a.classe||'?'} Nv${a.nivel||'—'}`,`${b.classe||'?'} Nv${b.nivel||'—'}`)}
+      ${textRow('Preço',`${(a.preco_draco||0).toLocaleString()} D`,`${(b.preco_draco||0).toLocaleString()} D`)}
+      ${textRow('Data',a.data_venda||'—',b.data_venda||'—')}
+      ${row('Power Score',a.power_score,b.power_score)}
+      ${row('Spirits lend.',val(a,compA,'spirits_lend_count'),val(b,compB,'spirits_lend_count'))}
+      ${row('Potencial total',val(a,compA,'potencial_total'),val(b,compB,'potencial_total'))}
+      ${row('Mina nível',val(a,compA,'mina_lv'),val(b,compB,'mina_lv'),'float')}
+      ${row('Constituição',val(a,compA,'constituicao_lv'),val(b,compB,'constituicao_lv'),'float')}
+      ${row('Heaven max lv',val(a,compA,'heaven_max_lv'),val(b,compB,'heaven_max_lv'),'float')}
+      ${row('Succession enh.',val(a,compA,'succession_avg_enhance'),val(b,compB,'succession_avg_enhance'),'float')}
+      ${row('Itens lendários',val(a,compA,'legendary_count'),val(b,compB,'legendary_count'))}
+      ${row('Itens épicos',val(a,compA,'epic_count'),val(b,compB,'epic_count'))}
+      ${row('Dragão grade máx.',val(a,compA,'dragon_max_grade'),val(b,compB,'dragon_max_grade'),'float')}
+      ${row('Antiguidade grade máx.',val(a,compA,'antiguidade_max_grade'),val(b,compB,'antiguidade_max_grade'),'float')}
+    </tbody></table>
+    <details style="margin-top:1rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Spirits lendários — ${nomeA} vs ${nomeB}</summary>
+      <div style="margin-top:.5rem">
+        <p style="color:#8b949e;font-size:11px;margin:6px 0 4px">Comuns aos dois (${comuns.length}):</p>${pills(comuns)}
+        <p style="color:#8b949e;font-size:11px;margin:8px 0 4px">Só em ${nomeA} (${onlyA.length}):</p>${pills(onlyA,'lend')}
+        <p style="color:#8b949e;font-size:11px;margin:8px 0 4px">Só em ${nomeB} (${onlyB.length}):</p>${pills(onlyB,'lend')}
+      </div></details>
+    <details style="margin-top:.6rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Itens lendários de ${nomeA} (${(a.legendary_items||[]).length})</summary><div style="margin-top:.5rem">${pills(a.legendary_items,'lend')}</div></details>
+    <details style="margin-top:.6rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Itens lendários de ${nomeB} (${(b.legendary_items||[]).length})</summary><div style="margin-top:.5rem">${pills(b.legendary_items,'lend')}</div></details>
+  `;
+  document.getElementById('modal').classList.add('open');
+}
+
 async function openComparacao(nft,event){
   if(event)event.stopPropagation();
   if(!dadosCompletos(nft)&&nft.transport_id){
@@ -480,7 +541,7 @@ function renderComparacaoModal(nft,loading){
     if(!allListings.length)return'<div style="color:#8b949e;font-size:12px;padding:.5rem 0">Carrega a aba "NFTs à Venda" primeiro.</div>';
     const sl=findComparables(nft,allListings,{minN:3,maxN:6});
     if(!sl.length)return'<div style="color:#8b949e;font-size:12px;padding:.5rem 0">Sem listings similares agora.</div>';
-    return`<table class="diff-table"><thead><tr><th>Nome</th><th>Nv</th><th>PS</th><th>Preço pedido</th><th>Sim.</th><th></th></tr></thead><tbody>${sl.map(l=>`<tr><td>${l.nome||'—'}</td><td>${l.nivel}</td><td>${(l.power_score||0).toLocaleString()}</td><td style="color:#ffa657;font-weight:600">${(l.preco_draco||0).toLocaleString()} D</td><td><span class="sim-bar"><span class="sim-bar-fill" style="width:${l._sim}%"></span></span>${l._sim}%</td><td><a class="btn-buy" href="https://www.xdraco.com/nft/trade/${l.seq}" target="_blank">Ver</a></td></tr>`).join('')}</tbody></table>`;
+    return`<table class="diff-table"><thead><tr><th>Nome</th><th>Nv</th><th>PS</th><th>Preço pedido</th><th>Sim.</th><th></th></tr></thead><tbody>${sl.map(l=>`<tr style="cursor:pointer" onclick="openSideBySide(${JSON.stringify(nft).replace(/"/g,'&quot;')},${JSON.stringify(l).replace(/"/g,'&quot;')},event)"><td>${l.nome||'—'}</td><td>${l.nivel}</td><td>${(l.power_score||0).toLocaleString()}</td><td style="color:#ffa657;font-weight:600">${(l.preco_draco||0).toLocaleString()} D</td><td><span class="sim-bar"><span class="sim-bar-fill" style="width:${l._sim}%"></span></span>${l._sim}%</td><td><a class="btn-buy" href="https://www.xdraco.com/nft/trade/${l.seq}" target="_blank" onclick="event.stopPropagation()">Ver</a></td></tr>`).join('')}</tbody></table>`;
   })();
 
   const confMap={alta:{icon:'🟢',label:'Confiança alta'},'média':{icon:'🟡',label:'Confiança média'},baixa:{icon:'🟠',label:'Confiança baixa'}};
@@ -489,6 +550,7 @@ function renderComparacaoModal(nft,loading){
 
   document.getElementById('modal-title').textContent=`${nft.nome||'NFT'} — ${nft.classe} Nv${nft.nivel}`;
   document.getElementById('modal-subtitle').textContent=`PS ${(nft.power_score||0).toLocaleString()} · Comparado com ${sim.length} vendas similares${tierNota}`;
+  window._lastAnaliseNFT=nft;
   document.getElementById('modal-body').innerHTML=`
     <div class="price-cards">
       <div class="price-card"><label>Preço ${nft.data_venda&&nft.data_venda!=='—'?'vendido':'pedido'}</label><value style="color:#f0f6fc">${(nft.preco_draco||0).toLocaleString()} D</value></div>
@@ -515,14 +577,17 @@ function renderComparacaoModal(nft,loading){
       ${diffRow('Dragão grade máx.',nftCompleto?nft.dragon_max_grade||0:null,avgF(r=>r.dragon_max_grade||0),'float')}
       ${diffRow('Antiguidade grade máx.',nftCompleto?nft.antiguidade_max_grade||0:null,avgF(r=>r.antiguidade_max_grade||0),'float')}
     </tbody></table>
-    ${soNFT.length?`<p class="section-title">Spirits exclusivos deste NFT</p><div>${soNFT.map(s=>`<span class="item-pill lend">⭐ ${s}</span>`).join('')}</div>`:''}
-    ${soSim.length?`<p class="section-title">Spirits frequentes nos similares (ausentes aqui)</p><div>${soSim.map(s=>`<span class="item-pill">${s}</span>`).join('')}</div>`:''}
-    ${(nft.legendary_items||[]).length?`<p class="section-title">Itens lendários deste NFT</p><div>${nft.legendary_items.map(s=>`<span class="item-pill lend">🗡️ ${s}</span>`).join('')}</div>`:''}
-    ${(nft.epic_items||[]).length?`<p class="section-title">Itens épicos deste NFT</p><div>${nft.epic_items.map(s=>`<span class="item-pill">${s}</span>`).join('')}</div>`:''}
+    ${soNFT.length||soSim.length?`<details style="margin-top:.8rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Spirits — diferenças vs similares (${soNFT.length} exclusivos, ${soSim.length} em falta)</summary>
+      <div style="margin-top:.5rem">
+        ${soNFT.length?`<p style="color:#8b949e;font-size:11px;margin:6px 0 4px">Exclusivos deste NFT:</p><div>${soNFT.map(s=>`<span class="item-pill lend">⭐ ${s}</span>`).join('')}</div>`:''}
+        ${soSim.length?`<p style="color:#8b949e;font-size:11px;margin:8px 0 4px">Frequentes nos similares, ausentes aqui:</p><div>${soSim.map(s=>`<span class="item-pill">${s}</span>`).join('')}</div>`:''}
+      </div></details>`:''}
+    ${(nft.legendary_items||[]).length?`<details style="margin-top:.6rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Itens lendários deste NFT (${nft.legendary_items.length})</summary><div style="margin-top:.5rem">${nft.legendary_items.map(s=>`<span class="item-pill lend">🗡️ ${s}</span>`).join('')}</div></details>`:''}
+    ${(nft.epic_items||[]).length?`<details style="margin-top:.6rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Itens épicos deste NFT (${nft.epic_items.length})</summary><div style="margin-top:.5rem">${nft.epic_items.map(s=>`<span class="item-pill">${s}</span>`).join('')}</div></details>`:''}
     ${nft.mainstats&&Object.keys(nft.mainstats).length?`<p class="section-title">Stats principais</p><div class="grid2" style="margin-bottom:.8rem">${Object.entries(nft.mainstats).slice(0,8).map(([k,v])=>`<div class="stat-row"><span style="color:#8b949e">${k}</span><span style="font-weight:500">${typeof v==='number'?v.toLocaleString():v}</span></div>`).join('')}</div>`:''}
-    <p class="section-title">Vendas similares usadas</p>
+    <p class="section-title">Vendas similares usadas <span style="font-weight:400;text-transform:none;color:#8b949e">(clica numa para comparar 1-a-1)</span></p>
     <table class="diff-table"><thead><tr><th>Nome</th><th>Nv</th><th>PS</th><th>Preço vendido</th><th>Sim.</th><th>Data</th></tr></thead>
-    <tbody>${sim.map(r=>`<tr><td>${r.nome||'—'}${dadosCompletos(r)?'':' <span title="Dados incompletos — pode explicar diferenças de preço não visíveis aqui" style="cursor:help">⚠️</span>'}</td><td>${r.nivel||'—'}</td><td>${(r.power_score||0).toLocaleString()}</td><td style="color:#7ee787;font-weight:600">${(r.preco_draco||0).toLocaleString()} D</td><td><span class="sim-bar"><span class="sim-bar-fill" style="width:${r._sim}%"></span></span>${r._sim}%</td><td style="color:#8b949e">${r.data_venda||'—'}</td></tr>`).join('')}</tbody></table>
+    <tbody>${sim.map(r=>`<tr style="cursor:pointer" onclick="openSideBySide(${JSON.stringify(nft).replace(/"/g,'&quot;')},${JSON.stringify(r).replace(/"/g,'&quot;')},event)"><td>${r.nome||'—'}${dadosCompletos(r)?'':' <span title="Dados incompletos — pode explicar diferenças de preço não visíveis aqui" style="cursor:help">⚠️</span>'}</td><td>${r.nivel||'—'}</td><td>${(r.power_score||0).toLocaleString()}</td><td style="color:#7ee787;font-weight:600">${(r.preco_draco||0).toLocaleString()} D</td><td><span class="sim-bar"><span class="sim-bar-fill" style="width:${r._sim}%"></span></span>${r._sim}%</td><td style="color:#8b949e">${r.data_venda||'—'}</td></tr>`).join('')}</tbody></table>
     <p class="section-title">À venda agora com specs similares</p>${listingsSimHTML}
     `:'<div class="empty">Sem vendas similares no histórico ainda.</div>'}
   `;

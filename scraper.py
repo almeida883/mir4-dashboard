@@ -12,15 +12,28 @@ HEADERS = {
 }
 CLASS_MAP = {1:"Warrior",2:"Sorcerer",3:"Taoist",4:"Arbalist",5:"Lancer",6:"Darkist"}
 MAX_HISTORY = 2000
+DEBUG_ENTRIES = []  # diagnóstico de falhas, escrito em data/debug_log.json no fim do run
+
+def diag_endpoint(resp):
+    if not isinstance(resp, dict):
+        return "tipo_invalido"
+    if "_fetch_error" in resp:
+        return f"erro:{resp['_fetch_error']}"
+    if not resp.get("data"):
+        return "vazio"
+    return "ok"
 
 def get(url, retries=3):
+    last_err = None
     for i in range(retries):
         try:
             r = requests.get(url, headers=HEADERS, timeout=10)
             return r.json()
-        except:
+        except Exception as e:
+            last_err = str(e)
             time.sleep(2)
-    return {}
+    # Distingue de uma resposta {} legítima: isto foi sempre excepção/timeout
+    return {"_fetch_error": last_err or "unknown"}
 
 def fetch_list(list_type="recent", pages=5):
     results = []
@@ -285,6 +298,21 @@ def fetch_detail(transport_id, class_id):
         # o pedido aos endpoints de detalhe provavelmente falhou ou voltou vazio.
         dados_completos = bool(potencial_total or constituicao_lv or heaven_max_lv or succession_avg_enhance or mina_lv)
 
+        if not dados_completos:
+            DEBUG_ENTRIES.append({
+                "transport_id": transport_id,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "endpoints": {
+                    "potential": diag_endpoint(potential),
+                    "spirit": diag_endpoint(spirit),
+                    "heaven": diag_endpoint(heaven),
+                    "succession": diag_endpoint(succession),
+                    "building": diag_endpoint(building),
+                    "training": diag_endpoint(training),
+                    "inven": diag_endpoint(inven),
+                }
+            })
+
         return {
             "dados_completos": dados_completos,
             # Inventário
@@ -345,6 +373,11 @@ def fetch_detail(transport_id, class_id):
         }
     except Exception as e:
         print(f"    Erro detalhe: {e}")
+        DEBUG_ENTRIES.append({
+            "transport_id": transport_id,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "endpoints": {"excepcao_geral": str(e)}
+        })
         return {
             "dados_completos": False,
             "equipados":[],"legendary_items":[],"epic_items":[],"legendary_count":0,"epic_count":0,
@@ -387,6 +420,13 @@ def process_nft(item):
     if transport_id:
         detail = fetch_detail(transport_id, class_id)
         record.update(detail)
+        agora = datetime.now(timezone.utc).isoformat()
+        record["primeira_tentativa"] = agora
+        record["ultima_tentativa"] = agora
+        record["tentativas"] = 1
+        if detail.get("dados_completos"):
+            record["completo_em"] = agora
+            record["tempo_ate_completar_h"] = 0.0
         time.sleep(0.3)
 
     return record
@@ -504,16 +544,41 @@ def main():
     if to_update:
         print(f"\n🔄 A actualizar {len(to_update)} NFTs incompletos...")
         for i, r in enumerate(to_update):
-            print(f"  [{i+1}/{len(to_update)}] {r.get('nome','?')}", end=" ... ")
+            print(f"  [{i+1}/{len(to_update)}] {r.get('nome','?')} (tentativa #{r.get('tentativas',0)+1})", end=" ... ")
             detail = fetch_detail(r["transport_id"], r.get("classe_id", 0))
+            agora = datetime.now(timezone.utc).isoformat()
+            idx = next((j for j,h in enumerate(history) if h.get("seq") == r.get("seq")), None)
+            if idx is not None:
+                history[idx]["tentativas"] = history[idx].get("tentativas", 0) + 1
+                history[idx]["ultima_tentativa"] = agora
+                history[idx].setdefault("primeira_tentativa", agora)
             if detail and detail.get("dados_completos"):
-                idx = next((j for j,h in enumerate(history) if h.get("seq") == r.get("seq")), None)
                 if idx is not None:
                     history[idx].update(detail)
-                    print(f"✅ pot:{detail.get('potencial_total',0)} const:{detail.get('constituicao_lv',0)}")
+                    history[idx]["completo_em"] = agora
+                    try:
+                        t0 = datetime.fromisoformat(history[idx]["primeira_tentativa"])
+                        t1 = datetime.fromisoformat(agora)
+                        history[idx]["tempo_ate_completar_h"] = round((t1 - t0).total_seconds() / 3600, 2)
+                    except Exception:
+                        pass
+                print(f"✅ pot:{detail.get('potencial_total',0)} const:{detail.get('constituicao_lv',0)}")
             else:
                 print("❌")
             time.sleep(0.5)
+
+    # Diagnóstico de falhas (últimas 300 entradas) — ver que endpoints estão a falhar e porquê
+    if DEBUG_ENTRIES:
+        debug_path = "data/debug_log.json"
+        try:
+            with open(debug_path, encoding="utf-8") as f:
+                existing_debug = json.load(f)
+        except Exception:
+            existing_debug = []
+        combined_debug = (DEBUG_ENTRIES + existing_debug)[:300]
+        with open(debug_path, "w", encoding="utf-8") as f:
+            json.dump(combined_debug, f, ensure_ascii=False, indent=2)
+        print(f"🩺 Diagnóstico: {len(DEBUG_ENTRIES)} falhas novas registadas em {debug_path}")
 
     os.makedirs("data", exist_ok=True)
     with open(history_path, "w", encoding="utf-8") as f:

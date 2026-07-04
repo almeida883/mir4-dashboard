@@ -1,0 +1,46 @@
+name: Deploy Pages
+
+# Só corre quando o conteúdo publicado (docs/) muda de facto — o dashboard lê
+# os JSON directamente de raw.githubusercontent.com, por isso os commits do
+# scraper a data/ (a cada 10 min) NUNCA precisam de re-publicar o Pages.
+# Isto elimina as colisões de deployment ("Deployment failed, try again later").
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+  workflow_dispatch:  # permite disparar manualmente em Actions > Deploy Pages > Run workflow
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Garante que nunca há dois deployments do Pages em simultâneo: se um novo
+# push chegar enquanto outro deploy ainda está a decorrer, este fica em fila
+# em vez de colidir e falhar.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact (docs/)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

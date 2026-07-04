@@ -316,8 +316,134 @@ function nftRowListing(r){
   </tr>`;
 }
 
-function openComparacao(nft,event){
+// ---- Fetch de detalhe AO VIVO, directo do browser, para NFTs sem dados_completos ----
+// Usado sobretudo para NFTs à venda (que o scraper.py nunca detalha) e para vendas
+// ainda não alcançadas pelo backfill. Replica o parsing do scraper.py, mas em JS.
+const MIR4_BASE='https://webapi.mir4global.com';
+const liveDetailCache=new Map();
+
+async function mir4Get(ep,transportId){
+  try{
+    const r=await fetch(`${MIR4_BASE}/nft/character/${ep}?transportID=${transportId}&languageCode=pt`);
+    return await r.json();
+  }catch(e){return{};}
+}
+
+async function fetchDetailLive(transportId){
+  const [inven,spirit,building,training,potential,holystuff,dragon,heaven,succession,stats]=await Promise.all(
+    ['inven','spirit','building','training','potential','holystuff','dragon','heaven','succession','stats']
+      .map(ep=>mir4Get(ep,transportId))
+  );
+
+  const items=inven.data||[];
+  const equipados=(Array.isArray(items)?items:[]).map(i=>{
+    const g=String(i.grade??'');
+    return{nome:i.itemName||'',grade_id:/^\d+$/.test(g)?parseInt(g):0};
+  });
+  const legendary_items=equipados.filter(i=>i.grade_id>=5).map(i=>i.nome);
+  const epic_items=equipados.filter(i=>i.grade_id===4).map(i=>i.nome);
+
+  const mainstats={};
+  (stats.data?.mainstats||[]).forEach(s=>{
+    const val=String(s.statValue??'').replace(/,/g,'').replace('%','');
+    const n=parseFloat(val);
+    mainstats[s.statName]=isNaN(n)?s.statValue:n;
+  });
+
+  const spiritData=spirit.data||{};
+  const spiritsEquipados=[];
+  if(spiritData&&typeof spiritData==='object'){
+    Object.values(spiritData.equip||{}).forEach(positions=>{
+      if(positions&&typeof positions==='object')Object.values(positions).forEach(s=>{
+        if(s&&typeof s==='object')spiritsEquipados.push({nome:s.petName||'',grade:s.grade||0});
+      });
+    });
+  }
+  const spirits_lend=spiritsEquipados.filter(s=>s.grade>=5).map(s=>s.nome);
+
+  let mina_lv=0;
+  const buildingData=building.data||{};
+  const readBuilding=v=>{const nome=v.buildingName||v.buildName||'';const lv=parseInt(v.buildingLevel||v.buildLv||0);if(nome==='Mina')mina_lv=lv;};
+  if(Array.isArray(buildingData))buildingData.forEach(readBuilding);
+  else if(buildingData&&typeof buildingData==='object')Object.values(buildingData).forEach(v=>{if(v&&typeof v==='object')readBuilding(v);});
+
+  let constituicao_lv=0;
+  const trainingData=training.data||{};
+  if(Array.isArray(trainingData)){
+    const c=trainingData.find(t=>(t.forceName||t.trainName)==='Constituição');
+    constituicao_lv=c?parseInt(c.forceLevel||c.trainLv||0):0;
+  }else if(trainingData&&typeof trainingData==='object'){
+    constituicao_lv=parseInt(trainingData.consitutionLevel||0);
+  }
+
+  const potentialData=potential.data||{};
+  const potencial_total=potentialData.total||potentialData.totalPotential||0;
+
+  let antiguidade_max_grade=0;
+  const holyData=holystuff.data||{};
+  if(holyData&&typeof holyData==='object')Object.values(holyData).forEach(v=>{
+    if(v&&typeof v==='object'){const g=parseInt(v.Grade||0);if(g>antiguidade_max_grade)antiguidade_max_grade=g;}
+  });
+
+  let dragon_max_grade=0;
+  const dragonData=dragon.data||{};
+  if(dragonData&&typeof dragonData==='object')Object.values(dragonData).forEach(v=>{
+    if(v&&typeof v==='object'){const g=parseInt(v.HoleGrade||0);if(g>dragon_max_grade)dragon_max_grade=g;}
+  });
+
+  let heaven_max_lv=0;
+  const heavenData=heaven.data||{};
+  if(heavenData&&typeof heavenData==='object')Object.values(heavenData.training||{}).forEach(positions=>{
+    if(positions&&typeof positions==='object')Object.values(positions).forEach(t=>{
+      if(t&&typeof t==='object'){const lv=t.trainingLevel||0;if(lv>heaven_max_lv)heaven_max_lv=lv;}
+    });
+  });
+
+  let succession_avg_enhance=0;
+  const succData=succession.data||{};
+  if(succData&&typeof succData==='object'){
+    const enh=Object.values(succData.equipItem||{}).filter(i=>i&&typeof i==='object').map(i=>i.enhance||0);
+    if(enh.length)succession_avg_enhance=Math.round((enh.reduce((a,b)=>a+b,0)/enh.length)*10)/10;
+  }
+
+  const dados_completos=Boolean(potencial_total||constituicao_lv||heaven_max_lv||succession_avg_enhance||mina_lv);
+
+  return{
+    dados_completos,_live:true,
+    legendary_items,epic_items,legendary_count:legendary_items.length,epic_count:epic_items.length,
+    spirits_lend,spirits_lend_count:spirits_lend.length,
+    mina_lv,constituicao_lv,potencial_total,antiguidade_max_grade,dragon_max_grade,heaven_max_lv,succession_avg_enhance,
+    mainstats
+  };
+}
+
+async function openComparacao(nft,event){
   if(event)event.stopPropagation();
+  if(!dadosCompletos(nft)&&nft.transport_id){
+    if(liveDetailCache.has(nft.transport_id)){
+      nft={...nft,...liveDetailCache.get(nft.transport_id)};
+      nft={...nft,...avaliarNFT(nft)};
+    }else{
+      renderComparacaoModal(nft,true);
+      try{
+        const live=await fetchDetailLive(nft.transport_id);
+        liveDetailCache.set(nft.transport_id,live);
+        nft={...nft,...live};
+        nft={...nft,...avaliarNFT(nft)};
+      }catch(e){/* mantém nft como estava, sem dados ao vivo */}
+    }
+  }
+  renderComparacaoModal(nft,false);
+}
+
+function renderComparacaoModal(nft,loading){
+  if(loading){
+    document.getElementById('modal-title').textContent=`${nft.nome||'NFT'} — ${nft.classe} Nv${nft.nivel}`;
+    document.getElementById('modal-subtitle').textContent=`PS ${(nft.power_score||0).toLocaleString()}`;
+    document.getElementById('modal-body').innerHTML='<div class="empty">🔄 A ir buscar dados ao vivo a este NFT (este dashboard nunca pediu detalhe para NFTs à venda)...</div>';
+    document.getElementById('modal').classList.add('open');
+    return;
+  }
   const sim=nft._similares||[];
   const vs=nft.vs_mercado,pj=nft.preco_justo;
   const cor=vs===null?'#8b949e':vs<=-5?'#7ee787':vs<=5?'#e3b341':'#ff7b72';
@@ -370,7 +496,9 @@ function openComparacao(nft,event){
       <div class="price-card"><label>vs Mercado</label><value style="color:${cor}">${vs!==null?(vs>0?'+':'')+vs+'%':'—'}</value></div>
     </div>
     <div class="verdict-box" style="background:${cor}18;border:1px solid ${cor}44;color:${cor}">${veredicto}${confInfo?` <span style="font-weight:400;opacity:.85">— ${confInfo.icon} ${confInfo.label} (${sim.length} comparáveis)</span>`:''}</div>
-    ${!nftCompleto?`<div style="background:#3d3200;border:1px solid #e3b34155;color:#e3b341;padding:.7rem 1rem;border-radius:6px;font-size:12px;margin-bottom:1rem">⚠️ Este NFT ainda não tem dados de detalhe confirmados (potencial, mina, constituição, heaven, succession, itens, dragão). Só Power Score, Nível e Preço são fiáveis nesta comparação — o resto aparece como "sem dados", não como zero real.</div>`:''}
+    ${nft._live&&!nftCompleto?`<div style="background:#4d1a1a;border:1px solid #ff7b7255;color:#ff7b72;padding:.7rem 1rem;border-radius:6px;font-size:12px;margin-bottom:1rem">🔴 Foi tentado ir buscar dados ao vivo agora mesmo, mas a API do MIR4 devolveu vazio para este NFT (pode ser transferência muito recente, ou personagem sem dados nesses sistemas). Só Power Score, Nível e Preço são fiáveis.</div>`
+      :nft._live?`<div style="background:#0d2818;border:1px solid #7ee78755;color:#7ee787;padding:.5rem 1rem;border-radius:6px;font-size:12px;margin-bottom:1rem">📡 Dados obtidos ao vivo agora mesmo (este NFT está à venda, o scraper nunca o detalha).</div>`
+      :!nftCompleto?`<div style="background:#3d3200;border:1px solid #e3b34155;color:#e3b341;padding:.7rem 1rem;border-radius:6px;font-size:12px;margin-bottom:1rem">⚠️ Este NFT ainda não tem dados de detalhe confirmados (potencial, mina, constituição, heaven, succession, itens, dragão). Só Power Score, Nível e Preço são fiáveis nesta comparação — o resto aparece como "sem dados", não como zero real.</div>`:''}
     ${sim.length?`
     <p class="section-title">Atributos vs média dos similares${n<sim.length?` <span style="font-weight:400;text-transform:none;color:#8b949e">(média sobre ${n}/${sim.length} com dados completos)</span>`:''}</p>
     <table class="diff-table"><thead><tr><th>Atributo</th><th>Este NFT</th><th>Média similares</th><th>Diferença</th></tr></thead><tbody>

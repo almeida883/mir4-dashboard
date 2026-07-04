@@ -1,15 +1,29 @@
 {
-  "updated_at": "2026-07-04T04:58:58.183446+00:00",
-  "total": 721,
-  "preco_medio_global": 2166,
+  "updated_at": "2026-07-04T07:41:27.308899+00:00",
+  "total": 725,
+  "preco_medio_global": 2156,
   "preco_mediano_global": 500,
   "por_classe": {
+    "Lancer": {
+      "media": 2532,
+      "mediana": 530,
+      "min": 1,
+      "max": 22000,
+      "count": 91
+    },
     "Arbalist": {
-      "media": 2317,
-      "mediana": 700,
+      "media": 2299,
+      "mediana": 699,
       "min": 1,
       "max": 48000,
-      "count": 235
+      "count": 237
+    },
+    "Taoist": {
+      "media": 1728,
+      "mediana": 300,
+      "min": 1,
+      "max": 18799,
+      "count": 124
     },
     "Warrior": {
       "media": 2502,
@@ -24,20 +38,6 @@
       "min": 1,
       "max": 27000,
       "count": 63
-    },
-    "Lancer": {
-      "media": 2559,
-      "mediana": 540,
-      "min": 1,
-      "max": 22000,
-      "count": 90
-    },
-    "Taoist": {
-      "media": 1736,
-      "mediana": 300,
-      "min": 1,
-      "max": 18799,
-      "count": 123
     },
     "Sorcerer": {
       "media": 1632,
@@ -70,13 +70,13 @@
     },
     "110": {
       "media": 115,
-      "mediana": 88,
-      "count": 44
+      "mediana": 93,
+      "count": 46
     },
     "120": {
       "media": 200,
       "mediana": 190,
-      "count": 42
+      "count": 43
     },
     "130": {
       "media": 265,
@@ -85,8 +85,8 @@
     },
     "140": {
       "media": 587,
-      "mediana": 560,
-      "count": 140
+      "mediana": 569,
+      "count": 141
     },
     "150": {
       "media": 2309,
@@ -108,17 +108,17 @@
     "100000": {
       "media": 101,
       "mediana": 75,
-      "count": 139
+      "count": 140
     },
     "200000": {
-      "media": 232,
-      "mediana": 247,
-      "count": 122
+      "media": 231,
+      "mediana": 244,
+      "count": 124
     },
     "300000": {
-      "media": 520,
+      "media": 521,
       "mediana": 500,
-      "count": 190
+      "count": 191
     },
     "400000": {
       "media": 2342,

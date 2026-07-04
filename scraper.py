@@ -280,7 +280,13 @@ def fetch_detail(transport_id, class_id):
                     }
         succession_avg_enhance = round(sum(v["enhance"] for v in equip_transferencia.values()) / max(len(equip_transferencia),1), 1) if equip_transferencia else 0
 
+        # Flag explícita: distingue "valor real é 0" de "ainda não sabemos".
+        # Mesma condição usada em needs_update() — se nenhum destes veio preenchido,
+        # o pedido aos endpoints de detalhe provavelmente falhou ou voltou vazio.
+        dados_completos = bool(potencial_total or constituicao_lv or heaven_max_lv or succession_avg_enhance or mina_lv)
+
         return {
+            "dados_completos": dados_completos,
             # Inventário
             "equipados": equipados,
             "legendary_items": legendary_items,
@@ -340,6 +346,7 @@ def fetch_detail(transport_id, class_id):
     except Exception as e:
         print(f"    Erro detalhe: {e}")
         return {
+            "dados_completos": False,
             "equipados":[],"legendary_items":[],"epic_items":[],"legendary_count":0,"epic_count":0,
             "trained_skills":{},"max_skill_lv":0,"mainstats":{},"all_stats":{},
             "spirits_equipados":[],"spirits_lend":[],"spirits_grade6":[],"spirits_lend_count":0,"spirits_grade6_count":0,"spirits_inven_lend":[],
@@ -447,7 +454,12 @@ def compute_stats(records):
     return stats
 
 def needs_update(r):
-    return bool(r.get("transport_id")) and not r.get("potencial_total", 0) and not r.get("constituicao_lv", 0)
+    if not r.get("transport_id"):
+        return False
+    if "dados_completos" in r:
+        return not r["dados_completos"]
+    # Registos antigos sem a flag: heurística anterior
+    return not r.get("potencial_total", 0) and not r.get("constituicao_lv", 0)
 
 def main():
     print("🚀 MIR4 Scraper v3:", datetime.now().strftime("%Y-%m-%d %H:%M"))
@@ -494,7 +506,7 @@ def main():
         for i, r in enumerate(to_update):
             print(f"  [{i+1}/{len(to_update)}] {r.get('nome','?')}", end=" ... ")
             detail = fetch_detail(r["transport_id"], r.get("classe_id", 0))
-            if detail and (detail.get("potencial_total", 0) > 0 or detail.get("constituicao_lv", 0) > 0):
+            if detail and detail.get("dados_completos"):
                 idx = next((j for j,h in enumerate(history) if h.get("seq") == r.get("seq")), None)
                 if idx is not None:
                     history[idx].update(detail)

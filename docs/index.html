@@ -432,7 +432,7 @@ function renderListings(){
 async function load(){
   try{
     const [stats,history]=await Promise.all([fetch(BASE+'stats.json').then(r=>r.json()),fetch(BASE+'nft_history.json').then(r=>r.json())]);
-    statsData=stats;allHistory=history.map(r=>{const av=avaliarNFT(r);return{...r,...av};});
+    statsData=stats;allHistory=history;allHistory=allHistory.map(r=>{const av=avaliarNFT(r);return{...r,...av};});
     document.getElementById('updated').textContent=stats.updated_at?'Actualizado: '+new Date(stats.updated_at).toLocaleString('pt-PT'):'';
     document.getElementById('total-tag').textContent=(stats.total||0)+' NFTs';
     document.getElementById('m-total').textContent=(stats.total||0).toLocaleString();

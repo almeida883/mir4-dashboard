@@ -292,14 +292,14 @@ function vsMercadoBadge(vs,nft){
 }
 
 function nftRow(r){
-  return`<tr onclick="openDetalhe(${JSON.stringify(r).replace(/"/g,'&quot;')})">
+  return`<tr onclick="openComparacao(${JSON.stringify(r).replace(/"/g,'&quot;')},event)">
     <td>${r.nome||'—'}</td><td><span class="badge ${r.classe||''}">${r.classe||'?'}</span></td>
     <td>${r.nivel||'—'}</td><td>${(r.power_score||0).toLocaleString()}</td>
     <td><strong>${(r.preco_draco||0).toLocaleString()}</strong></td>
     <td>${vsMercadoBadge(r.vs_mercado,r)}</td>
     <td style="color:#8b949e;font-size:11px">${r.data_venda||'—'}</td>
     <td style="display:flex;gap:4px">
-      <button class="btn-sm" onclick="event.stopPropagation();openDetalhe(${JSON.stringify(r).replace(/"/g,'&quot;')})">Ver</button>
+      <button class="btn-sm" onclick="event.stopPropagation();openComparacao(${JSON.stringify(r).replace(/"/g,'&quot;')},event)">Ver</button>
       <a class="btn-buy" href="https://www.xdraco.com/nft/trade/${r.seq}" target="_blank" onclick="event.stopPropagation()">xDraco</a>
     </td>
   </tr>`;
@@ -496,6 +496,7 @@ function renderComparacaoModal(nft,loading){
       <div class="price-card"><label>vs Mercado</label><value style="color:${cor}">${vs!==null?(vs>0?'+':'')+vs+'%':'—'}</value></div>
     </div>
     <div class="verdict-box" style="background:${cor}18;border:1px solid ${cor}44;color:${cor}">${veredicto}${confInfo?` <span style="font-weight:400;opacity:.85">— ${confInfo.icon} ${confInfo.label} (${sim.length} comparáveis)</span>`:''}</div>
+    ${nft.seq?`<div style="margin-bottom:1rem"><a class="btn-buy" href="https://www.xdraco.com/nft/trade/${nft.seq}" target="_blank">Ver no xDraco</a></div>`:''}
     ${nft._live&&!nftCompleto?`<div style="background:#4d1a1a;border:1px solid #ff7b7255;color:#ff7b72;padding:.7rem 1rem;border-radius:6px;font-size:12px;margin-bottom:1rem">🔴 Foi tentado ir buscar dados ao vivo agora mesmo, mas a API do MIR4 devolveu vazio para este NFT (pode ser transferência muito recente, ou personagem sem dados nesses sistemas). Só Power Score, Nível e Preço são fiáveis.</div>`
       :nft._live?`<div style="background:#0d2818;border:1px solid #7ee78755;color:#7ee787;padding:.5rem 1rem;border-radius:6px;font-size:12px;margin-bottom:1rem">📡 Dados obtidos ao vivo agora mesmo (este NFT está à venda, o scraper nunca o detalha).</div>`
       :!nftCompleto?`<div style="background:#3d3200;border:1px solid #e3b34155;color:#e3b341;padding:.7rem 1rem;border-radius:6px;font-size:12px;margin-bottom:1rem">⚠️ Este NFT ainda não tem dados de detalhe confirmados (potencial, mina, constituição, heaven, succession, itens, dragão). Só Power Score, Nível e Preço são fiáveis nesta comparação — o resto aparece como "sem dados", não como zero real.</div>`:''}
@@ -516,35 +517,14 @@ function renderComparacaoModal(nft,loading){
     </tbody></table>
     ${soNFT.length?`<p class="section-title">Spirits exclusivos deste NFT</p><div>${soNFT.map(s=>`<span class="item-pill lend">⭐ ${s}</span>`).join('')}</div>`:''}
     ${soSim.length?`<p class="section-title">Spirits frequentes nos similares (ausentes aqui)</p><div>${soSim.map(s=>`<span class="item-pill">${s}</span>`).join('')}</div>`:''}
+    ${(nft.legendary_items||[]).length?`<p class="section-title">Itens lendários deste NFT</p><div>${nft.legendary_items.map(s=>`<span class="item-pill lend">🗡️ ${s}</span>`).join('')}</div>`:''}
+    ${(nft.epic_items||[]).length?`<p class="section-title">Itens épicos deste NFT</p><div>${nft.epic_items.map(s=>`<span class="item-pill">${s}</span>`).join('')}</div>`:''}
+    ${nft.mainstats&&Object.keys(nft.mainstats).length?`<p class="section-title">Stats principais</p><div class="grid2" style="margin-bottom:.8rem">${Object.entries(nft.mainstats).slice(0,8).map(([k,v])=>`<div class="stat-row"><span style="color:#8b949e">${k}</span><span style="font-weight:500">${typeof v==='number'?v.toLocaleString():v}</span></div>`).join('')}</div>`:''}
     <p class="section-title">Vendas similares usadas</p>
     <table class="diff-table"><thead><tr><th>Nome</th><th>Nv</th><th>PS</th><th>Preço vendido</th><th>Sim.</th><th>Data</th></tr></thead>
     <tbody>${sim.map(r=>`<tr><td>${r.nome||'—'}${dadosCompletos(r)?'':' <span title="Dados incompletos — pode explicar diferenças de preço não visíveis aqui" style="cursor:help">⚠️</span>'}</td><td>${r.nivel||'—'}</td><td>${(r.power_score||0).toLocaleString()}</td><td style="color:#7ee787;font-weight:600">${(r.preco_draco||0).toLocaleString()} D</td><td><span class="sim-bar"><span class="sim-bar-fill" style="width:${r._sim}%"></span></span>${r._sim}%</td><td style="color:#8b949e">${r.data_venda||'—'}</td></tr>`).join('')}</tbody></table>
     <p class="section-title">À venda agora com specs similares</p>${listingsSimHTML}
     `:'<div class="empty">Sem vendas similares no histórico ainda.</div>'}
-  `;
-  document.getElementById('modal').classList.add('open');
-}
-
-function openDetalhe(r){
-  const completo=dadosCompletos(r);
-  document.getElementById('modal-title').textContent=`${r.nome||'NFT'} — ${r.classe} Nv${r.nivel}`;
-  document.getElementById('modal-subtitle').innerHTML=`PS ${(r.power_score||0).toLocaleString()} · Vendido a ${(r.preco_draco||0).toLocaleString()} DRACO · ${r.data_venda||''} ${completo?'<span style="color:#7ee787">· ✅ dados completos</span>':'<span style="color:#e3b341">· ⚠️ dados de detalhe incompletos</span>'}`;
-  const sl=arr=>(arr||[]).map(i=>`<span class="item-pill lend">${i}</span>`).join('');
-  const sd='<span style="color:#8b949e">sem dados</span>';
-  document.getElementById('modal-body').innerHTML=`
-    <div class="grid2" style="margin-bottom:1rem">
-      <div>
-        ${[['Preço vendido',(r.preco_draco||0).toLocaleString()+' DRACO','#7ee787',true],['Mina',r.mina_lv,'',completo],['Constituição',r.constituicao_lv,'',completo],['Potencial',r.potencial_total,'',completo],['Heaven max lv',r.heaven_max_lv,'',completo],['Succession enh.',r.succession_avg_enhance,'',completo],['Itens lendários',r.legendary_count,'',completo],['Dragão grade máx.',r.dragon_max_grade,'',completo],['Servidor',r.servidor,'',true]].map(([l,v,c,ok])=>`<div class="stat-row"><span style="color:#8b949e">${l}</span><span style="font-weight:500;color:${c||'#f0f6fc'}">${ok?(v??'—'):sd}</span></div>`).join('')}
-      </div>
-      <div>${Object.entries(r.mainstats||{}).slice(0,8).map(([k,v])=>`<div class="stat-row"><span style="color:#8b949e">${k}</span><span style="font-weight:500">${typeof v==='number'?v.toLocaleString():v}</span></div>`).join('')}</div>
-    </div>
-    ${!completo?`<div style="background:#3d3200;border:1px solid #e3b34155;color:#e3b341;padding:.6rem 1rem;border-radius:6px;font-size:12px;margin-bottom:.8rem">⚠️ O scraper ainda não confirmou os dados de detalhe deste NFT (falha temporária ou por actualizar). Os valores acima ficam "sem dados" em vez de 0 para não confundir com um valor real.</div>`:''}
-    ${(r.spirits_lend||[]).length?`<p class="section-title">Spirits lendários</p><div style="margin-bottom:.8rem">${sl(r.spirits_lend)}</div>`:''}
-    ${(r.legendary_items||[]).length?`<p class="section-title">Itens lendários</p><div style="margin-bottom:.8rem">${sl(r.legendary_items)}</div>`:''}
-    <div style="margin-top:1rem;display:flex;gap:8px">
-      <button class="btn-sm" onclick="openComparacao(${JSON.stringify(r).replace(/"/g,'&quot;')},null)">🔍 Análise de mercado</button>
-      <a class="btn-buy" href="https://www.xdraco.com/nft/trade/${r.seq}" target="_blank">Ver no xDraco</a>
-    </div>
   `;
   document.getElementById('modal').classList.add('open');
 }

@@ -336,10 +336,13 @@ async function fetchDetailLive(transportId){
   );
 
   const items=inven.data||[];
+  // Mesmo filtro do scraper.py: só arma(2)/armadura(3)/acessório(4) contam como equipamento real;
+  // o resto do que a API devolve aqui é inventário (poções, pedras mágicas, materiais).
+  const EQUIP_MAIN_TYPES=new Set([2,3,4]);
   const equipados=(Array.isArray(items)?items:[]).map(i=>{
     const g=String(i.grade??'');
-    return{nome:i.itemName||'',grade_id:/^\d+$/.test(g)?parseInt(g):0};
-  });
+    return{nome:i.itemName||'',grade_id:/^\d+$/.test(g)?parseInt(g):0,mainType:i.mainType??0};
+  }).filter(i=>EQUIP_MAIN_TYPES.has(i.mainType));
   const legendary_items=equipados.filter(i=>i.grade_id>=5).map(i=>i.nome);
   const epic_items=equipados.filter(i=>i.grade_id===4).map(i=>i.nome);
 

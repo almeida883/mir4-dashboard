@@ -1,22 +1,36 @@
 {
-  "updated_at": "2026-07-05T14:55:12.501746+00:00",
-  "total": 779,
-  "preco_medio_global": 2119,
+  "updated_at": "2026-07-05T16:00:41.883215+00:00",
+  "total": 782,
+  "preco_medio_global": 2115,
   "preco_mediano_global": 500,
   "por_classe": {
+    "Darkist": {
+      "media": 2807,
+      "mediana": 450,
+      "min": 1,
+      "max": 27000,
+      "count": 66
+    },
+    "Warrior": {
+      "media": 2459,
+      "mediana": 685,
+      "min": 1,
+      "max": 27500,
+      "count": 105
+    },
+    "Lancer": {
+      "media": 2469,
+      "mediana": 550,
+      "min": 1,
+      "max": 22000,
+      "count": 97
+    },
     "Arbalist": {
       "media": 2258,
       "mediana": 655,
       "min": 1,
       "max": 48000,
       "count": 254
-    },
-    "Darkist": {
-      "media": 2842,
-      "mediana": 450,
-      "min": 1,
-      "max": 27000,
-      "count": 65
     },
     "Sorcerer": {
       "media": 1591,
@@ -25,26 +39,12 @@
       "max": 10000,
       "count": 86
     },
-    "Warrior": {
-      "media": 2475,
-      "mediana": 678,
-      "min": 1,
-      "max": 27500,
-      "count": 104
-    },
     "Taoist": {
       "media": 1733,
       "mediana": 354,
       "min": 1,
       "max": 18799,
       "count": 142
-    },
-    "Lancer": {
-      "media": 2480,
-      "mediana": 550,
-      "min": 1,
-      "max": 22000,
-      "count": 96
     }
   },
   "por_nivel": {
@@ -86,12 +86,12 @@
     "140": {
       "media": 599,
       "mediana": 550,
-      "count": 154
+      "count": 155
     },
     "150": {
-      "media": 2243,
-      "mediana": 1724,
-      "count": 188
+      "media": 2230,
+      "mediana": 1700,
+      "count": 190
     },
     "160": {
       "media": 8074,
@@ -118,12 +118,12 @@
     "300000": {
       "media": 521,
       "mediana": 500,
-      "count": 209
+      "count": 210
     },
     "400000": {
-      "media": 2388,
-      "mediana": 2000,
-      "count": 178
+      "media": 2373,
+      "mediana": 1999,
+      "count": 180
     },
     "500000": {
       "media": 8349,

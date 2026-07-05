@@ -86,6 +86,7 @@ tr:hover td{background:#21262d;cursor:pointer}
   <button onclick="showPage('listings',this)">🏪 NFTs à Venda</button>
 </nav>
 <main>
+<div id="erro-banner" style="display:none;background:#3d3200;border:1px solid #e3b34155;color:#e3b341;padding:.7rem 1rem;border-radius:6px;font-size:13px;margin-bottom:1rem"></div>
 
 <!-- OVERVIEW -->
 <div id="page-overview" class="page active">
@@ -420,9 +421,25 @@ async function fetchDetailLive(transportId){
   };
 }
 
-function openSideBySide(a,b,event){
+async function openSideBySide(a,b,event){
   if(event)event.stopPropagation();
-  renderSideBySide(a,b);
+  document.getElementById('modal-title').textContent='Comparação directa';
+  document.getElementById('modal-subtitle').textContent=`${a.nome||'NFT A'} vs ${b.nome||'NFT B'}`;
+  document.getElementById('modal-body').innerHTML='<div class="empty">🔄 A ir buscar dados ao vivo (NFTs à venda nunca são detalhados automaticamente)...</div>';
+  document.getElementById('modal').classList.add('open');
+
+  const comDadosAoVivo=async(nft)=>{
+    if(dadosCompletos(nft)||!nft.transport_id)return nft;
+    if(liveDetailCache.has(nft.transport_id))return{...nft,...liveDetailCache.get(nft.transport_id)};
+    try{
+      const live=await fetchDetailLive(nft.transport_id);
+      liveDetailCache.set(nft.transport_id,live);
+      return{...nft,...live};
+    }catch(e){return nft;}
+  };
+
+  const [na,nb]=await Promise.all([comDadosAoVivo(a),comDadosAoVivo(b)]);
+  renderSideBySide(na,nb);
 }
 
 function renderSideBySide(a,b){
@@ -679,6 +696,7 @@ function renderListings(){
 }
 
 async function load(){
+  const banner=document.getElementById('erro-banner');
   try{
     const [stats,history]=await Promise.all([fetch(BASE+'stats.json').then(r=>r.json()),fetch(BASE+'nft_history.json').then(r=>r.json())]);
     statsData=stats;allHistory=history;allHistory=allHistory.map(r=>{const av=avaliarNFT(r);return{...r,...av};});
@@ -692,7 +710,18 @@ async function load(){
     const avgPS=history.length?Math.round(history.reduce((s,r)=>s+(r.power_score||0),0)/history.length):0;
     document.getElementById('m-ps').textContent=(avgPS/1000).toFixed(0)+'k';
     buildCharts(stats);
-  }catch(e){document.querySelector('main').innerHTML='<div class="loading">Erro ao carregar dados.</div>';}
+    if(banner)banner.style.display='none';
+    // Se a tabela do histórico já estiver visível, refrescar com os dados novos sem perder a página onde o utilizador está
+    if(document.getElementById('page-historico')?.classList.contains('active'))renderHistorico();
+  }catch(e){
+    console.error('Falha ao actualizar dados:',e);
+    // NUNCA apagar a página inteira — os dados já carregados continuam válidos e visíveis.
+    // Só avisamos discretamente; quem estiver a ver "NFTs à Venda" ou "Histórico" não perde nada.
+    if(banner){
+      banner.style.display='block';
+      banner.textContent=`⚠️ Não foi possível actualizar os dados agora (${e.message||'erro de rede'}). A mostrar os últimos dados carregados com sucesso.`;
+    }
+  }
 }
 load();setInterval(load,5*60*1000);
 </script>

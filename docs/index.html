@@ -235,7 +235,9 @@ function calcSimilaridade(nft,r){
     const potDiff=Math.abs(potA-potB)/Math.max(potA,potB,1);
     const sucA=nft.succession_avg_enhance||0, sucB=r.succession_avg_enhance||0;
     const sucDiff=Math.abs(sucA-sucB)/Math.max(sucA,sucB,1);
-    return 1-(pd*0.40+nd*0.10+spDiff*0.25+potDiff*0.15+sucDiff*0.10);
+    const enhA=nft.weapon_enhance||0, enhB=r.weapon_enhance||0;
+    const enhDiff=Math.abs(enhA-enhB)/Math.max(enhA,enhB,1);
+    return 1-(pd*0.35+nd*0.10+spDiff*0.20+potDiff*0.15+sucDiff*0.10+enhDiff*0.10);
   }
   return 1-(pd*0.7+nd*0.3);
 }
@@ -342,10 +344,16 @@ async function fetchDetailLive(transportId){
   const EQUIP_MAIN_TYPES=new Set([2,3,4]);
   const equipados=(Array.isArray(items)?items:[]).map(i=>{
     const g=String(i.grade??'');
-    return{nome:i.itemName||'',grade_id:/^\d+$/.test(g)?parseInt(g):0,mainType:i.mainType??0};
+    return{nome:i.itemName||'',grade_id:/^\d+$/.test(g)?parseInt(g):0,mainType:i.mainType??0,enhance:i.enhance||0};
   }).filter(i=>EQUIP_MAIN_TYPES.has(i.mainType));
   const legendary_items=equipados.filter(i=>i.grade_id>=5).map(i=>i.nome);
   const epic_items=equipados.filter(i=>i.grade_id===4).map(i=>i.nome);
+  // Enhance do equipamento — factor de preço importante que faltava (ex: arma +11 vs +9)
+  const gearEnhances=equipados.map(i=>i.enhance||0);
+  const gear_avg_enhance=gearEnhances.length?Math.round((gearEnhances.reduce((a,b)=>a+b,0)/gearEnhances.length)*10)/10:0;
+  const gear_max_enhance=gearEnhances.length?Math.max(...gearEnhances):0;
+  const weaponEnhances=equipados.filter(i=>i.mainType===2).map(i=>i.enhance||0);
+  const weapon_enhance=weaponEnhances.length?Math.max(...weaponEnhances):0;
 
   const mainstats={};
   (stats.data?.mainstats||[]).forEach(s=>{
@@ -415,6 +423,7 @@ async function fetchDetailLive(transportId){
   return{
     dados_completos,_live:true,
     legendary_items,epic_items,legendary_count:legendary_items.length,epic_count:epic_items.length,
+    gear_avg_enhance,gear_max_enhance,weapon_enhance,
     spirits_lend,spirits_lend_count:spirits_lend.length,
     mina_lv,constituicao_lv,potencial_total,antiguidade_max_grade,dragon_max_grade,heaven_max_lv,succession_avg_enhance,
     mainstats
@@ -483,6 +492,9 @@ function renderSideBySide(a,b){
       ${row('Succession enh.',val(a,compA,'succession_avg_enhance'),val(b,compB,'succession_avg_enhance'),'float')}
       ${row('Itens lendários',val(a,compA,'legendary_count'),val(b,compB,'legendary_count'))}
       ${row('Itens épicos',val(a,compA,'epic_count'),val(b,compB,'epic_count'))}
+      ${row('Enhance da arma',val(a,compA,'weapon_enhance'),val(b,compB,'weapon_enhance'),'float')}
+      ${row('Enhance médio equip.',val(a,compA,'gear_avg_enhance'),val(b,compB,'gear_avg_enhance'),'float')}
+      ${row('Enhance máx. equip.',val(a,compA,'gear_max_enhance'),val(b,compB,'gear_max_enhance'),'float')}
       ${row('Dragão grade máx.',val(a,compA,'dragon_max_grade'),val(b,compB,'dragon_max_grade'),'float')}
       ${row('Antiguidade grade máx.',val(a,compA,'antiguidade_max_grade'),val(b,compB,'antiguidade_max_grade'),'float')}
     </tbody></table>
@@ -594,6 +606,9 @@ function renderComparacaoModal(nft,loading){
       ${diffRow('Succession enh.',nftCompleto?nft.succession_avg_enhance||0:null,avgF(r=>r.succession_avg_enhance||0),'float')}
       ${diffRow('Itens lendários',nftCompleto?nft.legendary_count||0:null,avg(r=>r.legendary_count||0))}
       ${diffRow('Itens épicos',nftCompleto?nft.epic_count||0:null,avg(r=>r.epic_count||0))}
+      ${diffRow('Enhance da arma',nftCompleto?nft.weapon_enhance||0:null,avgF(r=>r.weapon_enhance||0),'float')}
+      ${diffRow('Enhance médio equip.',nftCompleto?nft.gear_avg_enhance||0:null,avgF(r=>r.gear_avg_enhance||0),'float')}
+      ${diffRow('Enhance máx. equip.',nftCompleto?nft.gear_max_enhance||0:null,avgF(r=>r.gear_max_enhance||0),'float')}
       ${diffRow('Dragão grade máx.',nftCompleto?nft.dragon_max_grade||0:null,avgF(r=>r.dragon_max_grade||0),'float')}
       ${diffRow('Antiguidade grade máx.',nftCompleto?nft.antiguidade_max_grade||0:null,avgF(r=>r.antiguidade_max_grade||0),'float')}
     </tbody></table>

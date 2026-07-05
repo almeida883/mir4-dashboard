@@ -14,6 +14,13 @@ CLASS_MAP = {1:"Warrior",2:"Sorcerer",3:"Taoist",4:"Arbalist",5:"Lancer",6:"Dark
 MAX_HISTORY = 2000
 DEBUG_ENTRIES = []  # diagnóstico de falhas, escrito em data/debug_log.json no fim do run
 
+def safe_int(x, default=0):
+    """int() que não rebenta quando a API devolve null/None num campo que devia ser numérico."""
+    try:
+        return int(x)
+    except (TypeError, ValueError):
+        return default
+
 def diag_endpoint(resp):
     if not isinstance(resp, dict):
         return "tipo_invalido"
@@ -74,6 +81,12 @@ def fetch_detail(transport_id, class_id):
         grade_map = {"6":"Mítico","5":"Lendário","4":"Épico","3":"Raro","2":"Incomum","1":"Normal"}
 
         # --- INVENTÁRIO (itens equipados) ---
+        # A API devolve o INVENTÁRIO TODO (mochila), não só o que está equipado — por isso
+        # filtramos por mainType para ficar só com arma(2)/armadura(3)/acessório(4), que são
+        # as únicas categorias claramente identificáveis como equipamento real nos dados reais
+        # (as restantes — 5,6,7,8,9,17,21,None... — são poções, pedras mágicas, pergaminhos,
+        # bilhetes e outros consumíveis/materiais, confirmado por inspecção directa dos nomes).
+        EQUIP_MAIN_TYPES = {2, 3, 4}
         items = inven.get("data", [])
         equipados = []
         for i in items:
@@ -81,16 +94,17 @@ def fetch_detail(transport_id, class_id):
             equipados.append({
                 "nome": i.get("itemName",""),
                 "grade": grade_map.get(g, g),
-                "grade_id": int(g) if g.isdigit() else 0,
+                "grade_id": safe_int(g) if g.isdigit() else 0,
                 "enhance": i.get("enhance", 0),
                 "mainType": i.get("mainType", 0)
             })
-        legendary_items = [i["nome"] for i in equipados if i["grade_id"] >= 5]
-        epic_items = [i["nome"] for i in equipados if i["grade_id"] == 4]
+        gear_only = [i for i in equipados if i.get("mainType") in EQUIP_MAIN_TYPES]
+        legendary_items = [i["nome"] for i in gear_only if i["grade_id"] >= 5]
+        epic_items = [i["nome"] for i in gear_only if i["grade_id"] == 4]
 
         # --- SKILLS ---
         skill_list = skills.get("data", [])
-        trained_skills = {s["skillName"]: int(s.get("skillLevel",0)) for s in skill_list if int(s.get("skillLevel",0)) > 0}
+        trained_skills = {s["skillName"]: safe_int(s.get("skillLevel",0)) for s in skill_list if safe_int(s.get("skillLevel",0)) > 0}
         max_skill_lv = max(trained_skills.values()) if trained_skills else 0
 
         # --- STATS ---
@@ -117,7 +131,7 @@ def fetch_detail(transport_id, class_id):
                             "nome": s.get("petName",""),
                             "grade": s.get("grade",0),
                             "transcend": s.get("transcend",0),
-                            "slot": int(slot)
+                            "slot": safe_int(slot)
                         })
         spirits_lend = [s["nome"] for s in spirits_equipados if s["grade"] >= 5]
         spirits_grade6 = [s["nome"] for s in spirits_equipados if s["grade"] >= 6]
@@ -131,12 +145,12 @@ def fetch_detail(transport_id, class_id):
             for k, v in building_data.items():
                 if isinstance(v, dict):
                     nome = v.get("buildingName","") or v.get("buildName","")
-                    lv = int(v.get("buildingLevel",0) or v.get("buildLv",0))
+                    lv = safe_int(v.get("buildingLevel",0) or v.get("buildLv",0))
                     if nome: buildings[nome] = lv
         elif isinstance(building_data, list):
             for b in building_data:
                 nome = b.get("buildingName","") or b.get("buildName","")
-                lv = int(b.get("buildingLevel",0) or b.get("buildLv",0))
+                lv = safe_int(b.get("buildingLevel",0) or b.get("buildLv",0))
                 if nome: buildings[nome] = lv
         mina_lv = buildings.get("Mina", 0)
 
@@ -148,15 +162,15 @@ def fetch_detail(transport_id, class_id):
         if isinstance(training_data, dict):
             for k, v in training_data.items():
                 if isinstance(v, dict):
-                    lv = int(v.get("forceLevel", 0) or v.get("trainLv", 0))
+                    lv = safe_int(v.get("forceLevel", 0) or v.get("trainLv", 0))
                     nome = v.get("forceName", "") or v.get("trainName", "")
                     if lv > 0 and nome:
                         training_summary[nome] = lv
-            constituicao_lv = int(training_data.get("consitutionLevel", 0))
-            collect_lv = int(training_data.get("collectLevel", 0))
+            constituicao_lv = safe_int(training_data.get("consitutionLevel", 0))
+            collect_lv = safe_int(training_data.get("collectLevel", 0))
         elif isinstance(training_data, list):
             for t in training_data:
-                lv = int(t.get("forceLevel", 0) or t.get("trainLv", 0))
+                lv = safe_int(t.get("forceLevel", 0) or t.get("trainLv", 0))
                 nome = t.get("forceName", "") or t.get("trainName", "")
                 if lv > 0 and nome:
                     training_summary[nome] = lv
@@ -220,8 +234,8 @@ def fetch_detail(transport_id, class_id):
             for k, v in scripture_data.items():
                 if isinstance(v, dict):
                     scripture_summary[v.get("codexName", k)] = {
-                        "total": int(v.get("totalCount",0)),
-                        "completed": int(v.get("completed",0))
+                        "total": safe_int(v.get("totalCount",0)),
+                        "completed": safe_int(v.get("completed",0))
                     }
 
         # --- CODEX ---
@@ -231,8 +245,8 @@ def fetch_detail(transport_id, class_id):
             for k, v in codex_data.items():
                 if isinstance(v, dict):
                     codex_summary[v.get("codexName", k)] = {
-                        "total": int(v.get("totalCount",0)),
-                        "completed": int(v.get("completed",0))
+                        "total": safe_int(v.get("totalCount",0)),
+                        "completed": safe_int(v.get("completed",0))
                     }
         codex_total_completed = sum(v.get("completed",0) for v in codex_summary.values())
 
@@ -242,7 +256,7 @@ def fetch_detail(transport_id, class_id):
         if isinstance(holystuff_data, dict):
             for k, v in holystuff_data.items():
                 if isinstance(v, dict):
-                    antiguidades[v.get("HolyStuffName",k)] = int(v.get("Grade",0))
+                    antiguidades[v.get("HolyStuffName",k)] = safe_int(v.get("Grade",0))
         antiguidade_max_grade = max(antiguidades.values()) if antiguidades else 0
 
         # --- DRAGON ---
@@ -252,8 +266,8 @@ def fetch_detail(transport_id, class_id):
             for k, v in dragon_data.items():
                 if isinstance(v, dict):
                     dragon_summary[f"slot_{k}"] = {
-                        "grade": int(v.get("HoleGrade",0)),
-                        "count": int(v.get("HoleCount",0))
+                        "grade": safe_int(v.get("HoleGrade",0)),
+                        "count": safe_int(v.get("HoleCount",0))
                     }
         dragon_max_grade = max((v["grade"] for v in dragon_summary.values()), default=0)
 
@@ -269,28 +283,33 @@ def fetch_detail(transport_id, class_id):
         heaven_data = heaven.get("data", {})
         heaven_training = {}
         if isinstance(heaven_data, dict):
-            for slot, positions in heaven_data.get("training", {}).items():
-                if isinstance(positions, dict):
-                    for pos, t in positions.items():
-                        if isinstance(t, dict):
-                            lv = t.get("trainingLevel", 0)
-                            if lv > 0:
-                                heaven_training[f"slot{slot}_pos{pos}"] = lv
+            training_block = heaven_data.get("training", {})
+            if isinstance(training_block, dict):
+                for slot, positions in training_block.items():
+                    if isinstance(positions, dict):
+                        for pos, t in positions.items():
+                            if isinstance(t, dict):
+                                lv = t.get("trainingLevel", 0)
+                                if lv > 0:
+                                    heaven_training[f"slot{slot}_pos{pos}"] = lv
         heaven_max_lv = max(heaven_training.values()) if heaven_training else 0
         circles = heaven_data.get("circle", {}) if isinstance(heaven_data, dict) else {}
+        circles = circles if isinstance(circles, dict) else {}
         uniao_universal = {f"ciclo_{k}": v.get("circleValue",0) for k,v in circles.items() if isinstance(v,dict)}
 
         # --- SUCCESSION (Equip Transferência detalhado) ---
         succession_data = succession.get("data", {})
         equip_transferencia = {}
         if isinstance(succession_data, dict):
-            for slot, item in succession_data.get("equipItem", {}).items():
-                if isinstance(item, dict):
-                    equip_transferencia[slot] = {
-                        "nome": item.get("itemName",""),
-                        "grade": int(item.get("grade",0)),
-                        "enhance": int(item.get("enhance",0))
-                    }
+            equip_block = succession_data.get("equipItem", {})
+            if isinstance(equip_block, dict):
+                for slot, item in equip_block.items():
+                    if isinstance(item, dict):
+                        equip_transferencia[slot] = {
+                            "nome": item.get("itemName",""),
+                            "grade": safe_int(item.get("grade",0)),
+                            "enhance": safe_int(item.get("enhance",0))
+                        }
         succession_avg_enhance = round(sum(v["enhance"] for v in equip_transferencia.values()) / max(len(equip_transferencia),1), 1) if equip_transferencia else 0
 
         # Flag explícita: distingue "valor real é 0" de "ainda não sabemos".

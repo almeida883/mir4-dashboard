@@ -96,7 +96,9 @@ def fetch_detail(transport_id, class_id):
                 "grade": grade_map.get(g, g),
                 "grade_id": safe_int(g) if g.isdigit() else 0,
                 "enhance": i.get("enhance", 0),
-                "mainType": i.get("mainType", 0)
+                "mainType": i.get("mainType", 0),
+                "tier": safe_int(i.get("tier", 0)),
+                "hole_count": safe_int(i.get("holeCount", 0))
             })
         gear_only = [i for i in equipados if i.get("mainType") in EQUIP_MAIN_TYPES]
         legendary_items = [i["nome"] for i in gear_only if i["grade_id"] >= 5]
@@ -115,6 +117,16 @@ def fetch_detail(transport_id, class_id):
         gear_avg_enhance = round(sum(gear_enhances)/len(gear_enhances), 1) if gear_enhances else 0
         gear_max_enhance = max(gear_enhances) if gear_enhances else 0
         weapon_enhance = max((i.get("enhance", 0) or 0 for i in gear_only if i.get("mainType") == 2), default=0)
+
+        # Tier — confirmado com dados reais como campo INDEPENDENTE de grade (ex: grade "Raro"
+        # aparece com tier 1, 2, 3 ou 4). Item raro de tier 4 pode valer mais que lendário tier 1.
+        gear_tiers = [i["tier"] for i in gear_only]
+        gear_max_tier = max(gear_tiers) if gear_tiers else 0
+        gear_avg_tier = round(sum(gear_tiers)/len(gear_tiers), 1) if gear_tiers else 0
+
+        # Soquetes por item (holeCount) — maioria dos itens tem 0, só alguns têm 1-3 preenchidos;
+        # possivelmente o mesmo sistema de Primal Force mas ao nível do item em vez da conta.
+        gear_total_holecount = sum(i["hole_count"] for i in gear_only)
 
         # --- SKILLS ---
         skill_list = skills.get("data", [])
@@ -137,16 +149,17 @@ def fetch_detail(transport_id, class_id):
         spirit_data = spirit.get("data", {})
         equip_slots = spirit_data.get("equip", {}) if isinstance(spirit_data, dict) else {}
         spirits_equipados = []
-        for slot, positions in equip_slots.items():
-            if isinstance(positions, dict):
-                for pos, s in positions.items():
-                    if isinstance(s, dict):
-                        spirits_equipados.append({
-                            "nome": s.get("petName",""),
-                            "grade": s.get("grade",0),
-                            "transcend": s.get("transcend",0),
-                            "slot": safe_int(slot)
-                        })
+        if isinstance(equip_slots, dict):
+            for slot, positions in equip_slots.items():
+                if isinstance(positions, dict):
+                    for pos, s in positions.items():
+                        if isinstance(s, dict):
+                            spirits_equipados.append({
+                                "nome": s.get("petName",""),
+                                "grade": s.get("grade",0),
+                                "transcend": s.get("transcend",0),
+                                "slot": safe_int(slot)
+                            })
         spirits_lend = [s["nome"] for s in spirits_equipados if s["grade"] >= 5]
         spirits_grade6 = [s["nome"] for s in spirits_equipados if s["grade"] >= 6]
         spirits_inven = spirit_data.get("inven", []) if isinstance(spirit_data, dict) else []
@@ -362,6 +375,9 @@ def fetch_detail(transport_id, class_id):
             "gear_avg_enhance": gear_avg_enhance,
             "gear_max_enhance": gear_max_enhance,
             "weapon_enhance": weapon_enhance,
+            "gear_max_tier": gear_max_tier,
+            "gear_avg_tier": gear_avg_tier,
+            "gear_total_holecount": gear_total_holecount,
             "gear_raw_debug": gear_raw_debug,
             "epic_count": len(epic_items),
             # Skills
@@ -428,6 +444,7 @@ def fetch_detail(transport_id, class_id):
             "dados_completos": False,
             "equipados":[],"legendary_items":[],"epic_items":[],"legendary_count":0,"epic_count":0,
             "gear_avg_enhance":0,"gear_max_enhance":0,"weapon_enhance":0,
+            "gear_max_tier":0,"gear_avg_tier":0,"gear_total_holecount":0,
             "trained_skills":{},"max_skill_lv":0,"mainstats":{},"all_stats":{},
             "spirits_equipados":[],"spirits_lend":[],"spirits_grade6":[],"spirits_lend_count":0,"spirits_grade6_count":0,"spirits_inven_lend":[],
             "buildings":{},"mina_lv":0,"training":{},"constituicao_lv":0,"collect_lv":0,

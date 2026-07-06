@@ -251,6 +251,7 @@ def fetch_detail(transport_id, class_id):
                         "total": safe_int(v.get("totalCount",0)),
                         "completed": safe_int(v.get("completed",0))
                     }
+        scripture_total_completed = sum(v.get("completed",0) for v in scripture_summary.values())
 
         # --- CODEX ---
         codex_data = codex.get("data", {})
@@ -273,7 +274,10 @@ def fetch_detail(transport_id, class_id):
                     antiguidades[v.get("HolyStuffName",k)] = safe_int(v.get("Grade",0))
         antiguidade_max_grade = max(antiguidades.values()) if antiguidades else 0
 
-        # --- DRAGON ---
+        # --- DRAGON (Primal Force / Void Resonance) ---
+        # HoleGrade = raridade do soquete; HoleCount = nº de pontos/atributos activados por soquete
+        # ("mais pontos = mais atributos extra activados", como descrito pelo utilizador) — só o
+        # grade máximo estava a ser aproveitado, o total de pontos (o que mais importa) nunca era.
         dragon_data = dragon.get("data", {})
         dragon_summary = {}
         if isinstance(dragon_data, dict):
@@ -284,6 +288,8 @@ def fetch_detail(transport_id, class_id):
                         "count": safe_int(v.get("HoleCount",0))
                     }
         dragon_max_grade = max((v["grade"] for v in dragon_summary.values()), default=0)
+        dragon_total_count = sum(v["count"] for v in dragon_summary.values())
+        dragon_max_count = max((v["count"] for v in dragon_summary.values()), default=0)
 
         # --- ASSETS (Recursos) ---
         assets_data = assets.get("data", {})
@@ -398,6 +404,9 @@ def fetch_detail(transport_id, class_id):
             # Dragon
             "dragon": dragon_summary,
             "dragon_max_grade": dragon_max_grade,
+            "dragon_total_count": dragon_total_count,
+            "dragon_max_count": dragon_max_count,
+            "scripture_total_completed": scripture_total_completed,
             # Assets
             "recursos": recursos,
             # Heaven
@@ -426,7 +435,8 @@ def fetch_detail(transport_id, class_id):
             "potencial_total":0,"potencial_caca":0,"potencial_pvp":0,
             "scripture":{},"codex":{},"codex_total_completed":0,
             "antiguidades":{},"antiguidade_max_grade":0,
-            "dragon":{},"dragon_max_grade":0,"recursos":{},
+            "dragon":{},"dragon_max_grade":0,"dragon_total_count":0,"dragon_max_count":0,
+            "scripture_total_completed":0,"recursos":{},
             "heaven_training":{},"heaven_max_lv":0,"uniao_universal":{},
             "equip_transferencia":{},"succession_avg_enhance":0,
         }

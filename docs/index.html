@@ -242,9 +242,11 @@ function calcSimilaridade(nft,r){
     const pfDiff=Math.abs(pfA-pfB)/Math.max(pfA,pfB,1);
     const sucA=nft.succession_avg_enhance||0, sucB=r.succession_avg_enhance||0;
     const sucDiff=Math.abs(sucA-sucB)/Math.max(sucA,sucB,1);
+    const tierA=nft.gear_max_tier||0, tierB=r.gear_max_tier||0;
+    const tierDiff=Math.abs(tierA-tierB)/Math.max(tierA,tierB,1);
     // Enhance removido do cálculo (decisão confirmada: dados próprios apontam pouca correlação
-    // com o preço). Potencial Total e Primal Force sobem de peso por serem os factores mais fortes.
-    return 1-(pd*0.30+nd*0.10+potDiff*0.30+pfDiff*0.15+spDiff*0.10+sucDiff*0.05);
+    // com o preço). Potencial Total, Tier e Primal Force sobem de peso por serem os factores mais fortes.
+    return 1-(pd*0.25+nd*0.10+potDiff*0.25+tierDiff*0.20+pfDiff*0.10+spDiff*0.07+sucDiff*0.03);
   }
   return 1-(pd*0.7+nd*0.3);
 }
@@ -358,7 +360,7 @@ async function fetchDetailLive(transportId){
   const EQUIP_MAIN_TYPES=new Set([2,3,4]);
   const equipados=(Array.isArray(items)?items:[]).map(i=>{
     const g=String(i.grade??'');
-    return{nome:i.itemName||'',grade_id:/^\d+$/.test(g)?parseInt(g):0,mainType:i.mainType??0,enhance:i.enhance||0};
+    return{nome:i.itemName||'',grade_id:/^\d+$/.test(g)?parseInt(g):0,mainType:i.mainType??0,enhance:i.enhance||0,tier:parseInt(i.tier||0),hole_count:parseInt(i.holeCount||0)};
   }).filter(i=>EQUIP_MAIN_TYPES.has(i.mainType));
   const legendary_items=equipados.filter(i=>i.grade_id>=5).map(i=>i.nome);
   const epic_items=equipados.filter(i=>i.grade_id===4).map(i=>i.nome);
@@ -368,6 +370,11 @@ async function fetchDetailLive(transportId){
   const gear_max_enhance=gearEnhances.length?Math.max(...gearEnhances):0;
   const weaponEnhances=equipados.filter(i=>i.mainType===2).map(i=>i.enhance||0);
   const weapon_enhance=weaponEnhances.length?Math.max(...weaponEnhances):0;
+  // Tier — confirmado com dados reais como independente de grade (Raro pode ser tier 4)
+  const gearTiers=equipados.map(i=>i.tier||0);
+  const gear_max_tier=gearTiers.length?Math.max(...gearTiers):0;
+  const gear_avg_tier=gearTiers.length?Math.round((gearTiers.reduce((a,b)=>a+b,0)/gearTiers.length)*10)/10:0;
+  const gear_total_holecount=equipados.reduce((s,i)=>s+(i.hole_count||0),0);
 
   const mainstats={};
   (stats.data?.mainstats||[]).forEach(s=>{
@@ -448,7 +455,7 @@ async function fetchDetailLive(transportId){
   return{
     dados_completos,_live:true,
     legendary_items,epic_items,legendary_count:legendary_items.length,epic_count:epic_items.length,
-    gear_avg_enhance,gear_max_enhance,weapon_enhance,
+    gear_avg_enhance,gear_max_enhance,weapon_enhance,gear_max_tier,gear_avg_tier,gear_total_holecount,
     spirits_lend,spirits_lend_count:spirits_lend.length,
     mina_lv,constituicao_lv,potencial_total,antiguidade_max_grade,dragon_max_grade,dragon_total_count,dragon_max_count,
     scripture_total_completed,heaven_max_lv,succession_avg_enhance,
@@ -511,6 +518,7 @@ function renderSideBySide(a,b){
       ${textRow('Data',a.data_venda||'—',b.data_venda||'—')}
       ${row('Power Score',a.power_score,b.power_score)}
       ${row('Potencial total',val(a,compA,'potencial_total'),val(b,compB,'potencial_total'))}
+      ${row('Tier máx. equip.',val(a,compA,'gear_max_tier'),val(b,compB,'gear_max_tier'),'float')}
       ${row('Primal Force (pontos)',val(a,compA,'dragon_total_count'),val(b,compB,'dragon_total_count'),'float')}
       ${row('Itens lendários',val(a,compA,'legendary_count'),val(b,compB,'legendary_count'))}
       ${row('Itens épicos',val(a,compA,'epic_count'),val(b,compB,'epic_count'))}
@@ -526,6 +534,8 @@ function renderSideBySide(a,b){
       ${row('Enhance médio equip.',val(a,compA,'gear_avg_enhance'),val(b,compB,'gear_avg_enhance'),'float')}
       ${row('Enhance máx. equip.',val(a,compA,'gear_max_enhance'),val(b,compB,'gear_max_enhance'),'float')}
       ${row('Dragão grade máx.',val(a,compA,'dragon_max_grade'),val(b,compB,'dragon_max_grade'),'float')}
+      ${row('Tier médio equip.',val(a,compA,'gear_avg_tier'),val(b,compB,'gear_avg_tier'),'float')}
+      ${row('Soquetes por item (total)',val(a,compA,'gear_total_holecount'),val(b,compB,'gear_total_holecount'),'float')}
       ${row('Scripture completadas',val(a,compA,'scripture_total_completed'),val(b,compB,'scripture_total_completed'),'float')}
       ${row('Antiguidade grade máx.',val(a,compA,'antiguidade_max_grade'),val(b,compB,'antiguidade_max_grade'),'float')}
     </tbody></table></details>
@@ -630,6 +640,7 @@ function renderComparacaoModal(nft,loading){
     <table class="diff-table"><thead><tr><th>Atributo</th><th>Este NFT</th><th>Média similares</th><th>Diferença</th></tr></thead><tbody>
       ${diffRow('Power Score',nft.power_score,avg(r=>r.power_score||0))}
       ${diffRow('Potencial total',nftCompleto?nft.potencial_total||0:null,avg(r=>r.potencial_total||0))}
+      ${diffRow('Tier máx. equip.',nftCompleto?nft.gear_max_tier||0:null,avgF(r=>r.gear_max_tier||0),'float')}
       ${diffRow('Primal Force (pontos)',nftCompleto?nft.dragon_total_count||0:null,avgF(r=>r.dragon_total_count||0),'float')}
       ${diffRow('Itens lendários',nftCompleto?nft.legendary_count||0:null,avg(r=>r.legendary_count||0))}
       ${diffRow('Itens épicos',nftCompleto?nft.epic_count||0:null,avg(r=>r.epic_count||0))}
@@ -645,6 +656,8 @@ function renderComparacaoModal(nft,loading){
       ${diffRow('Enhance médio equip.',nftCompleto?nft.gear_avg_enhance||0:null,avgF(r=>r.gear_avg_enhance||0),'float')}
       ${diffRow('Enhance máx. equip.',nftCompleto?nft.gear_max_enhance||0:null,avgF(r=>r.gear_max_enhance||0),'float')}
       ${diffRow('Dragão grade máx.',nftCompleto?nft.dragon_max_grade||0:null,avgF(r=>r.dragon_max_grade||0),'float')}
+      ${diffRow('Tier médio equip.',nftCompleto?nft.gear_avg_tier||0:null,avgF(r=>r.gear_avg_tier||0),'float')}
+      ${diffRow('Soquetes por item (total)',nftCompleto?nft.gear_total_holecount||0:null,avgF(r=>r.gear_total_holecount||0),'float')}
       ${diffRow('Scripture completadas',nftCompleto?nft.scripture_total_completed||0:null,avgF(r=>r.scripture_total_completed||0),'float')}
       ${diffRow('Antiguidade grade máx.',nftCompleto?nft.antiguidade_max_grade||0:null,avgF(r=>r.antiguidade_max_grade||0),'float')}
     </tbody></table></details>

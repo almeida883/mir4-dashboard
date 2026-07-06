@@ -283,7 +283,10 @@ function findComparables(nft,pool,{minN=MIN_COMPARAVEIS,maxN=MAX_COMPARAVEIS}={}
 function avaliarNFT(nft){
   const similares=findComparables(nft,allHistory);
   if(!similares.length)return{preco_justo:null,vs_mercado:null,confianca:null,_tier:null,_similares:[]};
-  const pesos=similares.map(r=>(r._sim/100)*pesoRecencia(r));
+  // Peso não-linear (³) na similaridade: um comparável a 59% não deve pesar quase o mesmo que um
+  // a 99% só porque a fórmula de peso era linear — agora um match fraco conta muito menos,
+  // sem ser completamente excluído (continua a aparecer na tabela, só não domina o preço justo).
+  const pesos=similares.map(r=>Math.pow(r._sim/100,3)*pesoRecencia(r));
   const ts=pesos.reduce((a,b)=>a+b,0)||1;
   const pj=Math.round(similares.reduce((s,r,i)=>s+r.preco_draco*pesos[i],0)/ts);
   const vm=Math.round(((nft.preco_draco-pj)/pj)*100);

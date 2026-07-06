@@ -333,8 +333,8 @@ async function mir4Get(ep,transportId){
 }
 
 async function fetchDetailLive(transportId){
-  const [inven,spirit,building,training,potential,holystuff,dragon,heaven,succession,stats]=await Promise.all(
-    ['inven','spirit','building','training','potential','holystuff','dragon','heaven','succession','stats']
+  const [inven,spirit,building,training,potential,holystuff,dragon,heaven,succession,stats,scripture]=await Promise.all(
+    ['inven','spirit','building','training','potential','holystuff','dragon','heaven','succession','stats','scripture']
       .map(ep=>mir4Get(ep,transportId))
   );
 
@@ -397,10 +397,15 @@ async function fetchDetailLive(transportId){
     if(v&&typeof v==='object'){const g=parseInt(v.Grade||0);if(g>antiguidade_max_grade)antiguidade_max_grade=g;}
   });
 
-  let dragon_max_grade=0;
+  let dragon_max_grade=0,dragon_total_count=0,dragon_max_count=0;
   const dragonData=dragon.data||{};
   if(dragonData&&typeof dragonData==='object')Object.values(dragonData).forEach(v=>{
-    if(v&&typeof v==='object'){const g=parseInt(v.HoleGrade||0);if(g>dragon_max_grade)dragon_max_grade=g;}
+    if(v&&typeof v==='object'){
+      const g=parseInt(v.HoleGrade||0),c=parseInt(v.HoleCount||0);
+      if(g>dragon_max_grade)dragon_max_grade=g;
+      dragon_total_count+=c;
+      if(c>dragon_max_count)dragon_max_count=c;
+    }
   });
 
   let heaven_max_lv=0;
@@ -418,6 +423,12 @@ async function fetchDetailLive(transportId){
     if(enh.length)succession_avg_enhance=Math.round((enh.reduce((a,b)=>a+b,0)/enh.length)*10)/10;
   }
 
+  let scripture_total_completed=0;
+  const scriptureData=scripture.data||{};
+  if(scriptureData&&typeof scriptureData==='object'){
+    Object.values(scriptureData).forEach(v=>{if(v&&typeof v==='object')scripture_total_completed+=parseInt(v.completed||0);});
+  }
+
   const dados_completos=Boolean(potencial_total||constituicao_lv||heaven_max_lv||succession_avg_enhance||mina_lv);
 
   return{
@@ -425,7 +436,8 @@ async function fetchDetailLive(transportId){
     legendary_items,epic_items,legendary_count:legendary_items.length,epic_count:epic_items.length,
     gear_avg_enhance,gear_max_enhance,weapon_enhance,
     spirits_lend,spirits_lend_count:spirits_lend.length,
-    mina_lv,constituicao_lv,potencial_total,antiguidade_max_grade,dragon_max_grade,heaven_max_lv,succession_avg_enhance,
+    mina_lv,constituicao_lv,potencial_total,antiguidade_max_grade,dragon_max_grade,dragon_total_count,dragon_max_count,
+    scripture_total_completed,heaven_max_lv,succession_avg_enhance,
     mainstats
   };
 }
@@ -496,6 +508,8 @@ function renderSideBySide(a,b){
       ${row('Enhance médio equip.',val(a,compA,'gear_avg_enhance'),val(b,compB,'gear_avg_enhance'),'float')}
       ${row('Enhance máx. equip.',val(a,compA,'gear_max_enhance'),val(b,compB,'gear_max_enhance'),'float')}
       ${row('Dragão grade máx.',val(a,compA,'dragon_max_grade'),val(b,compB,'dragon_max_grade'),'float')}
+      ${row('Primal Force (pontos)',val(a,compA,'dragon_total_count'),val(b,compB,'dragon_total_count'),'float')}
+      ${row('Scripture completadas',val(a,compA,'scripture_total_completed'),val(b,compB,'scripture_total_completed'),'float')}
       ${row('Antiguidade grade máx.',val(a,compA,'antiguidade_max_grade'),val(b,compB,'antiguidade_max_grade'),'float')}
     </tbody></table>
     <details style="margin-top:1rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Spirits lendários — ${nomeA} vs ${nomeB}</summary>
@@ -610,6 +624,8 @@ function renderComparacaoModal(nft,loading){
       ${diffRow('Enhance médio equip.',nftCompleto?nft.gear_avg_enhance||0:null,avgF(r=>r.gear_avg_enhance||0),'float')}
       ${diffRow('Enhance máx. equip.',nftCompleto?nft.gear_max_enhance||0:null,avgF(r=>r.gear_max_enhance||0),'float')}
       ${diffRow('Dragão grade máx.',nftCompleto?nft.dragon_max_grade||0:null,avgF(r=>r.dragon_max_grade||0),'float')}
+      ${diffRow('Primal Force (pontos)',nftCompleto?nft.dragon_total_count||0:null,avgF(r=>r.dragon_total_count||0),'float')}
+      ${diffRow('Scripture completadas',nftCompleto?nft.scripture_total_completed||0:null,avgF(r=>r.scripture_total_completed||0),'float')}
       ${diffRow('Antiguidade grade máx.',nftCompleto?nft.antiguidade_max_grade||0:null,avgF(r=>r.antiguidade_max_grade||0),'float')}
     </tbody></table>
     ${soNFT.length||soSim.length?`<details style="margin-top:.8rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Spirits — diferenças vs similares (${soNFT.length} exclusivos, ${soSim.length} em falta)</summary>

@@ -1,22 +1,36 @@
 {
-  "updated_at": "2026-07-07T21:47:17.240655+00:00",
-  "total": 881,
-  "preco_medio_global": 2014,
+  "updated_at": "2026-07-07T22:50:29.688565+00:00",
+  "total": 885,
+  "preco_medio_global": 2026,
   "preco_mediano_global": 500,
   "por_classe": {
     "Lancer": {
-      "media": 2338,
-      "mediana": 540,
+      "media": 2317,
+      "mediana": 530,
       "min": 1,
       "max": 22000,
-      "count": 106
+      "count": 107
     },
     "Arbalist": {
-      "media": 2203,
-      "mediana": 660,
+      "media": 2230,
+      "mediana": 680,
       "min": 1,
       "max": 48000,
-      "count": 289
+      "count": 290
+    },
+    "Darkist": {
+      "media": 2637,
+      "mediana": 450,
+      "min": 1,
+      "max": 27000,
+      "count": 75
+    },
+    "Taoist": {
+      "media": 1615,
+      "mediana": 329,
+      "min": 1,
+      "max": 18799,
+      "count": 161
     },
     "Sorcerer": {
       "media": 1588,
@@ -31,20 +45,6 @@
       "min": 1,
       "max": 27500,
       "count": 121
-    },
-    "Darkist": {
-      "media": 2571,
-      "mediana": 415,
-      "min": 1,
-      "max": 27000,
-      "count": 74
-    },
-    "Taoist": {
-      "media": 1620,
-      "mediana": 314,
-      "min": 1,
-      "max": 18799,
-      "count": 160
     }
   },
   "por_nivel": {
@@ -74,9 +74,9 @@
       "count": 52
     },
     "120": {
-      "media": 200,
+      "media": 199,
       "mediana": 190,
-      "count": 50
+      "count": 51
     },
     "130": {
       "media": 260,
@@ -84,9 +84,9 @@
       "count": 143
     },
     "140": {
-      "media": 581,
+      "media": 582,
       "mediana": 550,
-      "count": 176
+      "count": 177
     },
     "150": {
       "media": 2140,
@@ -94,9 +94,9 @@
       "count": 227
     },
     "160": {
-      "media": 7948,
+      "media": 7962,
       "mediana": 7000,
-      "count": 114
+      "count": 116
     },
     "170": {
       "media": 18276,
@@ -112,13 +112,13 @@
     },
     "200000": {
       "media": 221,
-      "mediana": 240,
-      "count": 143
+      "mediana": 236,
+      "count": 144
     },
     "300000": {
-      "media": 524,
+      "media": 526,
       "mediana": 500,
-      "count": 245
+      "count": 246
     },
     "400000": {
       "media": 2278,
@@ -126,9 +126,9 @@
       "count": 207
     },
     "500000": {
-      "media": 8228,
+      "media": 8237,
       "mediana": 7767,
-      "count": 111
+      "count": 113
     },
     "600000": {
       "media": 23702,
@@ -137,37 +137,37 @@
     }
   },
   "top_spirits": {
-    "Balrog, o Lorde do Fogo": 51,
-    "Lulu, a Felina Encantada": 46,
-    "Darknyan, o Ressuscitador": 44,
-    "Wooska, Príncipe Herdeiro das Trevas": 40,
-    "Drago Ponta de Sangue": 39,
-    "Reidouro, o Falcão de Fogo": 35,
-    "Setra Radiante": 32,
-    "Grifavalo, o Garanhão Sombrio": 25,
-    "Raryo, o Pequeno Dragão Branco": 19,
+    "Darknyan, o Ressuscitador": 49,
+    "Wooska, Príncipe Herdeiro das Trevas": 46,
+    "Balrog, o Lorde do Fogo": 44,
+    "Lulu, a Felina Encantada": 42,
+    "Drago Ponta de Sangue": 41,
+    "Setra Radiante": 35,
+    "Reidouro, o Falcão de Fogo": 34,
+    "Grifavalo, o Garanhão Sombrio": 26,
     "Candela, a Imperatriz Radiante": 18,
     "Vendavalma, o Invocador do Vento": 18,
     "Hydra, o Dragão de Três Cabeças": 15,
     "Rocki, o Dragonino Rochoso": 15,
-    "Styx, o Cavaleiro Fantasma": 13,
-    "Sumacheon, o Rei Demoníaco do Mar do Norte": 13
+    "Sumacheon, o Rei Demoníaco do Mar do Norte": 14,
+    "Lucy, dos Olhos Vermelhos": 13,
+    "Flordoura, a Dragoa Fada": 13
   },
   "top_legendary_items": {
-    "Pedra Mágica de Crescimento Lendária": 69,
-    "Pedra Mágica de Ascensão Lendária": 55,
-    "Pedra Mágica de Vigor Lendária": 51,
-    "Picareta de Tempestade": 42,
-    "Pedra Mágica de Mana Lendária": 38,
-    "Pedra Mágica de Força Lendária": 30,
-    "Pedra Mágica Antidemônio Lendária": 29,
+    "Pedra Mágica de Crescimento Lendária": 63,
+    "Pedra Mágica de Ascensão Lendária": 54,
+    "Pedra Mágica de Vigor Lendária": 49,
+    "Picareta de Tempestade": 41,
+    "Pedra Mágica de Mana Lendária": 35,
     "Carapaça do Deus dos Cinco Dragões": 29,
     "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas": 29,
-    "Pedra Cintamani da Marta Milenar": 28,
-    "Pedra Mágica de Destruição Lendária": 28,
-    "Espectromite Lendária": 24,
-    "Pedra Mágica de Foco Lendária": 23,
-    "Pedra de Afiar do Suíno Supremo": 20,
-    "Núcleo do Cristal de Mana": 19
+    "Pedra Mágica Antidemônio Lendária": 28,
+    "Pedra Cintamani da Marta Milenar": 27,
+    "Pedra Mágica de Força Lendária": 27,
+    "Pedra Mágica de Destruição Lendária": 25,
+    "Espectromite Lendária": 23,
+    "Pedra Mágica de Foco Lendária": 18,
+    "Pedaço do Dragão Divino": 18,
+    "Núcleo do Cristal de Mana": 18
   }
 }

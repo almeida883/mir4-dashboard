@@ -724,17 +724,14 @@ function clearFilters(p){
 async function loadListings(){
   document.getElementById('tbody-listings').innerHTML='<tr><td colspan="8" class="loading">A carregar listings...</td></tr>';
   try{
-    let results=[];
-    for(let p=1;p<=20;p++){
-      const r=await fetch(`https://webapi.mir4global.com/nft/lists?listType=sale&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&page=${p}&languageCode=pt`);
-      const data=await r.json();const items=data?.data?.lists||[];
-      if(!items.length)break;results=results.concat(items);
-    }
-    const CM={1:'Warrior',2:'Sorcerer',3:'Taoist',4:'Arbalist',5:'Lancer',6:'Darkist'};
-    allListings=results.map(item=>{
-      const r=item.info||item;
-      const nft={seq:r.seq,row_id:r.rowID||0,nft_id:r.nftID,transport_id:r.transportID,nome:r.characterName||'',classe:CM[r.class]||'?',nivel:r.lv,power_score:r.powerScore,preco_draco:r.price,mirage_score:r.MirageScore||0,legendary_items:[],spirits_lend:[],spirits_lend_count:0,potencial_total:0,mina_lv:0,constituicao_lv:0,heaven_max_lv:0,succession_avg_enhance:0,mainstats:Object.fromEntries((r.stat||[]).map(s=>[s.statName,s.statValue])),data_venda:'—'};
-      const av=avaliarNFT(nft);return{...nft,...av};
+    // Já não vamos buscar ao vivo à API do MIR4 (20 pedidos, lento, sem dados de detalhe) —
+    // o scraper.py agora mantém data/listings_active.json com o mesmo detalhe que o histórico
+    // de vendas, incluindo Potencial/Tier/Primal Force já verificados quando disponíveis.
+    const results=await fetch(BASE+'listings_active.json').then(r=>r.json());
+    allListings=results.map(r=>{
+      const nft={...r,data_venda:'—'};
+      const av=avaliarNFT(nft);
+      return{...nft,...av};
     });
     document.getElementById('fl-count').textContent=allListings.length+' listings';
     renderListings();

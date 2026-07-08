@@ -368,6 +368,7 @@ def fetch_detail(transport_id, class_id):
         # --- SUCCESSION (Equip Transferência detalhado) ---
         succession_data = succession.get("data", {})
         equip_transferencia = {}
+        succession_raw_debug = []
         if isinstance(succession_data, dict):
             equip_block = succession_data.get("equipItem", {})
             if isinstance(equip_block, dict):
@@ -376,9 +377,23 @@ def fetch_detail(transport_id, class_id):
                         equip_transferencia[slot] = {
                             "nome": item.get("itemName",""),
                             "grade": safe_int(item.get("grade",0)),
-                            "enhance": safe_int(item.get("enhance",0))
+                            "enhance": safe_int(item.get("enhance",0)),
+                            "tier": safe_int(item.get("tier",0))
                         }
+                        succession_raw_debug.append(item)
         succession_avg_enhance = round(sum(v["enhance"] for v in equip_transferencia.values()) / max(len(equip_transferencia),1), 1) if equip_transferencia else 0
+
+        # Itens de Sucessão são equipamento real (arma/joias de um 2º conjunto) — juntam-se às
+        # contagens de itens lendários/épicos do equipamento principal, em vez de ficarem de fora.
+        succession_legendary = [v["nome"] for v in equip_transferencia.values() if v["grade"] >= 5]
+        succession_epic = [v["nome"] for v in equip_transferencia.values() if v["grade"] == 4]
+        succession_max_tier = max((v["tier"] for v in equip_transferencia.values()), default=0)
+
+        # Juntar aos totais do equipamento principal — dois conjuntos de equipamento real, a
+        # mesma pessoa. Antes disto, o de Sucessão ficava de fora das contagens de equivalência.
+        legendary_items = legendary_items + succession_legendary
+        epic_items = epic_items + succession_epic
+        gear_max_tier = max(gear_max_tier, succession_max_tier)
 
         # Flag explícita: distingue "valor real é 0" de "ainda não sabemos".
         # Mesma condição usada em needs_update() — se nenhum destes veio preenchido,
@@ -414,6 +429,7 @@ def fetch_detail(transport_id, class_id):
             "gear_avg_tier": gear_avg_tier,
             "gear_total_holecount": gear_total_holecount,
             "gear_raw_debug": gear_raw_debug,
+            "succession_raw_debug": succession_raw_debug,
             "epic_count": len(epic_items),
             # Skills
             "trained_skills": trained_skills,

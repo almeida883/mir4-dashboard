@@ -198,14 +198,19 @@ function showPage(id,btn){
 
 const cOpts=()=>({responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b949e',font:{size:10}},grid:{color:'rgba(255,255,255,0.04)'}},y:{ticks:{color:'#8b949e',font:{size:10},callback:v=>v>=1000?(v/1000).toFixed(0)+'k':v},grid:{color:'rgba(255,255,255,0.04)'}}}});
 
+let _chartInstances=[];
 function buildCharts(s){
+  // Destruir gráficos anteriores antes de recriar — evita "Canvas is already in use" quando
+  // o refresh automático de 5 em 5 min chama buildCharts() outra vez sobre o mesmo canvas.
+  _chartInstances.forEach(ch=>{try{ch.destroy();}catch(e){}});
+  _chartInstances=[];
   const cl=Object.keys(s.por_classe||{}).sort((a,b)=>(s.por_classe[b].mediana||0)-(s.por_classe[a].mediana||0));
-  new Chart(document.getElementById('chartClasse'),{type:'bar',data:{labels:cl,datasets:[{data:cl.map(c=>s.por_classe[c].mediana),backgroundColor:cl.map(c=>CC[c]||'#8b949e'),borderRadius:4}]},options:cOpts()});
-  new Chart(document.getElementById('chartPie'),{type:'doughnut',data:{labels:cl,datasets:[{data:cl.map(c=>s.por_classe[c].count),backgroundColor:cl.map(c=>CC[c]||'#8b949e')}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#8b949e',font:{size:11}}}}}});
+  _chartInstances.push(new Chart(document.getElementById('chartClasse'),{type:'bar',data:{labels:cl,datasets:[{data:cl.map(c=>s.por_classe[c].mediana),backgroundColor:cl.map(c=>CC[c]||'#8b949e'),borderRadius:4}]},options:cOpts()}));
+  _chartInstances.push(new Chart(document.getElementById('chartPie'),{type:'doughnut',data:{labels:cl,datasets:[{data:cl.map(c=>s.por_classe[c].count),backgroundColor:cl.map(c=>CC[c]||'#8b949e')}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'right',labels:{color:'#8b949e',font:{size:11}}}}}}));
   const nl=Object.keys(s.por_nivel||{}).sort((a,b)=>+a-+b);
-  new Chart(document.getElementById('chartNivel'),{type:'line',data:{labels:nl.map(k=>'Nv'+k),datasets:[{data:nl.map(k=>s.por_nivel[k].mediana),borderColor:'#7ee787',backgroundColor:'rgba(126,231,135,0.08)',tension:0.4,fill:true,pointRadius:3}]},options:cOpts()});
+  _chartInstances.push(new Chart(document.getElementById('chartNivel'),{type:'line',data:{labels:nl.map(k=>'Nv'+k),datasets:[{data:nl.map(k=>s.por_nivel[k].mediana),borderColor:'#7ee787',backgroundColor:'rgba(126,231,135,0.08)',tension:0.4,fill:true,pointRadius:3}]},options:cOpts()}));
   const pl=Object.keys(s.por_ps||{}).sort((a,b)=>+a-+b);
-  new Chart(document.getElementById('chartPS'),{type:'bar',data:{labels:pl.map(k=>(+k/1000)+'k'),datasets:[{data:pl.map(k=>s.por_ps[k].mediana),backgroundColor:'#378ADD',borderRadius:4}]},options:cOpts()});
+  _chartInstances.push(new Chart(document.getElementById('chartPS'),{type:'bar',data:{labels:pl.map(k=>(+k/1000)+'k'),datasets:[{data:pl.map(k=>s.por_ps[k].mediana),backgroundColor:'#378ADD',borderRadius:4}]},options:cOpts()}));
   document.getElementById('top-spirits').innerHTML=Object.entries(s.top_spirits||{}).slice(0,10).map(([n,c])=>`<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #21262d;font-size:12px"><span style="color:#e3b341">${n}</span><span style="color:#f0f6fc;font-weight:600">${c}x</span></div>`).join('');
 }
 
@@ -285,10 +290,15 @@ function avaliarNFT(nft){
   // comparável não tem dados completos, a similaridade cai para a fórmula simples (PS+Nível),
   // que pode dar 90%+ só por coincidência de PS — sem nunca confirmar Potencial/Tier/Primal Force.
   // Por isso a confiança não pode subir se os comparáveis não tiverem dados verificados também.
+  // E também não pode subir se o PRÓPRIO NFT não tiver dados verificados — caso típico das
+  // listagens à venda antes de se clicar para ir buscar dados ao vivo: por muitos comparáveis
+  // completos que existam, não sabemos nada sobre este NFT em concreto ainda.
   const nCompletos=similares.filter(dadosCompletos).length;
   let confianca='baixa';
-  if(nCompletos>=8&&avgSim>=90)confianca='alta';
-  else if(nCompletos>=4&&avgSim>=80)confianca='média';
+  if(dadosCompletos(nft)){
+    if(nCompletos>=8&&avgSim>=90)confianca='alta';
+    else if(nCompletos>=4&&avgSim>=80)confianca='média';
+  }
   return{preco_justo:pj,vs_mercado:vm,confianca,_similares:similares};
 }
 
@@ -297,14 +307,14 @@ function vsMercadoBadge(vs,nft){
   const s=`padding:3px 8px;border-radius:4px;font-size:11px;font-weight:700;cursor:pointer;border:none;`;
   const c=`onclick="openComparacao(JSON.parse(this.dataset.nft),event)" data-nft="${nj}"`;
   const baixaConf=nft&&nft.confianca==='baixa';
-  const t=baixaConf?' title="Confiança baixa: poucos comparáveis ou janela alargada"':'';
-  const op=baixaConf?'opacity:.6;':'';
-  if(vs===null)return`<button ${c}${t} style="${s}${op}background:#21262d;color:#8b949e">sem dados 🔍</button>`;
-  if(vs<=-15)return`<button ${c}${t} style="${s}${op}background:#1f6e3d;color:#7ee787">🟢 ${vs}%</button>`;
-  if(vs<=-5)return`<button ${c}${t} style="${s}${op}background:#1a4d2e;color:#7ee787">🟢 ${vs}%</button>`;
-  if(vs<=5)return`<button ${c}${t} style="${s}${op}background:#3d3200;color:#e3b341">🟡 ${vs>0?'+':''}${vs}%</button>`;
-  if(vs<=20)return`<button ${c}${t} style="${s}${op}background:#4d2a00;color:#ffa657">🟠 +${vs}%</button>`;
-  return`<button ${c}${t} style="${s}${op}background:#4d1a1a;color:#ff7b72">🔴 +${vs}%</button>`;
+  const t=baixaConf?' title="Confiança baixa: poucos comparáveis com dados verificados de Potencial/Tier/Primal Force"':'';
+  const marcador=baixaConf?' ❓':'';
+  if(vs===null)return`<button ${c} title="Nenhum NFT vendido cumpre os critérios de equivalência (PS/Nível/Potencial + 65% de similaridade)" style="${s}background:#21262d;color:#8b949e">sem dados 🔍</button>`;
+  if(vs<=-15)return`<button ${c}${t} style="${s}background:#1f6e3d;color:#7ee787">🟢 ${vs}%${marcador}</button>`;
+  if(vs<=-5)return`<button ${c}${t} style="${s}background:#1a4d2e;color:#7ee787">🟢 ${vs}%${marcador}</button>`;
+  if(vs<=5)return`<button ${c}${t} style="${s}background:#3d3200;color:#e3b341">🟡 ${vs>0?'+':''}${vs}%${marcador}</button>`;
+  if(vs<=20)return`<button ${c}${t} style="${s}background:#4d2a00;color:#ffa657">🟠 +${vs}%${marcador}</button>`;
+  return`<button ${c}${t} style="${s}background:#4d1a1a;color:#ff7b72">🔴 +${vs}%${marcador}</button>`;
 }
 
 function nftRow(r){

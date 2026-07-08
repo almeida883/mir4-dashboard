@@ -47,11 +47,29 @@ def fetch_list(list_type="recent", pages=5):
     for page in range(1, pages+1):
         url = f"{BASE}/nft/lists?listType={list_type}&page={page}&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&languageCode=pt"
         data = get(url)
+        if page == 1:
+            # Grava sempre a resposta bruta da 1ª página num ficheiro (não só no log do Actions,
+            # que é difícil de consultar). Dá para ver directamente em
+            # raw.githubusercontent.com/.../data/listfetch_debug.json sem entrar no GitHub.
+            try:
+                os.makedirs("data", exist_ok=True)
+                with open("data/listfetch_debug.json", "r", encoding="utf-8") as f:
+                    dbg = json.load(f)
+            except Exception:
+                dbg = {}
+            dbg[list_type] = {
+                "url": url,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "resposta_bruta": data
+            }
+            try:
+                with open("data/listfetch_debug.json", "w", encoding="utf-8") as f:
+                    json.dump(dbg, f, ensure_ascii=False, indent=2, default=str)
+            except Exception as e:
+                print(f"    (não consegui gravar listfetch_debug.json: {e})")
         items = data.get("data", {}).get("lists", [])
         if not items:
             if page == 1:
-                # Diagnóstico: distingue "genuinamente sem resultados" de "erro engolido em
-                # silêncio". Antes disto, uma falha aqui parecia sempre "0 listagens", sem pista.
                 if "_fetch_error" in data:
                     print(f"    ⚠️ fetch_list('{list_type}') falhou na página 1: {data['_fetch_error']}")
                 elif "data" not in data:

@@ -49,6 +49,15 @@ def fetch_list(list_type="recent", pages=5):
         data = get(url)
         items = data.get("data", {}).get("lists", [])
         if not items:
+            if page == 1:
+                # Diagnóstico: distingue "genuinamente sem resultados" de "erro engolido em
+                # silêncio". Antes disto, uma falha aqui parecia sempre "0 listagens", sem pista.
+                if "_fetch_error" in data:
+                    print(f"    ⚠️ fetch_list('{list_type}') falhou na página 1: {data['_fetch_error']}")
+                elif "data" not in data:
+                    print(f"    ⚠️ fetch_list('{list_type}') resposta inesperada: {str(data)[:200]}")
+                else:
+                    print(f"    ℹ️ fetch_list('{list_type}') devolveu 0 itens na página 1 (resposta ok, mas vazia)")
             break
         results.extend(items)
         time.sleep(0.3)

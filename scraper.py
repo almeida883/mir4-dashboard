@@ -45,7 +45,7 @@ def get(url, retries=3):
 def fetch_list(list_type="recent", pages=5):
     results = []
     for page in range(1, pages+1):
-        url = f"{BASE}/nft/lists?listType={list_type}&page={page}&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&languageCode=pt"
+        url = f"{BASE}/nft/lists?listType={list_type}&page={page}&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&languageCode=pt"
         data = get(url)
         items = data.get("data", {}).get("lists", [])
         if not items:

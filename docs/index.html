@@ -369,8 +369,8 @@ async function fetchDetailLive(transportId){
     const g=String(i.grade??'');
     return{nome:i.itemName||'',grade_id:/^\d+$/.test(g)?parseInt(g):0,mainType:i.mainType??0,enhance:i.enhance||0,tier:parseInt(i.tier||0),hole_count:parseInt(i.holeCount||0)};
   }).filter(i=>EQUIP_MAIN_TYPES.has(i.mainType));
-  const legendary_items=equipados.filter(i=>i.grade_id>=5).map(i=>i.nome);
-  const epic_items=equipados.filter(i=>i.grade_id===4).map(i=>i.nome);
+  let legendary_items=equipados.filter(i=>i.grade_id>=5).map(i=>i.nome);
+  let epic_items=equipados.filter(i=>i.grade_id===4).map(i=>i.nome);
   // Enhance do equipamento — factor de preço importante que faltava (ex: arma +11 vs +9)
   const gearEnhances=equipados.map(i=>i.enhance||0);
   const gear_avg_enhance=gearEnhances.length?Math.round((gearEnhances.reduce((a,b)=>a+b,0)/gearEnhances.length)*10)/10:0;
@@ -379,7 +379,7 @@ async function fetchDetailLive(transportId){
   const weapon_enhance=weaponEnhances.length?Math.max(...weaponEnhances):0;
   // Tier — confirmado com dados reais como independente de grade (Raro pode ser tier 4)
   const gearTiers=equipados.map(i=>i.tier||0);
-  const gear_max_tier=gearTiers.length?Math.max(...gearTiers):0;
+  let gear_max_tier=gearTiers.length?Math.max(...gearTiers):0;
   const gear_avg_tier=gearTiers.length?Math.round((gearTiers.reduce((a,b)=>a+b,0)/gearTiers.length)*10)/10:0;
   const gear_total_holecount=equipados.reduce((s,i)=>s+(i.hole_count||0),0);
 
@@ -446,10 +446,19 @@ async function fetchDetailLive(transportId){
 
   let succession_avg_enhance=0;
   const succData=succession.data||{};
+  let successionItems=[];
   if(succData&&typeof succData==='object'){
-    const enh=Object.values(succData.equipItem||{}).filter(i=>i&&typeof i==='object').map(i=>i.enhance||0);
+    successionItems=Object.values(succData.equipItem||{}).filter(i=>i&&typeof i==='object');
+    const enh=successionItems.map(i=>i.enhance||0);
     if(enh.length)succession_avg_enhance=Math.round((enh.reduce((a,b)=>a+b,0)/enh.length)*10)/10;
   }
+  // Itens de Sucessão juntam-se às contagens do equipamento principal (mesmo NFT, 2º conjunto)
+  const successionLegendary=successionItems.filter(i=>(i.grade||0)>=5).map(i=>i.itemName||'');
+  const successionEpic=successionItems.filter(i=>(i.grade||0)===4).map(i=>i.itemName||'');
+  const successionMaxTier=successionItems.length?Math.max(...successionItems.map(i=>parseInt(i.tier||0))):0;
+  legendary_items=legendary_items.concat(successionLegendary);
+  epic_items=epic_items.concat(successionEpic);
+  gear_max_tier=Math.max(gear_max_tier,successionMaxTier);
 
   let scripture_total_completed=0;
   const scriptureData=scripture.data||{};

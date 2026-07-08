@@ -14,6 +14,12 @@ CLASS_MAP = {1:"Warrior",2:"Sorcerer",3:"Taoist",4:"Arbalist",5:"Lancer",6:"Dark
 MAX_HISTORY = 2000
 DEBUG_ENTRIES = []  # diagnóstico de falhas, escrito em data/debug_log.json no fim do run
 
+# Sobe este número sempre que mudar o que é calculado em fetch_detail() (ex: juntar itens de
+# Sucessão às contagens). Um registo com schema_version diferente volta a ser reprocessado,
+# MESMO que já tivesse dados_completos=true — sem isto, dados antigos ficavam parados para
+# sempre com a lógica velha, porque needs_update() nunca voltava a mexer neles.
+SCHEMA_VERSION = 2
+
 def safe_int(x, default=0):
     """int() que não rebenta quando a API devolve null/None num campo que devia ser numérico."""
     try:
@@ -417,6 +423,7 @@ def fetch_detail(transport_id, class_id):
 
         return {
             "dados_completos": dados_completos,
+            "schema_version": SCHEMA_VERSION,
             # Inventário
             "equipados": equipados,
             "legendary_items": legendary_items,
@@ -493,6 +500,7 @@ def fetch_detail(transport_id, class_id):
         })
         return {
             "dados_completos": False,
+            "schema_version": SCHEMA_VERSION,
             "equipados":[],"legendary_items":[],"epic_items":[],"legendary_count":0,"epic_count":0,
             "gear_avg_enhance":0,"gear_max_enhance":0,"weapon_enhance":0,
             "gear_max_tier":0,"gear_avg_tier":0,"gear_total_holecount":0,
@@ -626,6 +634,8 @@ def compute_stats(records):
 def needs_update(r):
     if not r.get("transport_id"):
         return False
+    if r.get("schema_version") != SCHEMA_VERSION:
+        return True  # dados de uma versão antiga da lógica — reprocessar mesmo que já estivesse completo
     if "dados_completos" in r:
         return not r["dados_completos"]
     # Registos antigos sem a flag: heurística anterior

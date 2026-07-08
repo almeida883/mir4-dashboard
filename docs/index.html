@@ -281,9 +281,14 @@ function avaliarNFT(nft){
   const pj=Math.round(similares.reduce((s,r,i)=>s+r.preco_draco*pesos[i],0)/ts);
   const vm=Math.round(((nft.preco_draco-pj)/pj)*100);
   const avgSim=similares.reduce((s,r)=>s+r._sim,0)/similares.length;
+  // Confiança tem de reflectir equivalência VERIFICADA, não só PS/Nível parecidos. Quando o
+  // comparável não tem dados completos, a similaridade cai para a fórmula simples (PS+Nível),
+  // que pode dar 90%+ só por coincidência de PS — sem nunca confirmar Potencial/Tier/Primal Force.
+  // Por isso a confiança não pode subir se os comparáveis não tiverem dados verificados também.
+  const nCompletos=similares.filter(dadosCompletos).length;
   let confianca='baixa';
-  if(similares.length>=8&&avgSim>=90)confianca='alta';
-  else if(similares.length>=4&&avgSim>=80)confianca='média';
+  if(nCompletos>=8&&avgSim>=90)confianca='alta';
+  else if(nCompletos>=4&&avgSim>=80)confianca='média';
   return{preco_justo:pj,vs_mercado:vm,confianca,_similares:similares};
 }
 

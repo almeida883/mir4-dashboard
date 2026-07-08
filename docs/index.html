@@ -209,19 +209,11 @@ function buildCharts(s){
   document.getElementById('top-spirits').innerHTML=Object.entries(s.top_spirits||{}).slice(0,10).map(([n,c])=>`<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #21262d;font-size:12px"><span style="color:#e3b341">${n}</span><span style="color:#f0f6fc;font-weight:600">${c}x</span></div>`).join('');
 }
 
-// Camadas de tolerância: começa estrito, alarga se não houver comparáveis suficientes
-// Camadas de tolerância: PS/Nível/Potencial alargam juntos. O Potencial Total é o factor de
-// equivalência mais forte que já confirmámos (mais do que PS/Nível sozinhos) — por isso, quando
-// sabemos o Potencial de ambos os lados, um NFT com Potencial muito diferente é EXCLUÍDO da lista
-// de comparáveis, mesmo que o PS seja praticamente igual. "Mesmo PS não chega se os itens não
-// forem parecidos" (decisão confirmada com o utilizador).
-const SIM_TIERS=[
-  {ps:0.05, nv:3,  pot:0.15, label:'estrito'},
-  {ps:0.08, nv:5,  pot:0.25, label:'alargado'},
-  {ps:0.12, nv:8,  pot:0.40, label:'amplo'},
-  {ps:0.20, nv:15, pot:9999, label:'muito amplo'}  // último nível: sem filtro de potencial (só quando faltam mesmo comparáveis)
-];
-const MIN_COMPARAVEIS=5, MAX_COMPARAVEIS=10;
+// Critério fixo de comparabilidade — sem tentar forçar um número mínimo de resultados.
+// Se não houver vendas que cumpram isto, não há comparáveis e pronto (mostra "sem dados").
+const PS_TOL=0.20, NV_TOL=15, POT_TOL=0.30;
+const MIN_SIM_INCLUIR=65; // abaixo disto, não conta como comparável de todo
+const MAX_COMPARAVEIS=10;
 
 // Usa a flag explícita do scraper quando existir (registos novos); regista antigos sem a flag caem na heurística
 function dadosCompletos(x){
@@ -258,44 +250,41 @@ function pesoRecencia(r){
   return Math.exp(-diasAtras/90);
 }
 
-// Procura comparáveis alargando a janela PS/Nível até ter amostra suficiente
-function findComparables(nft,pool,{minN=MIN_COMPARAVEIS,maxN=MAX_COMPARAVEIS}={}){
+// Passe único, sem janelas nem tentativa de atingir um mínimo de resultados. Um candidato só
+// conta como comparável se estiver dentro de PS/Nível/Potencial E acima do limiar de similaridade
+// final. Se não houver nenhum, a lista fica vazia — sem forçar nada.
+function findComparables(nft,pool,{maxN=MAX_COMPARAVEIS}={}){
   const candidatos=pool.filter(r=>r.preco_draco>50&&r.classe===nft.classe&&r.seq!==nft.seq);
   const nftTemPotencial=dadosCompletos(nft)&&(nft.potencial_total||0)>0;
-  for(const tier of SIM_TIERS){
-    const dentroPS=c=>Math.abs((c.power_score||0)-(nft.power_score||0))/Math.max(nft.power_score||1,1)<=tier.ps;
-    const dentroNv=c=>Math.abs((c.nivel||0)-(nft.nivel||0))<=tier.nv;
-    const dentroPotencial=c=>{
-      if(!nftTemPotencial)return true; // não sabemos o potencial do alvo — não dá para filtrar por isso
-      if(!dadosCompletos(c)||!(c.potencial_total>0))return true; // não sabemos o do candidato — não excluir só por falta de dado
-      const diff=Math.abs((c.potencial_total||0)-nft.potencial_total)/Math.max(nft.potencial_total,1);
-      return diff<=tier.pot;
-    };
-    const found=candidatos.filter(c=>dentroPS(c)&&dentroNv(c)&&dentroPotencial(c))
-      .map(c=>({...c,_sim:Math.round(calcSimilaridade(nft,c)*100),_tier:tier.label}));
-    if(found.length>=minN||tier===SIM_TIERS[SIM_TIERS.length-1]){
-      return found.sort((a,b)=>b._sim-a._sim).slice(0,maxN);
-    }
-  }
-  return [];
+  const dentroPS=c=>Math.abs((c.power_score||0)-(nft.power_score||0))/Math.max(nft.power_score||1,1)<=PS_TOL;
+  const dentroNv=c=>Math.abs((c.nivel||0)-(nft.nivel||0))<=NV_TOL;
+  const dentroPotencial=c=>{
+    if(!nftTemPotencial)return true; // não sabemos o potencial do alvo — não dá para filtrar por isso
+    if(!dadosCompletos(c)||!(c.potencial_total>0))return true; // não sabemos o do candidato — não excluir só por falta de dado
+    const diff=Math.abs((c.potencial_total||0)-nft.potencial_total)/Math.max(nft.potencial_total,1);
+    return diff<=POT_TOL;
+  };
+  return candidatos.filter(c=>dentroPS(c)&&dentroNv(c)&&dentroPotencial(c))
+    .map(c=>({...c,_sim:Math.round(calcSimilaridade(nft,c)*100)}))
+    .filter(c=>c._sim>=MIN_SIM_INCLUIR)
+    .sort((a,b)=>b._sim-a._sim)
+    .slice(0,maxN);
 }
 
 function avaliarNFT(nft){
   const similares=findComparables(nft,allHistory);
-  if(!similares.length)return{preco_justo:null,vs_mercado:null,confianca:null,_tier:null,_similares:[]};
-  // Peso não-linear (³) na similaridade: um comparável a 59% não deve pesar quase o mesmo que um
-  // a 99% só porque a fórmula de peso era linear — agora um match fraco conta muito menos,
-  // sem ser completamente excluído (continua a aparecer na tabela, só não domina o preço justo).
+  if(!similares.length)return{preco_justo:null,vs_mercado:null,confianca:null,_similares:[]};
+  // Peso não-linear (³) na similaridade: um comparável a 65% não deve pesar quase o mesmo que um
+  // a 99% só porque a fórmula de peso era linear — agora um match fraco conta muito menos.
   const pesos=similares.map(r=>Math.pow(r._sim/100,3)*pesoRecencia(r));
   const ts=pesos.reduce((a,b)=>a+b,0)||1;
   const pj=Math.round(similares.reduce((s,r,i)=>s+r.preco_draco*pesos[i],0)/ts);
   const vm=Math.round(((nft.preco_draco-pj)/pj)*100);
   const avgSim=similares.reduce((s,r)=>s+r._sim,0)/similares.length;
-  const tier=similares[0]._tier;
   let confianca='baixa';
-  if(similares.length>=8&&avgSim>=85&&tier==='estrito')confianca='alta';
-  else if(similares.length>=5&&avgSim>=75&&tier!=='muito amplo')confianca='média';
-  return{preco_justo:pj,vs_mercado:vm,confianca,_tier:tier,_similares:similares};
+  if(similares.length>=8&&avgSim>=90)confianca='alta';
+  else if(similares.length>=4&&avgSim>=80)confianca='média';
+  return{preco_justo:pj,vs_mercado:vm,confianca,_similares:similares};
 }
 
 function vsMercadoBadge(vs,nft){
@@ -615,17 +604,15 @@ function renderComparacaoModal(nft,loading){
 
   const listingsSimHTML=(()=>{
     if(!allListings.length)return'<div style="color:#8b949e;font-size:12px;padding:.5rem 0">Carrega a aba "NFTs à Venda" primeiro.</div>';
-    const sl=findComparables(nft,allListings,{minN:3,maxN:6});
+    const sl=findComparables(nft,allListings,{maxN:6});
     if(!sl.length)return'<div style="color:#8b949e;font-size:12px;padding:.5rem 0">Sem listings similares agora.</div>';
     return`<table class="diff-table"><thead><tr><th>Nome</th><th>Nv</th><th>PS</th><th>Preço pedido</th><th>Sim.</th><th></th></tr></thead><tbody>${sl.map(l=>`<tr style="cursor:pointer" onclick="openSideBySide(${JSON.stringify(nft).replace(/"/g,'&quot;')},${JSON.stringify(l).replace(/"/g,'&quot;')},event)"><td>${l.nome||'—'}</td><td>${l.nivel}</td><td>${(l.power_score||0).toLocaleString()}</td><td style="color:#ffa657;font-weight:600">${(l.preco_draco||0).toLocaleString()} D</td><td><span class="sim-bar"><span class="sim-bar-fill" style="width:${l._sim}%"></span></span>${l._sim}%</td><td><a class="btn-buy" href="https://www.xdraco.com/nft/trade/${l.seq}" target="_blank" onclick="event.stopPropagation()">Ver</a></td></tr>`).join('')}</tbody></table>`;
   })();
 
   const confMap={alta:{icon:'🟢',label:'Confiança alta'},'média':{icon:'🟡',label:'Confiança média'},baixa:{icon:'🟠',label:'Confiança baixa'}};
   const confInfo=confMap[nft.confianca]||null;
-  const tierNota=nft._tier&&nft._tier!=='estrito'?` · janela ${nft._tier} (poucos comparáveis estritos)`:'';
-
   document.getElementById('modal-title').textContent=`${nft.nome||'NFT'} — ${nft.classe} Nv${nft.nivel}`;
-  document.getElementById('modal-subtitle').textContent=`PS ${(nft.power_score||0).toLocaleString()} · Comparado com ${sim.length} vendas similares${tierNota}`;
+  document.getElementById('modal-subtitle').textContent=`PS ${(nft.power_score||0).toLocaleString()} · Comparado com ${sim.length} vendas similares`;
   window._lastAnaliseNFT=nft;
   document.getElementById('modal-body').innerHTML=`
     <div class="price-cards">

@@ -458,7 +458,7 @@ def fetch_detail(transport_id, class_id):
             "equip_transferencia":{},"succession_avg_enhance":0,
         }
 
-def process_nft(item):
+def process_nft(item, cached_detail=None):
     info = item.get("info", {})
     trade_dt = info.get("tradeDT", 0)
     transport_id = info.get("transportID")
@@ -477,15 +477,29 @@ def process_nft(item):
         "mirage_score": info.get("MirageScore", 0),
         "mira_x":       info.get("MiraX", 0),
         "servidor":     info.get("worldName",""),
+        "row_id":       info.get("rowID", 0),
         "trade_dt":     trade_dt,
         "data_venda":   datetime.fromtimestamp(trade_dt, tz=timezone.utc).strftime("%Y-%m-%d %H:%M") if trade_dt else "",
         "scraped_at":   datetime.now(timezone.utc).isoformat()
     }
 
-    if transport_id:
+    agora = datetime.now(timezone.utc).isoformat()
+    campos_proprios = set(record.keys()) | {"primeiro_visto", "ultima_vez_visto"}
+
+    if cached_detail is not None:
+        # NFT vendido que já tínhamos visto à venda: reaproveita o detalhe já recolhido nessa
+        # altura em vez de voltar a pedir os 10 endpoints — poupa chamadas e é mais rápido.
+        record.update({k: v for k, v in cached_detail.items() if k not in campos_proprios})
+        record["primeira_tentativa"] = cached_detail.get("primeira_tentativa", agora)
+        record["ultima_tentativa"] = agora
+        record["tentativas"] = cached_detail.get("tentativas", 1)
+        if cached_detail.get("dados_completos"):
+            record["completo_em"] = cached_detail.get("completo_em", agora)
+            record["tempo_ate_completar_h"] = cached_detail.get("tempo_ate_completar_h", 0.0)
+        record["_reaproveitado_de_listagem"] = True
+    elif transport_id:
         detail = fetch_detail(transport_id, class_id)
         record.update(detail)
-        agora = datetime.now(timezone.utc).isoformat()
         record["primeira_tentativa"] = agora
         record["ultima_tentativa"] = agora
         record["tentativas"] = 1
@@ -570,14 +584,21 @@ def main():
     print("🚀 MIR4 Scraper v3:", datetime.now().strftime("%Y-%m-%d %H:%M"))
 
     history_path = "data/nft_history.json"
+    listings_path = "data/listings_active.json"
     try:
         with open(history_path, encoding="utf-8") as f:
             history = json.load(f)
     except:
         history = []
+    try:
+        with open(listings_path, encoding="utf-8") as f:
+            listings_active = json.load(f)
+    except:
+        listings_active = []
 
     existing_seqs = {r["seq"] for r in history}
-    print(f"📦 Histórico actual: {len(history)} NFTs")
+    listings_by_tid = {l["transport_id"]: l for l in listings_active if l.get("transport_id")}
+    print(f"📦 Histórico actual: {len(history)} NFTs | 🏪 Listagens activas: {len(listings_active)}")
 
     print("📋 A recolher listas...")
     recent = fetch_list("recent", pages=8)
@@ -593,13 +614,20 @@ def main():
             seen.add(seq)
             unique_items.append(item)
 
-    print(f"🆕 {len(unique_items)} NFTs novos para processar")
+    print(f"🆕 {len(unique_items)} vendas novas para processar")
 
     new_records = []
     for i, item in enumerate(unique_items):
-        nome = item.get("info",{}).get("characterName","?")
-        print(f"  [{i+1}/{len(unique_items)}] {nome}")
-        record = process_nft(item)
+        info = item.get("info", {})
+        tid = info.get("transportID")
+        nome = info.get("characterName", "?")
+        cached = listings_by_tid.get(tid)
+        if cached and cached.get("dados_completos"):
+            print(f"  [{i+1}/{len(unique_items)}] {nome} (reaproveitado da listagem)")
+            record = process_nft(item, cached_detail=cached)
+        else:
+            print(f"  [{i+1}/{len(unique_items)}] {nome}")
+            record = process_nft(item)
         new_records.append(record)
 
     history = (new_records + history)[:MAX_HISTORY]
@@ -632,6 +660,76 @@ def main():
                 print("❌")
             time.sleep(0.5)
 
+    # ---- LISTAGENS À VENDA ----
+    # Guarda o estado de quem está à venda AGORA, com o mesmo detalhe que já recolhemos para
+    # vendas. Quando uma listagem desaparece e o mesmo transport_id aparece como venda nova,
+    # os dados já recolhidos são reaproveitados acima (em vez de pedir tudo outra vez).
+    print("\n🏪 A recolher listagens à venda...")
+    sale_items = fetch_list("sale", pages=25)
+    current_active_tids = set()
+    sale_by_tid = {}
+    for item in sale_items:
+        tid = item.get("info", {}).get("transportID")
+        if tid:
+            current_active_tids.add(tid)
+            sale_by_tid[tid] = item
+
+    sold_tid_set = {r.get("transport_id") for r in new_records if r.get("transport_id")}
+
+    ainda_activas = []
+    n_vendidas = n_desaparecidas = 0
+    for l in listings_active:
+        tid = l.get("transport_id")
+        if tid in current_active_tids:
+            item = sale_by_tid.get(tid)
+            if item:
+                l["preco_draco"] = item.get("info", {}).get("price", l.get("preco_draco"))
+            l["ultima_vez_visto"] = datetime.now(timezone.utc).isoformat()
+            ainda_activas.append(l)
+        elif tid in sold_tid_set:
+            n_vendidas += 1  # já reaproveitado acima; só sai da lista de activas
+        else:
+            n_desaparecidas += 1  # delistado/cancelado — sai sem ir para o histórico de vendas
+
+    novas_tids = current_active_tids - set(listings_by_tid.keys())
+    novas_items = [it for it in sale_items if it.get("info", {}).get("transportID") in novas_tids]
+    MAX_NOVAS_LISTAGENS = 25  # tal como o backfill, para não rebentar rate-limit de uma vez
+    print(f"🏪 {len(current_active_tids)} activas | {len(novas_items)} novas | {n_vendidas} venderam | {n_desaparecidas} desapareceram sem venda confirmada")
+
+    for i, item in enumerate(novas_items[:MAX_NOVAS_LISTAGENS]):
+        nome = item.get("info", {}).get("characterName", "?")
+        print(f"  [listagem {i+1}/{min(len(novas_items),MAX_NOVAS_LISTAGENS)}] {nome}")
+        record = process_nft(item)
+        agora = datetime.now(timezone.utc).isoformat()
+        record["primeiro_visto"] = agora
+        record["ultima_vez_visto"] = agora
+        ainda_activas.append(record)
+
+    # Backfill de listagens ainda sem dados completos (mesma lógica do histórico, ficheiro diferente)
+    to_update_listings = [l for l in ainda_activas if needs_update(l)][:15]
+    if to_update_listings:
+        print(f"🔄 A actualizar {len(to_update_listings)} listagens incompletas...")
+        for i, l in enumerate(to_update_listings):
+            print(f"  [{i+1}/{len(to_update_listings)}] {l.get('nome','?')} (tentativa #{l.get('tentativas',0)+1})", end=" ... ")
+            detail = fetch_detail(l["transport_id"], l.get("classe_id", 0))
+            agora = datetime.now(timezone.utc).isoformat()
+            idx = next((j for j, h in enumerate(ainda_activas) if h.get("transport_id") == l.get("transport_id")), None)
+            if idx is not None:
+                ainda_activas[idx]["tentativas"] = ainda_activas[idx].get("tentativas", 0) + 1
+                ainda_activas[idx]["ultima_tentativa"] = agora
+                ainda_activas[idx].setdefault("primeira_tentativa", agora)
+                if detail and detail.get("dados_completos"):
+                    ainda_activas[idx].update(detail)
+                    ainda_activas[idx]["completo_em"] = agora
+                    print(f"✅ pot:{detail.get('potencial_total',0)}")
+                else:
+                    print("❌")
+            time.sleep(0.5)
+
+    listings_active = ainda_activas[:1000]
+    with open(listings_path, "w", encoding="utf-8") as f:
+        json.dump(listings_active, f, ensure_ascii=False, indent=2)
+
     # Diagnóstico de falhas (últimas 300 entradas) — ver que endpoints estão a falhar e porquê
     if DEBUG_ENTRIES:
         debug_path = "data/debug_log.json"
@@ -656,7 +754,7 @@ def main():
     with open("data/stats.json", "w", encoding="utf-8") as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
 
-    print(f"✅ +{len(new_records)} novos | Total: {len(history)}")
+    print(f"✅ +{len(new_records)} vendas novas | Total vendas: {len(history)} | Listagens activas: {len(listings_active)}")
 
 if __name__ == "__main__":
     main()

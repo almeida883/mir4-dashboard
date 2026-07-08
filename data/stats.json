@@ -1,15 +1,29 @@
 {
-  "updated_at": "2026-07-08T06:47:42.460436+00:00",
-  "total": 901,
-  "preco_medio_global": 2024,
-  "preco_mediano_global": 510,
+  "updated_at": "2026-07-08T08:56:57.791910+00:00",
+  "total": 906,
+  "preco_medio_global": 2035,
+  "preco_mediano_global": 514,
   "por_classe": {
+    "Arbalist": {
+      "media": 2254,
+      "mediana": 700,
+      "min": 1,
+      "max": 48000,
+      "count": 300
+    },
     "Taoist": {
-      "media": 1592,
-      "mediana": 332,
+      "media": 1587,
+      "mediana": 344,
       "min": 1,
       "max": 18799,
-      "count": 165
+      "count": 166
+    },
+    "Lancer": {
+      "media": 2419,
+      "mediana": 550,
+      "min": 1,
+      "max": 22000,
+      "count": 109
     },
     "Warrior": {
       "media": 2236,
@@ -17,20 +31,6 @@
       "min": 1,
       "max": 27500,
       "count": 123
-    },
-    "Arbalist": {
-      "media": 2255,
-      "mediana": 700,
-      "min": 1,
-      "max": 48000,
-      "count": 298
-    },
-    "Lancer": {
-      "media": 2309,
-      "mediana": 540,
-      "min": 1,
-      "max": 22000,
-      "count": 108
     },
     "Sorcerer": {
       "media": 1583,
@@ -80,13 +80,13 @@
     },
     "130": {
       "media": 260,
-      "mediana": 262,
-      "count": 144
+      "mediana": 265,
+      "count": 145
     },
     "140": {
       "media": 586,
       "mediana": 550,
-      "count": 179
+      "count": 181
     },
     "150": {
       "media": 2126,
@@ -94,14 +94,14 @@
       "count": 234
     },
     "160": {
-      "media": 7911,
+      "media": 7876,
       "mediana": 7000,
-      "count": 117
+      "count": 118
     },
     "170": {
-      "media": 17948,
-      "mediana": 15999,
-      "count": 13
+      "media": 17680,
+      "mediana": 15100,
+      "count": 14
     }
   },
   "por_ps": {
@@ -118,12 +118,12 @@
     "300000": {
       "media": 526,
       "mediana": 500,
-      "count": 249
+      "count": 252
     },
     "400000": {
-      "media": 2268,
-      "mediana": 1874,
-      "count": 214
+      "media": 2275,
+      "mediana": 1899,
+      "count": 215
     },
     "500000": {
       "media": 8237,
@@ -131,27 +131,27 @@
       "count": 113
     },
     "600000": {
-      "media": 22732,
-      "mediana": 19995,
-      "count": 10
+      "media": 21956,
+      "mediana": 19990,
+      "count": 11
     }
   },
   "top_spirits": {
-    "Wooska, Príncipe Herdeiro das Trevas": 53,
+    "Wooska, Príncipe Herdeiro das Trevas": 57,
+    "Lulu, a Felina Encantada": 54,
+    "Balrog, o Lorde do Fogo": 50,
     "Darknyan, o Ressuscitador": 49,
-    "Lulu, a Felina Encantada": 48,
     "Drago Ponta de Sangue": 45,
-    "Balrog, o Lorde do Fogo": 44,
     "Setra Radiante": 41,
-    "Reidouro, o Falcão de Fogo": 34,
-    "Grifavalo, o Garanhão Sombrio": 27,
+    "Reidouro, o Falcão de Fogo": 36,
+    "Grifavalo, o Garanhão Sombrio": 30,
+    "Vendavalma, o Invocador do Vento": 20,
     "Lucy, dos Olhos Vermelhos": 19,
     "Candela, a Imperatriz Radiante": 18,
-    "Vendavalma, o Invocador do Vento": 18,
+    "Flordoura, a Dragoa Fada": 17,
     "Styx, o Cavaleiro Fantasma": 17,
-    "Hydra, o Dragão de Três Cabeças": 15,
-    "Rocki, o Dragonino Rochoso": 15,
-    "Sumacheon, o Rei Demoníaco do Mar do Norte": 14
+    "Sumacheon, o Rei Demoníaco do Mar do Norte": 16,
+    "Imperador da Destruição, o Demônio Infernal Octogonal": 16
   },
   "top_legendary_items": {
     "Pedra Mágica de Crescimento Lendária": 63,
@@ -166,8 +166,8 @@
     "Pedra Mágica de Força Lendária": 27,
     "Pedra Mágica de Destruição Lendária": 25,
     "Espectromite Lendária": 23,
+    "Brincos de Ligação Celestial": 18,
     "Pedra Mágica de Foco Lendária": 18,
-    "Pedaço do Dragão Divino": 18,
-    "Núcleo do Cristal de Mana": 18
+    "Pedaço do Dragão Divino": 18
   }
 }

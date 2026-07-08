@@ -30,6 +30,14 @@ def diag_endpoint(resp):
         return "vazio"
     return "ok"
 
+def get_info(item):
+    """As listas 'recent'/'topTraded' embrulham os campos do NFT em item['info'];
+    'sale'/'recommended' trazem os campos directamente no item, sem embrulho.
+    Isto normaliza os dois formatos para o resto do código não ter de saber a diferença."""
+    if not isinstance(item, dict):
+        return {}
+    return item.get("info", item)
+
 def get(url, retries=3):
     last_err = None
     for i in range(retries):
@@ -486,7 +494,7 @@ def fetch_detail(transport_id, class_id):
         }
 
 def process_nft(item, cached_detail=None):
-    info = item.get("info", {})
+    info = get_info(item)
     trade_dt = info.get("tradeDT", 0)
     transport_id = info.get("transportID")
     class_id = info.get("class", 0)
@@ -636,7 +644,7 @@ def main():
     seen = set()
     unique_items = []
     for item in all_items:
-        seq = item.get("info", {}).get("seq")
+        seq = get_info(item).get("seq")
         if seq and seq not in seen and seq not in existing_seqs:
             seen.add(seq)
             unique_items.append(item)
@@ -645,7 +653,7 @@ def main():
 
     new_records = []
     for i, item in enumerate(unique_items):
-        info = item.get("info", {})
+        info = get_info(item)
         tid = info.get("transportID")
         nome = info.get("characterName", "?")
         cached = listings_by_tid.get(tid)
@@ -696,7 +704,7 @@ def main():
     current_active_tids = set()
     sale_by_tid = {}
     for item in sale_items:
-        tid = item.get("info", {}).get("transportID")
+        tid = get_info(item).get("transportID")
         if tid:
             current_active_tids.add(tid)
             sale_by_tid[tid] = item
@@ -710,7 +718,7 @@ def main():
         if tid in current_active_tids:
             item = sale_by_tid.get(tid)
             if item:
-                l["preco_draco"] = item.get("info", {}).get("price", l.get("preco_draco"))
+                l["preco_draco"] = get_info(item).get("price", l.get("preco_draco"))
             l["ultima_vez_visto"] = datetime.now(timezone.utc).isoformat()
             ainda_activas.append(l)
         elif tid in sold_tid_set:
@@ -719,12 +727,12 @@ def main():
             n_desaparecidas += 1  # delistado/cancelado — sai sem ir para o histórico de vendas
 
     novas_tids = current_active_tids - set(listings_by_tid.keys())
-    novas_items = [it for it in sale_items if it.get("info", {}).get("transportID") in novas_tids]
+    novas_items = [it for it in sale_items if get_info(it).get("transportID") in novas_tids]
     MAX_NOVAS_LISTAGENS = 25  # tal como o backfill, para não rebentar rate-limit de uma vez
     print(f"🏪 {len(current_active_tids)} activas | {len(novas_items)} novas | {n_vendidas} venderam | {n_desaparecidas} desapareceram sem venda confirmada")
 
     for i, item in enumerate(novas_items[:MAX_NOVAS_LISTAGENS]):
-        nome = item.get("info", {}).get("characterName", "?")
+        nome = get_info(item).get("characterName", "?")
         print(f"  [listagem {i+1}/{min(len(novas_items),MAX_NOVAS_LISTAGENS)}] {nome}")
         record = process_nft(item)
         agora = datetime.now(timezone.utc).isoformat()

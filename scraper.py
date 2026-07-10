@@ -556,6 +556,18 @@ def process_nft(item, cached_detail=None):
             record["completo_em"] = cached_detail.get("completo_em", agora)
             record["tempo_ate_completar_h"] = cached_detail.get("tempo_ate_completar_h", 0.0)
         record["_reaproveitado_de_listagem"] = True
+
+        # Tempo que o NFT esteve à venda até ser vendido — sabíamos "primeiro_visto" (quando
+        # entrou no mercado) mas estava a ser descartado ao passar de listagem para venda.
+        primeiro_visto = cached_detail.get("primeiro_visto")
+        if primeiro_visto:
+            record["primeiro_visto_no_mercado"] = primeiro_visto
+            try:
+                t0 = datetime.fromisoformat(primeiro_visto)
+                t1 = datetime.fromtimestamp(trade_dt, tz=timezone.utc) if trade_dt else datetime.now(timezone.utc)
+                record["tempo_no_mercado_h"] = round((t1 - t0).total_seconds() / 3600, 2)
+            except Exception:
+                pass
     elif transport_id:
         detail = fetch_detail(transport_id, class_id)
         record.update(detail)

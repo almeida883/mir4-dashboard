@@ -259,15 +259,16 @@ function pesoRecencia(r){
 // conta como comparável se estiver dentro de PS/Nível/Potencial E acima do limiar de similaridade
 // final. Se não houver nenhum, a lista fica vazia — sem forçar nada.
 function findComparables(nft,pool,{maxN=MAX_COMPARAVEIS}={}){
-  const nftTemPotencial=dadosCompletos(nft)&&(nft.potencial_total||0)>0;
-  // Se o alvo tem dados verificados, um comparável SEM dados verificados é excluído por
-  // completo — não entra "à mesma" só marcado com aviso. Preferimos poucos comparáveis
-  // fiáveis a muitos onde não sabemos se são mesmo equivalentes.
-  const candidatos=pool.filter(r=>r.preco_draco>50&&r.classe===nft.classe&&r.seq!==nft.seq&&(!nftTemPotencial||dadosCompletos(r)));
+  const nftCompleto=dadosCompletos(nft);
+  const nftTemPotencial=nftCompleto&&(nft.potencial_total||0)>0;
+  // Se o alvo tem dados verificados (mesmo que o Potencial em si seja 0 — ex: personagem de
+  // nível baixo que ainda não investiu nada), um comparável SEM dados verificados é excluído
+  // por completo — não entra "à mesma" só marcado com aviso.
+  const candidatos=pool.filter(r=>r.preco_draco>50&&r.classe===nft.classe&&r.seq!==nft.seq&&(!nftCompleto||dadosCompletos(r)));
   const dentroPS=c=>Math.abs((c.power_score||0)-(nft.power_score||0))/Math.max(nft.power_score||1,1)<=PS_TOL;
   const dentroNv=c=>Math.abs((c.nivel||0)-(nft.nivel||0))<=NV_TOL;
   const dentroPotencial=c=>{
-    if(!nftTemPotencial)return true; // não sabemos o potencial do alvo — não dá para filtrar por isso
+    if(!nftTemPotencial)return true; // Potencial do alvo é 0 ou desconhecido — não dá para filtrar por diferença
     const diff=Math.abs((c.potencial_total||0)-nft.potencial_total)/Math.max(nft.potencial_total,1);
     return diff<=POT_TOL;
   };

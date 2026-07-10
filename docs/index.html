@@ -732,11 +732,23 @@ function clearFilters(p){
 
 async function loadListings(){
   document.getElementById('tbody-listings').innerHTML='<tr><td colspan="8" class="loading">A carregar listings...</td></tr>';
+  // Já não vamos buscar ao vivo à API do MIR4 (20 pedidos, lento, sem dados de detalhe) —
+  // o scraper.py agora mantém data/listings_active.json com o mesmo detalhe que o histórico
+  // de vendas, incluindo Potencial/Tier/Primal Force já verificados quando disponíveis.
+  const tentarFetch=async()=>{
+    const r=await fetch(BASE+'listings_active.json');
+    if(!r.ok)throw new Error(`HTTP ${r.status}`);
+    return r.json();
+  };
   try{
-    // Já não vamos buscar ao vivo à API do MIR4 (20 pedidos, lento, sem dados de detalhe) —
-    // o scraper.py agora mantém data/listings_active.json com o mesmo detalhe que o histórico
-    // de vendas, incluindo Potencial/Tier/Primal Force já verificados quando disponíveis.
-    const results=await fetch(BASE+'listings_active.json').then(r=>r.json());
+    let results;
+    try{
+      results=await tentarFetch();
+    }catch(e1){
+      console.error('1ª tentativa de carregar listings_active.json falhou, a repetir:',e1);
+      await new Promise(res=>setTimeout(res,1500));
+      results=await tentarFetch(); // se esta também falhar, cai no catch de fora
+    }
     allListings=results.map(r=>{
       const nft={...r,data_venda:'—'};
       const av=avaliarNFT(nft);
@@ -744,7 +756,10 @@ async function loadListings(){
     });
     document.getElementById('fl-count').textContent=allListings.length+' listings';
     renderListings();
-  }catch(e){document.getElementById('tbody-listings').innerHTML='<tr><td colspan="8" class="empty">Erro ao carregar</td></tr>';}
+  }catch(e){
+    console.error('Erro ao carregar listings_active.json (2 tentativas falharam):',e);
+    document.getElementById('tbody-listings').innerHTML='<tr><td colspan="8" class="empty">Erro ao carregar — ver consola (F12) para detalhe, ou clicar Actualizar</td></tr>';
+  }
 }
 
 function sortListings(col){if(listSortCol2===col)listSortDir2*=-1;else{listSortCol2=col;listSortDir2=-1;}renderListings();}

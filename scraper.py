@@ -18,7 +18,7 @@ DEBUG_ENTRIES = []  # diagnóstico de falhas, escrito em data/debug_log.json no 
 # Sucessão às contagens). Um registo com schema_version diferente volta a ser reprocessado,
 # MESMO que já tivesse dados_completos=true — sem isto, dados antigos ficavam parados para
 # sempre com a lógica velha, porque needs_update() nunca voltava a mexer neles.
-SCHEMA_VERSION = 2
+SCHEMA_VERSION = 3
 
 def safe_int(x, default=0):
     """int() que não rebenta quando a API devolve null/None num campo que devia ser numérico."""
@@ -425,7 +425,7 @@ def fetch_detail(transport_id, class_id):
             "dados_completos": dados_completos,
             "schema_version": SCHEMA_VERSION,
             # Inventário
-            "equipados": equipados,
+            "equipados": gear_only,  # só equipamento real (arma/armadura/acessório) — antes guardava o inventário todo (600+ itens, incl. poções/materiais)
             "legendary_items": legendary_items,
             "epic_items": epic_items,
             "legendary_count": len(legendary_items),
@@ -623,8 +623,14 @@ def compute_stats(records):
             spirit_freq[s] += 1
     stats["top_spirits"] = dict(spirit_freq.most_common(15))
 
+    # Só conta itens de registos já reprocessados com a lógica actual (schema_version correcto).
+    # Registos antigos ainda têm o inventário todo a contar como "lendário" (bug já corrigido no
+    # código, mas os dados antigos só se limpam quando forem reprocessados) — misturar os dois
+    # continuava a poluir este top com poções/materiais em vez de equipamento real.
     leg_freq = Counter()
     for r in top:
+        if r.get("schema_version") != SCHEMA_VERSION:
+            continue
         for i in r.get("legendary_items", []):
             leg_freq[i] += 1
     stats["top_legendary_items"] = dict(leg_freq.most_common(15))

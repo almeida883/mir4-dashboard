@@ -1,5 +1,828 @@
 [
   {
+    "nft_id": "60171",
+    "seq": 2354312,
+    "transport_id": 365501,
+    "nome": "Pittchula",
+    "classe_id": 4,
+    "classe": "Arbalist",
+    "nivel": 102,
+    "power_score": 157126,
+    "preco_draco": 1,
+    "mirage_score": 197953,
+    "mira_x": 2677,
+    "servidor": "SA023",
+    "row_id": 1,
+    "trade_dt": 1783728662,
+    "data_venda": "2026-07-11 00:11",
+    "scraped_at": "2026-07-11T01:03:02.543967+00:00",
+    "dados_completos": true,
+    "schema_version": 3,
+    "equipados": [
+      {
+        "nome": "Luvas de Uniforme Marcial de Pacificação",
+        "grade": "Raro",
+        "grade_id": 3,
+        "enhance": 8,
+        "mainType": 3,
+        "tier": 4,
+        "hole_count": 0
+      },
+      {
+        "nome": "Anel Lunissolar",
+        "grade": "Épico",
+        "grade_id": 4,
+        "enhance": 6,
+        "mainType": 4,
+        "tier": 1,
+        "hole_count": 0
+      },
+      {
+        "nome": "Torso de Uniforme Marcial de Assassino",
+        "grade": "Épico",
+        "grade_id": 4,
+        "enhance": 5,
+        "mainType": 3,
+        "tier": 1,
+        "hole_count": 0
+      },
+      {
+        "nome": "Brincos Inflexíveis",
+        "grade": "Raro",
+        "grade_id": 3,
+        "enhance": 6,
+        "mainType": 4,
+        "tier": 3,
+        "hole_count": 0
+      },
+      {
+        "nome": "Colar de Sangue de Dragão",
+        "grade": "Raro",
+        "grade_id": 3,
+        "enhance": 6,
+        "mainType": 4,
+        "tier": 2,
+        "hole_count": 0
+      },
+      {
+        "nome": "Botas de Uniforme Marcial de Assassino",
+        "grade": "Épico",
+        "grade_id": 4,
+        "enhance": 5,
+        "mainType": 3,
+        "tier": 1,
+        "hole_count": 0
+      },
+      {
+        "nome": "Pulseira Lunissolar",
+        "grade": "Épico",
+        "grade_id": 4,
+        "enhance": 5,
+        "mainType": 4,
+        "tier": 1,
+        "hole_count": 0
+      },
+      {
+        "nome": "Arco da Lua Nova",
+        "grade": "Épico",
+        "grade_id": 4,
+        "enhance": 5,
+        "mainType": 2,
+        "tier": 1,
+        "hole_count": 0
+      },
+      {
+        "nome": "Pernas de Uniforme Marcial de Aço Sombrio",
+        "grade": "Raro",
+        "grade_id": 3,
+        "enhance": 8,
+        "mainType": 3,
+        "tier": 4,
+        "hole_count": 0
+      },
+      {
+        "nome": "Berloque Corcel de Batalha",
+        "grade": "Raro",
+        "grade_id": 3,
+        "enhance": 5,
+        "mainType": 4,
+        "tier": 1,
+        "hole_count": 0
+      },
+      {
+        "nome": "Medalha da Harmonia",
+        "grade": "Raro",
+        "grade_id": 3,
+        "enhance": 6,
+        "mainType": 4,
+        "tier": 1,
+        "hole_count": 0
+      }
+    ],
+    "legendary_items": [
+      "Bastão de Sarmati",
+      "Cabaça de Wu Yeogi",
+      "Grampo Ornamental de Jade de Cheonpa",
+      "Tomo de Bok Yangjeo",
+      "Agulha Dourada de Dragão Amarelo do Ervanário Hong",
+      "Pakua de Chogye",
+      "Ombreira de Sondeok"
+    ],
+    "epic_items": [
+      "Anel Lunissolar",
+      "Torso de Uniforme Marcial de Assassino",
+      "Botas de Uniforme Marcial de Assassino",
+      "Pulseira Lunissolar",
+      "Arco da Lua Nova"
+    ],
+    "legendary_count": 7,
+    "gear_avg_enhance": 5.9,
+    "gear_max_enhance": 8,
+    "weapon_enhance": 5,
+    "gear_max_tier": 4,
+    "gear_avg_tier": 1.8,
+    "gear_total_holecount": 0,
+    "gear_raw_debug": [
+      {
+        "itemUID": "638338125099696129",
+        "itemID": "303204016",
+        "enhance": 8,
+        "stack": 0,
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "holeCount": 0,
+        "uniqueNo": "",
+        "limited": "",
+        "itemName": "Luvas de Uniforme Marcial de Pacificação",
+        "grade": "3",
+        "mainType": 3,
+        "subType": 3,
+        "tabCategory": 1,
+        "tier": "4",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pca_01/PCA_Armor_03_Gloves.png",
+        "optionSlot": 0
+      },
+      {
+        "itemUID": "728989800792981504",
+        "itemID": "403201018",
+        "enhance": 6,
+        "stack": 0,
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "holeCount": 0,
+        "uniqueNo": "",
+        "limited": "",
+        "itemName": "Anel Lunissolar",
+        "grade": "4",
+        "mainType": 4,
+        "subType": 3,
+        "tabCategory": 1,
+        "tier": "1",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_Ring_003.png",
+        "optionSlot": 0
+      },
+      {
+        "itemUID": "766196621441892353",
+        "itemID": "301204018",
+        "enhance": 5,
+        "stack": 0,
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "holeCount": 0,
+        "uniqueNo": "",
+        "limited": "",
+        "itemName": "Torso de Uniforme Marcial de Assassino",
+        "grade": "4",
+        "mainType": 3,
+        "subType": 1,
+        "tabCategory": 1,
+        "tier": "1",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pca_01/PCA_Armor_05_Top.png",
+        "optionSlot": 0
+      },
+      {
+        "itemUID": "823281066132635648",
+        "itemID": "404201012",
+        "enhance": 6,
+        "stack": 0,
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "holeCount": 0,
+        "uniqueNo": "",
+        "limited": "",
+        "itemName": "Brincos Inflexíveis",
+        "grade": "3",
+        "mainType": 4,
+        "subType": 4,
+        "tabCategory": 0,
+        "tier": "3",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_EarRing_003.png",
+        "optionSlot": 0
+      },
+      {
+        "itemUID": "841079341888045057",
+        "itemID": "401201013",
+        "enhance": 6,
+        "stack": 0,
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "holeCount": 0,
+        "uniqueNo": "",
+        "limited": "",
+        "itemName": "Colar de Sangue de Dragão",
+        "grade": "3",
+        "mainType": 4,
+        "subType": 1,
+        "tabCategory": 1,
+        "tier": "2",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_Necklace_006.png",
+        "optionSlot": 0
+      },
+      {
+        "itemUID": "904434885507416064",
+        "itemID": "304204018",
+        "enhance": 5,
+        "stack": 0,
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "holeCount": 0,
+        "uniqueNo": "",
+        "limited": "",
+        "itemName": "Botas de Uniforme Marcial de Assassino",
+        "grade": "4",
+        "mainType": 3,
+        "subType": 4,
+        "tabCategory": 1,
+        "tier": "1",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pca_01/PCA_Armor_05_Shose.png",
+        "optionSlot": 0
+      },
+      {
+        "itemUID": "921846459587231744",
+        "itemID": "402201018",
+        "enhance": 5,
+        "stack": 0,
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "holeCount": 0,
+        "uniqueNo": "",
+        "limited": "",
+        "itemName": "Pulseira Lunissolar",
+        "grade": "4",
+        "mainType": 4,
+        "subType": 2,
+        "tabCategory": 1,
+        "tier": "1",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_Bracelet_003.png",
+        "optionSlot": 0
+      },
+      {
+        "itemUID": "978257837587824640",
+        "itemID": "200204018",
+        "enhance": 5,
+        "stack": 0,
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "holeCount": 0,
+        "uniqueNo": "",
+        "limited": "",
+        "itemName": "Arco da Lua Nova",
+        "grade": "4",
+        "mainType": 2,
+        "subType": 4,
+        "tabCategory": 1,
+        "tier": "1",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pca_01/Icon_WPN_PCA_05.png",
+        "optionSlot": 0
+      },
+      {
+        "itemUID": "1026396614755090432",
+        "itemID": "302204017",
+        "enhance": 8,
+        "stack": 0,
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "holeCount": 0,
+        "uniqueNo": "",
+        "limited": "",
+        "itemName": "Pernas de Uniforme Marcial de Aço Sombrio",
+        "grade": "3",
+        "mainType": 3,
+        "subType": 2,
+        "tabCategory": 1,
+        "tier": "4",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pca_01/PCA_Armor_04_Pants.png",
+        "optionSlot": 0
+      },
+      {
+        "itemUID": "3016858244265148416",
+        "itemID": "406201009",
+        "enhance": 5,
+        "stack": 0,
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "holeCount": 0,
+        "uniqueNo": "",
+        "limited": "",
+        "itemName": "Berloque Corcel de Batalha",
+        "grade": "3",
+        "mainType": 4,
+        "subType": 6,
+        "tabCategory": 0,
+        "tier": "1",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_BellCharm_004.png",
+        "optionSlot": 0
+      },
+      {
+        "itemUID": "3016858312984625152",
+        "itemID": "405201009",
+        "enhance": 6,
+        "stack": 0,
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "holeCount": 0,
+        "uniqueNo": "",
+        "limited": "",
+        "itemName": "Medalha da Harmonia",
+        "grade": "3",
+        "mainType": 4,
+        "subType": 5,
+        "tabCategory": 0,
+        "tier": "1",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_PairedBi_004.png",
+        "optionSlot": 0
+      }
+    ],
+    "succession_raw_debug": [
+      {
+        "itemIdx": "240120001",
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "enhance": 6,
+        "grade": "5",
+        "tier": "1",
+        "itemType": "24_1",
+        "itemName": "Bastão de Sarmati",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Staff_01.png"
+      },
+      {
+        "itemIdx": "240320001",
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "enhance": 5,
+        "grade": "5",
+        "tier": "1",
+        "itemType": "24_3",
+        "itemName": "Cabaça de Wu Yeogi",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Bottle_01.png"
+      },
+      {
+        "itemIdx": "240220001",
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "enhance": 5,
+        "grade": "5",
+        "tier": "1",
+        "itemType": "24_2",
+        "itemName": "Grampo Ornamental de Jade de Cheonpa",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Hairpin_01.png"
+      },
+      {
+        "itemIdx": "240420001",
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "enhance": 5,
+        "grade": "5",
+        "tier": "1",
+        "itemType": "24_4",
+        "itemName": "Tomo de Bok Yangjeo",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Book_01.png"
+      },
+      {
+        "itemIdx": "240520001",
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "enhance": 3,
+        "grade": "5",
+        "tier": "1",
+        "itemType": "24_5",
+        "itemName": "Agulha Dourada de Dragão Amarelo do Ervanário Hong",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Needlecase_01.png"
+      },
+      {
+        "itemIdx": "240720001",
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "enhance": 3,
+        "grade": "5",
+        "tier": "1",
+        "itemType": "24_7",
+        "itemName": "Pakua de Chogye",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_EightTrigrams_01.png"
+      },
+      {
+        "itemIdx": "240820001",
+        "tranceStep": 0,
+        "RefineStep": 0,
+        "enhance": 1,
+        "grade": "5",
+        "tier": "1",
+        "itemType": "24_8",
+        "itemName": "Ombreira de Sondeok",
+        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Pauldron_01.png"
+      }
+    ],
+    "epic_count": 5,
+    "trained_skills": {
+      "Chuva de Setas": 7,
+      "Tiro Rápido": 7,
+      "Vendaval de Golpe de Dor": 7,
+      "Seta da Ilusão": 8,
+      "Escudo Explosivo": 8,
+      "Seta do Clarão": 8,
+      "Arco Celestial": 8,
+      "Olho da Mente": 9,
+      "Prisão de Gelo": 9,
+      "Escudo de Aniquilação": 7,
+      "Escudo da Névoa Venenosa": 8,
+      "Seta da Procura": 8,
+      "Ocultação": 9
+    },
+    "max_skill_lv": 9,
+    "mainstats": {
+      "HP": 75352.0,
+      "MP": 11881.0,
+      "ATAQUE FÍSICO": 4890.0,
+      "ATAQUE de Feitiço": 1559.0,
+      "DEFESA FÍSICA": 3388.0,
+      "DEFESA contra feitiços": 3266.0
+    },
+    "all_stats": {
+      "HP": 75352.0,
+      "REGENERAÇÃO DE % DE HP (cada 10s)": 0.8,
+      "MP": 11881.0,
+      "REGENERAÇÃO DE % DE MP (cada 10s)": 5.0,
+      "ATAQUE FÍSICO": 4890.0,
+      "ATAQUE de Feitiço": 1559.0,
+      "DEFESA FÍSICA": 3388.0,
+      "DEFESA contra feitiços": 3266.0,
+      "Precisão": 1329.0,
+      "EVASÃO": 1350.0,
+      "CRÍTICO": 778.0,
+      "EVASÃO DE CRÍTICO": 966.0,
+      "Aumento do DANO DE ATAQUE CRÍTICO": 252.7,
+      "Redução do DANO CRÍTICO Recebido": 167.4,
+      "Aumento do DANO DE ATAQUE de Esmagamento": 173.6,
+      "Redução do DANO de Esmagamento Recebido": 125.8,
+      "Poder Antidemônio": 25.0,
+      "Aumento do DANO DE ATAQUE em PvP": 73.6,
+      "Redução do DANO em PvP Recebido": 50.7,
+      "Aumento do DANO DE ATAQUE de Monstros": 219.0,
+      "Aumento de DANO DE ATAQUE do Boss": 211.9,
+      "Redução do DANO Recebido de Monstros": 219.1,
+      "Redução do DANO Recebido do Boss": 179.2,
+      "Aumento de DANO DE ATAQUE de Habilidade": 106.2,
+      "Redução do DANO de Habilidade Recebido": 48.5,
+      "Aumento de Todo o DANO DE ATAQUE": 37.9,
+      "Redução de Todo o DANO Recebido": 21.2,
+      "Aumento da Probabilidade de Sucesso de Atordoar": 56.4,
+      "Aumento de RESISTÊNCIA a Atordoar": 83.0,
+      "Aumento da Probabilidade de Sucesso de Debilitação": 43.0,
+      "Aumento de RESISTÊNCIA à Debilitação": 60.4,
+      "Aumento da Probabilidade de Sucesso de Silenciar": 53.2,
+      "Aumento de RESISTÊNCIA a Silenciar": 68.9,
+      "Aumento de EXP de Caça": 144.0,
+      "Aumento de Ganho de Cobre de Caça": 101.0,
+      "Aumento de Ganho de Energia": 16.4,
+      "Aumento de Ganho de Aço Negro": 120.0,
+      "Aumento da Probabilidade de Obtenção": 53.7,
+      "Aumento da Probabilidade de Obtenção de Sorte": 43.0,
+      "Aceleramento do Tempo de Recolha": 0.0,
+      "Aceleramento do Tempo de Recolha de Energia": 10.0,
+      "Aceleramento de Tempo de Mineração": 30.0,
+      "Redução do Cooldown de Habilidade": 0.0,
+      "Redução do Custo de MP": 10.0,
+      "Aumento da Probabilidade de Sucesso de Derrubar": 52.0,
+      "Aumento de RESISTÊNCIA a Derrubar": 29.0,
+      "Aumento do Efeito da Poção de HP": 0.0,
+      "Aumento do Efeito da Poção de MP": 0.0,
+      "Aumento de Quantidade de Recuperação de HP de Habilidade": 0.0,
+      "Vida": 5.0,
+      "Aumento do DANO DE ATAQUE Básico": 26.9,
+      "Redução do DANO DE ATAQUE Básico Recebido": 12.4,
+      "Redução do Cooldown de Água Divina": 0.0,
+      "Aceleramento do Tempo de Abertura de Caixa": 0.0,
+      "Aumento da Probabilidade no Sucesso de Treino Ermo": 0.0,
+      "Aumento da Chance de Sucesso do Aprimoramento de Equipamento (Incomum)": 0.0,
+      "Aumento da Chance de Sucesso do Aprimoramento de Equipamento (Raro)": 0.0,
+      "Aumento da Chance de Sucesso do Aprimoramento de Equipamento (Épico)": 0.0,
+      "Aumento da Chance de Sucesso do Aprimoramento de Equipamento (Lendário)": 0.0,
+      "Aumento da Chance de Sucesso do Aprimoramento de Equipamento (de Incomum até Lendário)": 0.0,
+      "Aumento da Chance de Sucesso do Aprimoramento de Artefato de Dragão (Raro)": 0.0,
+      "Aumento da Chance de Sucesso do Aprimoramento de Artefato de Dragão (Épico)": 0.0,
+      "Aumento da Chance de Sucesso do Aprimoramento de Artefato de Dragão (Lendário)": 0.0,
+      "Aumento da Chance de Sucesso do Aprimoramento de Artefato de Dragão (de Incomum até Lendário)": 0.0,
+      "Aumento de Vigor Máximo (segundos)": 0.0,
+      "Aumento de Precisão em Monstros": 31.0,
+      "Aumento de EVASÃO de Monstros": 28.0,
+      "Aumento de EXP de Crescimento de Esfera da Alma Mágica": 0.0
+    },
+    "spirits_equipados": [
+      {
+        "nome": "Horyong, Pequeno Dragão azul-celeste",
+        "grade": 3,
+        "transcend": 1,
+        "slot": 5
+      },
+      {
+        "nome": "Brutus, o Senhor dos Oceanos",
+        "grade": 2,
+        "transcend": 1,
+        "slot": 5
+      },
+      {
+        "nome": "Lamparino, o Mensageiro da Alma",
+        "grade": 3,
+        "transcend": 1,
+        "slot": 5
+      },
+      {
+        "nome": "Mir, o Dragão Radiante",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 5
+      },
+      {
+        "nome": "Akka Serenidade",
+        "grade": 3,
+        "transcend": 1,
+        "slot": 4
+      },
+      {
+        "nome": "Solari, a Raposa Milenar",
+        "grade": 3,
+        "transcend": 1,
+        "slot": 4
+      },
+      {
+        "nome": "Nyanja Assassino",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 4
+      },
+      {
+        "nome": "Biyoho, o Descendente Infernal das Chamas",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 4
+      },
+      {
+        "nome": "Mir, o Dragão Radiante",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 4
+      },
+      {
+        "nome": "Suparna, o Pássaro Dourado",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 1
+      },
+      {
+        "nome": "Nerr, o Demônio de Gelo das Trevas",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 1
+      },
+      {
+        "nome": "Mir, o Dragão Radiante",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 1
+      },
+      {
+        "nome": "Cometa, o Dono dos Chifres Vermelhos",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 1
+      },
+      {
+        "nome": "Mantata, o Barão Azul",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 1
+      },
+      {
+        "nome": "Cristalidro, o Pavão Branco",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 3
+      },
+      {
+        "nome": "Florida, o Anjo Verdejante",
+        "grade": 3,
+        "transcend": 1,
+        "slot": 3
+      },
+      {
+        "nome": "Faísca, a Gema Brilhante",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 3
+      },
+      {
+        "nome": "Rei Leão Khun",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 3
+      },
+      {
+        "nome": "Bisana, a Borboleta Turquesa",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 3
+      },
+      {
+        "nome": "Shaoshao, o Maníaco das Gemas",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 2
+      },
+      {
+        "nome": "Biyoho, o Descendente Infernal das Chamas",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 2
+      },
+      {
+        "nome": "Mir, o Dragão Radiante",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 2
+      },
+      {
+        "nome": "Cometa, o Dono dos Chifres Vermelhos",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 2
+      },
+      {
+        "nome": "Mantata, o Barão Azul",
+        "grade": 4,
+        "transcend": 1,
+        "slot": 2
+      }
+    ],
+    "spirits_lend": [],
+    "spirits_grade6": [],
+    "spirits_lend_count": 0,
+    "spirits_grade6_count": 0,
+    "spirits_inven_lend": [],
+    "buildings": {
+      "Torre de Conquista": 16,
+      "Forja": 15,
+      "Mina": 16,
+      "Árvore Milenar": 15,
+      "Santuário de Treino": 15,
+      "Torre de Quintessência": 15,
+      "Torre da Vitória": 15,
+      "Santuário Sagrado": 15,
+      "Portão Dimensional": 14,
+      "Santuário de Hidra": 5
+    },
+    "mina_lv": 16,
+    "training": {
+      "Técnica de desenvolvimento muscular": 10,
+      "Manual dos Nove Yin": 10,
+      "Manual dos Nove Yang": 10,
+      "Arte Divina da Névoa Violeta": 1,
+      "Postura do Sapo": 2
+    },
+    "constituicao_lv": 10,
+    "collect_lv": 11,
+    "magicorb": {},
+    "magicstone": {
+      "": 0
+    },
+    "mystpiece": {
+      "": {
+        "grade": 0,
+        "enhance": 0
+      }
+    },
+    "potencial_total": 19,
+    "potencial_caca": 15,
+    "potencial_pvp": 2,
+    "scripture": {
+      "Salão das Escrituras 2": {
+        "total": 89,
+        "completed": 0
+      },
+      "Salão das Escrituras 1": {
+        "total": 169,
+        "completed": 0
+      }
+    },
+    "codex": {
+      "Reputação": {
+        "total": 348,
+        "completed": 30
+      },
+      "Esfera da Alma Mágica": {
+        "total": 241,
+        "completed": 1
+      },
+      "Servidor": {
+        "total": 252,
+        "completed": 5
+      },
+      "Personagem": {
+        "total": 1705,
+        "completed": 235
+      },
+      "Por Tempo limitado": {
+        "total": 55,
+        "completed": 2
+      }
+    },
+    "codex_total_completed": 273,
+    "antiguidades": {
+      "Antiguidade de Leão Unicórnio": 1,
+      "Antiguidade de Pássaro Vermelho": 1,
+      "Antiguidade de Tartaruga Negra": 1,
+      "Antiguidade de Tigre Branco": 1,
+      "Antiguidade de Dragão Azul": 1
+    },
+    "antiguidade_max_grade": 1,
+    "dragon": {},
+    "dragon_max_grade": 0,
+    "dragon_total_count": 0,
+    "dragon_max_count": 0,
+    "scripture_total_completed": 0,
+    "recursos": {},
+    "heaven_training": {},
+    "heaven_max_lv": 0,
+    "uniao_universal": {
+      "ciclo_1": 0,
+      "ciclo_2": 0,
+      "ciclo_3": 0,
+      "ciclo_4": 0
+    },
+    "equip_transferencia": {
+      "301": {
+        "nome": "Bastão de Sarmati",
+        "grade": 5,
+        "enhance": 6,
+        "tier": 1
+      },
+      "302": {
+        "nome": "Cabaça de Wu Yeogi",
+        "grade": 5,
+        "enhance": 5,
+        "tier": 1
+      },
+      "303": {
+        "nome": "Grampo Ornamental de Jade de Cheonpa",
+        "grade": 5,
+        "enhance": 5,
+        "tier": 1
+      },
+      "304": {
+        "nome": "Tomo de Bok Yangjeo",
+        "grade": 5,
+        "enhance": 5,
+        "tier": 1
+      },
+      "305": {
+        "nome": "Agulha Dourada de Dragão Amarelo do Ervanário Hong",
+        "grade": 5,
+        "enhance": 3,
+        "tier": 1
+      },
+      "307": {
+        "nome": "Pakua de Chogye",
+        "grade": 5,
+        "enhance": 3,
+        "tier": 1
+      },
+      "308": {
+        "nome": "Ombreira de Sondeok",
+        "grade": 5,
+        "enhance": 1,
+        "tier": 1
+      }
+    },
+    "succession_avg_enhance": 4.0,
+    "primeira_tentativa": "2026-07-10T23:37:07.015699+00:00",
+    "ultima_tentativa": "2026-07-11T01:03:02.543975+00:00",
+    "tentativas": 1,
+    "completo_em": "2026-07-10T23:37:07.015699+00:00",
+    "tempo_ate_completar_h": 0.0,
+    "_reaproveitado_de_listagem": true,
+    "primeiro_visto_no_mercado": "2026-07-10T23:37:19.374466+00:00",
+    "tempo_no_mercado_h": 0.56
+  },
+  {
     "nft_id": "200228",
     "seq": 2354183,
     "transport_id": 365053,
@@ -12241,8 +13064,8 @@
     },
     "succession_avg_enhance": 6.6,
     "primeira_tentativa": "2026-07-10T05:15:53.499209+00:00",
-    "ultima_tentativa": "2026-07-10T23:32:57.845834+00:00",
-    "tentativas": 5,
+    "ultima_tentativa": "2026-07-11T01:03:13.517260+00:00",
+    "tentativas": 6,
     "completo_em": "2026-07-10T05:15:53.499209+00:00",
     "tempo_ate_completar_h": 0.0,
     "_reaproveitado_de_listagem": true,
@@ -21946,8 +22769,8 @@
     },
     "succession_avg_enhance": 4.7,
     "primeira_tentativa": "2026-07-08T19:58:33.020283+00:00",
-    "ultima_tentativa": "2026-07-10T23:33:09.675657+00:00",
-    "tentativas": 7,
+    "ultima_tentativa": "2026-07-11T01:03:24.879220+00:00",
+    "tentativas": 8,
     "completo_em": "2026-07-09T17:45:52.350785+00:00",
     "tempo_ate_completar_h": 0.0,
     "schema_version": 2,
@@ -37363,8 +38186,8 @@
     },
     "succession_avg_enhance": 6.8,
     "primeira_tentativa": "2026-07-08T19:56:07.587250+00:00",
-    "ultima_tentativa": "2026-07-10T23:33:21.473708+00:00",
-    "tentativas": 8,
+    "ultima_tentativa": "2026-07-11T01:03:36.150314+00:00",
+    "tentativas": 9,
     "completo_em": "2026-07-09T17:44:25.031285+00:00",
     "tempo_ate_completar_h": 0.0,
     "schema_version": 2,
@@ -45391,8 +46214,8 @@
     },
     "succession_avg_enhance": 5.6,
     "primeira_tentativa": "2026-07-09T00:10:22.155770+00:00",
-    "ultima_tentativa": "2026-07-10T23:33:33.253456+00:00",
-    "tentativas": 7,
+    "ultima_tentativa": "2026-07-11T01:03:47.390403+00:00",
+    "tentativas": 8,
     "completo_em": "2026-07-09T00:10:22.155770+00:00",
     "tempo_ate_completar_h": 0.0,
     "_reaproveitado_de_listagem": true,
@@ -52571,8 +53394,8 @@
     },
     "succession_avg_enhance": 6.1,
     "primeira_tentativa": "2026-07-09T15:54:54.666751+00:00",
-    "ultima_tentativa": "2026-07-10T23:33:45.048577+00:00",
-    "tentativas": 7,
+    "ultima_tentativa": "2026-07-11T01:03:58.692369+00:00",
+    "tentativas": 8,
     "completo_em": "2026-07-09T15:54:54.666751+00:00",
     "tempo_ate_completar_h": 0.0,
     "_reaproveitado_de_listagem": true,
@@ -61428,8 +62251,8 @@
     },
     "succession_avg_enhance": 3.8,
     "primeira_tentativa": "2026-07-10T08:39:58.148781+00:00",
-    "ultima_tentativa": "2026-07-10T23:33:56.850816+00:00",
-    "tentativas": 8,
+    "ultima_tentativa": "2026-07-11T01:04:10.132511+00:00",
+    "tentativas": 9,
     "completo_em": "2026-07-10T08:39:58.148781+00:00",
     "tempo_ate_completar_h": 0.0,
     "_reaproveitado_de_listagem": true,
@@ -67630,8 +68453,8 @@
     },
     "succession_avg_enhance": 4.7,
     "primeira_tentativa": "2026-07-09T22:22:34.074007+00:00",
-    "ultima_tentativa": "2026-07-10T23:34:08.953236+00:00",
-    "tentativas": 8,
+    "ultima_tentativa": "2026-07-11T01:04:21.358913+00:00",
+    "tentativas": 9,
     "completo_em": "2026-07-09T22:22:34.074007+00:00",
     "tempo_ate_completar_h": 0.0,
     "_reaproveitado_de_listagem": true,
@@ -76892,8 +77715,8 @@
     },
     "succession_avg_enhance": 6.3,
     "primeira_tentativa": "2026-07-08T21:44:39.505197+00:00",
-    "ultima_tentativa": "2026-07-10T23:34:20.851665+00:00",
-    "tentativas": 9,
+    "ultima_tentativa": "2026-07-11T01:04:32.585888+00:00",
+    "tentativas": 10,
     "completo_em": "2026-07-08T21:44:39.505197+00:00",
     "tempo_ate_completar_h": 0.0,
     "_reaproveitado_de_listagem": true,
@@ -92224,8 +93047,8 @@
     },
     "succession_avg_enhance": 6.7,
     "primeira_tentativa": "2026-07-09T10:24:24.613391+00:00",
-    "ultima_tentativa": "2026-07-10T23:34:32.709645+00:00",
-    "tentativas": 11,
+    "ultima_tentativa": "2026-07-11T01:04:43.800144+00:00",
+    "tentativas": 12,
     "completo_em": "2026-07-09T10:24:24.613391+00:00",
     "tempo_ate_completar_h": 0.0,
     "_reaproveitado_de_listagem": true
@@ -99989,8 +100812,8 @@
     },
     "succession_avg_enhance": 5.4,
     "primeira_tentativa": "2026-07-10T05:15:10.487510+00:00",
-    "ultima_tentativa": "2026-07-10T23:34:44.516921+00:00",
-    "tentativas": 11,
+    "ultima_tentativa": "2026-07-11T01:04:55.019322+00:00",
+    "tentativas": 12,
     "completo_em": "2026-07-10T05:15:10.487510+00:00",
     "tempo_ate_completar_h": 0.0,
     "_reaproveitado_de_listagem": true
@@ -106362,8 +107185,8 @@
     },
     "succession_avg_enhance": 4.9,
     "primeira_tentativa": "2026-07-09T23:42:52.013474+00:00",
-    "ultima_tentativa": "2026-07-10T23:34:56.345433+00:00",
-    "tentativas": 11,
+    "ultima_tentativa": "2026-07-11T01:05:06.279915+00:00",
+    "tentativas": 12,
     "completo_em": "2026-07-09T23:42:52.013474+00:00",
     "tempo_ate_completar_h": 0.0,
     "_reaproveitado_de_listagem": true
@@ -112030,8 +112853,8 @@
     },
     "succession_avg_enhance": 3.2,
     "primeira_tentativa": "2026-07-10T08:34:23.025491+00:00",
-    "ultima_tentativa": "2026-07-10T23:35:08.171779+00:00",
-    "tentativas": 11,
+    "ultima_tentativa": "2026-07-11T01:05:17.491006+00:00",
+    "tentativas": 12,
     "completo_em": "2026-07-10T08:34:23.025491+00:00",
     "tempo_ate_completar_h": 0.0
   },
@@ -117941,8 +118764,8 @@
     },
     "succession_avg_enhance": 4.4,
     "primeira_tentativa": "2026-07-08T16:56:20.083017+00:00",
-    "ultima_tentativa": "2026-07-10T23:35:19.992155+00:00",
-    "tentativas": 12,
+    "ultima_tentativa": "2026-07-11T01:05:28.718919+00:00",
+    "tentativas": 13,
     "completo_em": "2026-07-09T07:20:06.992755+00:00",
     "tempo_ate_completar_h": 0.0,
     "schema_version": 2,
@@ -123102,8 +123925,8 @@
     },
     "succession_avg_enhance": 4.7,
     "primeira_tentativa": "2026-07-09T23:43:26.638100+00:00",
-    "ultima_tentativa": "2026-07-10T23:35:31.784918+00:00",
-    "tentativas": 11,
+    "ultima_tentativa": "2026-07-11T01:05:39.966663+00:00",
+    "tentativas": 12,
     "completo_em": "2026-07-09T23:43:26.638100+00:00",
     "tempo_ate_completar_h": 0.0,
     "_reaproveitado_de_listagem": true
@@ -128547,8 +129370,8 @@
     },
     "succession_avg_enhance": 5.0,
     "primeira_tentativa": "2026-07-08T21:04:55.042465+00:00",
-    "ultima_tentativa": "2026-07-10T23:35:43.643493+00:00",
-    "tentativas": 12,
+    "ultima_tentativa": "2026-07-11T01:05:51.218559+00:00",
+    "tentativas": 13,
     "completo_em": "2026-07-09T21:09:55.260250+00:00",
     "tempo_ate_completar_h": 0.0,
     "schema_version": 2,
@@ -133357,8 +134180,8 @@
     },
     "succession_avg_enhance": 3.4,
     "primeira_tentativa": "2026-07-08T23:03:40.812891+00:00",
-    "ultima_tentativa": "2026-07-10T23:35:55.418704+00:00",
-    "tentativas": 11,
+    "ultima_tentativa": "2026-07-11T01:06:02.457650+00:00",
+    "tentativas": 12,
     "completo_em": "2026-07-08T23:03:40.812891+00:00",
     "tempo_ate_completar_h": 0.0,
     "_reaproveitado_de_listagem": true
@@ -133561,8 +134384,8 @@
     "equip_transferencia": {},
     "succession_avg_enhance": 0,
     "primeira_tentativa": "2026-07-10T01:13:11.714397+00:00",
-    "ultima_tentativa": "2026-07-10T23:36:07.231095+00:00",
-    "tentativas": 14
+    "ultima_tentativa": "2026-07-11T01:06:13.765765+00:00",
+    "tentativas": 15
   },
   {
     "nft_id": "83831",
@@ -133762,8 +134585,8 @@
     "equip_transferencia": {},
     "succession_avg_enhance": 0,
     "primeira_tentativa": "2026-07-10T01:13:27.552321+00:00",
-    "ultima_tentativa": "2026-07-10T23:36:19.045083+00:00",
-    "tentativas": 14
+    "ultima_tentativa": "2026-07-11T01:06:25.289821+00:00",
+    "tentativas": 15
   },
   {
     "nft_id": "202554",
@@ -139496,8 +140319,8 @@
     },
     "succession_avg_enhance": 5.7,
     "primeira_tentativa": "2026-07-09T07:10:38.874611+00:00",
-    "ultima_tentativa": "2026-07-10T23:36:30.880427+00:00",
-    "tentativas": 10,
+    "ultima_tentativa": "2026-07-11T01:06:36.724226+00:00",
+    "tentativas": 11,
     "completo_em": "2026-07-09T07:10:38.874611+00:00",
     "tempo_ate_completar_h": 0.0,
     "_reaproveitado_de_listagem": true
@@ -146950,8 +147773,8 @@
     },
     "succession_avg_enhance": 4.8,
     "primeira_tentativa": "2026-07-08T11:36:17.686642+00:00",
-    "ultima_tentativa": "2026-07-10T23:36:42.639272+00:00",
-    "tentativas": 9,
+    "ultima_tentativa": "2026-07-11T01:06:47.933945+00:00",
+    "tentativas": 10,
     "completo_em": "2026-07-08T21:52:06.339889+00:00",
     "tempo_ate_completar_h": 0.0,
     "schema_version": 2,
@@ -413601,5889 +414424,6 @@
     "tentativas": 1,
     "completo_em": "2026-07-09T03:31:59.936851+00:00",
     "tempo_ate_completar_h": 0.0,
-    "_reaproveitado_de_listagem": true
-  },
-  {
-    "nft_id": "99526",
-    "seq": 2353825,
-    "transport_id": 359647,
-    "nome": "Ⓡⓞⓡⓞⓝⓞⓐ ゾロ",
-    "classe_id": 5,
-    "classe": "Lancer",
-    "nivel": 141,
-    "power_score": 345647,
-    "preco_draco": 350,
-    "mirage_score": 0,
-    "mira_x": 0,
-    "servidor": "SA041",
-    "row_id": 12,
-    "trade_dt": 1783572002,
-    "data_venda": "2026-07-09 04:40",
-    "scraped_at": "2026-07-09T07:03:06.024722+00:00",
-    "dados_completos": true,
-    "equipados": [
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue do Avanço Marcial",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Conta do Tigre Branco Desbotada",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue do Avanço Marcial",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta da Árvore Ari",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento do Cristal de Destruição",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal de Destruição",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Conta do Tigre Branco",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Afiar do Porco Martelo",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Panax de Neve Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Selo do Cristal de Mana",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue do Domínio Marcial",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço de Unichifre Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal de Destruição",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Sino de Relâmpago",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue do Domínio Marcial",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Força Vital da Marta Centenária",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Afiar do Porco Martelo",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Afiar do Porco Martelo",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Força Vital da Marta Milenar",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Vermelha Escura do Espírito Rancoroso",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Vermelha Escura do Espírito Rancoroso",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fruta Centenária Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Talismã do Fantasma",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vendaval",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Óleo de Flor Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Óleo de Flor Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Destruição Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Força Vital da Marta Milenar",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Tempestade",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Ascensão Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vendaval",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Destruição Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra do Espírito Rancoroso",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Vermelha Escura do Espírito Rancoroso",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fruta Centenária Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Glória Marcial",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Destruição Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Força Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Força Vital da Marta Milenar",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Pico Secreto",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Mineração Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vendaval",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço de Unichifre Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vento II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vento II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Crescimento Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço de Unichifre Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fruta Centenária Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Impenetrabilidade Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Guardião Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Brincos de Desafio Celestial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 7,
-        "mainType": 4,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Mineração Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida da Rainha das Víboras Monstruosas",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Poção de Acerto Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Selo Majestoso de Dragão Negro Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 3,
-        "mainType": 22,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Erva de Alma Preta e Branca Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Morte Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Força Vital da Marta Milenar",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Aprimoramento Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Capa Majestosa de Dragão Negro Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 4,
-        "mainType": 22,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vento II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Mestre Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida da Rainha das Víboras Monstruosas II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vento II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Treino Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bastão de Sarmati",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 6,
-        "mainType": 24,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama de Dragão Azul Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Dominação Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico da Sorte Inesperada Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Óleo de Dragão da Bênção Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Lançador de Feitiços Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Tomo Majestoso de Dragão Negro Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 4,
-        "mainType": 22,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cetro Majestoso de Dragão Negro Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 4,
-        "mainType": 22,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Raide",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta da Rainha das Víboras Monstruosas",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cabaça de Wu Yeogi",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 6,
-        "mainType": 24,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espectromite Épica II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Vigor Lendária II",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida da Rainha das Víboras Monstruosas II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Alabarda de Frenesim do Dragão",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 8,
-        "mainType": 2,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Botas de Uniforme de Combate de Escama de Dragão",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 8,
-        "mainType": 3,
-        "tier": 3,
-        "hole_count": 1
-      },
-      {
-        "nome": "Espectromite Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Guardião Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço de Tabuleta Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Jade Crescente de Dragão Branco Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 5,
-        "mainType": 22,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Leque do Santo",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera da Alma Mágica de Poipoi",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 23,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Estátua de Porco",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Estátua de Porquinho",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Ascensão Épica II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço de Tabuleta Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vendaval",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Colar de Ligação Celestial",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 7,
-        "mainType": 4,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Guizo de Prata de Dragão Branco Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 3,
-        "mainType": 22,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Poção de Recuperação de HP Imensa",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Grampo Ornamental de Jade de Cheonpa",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 6,
-        "mainType": 24,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pernas de Uniforme de Combate de Escama de Dragão",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 8,
-        "mainType": 3,
-        "tier": 3,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Ouro Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida da Rainha das Víboras Monstruosas",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Aprimoramento Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Poção de Recuperação de MP Imensa",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espelho de Bronze de Dragão Branco Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 3,
-        "mainType": 22,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera Perversa Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Alabarda Curta de Frenesim do Dragão",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 8,
-        "mainType": 20,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento de Pedra de Aprimoramento do Dragão Divino Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Lâmina Ornamentada de Dragão Branco Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 4,
-        "mainType": 22,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Crescimento Épica II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Preciosa de Proteção",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera da Alma Mágica de Cometa",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 23,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Força Vital da Marta Milenar",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Sombra Lunar Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Queimador de Incenso de Dragão Branco Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 4,
-        "mainType": 22,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Paixão Celestial Radiante",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pulseira de Evocação",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 8,
-        "mainType": 4,
-        "tier": 3,
-        "hole_count": 1
-      },
-      {
-        "nome": "Pedra de Aprimoramento Mística Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula de Prosperidade Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Aço Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Orgulho do Oceano Brilhante",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida da Rainha das Víboras Monstruosas II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Destruição Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Porrete de Ferro de Noh Wunjang",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 6,
-        "mainType": 24,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Lançador de Feitiços Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Força Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Coroa Majestosa de Dragão Negro Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 4,
-        "mainType": 22,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula de Vigor (60min)",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fruta Centenária Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Poção de Recuperação de HP Grande",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Torso de Uniforme de Combate do Demônio Verdadeiro",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 7,
-        "mainType": 3,
-        "tier": 4,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Tônico de Progresso Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço de Tabuleta Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Morte Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera da Alma Mágica de Drakazan",
-        "grade": "Normal",
-        "grade_id": 1,
-        "enhance": 0,
-        "mainType": 28,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Mestria Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Vigor Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Aprimoramento Obscura Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Agulha Dourada de Dragão Amarelo do Ervanário Hong",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 5,
-        "mainType": 24,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de EVASÃO Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Selo do Cristal de Mana",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Estátua de Dragão Azul Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama de Dragão Azul Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Repulsão Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Praça Mágica Fissurada",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espectromite Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Token de Tesouro do Dragão Ancestral",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Couro de Dragão Azul Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vento",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Pico Secreto Fissurado",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera da Alma Mágica de Khun",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 23,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera de Dragão Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pergaminho de Invocação do Capitão Imortal Gigante Branco",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera de Dragão Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Grande Pílula de Yang Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Grande Pílula de Yin Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pequena Pílula de Yang Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pequena Pílula de Yin Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama de Dragão Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal da Alma Esvoaçante Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal de Quintessência Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal da Alma Sanguinária Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal da Alma Celestial Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal da Alma Sanguinária Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal da Alma Sanguinária Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Lunar Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Crescimento Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Solar Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal da Alma Esvoaçante Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal de Quintessência Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal da Alma Esvoaçante Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica Lunar Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula de Virtude Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vento II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Aço Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Desintegração Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula de Nuvem Violeta Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Estátua de Dragão Azul Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera Perversa Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula Solitária Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade Queimado Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Sombra Lunar Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula de Ganância Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fluido Mineral Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Olho de Dragão Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Ombreira de Sondeok",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 3,
-        "mainType": 24,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pakua de Chogye",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 4,
-        "mainType": 24,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama de Dragão Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra do Espírito Rancoroso",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula de Progresso Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço de Unichifre Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra do Espírito Rancoroso",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espectromite Épica II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete do Caminho do Treino Intenso",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Raide Infernal",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Força Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Talismã do Fantasma",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vendaval",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra do Espírito Rancoroso II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra do Espírito Rancoroso II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Estátua de Porquinho II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Talismã do Espírito Rancoroso II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue do Domínio Marcial II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra de Homem Morto II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Tomo de Bok Yangjeo",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 5,
-        "mainType": 24,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Força Lendária II",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Seleção de Material de Artefato de Dragão Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra do Espírito Rancoroso II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Estátua de Porquinho II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Talismã do Espírito Rancoroso II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida da Rainha das Víboras Monstruosas II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue do Domínio Marcial II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra do Espírito Rancoroso",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico Vindo-do-Nada Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Tabuleta Ancestral Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Morte Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Praça Mágica",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra do Espírito Rancoroso II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pulseira do Dragão do Céu do Ancestral do Virtuoso",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Tesouro do Vento",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera da Alma Mágica de Faísca",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 23,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula de Virtude Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra do Espírito Rancoroso",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra de Homem Morto",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Vampirismo de Yeoyul",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 3,
-        "mainType": 24,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vendaval",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Morte Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Morte Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Água Purificada Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Recolha Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal da Alma Celestial Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Golpe Intenso Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Recolha Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Chifre de Dragão Azul Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Platina Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Muralha de Ferro Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pernas de Uniforme de Combate de Toda a Criação",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 6,
-        "mainType": 3,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Força Lendária II",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Aprimoramento Especial Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vento",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Raide de Boss",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera da Alma Mágica de Bisana",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 23,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Talismã do Espírito Rancoroso II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Anel de Espaço-tempo",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 7,
-        "mainType": 4,
-        "tier": 4,
-        "hole_count": 0
-      },
-      {
-        "nome": "Força Vital da Marta Milenar II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Desintegração Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Subjugação Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Tributo de Pássaro Vermelho",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Grande Pílula de Yin Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Aprimoramento Mística Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Força Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pequena Pílula de Yang Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Leque Flexível de Gaon",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 3,
-        "mainType": 24,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue do Domínio Marcial",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vento II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico da Sorte Inesperada Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vento",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Mineração Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra do Espírito Rancoroso II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Talismã do Fantasma",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra de Homem Morto",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada de Sangue Carmesim do Fantasma II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula de Progresso Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra de Homem Morto",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Ouro Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Picareta de Vendaval II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária II",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica da Agilidade Mítica",
-        "grade": "Mítico",
-        "grade_id": 6,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Selo do Cristal de Vigor",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade de Golpe da Lua Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 12,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Óleo de Dragão da Bênção Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Água Divina Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Couro de Dragão Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Olho de Dragão Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Invocação de Esfera de Dragão",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 18,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico Inflexível Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Etéreo Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra de Homem Morto II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Chifre de Dragão Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Subjugação Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Mestre Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Mestre Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Invocação de Escama de Dragão",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 18,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor Negra de Homem Morto",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Botas de Uniforme de Combate de Toda a Criação",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 6,
-        "mainType": 3,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de ACERTO Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Invocação de Material de Dragão",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 18,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Preciosa de Proteção",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Quintessência Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Crescimento Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Tônico de Prosperidade Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Tônico de Ganância Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Força Vital da Marta Milenar",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Reishi Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Juramento Escrito do Anseio",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 12,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Água Purificada Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Folha de Erva Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Crachá de Invocação de Makaraz",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Crachá de Invocação de Dragão Força Monstruosa",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bugiganga de Exorcismo Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal de Quintessência Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Alma Purificada",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Panax de Neve Eterno Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Mestre Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Água Purificada Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra do Diabo Azul Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cristal da Alma Celestial Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Invocação de Pedra de Espírito Lendária",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 18,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pó de Espírito",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue do Domínio Marcial",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama Invertida Sangrenta do Chefe das Víboras Monstruosas",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra do Diabo Azul Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Treino Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Crescimento Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pergaminho de Encantamento",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Carapaça do Deus dos Cinco Dragões",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Raiz de Erva Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Folha de Erva Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Reishi Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade de Pontapé Nirvana Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 12,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fluido Mineral Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Folha de Erva Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica Lunar Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Chifre de Dragão Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Chifre de Dragão Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Crescimento Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica Lunar Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra do Diabo Azul Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Água Purificada Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula de Virtude Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Invocação de Chifre de Dragão",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 18,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Aprimoramento do Dragão Divino Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Lunar Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Folha de Erva Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Reishi Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Raiz de Erva Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espectromite Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Óleo de Flor Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra do Diabo Azul Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula de Virtude Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Berrante do Grande Chefe Nefariox",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Crescimento Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Força Vital da Marta Milenar",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espada do Demônio da Lúnula de Sangue da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pergaminho de Encantamento de Esfera da Alma Mágica",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica Lunar Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Sem Limites Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Talismã do Fantasma II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Repulsão Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de EVASÃO Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Golpe Intenso Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico Inflexível Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Riqueza Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Treino Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Jade de Dragão da Supremacia Marcial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera da Alma Mágica de Helbar",
-        "grade": "Normal",
-        "grade_id": 1,
-        "enhance": 0,
-        "mainType": 28,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Garra de Dragão Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Medalha do Tigre Voador",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 6,
-        "mainType": 4,
-        "tier": 1,
-        "hole_count": 1
-      },
-      {
-        "nome": "Colar de Ragnos Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 5,
-        "mainType": 26,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pulseira de Ragnos Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 5,
-        "mainType": 26,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Etéreo Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Etéreo Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Iluminante Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pulseira de Ligação Celestial",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 6,
-        "mainType": 4,
-        "tier": 1,
-        "hole_count": 3
-      },
-      {
-        "nome": "Carapaça do Deus dos Cinco Dragões II",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Iluminante Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Anima Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade de Golpe da Cauda do Dragão Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 12,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade de Ataque Esmagador Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 12,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade de Grande Tempestade Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 12,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Couro de Dragão Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade de Pontapé Nirvana Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 12,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Invocação de Livro de Habilidade",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 18,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Aprimoramento Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Olho de Dragão Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera de Dragão Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Berloque do Rugido",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 6,
-        "mainType": 4,
-        "tier": 1,
-        "hole_count": 2
-      },
-      {
-        "nome": "Fragmento Sem Limites Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Escama de Dragão Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Invocação de Pedra de Espírito",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 18,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Invocação de Couro de Dragão",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 18,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Garra de Dragão Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Anima Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Iluminante Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Lunar Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Sem Limites Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de ACERTO Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de ACERTO Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Chifre de Dragão Azul Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Força Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Espectromite Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Quintessência Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera da Alma Mágica do Dragão Celestial Maligno",
-        "grade": "Normal",
-        "grade_id": 1,
-        "enhance": 0,
-        "mainType": 28,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pergaminho de Encantamento de Esfera da Alma Mágica Especial",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Anel de Ragnos Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 5,
-        "mainType": 26,
-        "tier": 2,
-        "hole_count": 0
-      },
-      {
-        "nome": "Luvas de Uniforme de Combate de Toda a Criação",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 6,
-        "mainType": 3,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Solar Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Solar Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bugiganga de Exorcismo Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Platina Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Aço Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Aço Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Cintamani da Marta Centenária",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Material Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Token de Espírito do Dragão Ancestral",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Token de Habilidade do Dragão Ancestral",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Estátua de Dragão Azul Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Token do Dragão Ancestral",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Aço Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Platina Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Quintessência Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Aprimoramento Obscura Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Anima Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Sombra Lunar Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Aprimoramento Mística Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera Perversa Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Platina Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pó Brilhante",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Iluminante Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Platina Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera Perversa Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Aço Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Sombra Lunar Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Anima Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bugiganga de Exorcismo Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fragmento Iluminante Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Quintessência Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bugiganga de Exorcismo Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Aprimoramento do Dragão Divino Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Seleção (E.T. I)",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de ACERTO Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Esfera da Alma Mágica de Chifre Flamejante",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 23,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Essência da Vida",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Apoio de Pedra Mágica Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de E.T. de Noh Wunjang",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Invocação de Pedra Mágica",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 18,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade de Golpe de Rasgão do Céu Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 12,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade de Golpe Divino Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 12,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade de Absorção de Vida Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 12,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade de Grande Tempestade Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 12,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Invocação de Olho de Dragão",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 18,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Apoio de Tesouro de Espírito Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Material Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Livro de Habilidade de Golpe Supremo Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 12,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Raiz de Erva Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra do Diabo Azul Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Material Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Seleção de Material de Artefato de Dragão Lendário",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Erva de Alma Preta e Branca Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Tesouro de Espírito Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Folha de Erva Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Defesa Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica Lunar Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Presente do Dragão Negro",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Seleção de Material de Aprimoramento de Antiguidade",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Tributo de Tartaruga Negra",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Seleção de Bilhete de Invocação",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Crachá dos Abandonados de Nefariox Revestido de Demônio do Exército do Céu Negro",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 18,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Vigor Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Força Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula de Virtude Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Água Purificada Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 7,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedaço Místico de Mineração Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 21,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Erva de Alma Preta e Branca Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Ascensão Lendária",
-        "grade": "Lendário",
-        "grade_id": 5,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra Mágica de Vigor Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 8,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Aprimoramento do Dragão Divino Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Fluido Mineral Azureum Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Selo do Cristal de Destruição",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Sopro do Dragão Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Raiz de Erva Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Grande Pílula de Yin Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Grande Pílula de Yang Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Poção de Recuperação de MP Grande",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Grande Pílula de Yang Épica",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Cofre de Buff de Combate",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Pedra Mágica Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa de Material de Promoção Épico",
-        "grade": "Épico",
-        "grade_id": 4,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Flor de Romã Rara",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Crachá dos Abandonados de Nefariox do Céu Corrupto do Exército do Céu Negro",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 18,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Moeda de Prata Antiga",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 14,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pílula de Vigor (30min)",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Bilhete de Aceleramento de 10 Minutos",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa Selada de Tesouro de Espírito Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Caixa Selada de Pedra Mágica Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 6,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Goblin de Prata Branca Raro",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Berrante do Capitão Estrondeador Nefariox",
-        "grade": "Raro",
-        "grade_id": 3,
-        "enhance": 0,
-        "mainType": 17,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Reishi Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Platina Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 9,
-        "tier": 1,
-        "hole_count": 0
-      },
-      {
-        "nome": "Pedra de Aprimoramento Incomum",
-        "grade": "Incomum",
-        "grade_id": 2,
-        "enhance": 0,
-        "mainType": 5,
-        "tier": 1,
-        "hole_count": 0
-      }
-    ],
-    "legendary_items": [
-      "Alabarda de Frenesim do Dragão",
-      "Colar de Ligação Celestial",
-      "Pernas de Uniforme de Combate de Toda a Criação",
-      "Botas de Uniforme de Combate de Toda a Criação",
-      "Pulseira de Ligação Celestial",
-      "Luvas de Uniforme de Combate de Toda a Criação",
-      "Bastão de Sarmati",
-      "Cabaça de Wu Yeogi",
-      "Grampo Ornamental de Jade de Cheonpa",
-      "Tomo de Bok Yangjeo",
-      "Agulha Dourada de Dragão Amarelo do Ervanário Hong",
-      "Porrete de Ferro de Noh Wunjang",
-      "Pakua de Chogye",
-      "Ombreira de Sondeok",
-      "Vampirismo de Yeoyul",
-      "Leque Flexível de Gaon"
-    ],
-    "epic_items": [
-      "Brincos de Desafio Celestial",
-      "Botas de Uniforme de Combate de Escama de Dragão",
-      "Pernas de Uniforme de Combate de Escama de Dragão",
-      "Pulseira de Evocação",
-      "Torso de Uniforme de Combate do Demônio Verdadeiro",
-      "Anel de Espaço-tempo",
-      "Medalha do Tigre Voador",
-      "Berloque do Rugido"
-    ],
-    "legendary_count": 16,
-    "gear_avg_enhance": 6.9,
-    "gear_max_enhance": 8,
-    "weapon_enhance": 8,
-    "gear_max_tier": 4,
-    "gear_avg_tier": 1.9,
-    "gear_total_holecount": 8,
-    "gear_raw_debug": [
-      {
-        "itemUID": "1410939965367648257",
-        "itemID": "404201019",
-        "enhance": 7,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 0,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Brincos de Desafio Celestial",
-        "grade": "4",
-        "mainType": 4,
-        "subType": 4,
-        "tabCategory": 0,
-        "tier": "2",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_EarRing_006.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2113056149529034752",
-        "itemID": "200205026",
-        "enhance": 8,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 0,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Alabarda de Frenesim do Dragão",
-        "grade": "5",
-        "mainType": 2,
-        "subType": 5,
-        "tabCategory": 1,
-        "tier": "1",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pcz_01/Icon_Wpn_PCZ_00.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2125035174094831617",
-        "itemID": "304205022",
-        "enhance": 8,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 1,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Botas de Uniforme de Combate de Escama de Dragão",
-        "grade": "4",
-        "mainType": 3,
-        "subType": 4,
-        "tabCategory": 1,
-        "tier": "3",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pcz_01/PCZ_Armor_05_Shose.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2205882813841014784",
-        "itemID": "401201026",
-        "enhance": 7,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 0,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Colar de Ligação Celestial",
-        "grade": "5",
-        "mainType": 4,
-        "subType": 1,
-        "tabCategory": 1,
-        "tier": "1",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_Necklace_004.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2265066930603950081",
-        "itemID": "302205022",
-        "enhance": 8,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 0,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Pernas de Uniforme de Combate de Escama de Dragão",
-        "grade": "4",
-        "mainType": 3,
-        "subType": 2,
-        "tabCategory": 1,
-        "tier": "3",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pcz_01/PCZ_Armor_05_Pants.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2315930836721074176",
-        "itemID": "402201023",
-        "enhance": 8,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 1,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Pulseira de Evocação",
-        "grade": "4",
-        "mainType": 4,
-        "subType": 2,
-        "tabCategory": 1,
-        "tier": "3",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_Bracelet_007.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2382531760708911104",
-        "itemID": "301205024",
-        "enhance": 7,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 0,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Torso de Uniforme de Combate do Demônio Verdadeiro",
-        "grade": "4",
-        "mainType": 3,
-        "subType": 1,
-        "tabCategory": 1,
-        "tier": "4",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pcz_01/PCZ_Armor_05_Top.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2660958548563066884",
-        "itemID": "302205026",
-        "enhance": 6,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 0,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Pernas de Uniforme de Combate de Toda a Criação",
-        "grade": "5",
-        "mainType": 3,
-        "subType": 2,
-        "tabCategory": 1,
-        "tier": "1",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pcz_01/PCZ_Armor_07_Pants.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2690568413878943744",
-        "itemID": "403201024",
-        "enhance": 7,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 0,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Anel de Espaço-tempo",
-        "grade": "4",
-        "mainType": 4,
-        "subType": 3,
-        "tabCategory": 1,
-        "tier": "4",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_Ring_003.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2841413867247108096",
-        "itemID": "304205026",
-        "enhance": 6,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 0,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Botas de Uniforme de Combate de Toda a Criação",
-        "grade": "5",
-        "mainType": 3,
-        "subType": 4,
-        "tabCategory": 1,
-        "tier": "1",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pcz_01/PCZ_Armor_07_Shose.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2905877100112248833",
-        "itemID": "405201016",
-        "enhance": 6,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 1,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Medalha do Tigre Voador",
-        "grade": "4",
-        "mainType": 4,
-        "subType": 5,
-        "tabCategory": 0,
-        "tier": "1",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_PairedBi_005.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2908368937058304002",
-        "itemID": "402201026",
-        "enhance": 6,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 3,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Pulseira de Ligação Celestial",
-        "grade": "5",
-        "mainType": 4,
-        "subType": 2,
-        "tabCategory": 1,
-        "tier": "1",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_Bracelet_004.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2910909204055457792",
-        "itemID": "406201017",
-        "enhance": 6,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 2,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Berloque do Rugido",
-        "grade": "4",
-        "mainType": 4,
-        "subType": 6,
-        "tabCategory": 0,
-        "tier": "1",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Accessory_01/Pcc_Accessory_BellCharm_006.png",
-        "optionSlot": 0
-      },
-      {
-        "itemUID": "2914496790237806592",
-        "itemID": "303205026",
-        "enhance": 6,
-        "stack": 0,
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "holeCount": 0,
-        "uniqueNo": "",
-        "limited": "",
-        "itemName": "Luvas de Uniforme de Combate de Toda a Criação",
-        "grade": "5",
-        "mainType": 3,
-        "subType": 3,
-        "tabCategory": 1,
-        "tier": "1",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_Pcz_01/PCZ_Armor_07_Gloves.png",
-        "optionSlot": 0
-      }
-    ],
-    "epic_count": 8,
-    "trained_skills": {
-      "Golpe de Rasgão do Céu": 8,
-      "Ataque Esmagador": 9,
-      "Golpe da Lua": 8,
-      "Pontapé Nirvana": 9,
-      "Golpe Divino": 9,
-      "Grande Tempestade": 9,
-      "Golpe da Cauda do Dragão": 9,
-      "Voo do Dragão": 9,
-      "Golpe Supremo": 9,
-      "Muralha de Vento": 9,
-      "Trespasse de Lança": 9,
-      "Absorção de Vida": 9,
-      "Golpe Relâmpago": 9
-    },
-    "max_skill_lv": 9,
-    "mainstats": {
-      "HP": 143903.0,
-      "MP": 20467.0,
-      "ATAQUE FÍSICO": 10895.0,
-      "ATAQUE de Feitiço": 10514.0,
-      "DEFESA FÍSICA": 7548.0,
-      "DEFESA contra feitiços": 6814.0
-    },
-    "all_stats": {
-      "HP": 143903.0,
-      "REGENERAÇÃO DE % DE HP (cada 10s)": 0.8,
-      "MP": 20467.0,
-      "REGENERAÇÃO DE % DE MP (cada 10s)": 5.0,
-      "ATAQUE FÍSICO": 10895.0,
-      "ATAQUE de Feitiço": 10514.0,
-      "DEFESA FÍSICA": 7548.0,
-      "DEFESA contra feitiços": 6814.0,
-      "Precisão": 4046.0,
-      "EVASÃO": 3481.0,
-      "CRÍTICO": 3259.0,
-      "EVASÃO DE CRÍTICO": 3262.0,
-      "Aumento do DANO DE ATAQUE CRÍTICO": 840.9,
-      "Redução do DANO CRÍTICO Recebido": 546.2,
-      "Aumento do DANO DE ATAQUE de Esmagamento": 554.2,
-      "Redução do DANO de Esmagamento Recebido": 558.8,
-      "Poder Antidemônio": 52.3,
-      "Aumento do DANO DE ATAQUE em PvP": 225.1,
-      "Redução do DANO em PvP Recebido": 178.3,
-      "Aumento do DANO DE ATAQUE de Monstros": 472.6,
-      "Aumento de DANO DE ATAQUE do Boss": 464.8,
-      "Redução do DANO Recebido de Monstros": 474.9,
-      "Redução do DANO Recebido do Boss": 471.0,
-      "Aumento de DANO DE ATAQUE de Habilidade": 307.0,
-      "Redução do DANO de Habilidade Recebido": 314.9,
-      "Aumento de Todo o DANO DE ATAQUE": 87.1,
-      "Redução de Todo o DANO Recebido": 69.7,
-      "Aumento da Probabilidade de Sucesso de Atordoar": 150.9,
-      "Aumento de RESISTÊNCIA a Atordoar": 153.0,
-      "Aumento da Probabilidade de Sucesso de Debilitação": 137.0,
-      "Aumento de RESISTÊNCIA à Debilitação": 306.5,
-      "Aumento da Probabilidade de Sucesso de Silenciar": 161.4,
-      "Aumento de RESISTÊNCIA a Silenciar": 123.1,
-      "Aumento de EXP de Caça": 215.4,
-      "Aumento de Ganho de Cobre de Caça": 177.0,
-      "Aumento de Ganho de Energia": 101.2,
-      "Aumento de Ganho de Aço Negro": 241.2,
-      "Aumento da Probabilidade de Obtenção": 65.3,
-      "Aumento da Probabilidade de Obtenção de Sorte": 88.7,
-      "Aceleramento do Tempo de Recolha": 28.3,
-      "Aceleramento do Tempo de Recolha de Energia": 27.0,
-      "Aceleramento de Tempo de Mineração": 83.2,
-      "Redução do Cooldown de Habilidade": 12.0,
-      "Redução do Custo de MP": 20.0,
-      "Aumento da Probabilidade de Sucesso de Derrubar": 266.1,
-      "Aumento de RESISTÊNCIA a Derrubar": 144.8,
-      "Aumento do Efeito da Poção de HP": 6.7,
-      "Aumento do Efeito da Poção de MP": 14.3,
-      "Aumento de Quantidade de Recuperação de HP de Habilidade": 35.0,
-      "Vida": 5.0,
-      "Aumento do DANO DE ATAQUE Básico": 131.6,
-      "Redução do DANO DE ATAQUE Básico Recebido": 68.0,
-      "Redução do Cooldown de Água Divina": 6.9,
-      "Aceleramento do Tempo de Abertura de Caixa": 0.0,
-      "Aumento da Probabilidade no Sucesso de Treino Ermo": 0.6,
-      "Aumento da Chance de Sucesso do Aprimoramento de Equipamento (Incomum)": 0.5,
-      "Aumento da Chance de Sucesso do Aprimoramento de Equipamento (Raro)": 1.5,
-      "Aumento da Chance de Sucesso do Aprimoramento de Equipamento (Épico)": 0.0,
-      "Aumento da Chance de Sucesso do Aprimoramento de Equipamento (Lendário)": 0.0,
-      "Aumento da Chance de Sucesso do Aprimoramento de Equipamento (de Incomum até Lendário)": 0.4,
-      "Aumento da Chance de Sucesso do Aprimoramento de Artefato de Dragão (Raro)": 1.0,
-      "Aumento da Chance de Sucesso do Aprimoramento de Artefato de Dragão (Épico)": 0.0,
-      "Aumento da Chance de Sucesso do Aprimoramento de Artefato de Dragão (Lendário)": 0.0,
-      "Aumento da Chance de Sucesso do Aprimoramento de Artefato de Dragão (de Incomum até Lendário)": 0.2,
-      "Aumento de Vigor Máximo (segundos)": 113.0,
-      "Aumento de Precisão em Monstros": 215.0,
-      "Aumento de EVASÃO de Monstros": 155.0,
-      "Aumento de EXP de Crescimento de Esfera da Alma Mágica": 0.0
-    },
-    "spirits_equipados": [
-      {
-        "nome": "Tougon, o Monge Violento",
-        "grade": 3,
-        "transcend": 1,
-        "slot": 6
-      },
-      {
-        "nome": "Sortitude, o Gato Sortudo",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 6
-      },
-      {
-        "nome": "Sonholeta, a Fada Borboleta",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 6
-      },
-      {
-        "nome": "Chifre Flamejante, o Diabo de Fogo",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 6
-      },
-      {
-        "nome": "Gargas, o Vigia Verdejante",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 6
-      },
-      {
-        "nome": "Zakhan, o Assassino Sombrio",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 6
-      },
-      {
-        "nome": "Horyong, Pequeno Dragão azul-celeste",
-        "grade": 3,
-        "transcend": 1,
-        "slot": 5
-      },
-      {
-        "nome": "Suparna, o Pássaro Dourado",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 5
-      },
-      {
-        "nome": "Florida, o Anjo Verdejante",
-        "grade": 3,
-        "transcend": 1,
-        "slot": 5
-      },
-      {
-        "nome": "Faísca, a Gema Brilhante",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 5
-      },
-      {
-        "nome": "Rei Leão Khun",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 5
-      },
-      {
-        "nome": "Bisana, a Borboleta Turquesa",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 5
-      },
-      {
-        "nome": "Sortitude, o Gato Sortudo",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 7
-      },
-      {
-        "nome": "Florida, o Anjo Verdejante",
-        "grade": 3,
-        "transcend": 1,
-        "slot": 7
-      },
-      {
-        "nome": "Sonholeta, a Fada Borboleta",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 7
-      },
-      {
-        "nome": "Chifre Flamejante, o Diabo de Fogo",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 7
-      },
-      {
-        "nome": "Gargas, o Vigia Verdejante",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 7
-      },
-      {
-        "nome": "Zakhan, o Assassino Sombrio",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 7
-      },
-      {
-        "nome": "Shaoshao, o Maníaco das Gemas",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 4
-      },
-      {
-        "nome": "Biyoho, o Descendente Infernal das Chamas",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 4
-      },
-      {
-        "nome": "Mir, o Dragão Radiante",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 4
-      },
-      {
-        "nome": "Yobi, o Mensageiro da Primavera",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 4
-      },
-      {
-        "nome": "Cometa, o Dono dos Chifres Vermelhos",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 4
-      },
-      {
-        "nome": "Mantata, o Barão Azul",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 4
-      },
-      {
-        "nome": "Darknyan, o Ressuscitador",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 1
-      },
-      {
-        "nome": "Vendavalma, o Invocador do Vento",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 1
-      },
-      {
-        "nome": "Wooska, Príncipe Herdeiro das Trevas",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 1
-      },
-      {
-        "nome": "Sumacheon, o Rei Demoníaco do Mar do Norte",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 1
-      },
-      {
-        "nome": "Lulu, a Felina Encantada",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 1
-      },
-      {
-        "nome": "Haeryu, o Elementalista da Cura",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 1
-      },
-      {
-        "nome": "Darknyan, o Ressuscitador",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 2
-      },
-      {
-        "nome": "Nerr, o Demônio de Gelo das Trevas",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 2
-      },
-      {
-        "nome": "Wooska, Príncipe Herdeiro das Trevas",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 2
-      },
-      {
-        "nome": "Sumacheon, o Rei Demoníaco do Mar do Norte",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 2
-      },
-      {
-        "nome": "Lulu, a Felina Encantada",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 2
-      },
-      {
-        "nome": "Haeryu, o Elementalista da Cura",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 2
-      },
-      {
-        "nome": "Darknyan, o Ressuscitador",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 3
-      },
-      {
-        "nome": "Anjo da Morte, o Ceifeiro de Almas",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 3
-      },
-      {
-        "nome": "Wooska, Príncipe Herdeiro das Trevas",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 3
-      },
-      {
-        "nome": "Sumacheon, o Rei Demoníaco do Mar do Norte",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 3
-      },
-      {
-        "nome": "Lulu, a Felina Encantada",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 3
-      },
-      {
-        "nome": "Poipoi, o Dragão da Nuvem Negra",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 3
-      },
-      {
-        "nome": "Darknyan, o Ressuscitador",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 8
-      },
-      {
-        "nome": "Anjo da Morte, o Ceifeiro de Almas",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 8
-      },
-      {
-        "nome": "Vendavalma, o Invocador do Vento",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 8
-      },
-      {
-        "nome": "Wooska, Príncipe Herdeiro das Trevas",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 8
-      },
-      {
-        "nome": "Lulu, a Felina Encantada",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 8
-      },
-      {
-        "nome": "Darknyan, o Ressuscitador",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 9
-      },
-      {
-        "nome": "Anjo da Morte, o Ceifeiro de Almas",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 9
-      },
-      {
-        "nome": "Vendavalma, o Invocador do Vento",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 9
-      },
-      {
-        "nome": "Wooska, Príncipe Herdeiro das Trevas",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 9
-      },
-      {
-        "nome": "Woosa, o Sábio do Deserto",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 9
-      },
-      {
-        "nome": "Nyanja Assassino",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 10
-      },
-      {
-        "nome": "Biyoho, o Descendente Infernal das Chamas",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 10
-      },
-      {
-        "nome": "Koiga, Coração de Leão Brutal",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 10
-      },
-      {
-        "nome": "Mir, o Dragão Radiante",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 10
-      },
-      {
-        "nome": "Lulu, a Felina Encantada",
-        "grade": 5,
-        "transcend": 1,
-        "slot": 10
-      },
-      {
-        "nome": "Mantata, o Barão Azul",
-        "grade": 4,
-        "transcend": 1,
-        "slot": 10
-      }
-    ],
-    "spirits_lend": [
-      "Sonholeta, a Fada Borboleta",
-      "Sonholeta, a Fada Borboleta",
-      "Darknyan, o Ressuscitador",
-      "Vendavalma, o Invocador do Vento",
-      "Wooska, Príncipe Herdeiro das Trevas",
-      "Sumacheon, o Rei Demoníaco do Mar do Norte",
-      "Lulu, a Felina Encantada",
-      "Haeryu, o Elementalista da Cura",
-      "Darknyan, o Ressuscitador",
-      "Wooska, Príncipe Herdeiro das Trevas",
-      "Sumacheon, o Rei Demoníaco do Mar do Norte",
-      "Lulu, a Felina Encantada",
-      "Haeryu, o Elementalista da Cura",
-      "Darknyan, o Ressuscitador",
-      "Wooska, Príncipe Herdeiro das Trevas",
-      "Sumacheon, o Rei Demoníaco do Mar do Norte",
-      "Lulu, a Felina Encantada",
-      "Darknyan, o Ressuscitador",
-      "Vendavalma, o Invocador do Vento",
-      "Wooska, Príncipe Herdeiro das Trevas",
-      "Lulu, a Felina Encantada",
-      "Darknyan, o Ressuscitador",
-      "Vendavalma, o Invocador do Vento",
-      "Wooska, Príncipe Herdeiro das Trevas",
-      "Lulu, a Felina Encantada"
-    ],
-    "spirits_grade6": [],
-    "spirits_lend_count": 25,
-    "spirits_grade6_count": 0,
-    "spirits_inven_lend": [
-      "Darknyan, o Ressuscitador",
-      "Sonholeta, a Fada Borboleta",
-      "Vendavalma, o Invocador do Vento",
-      "Infernus, Senhor do Inferno",
-      "Wooska, Príncipe Herdeiro das Trevas",
-      "Sumacheon, o Rei Demoníaco do Mar do Norte",
-      "Lulu, a Felina Encantada",
-      "Haeryu, o Elementalista da Cura"
-    ],
-    "buildings": {
-      "Torre de Conquista": 20,
-      "Forja": 20,
-      "Mina": 20,
-      "Árvore Milenar": 20,
-      "Santuário de Treino": 18,
-      "Torre de Quintessência": 20,
-      "Torre da Vitória": 19,
-      "Santuário Sagrado": 20,
-      "Portão Dimensional": 20,
-      "Santuário de Hidra": 13
-    },
-    "mina_lv": 20,
-    "training": {
-      "Técnica de desenvolvimento muscular": 12,
-      "Manual dos Nove Yin": 13,
-      "Manual dos Nove Yang": 12,
-      "Arte Divina da Névoa Violeta": 3,
-      "Arte Divina Profunda do Norte": 3,
-      "Postura do Sapo": 8
-    },
-    "constituicao_lv": 17,
-    "collect_lv": 27,
-    "magicorb": {},
-    "magicstone": {
-      "": 0
-    },
-    "mystpiece": {
-      "": {
-        "grade": 0,
-        "enhance": 0
-      }
-    },
-    "potencial_total": 311,
-    "potencial_caca": 116,
-    "potencial_pvp": 101,
-    "scripture": {
-      "Salão das Escrituras 2": {
-        "total": 89,
-        "completed": 0
-      },
-      "Salão das Escrituras 1": {
-        "total": 169,
-        "completed": 1
-      }
-    },
-    "codex": {
-      "Reputação": {
-        "total": 348,
-        "completed": 127
-      },
-      "Esfera da Alma Mágica": {
-        "total": 241,
-        "completed": 39
-      },
-      "Servidor": {
-        "total": 252,
-        "completed": 159
-      },
-      "Personagem": {
-        "total": 1705,
-        "completed": 774
-      },
-      "Por Tempo limitado": {
-        "total": 55,
-        "completed": 2
-      }
-    },
-    "codex_total_completed": 1101,
-    "antiguidades": {
-      "Antiguidade de Leão Unicórnio": 4,
-      "Antiguidade de Pássaro Vermelho": 4,
-      "Antiguidade de Tartaruga Negra": 3,
-      "Antiguidade de Tigre Branco": 4,
-      "Antiguidade de Dragão Azul": 2
-    },
-    "antiguidade_max_grade": 4,
-    "dragon": {
-      "slot_1": {
-        "grade": 4,
-        "count": 3
-      },
-      "slot_2": {
-        "grade": 4,
-        "count": 3
-      },
-      "slot_3": {
-        "grade": 4,
-        "count": 4
-      },
-      "slot_4": {
-        "grade": 4,
-        "count": 4
-      },
-      "slot_5": {
-        "grade": 4,
-        "count": 3
-      },
-      "slot_6": {
-        "grade": 4,
-        "count": 5
-      }
-    },
-    "dragon_max_grade": 4,
-    "dragon_total_count": 22,
-    "dragon_max_count": 5,
-    "scripture_total_completed": 1,
-    "recursos": {},
-    "heaven_training": {
-      "slot1_pos1": 15,
-      "slot1_pos2": 10,
-      "slot1_pos3": 10,
-      "slot1_pos4": 10,
-      "slot1_pos5": 10,
-      "slot1_pos6": 10,
-      "slot1_pos7": 10,
-      "slot1_pos8": 10,
-      "slot2_pos1": 6,
-      "slot2_pos2": 5,
-      "slot2_pos3": 5,
-      "slot2_pos4": 5,
-      "slot2_pos5": 5,
-      "slot2_pos6": 5,
-      "slot2_pos7": 5,
-      "slot2_pos8": 5,
-      "slot3_pos1": 10,
-      "slot3_pos2": 10,
-      "slot3_pos3": 10,
-      "slot3_pos4": 10,
-      "slot3_pos5": 10,
-      "slot3_pos6": 10,
-      "slot3_pos7": 10,
-      "slot3_pos8": 8,
-      "slot4_pos1": 10,
-      "slot4_pos2": 10,
-      "slot4_pos3": 9,
-      "slot4_pos4": 5,
-      "slot4_pos5": 5,
-      "slot4_pos6": 5,
-      "slot4_pos7": 5,
-      "slot4_pos8": 5
-    },
-    "heaven_max_lv": 15,
-    "uniao_universal": {
-      "ciclo_1": 2,
-      "ciclo_2": 1,
-      "ciclo_3": 1,
-      "ciclo_4": 1
-    },
-    "equip_transferencia": {
-      "301": {
-        "nome": "Bastão de Sarmati",
-        "grade": 5,
-        "enhance": 6,
-        "tier": 1
-      },
-      "302": {
-        "nome": "Cabaça de Wu Yeogi",
-        "grade": 5,
-        "enhance": 6,
-        "tier": 1
-      },
-      "303": {
-        "nome": "Grampo Ornamental de Jade de Cheonpa",
-        "grade": 5,
-        "enhance": 6,
-        "tier": 1
-      },
-      "304": {
-        "nome": "Tomo de Bok Yangjeo",
-        "grade": 5,
-        "enhance": 5,
-        "tier": 1
-      },
-      "305": {
-        "nome": "Agulha Dourada de Dragão Amarelo do Ervanário Hong",
-        "grade": 5,
-        "enhance": 5,
-        "tier": 1
-      },
-      "306": {
-        "nome": "Porrete de Ferro de Noh Wunjang",
-        "grade": 5,
-        "enhance": 6,
-        "tier": 1
-      },
-      "307": {
-        "nome": "Pakua de Chogye",
-        "grade": 5,
-        "enhance": 4,
-        "tier": 1
-      },
-      "308": {
-        "nome": "Ombreira de Sondeok",
-        "grade": 5,
-        "enhance": 3,
-        "tier": 1
-      },
-      "309": {
-        "nome": "Vampirismo de Yeoyul",
-        "grade": 5,
-        "enhance": 3,
-        "tier": 1
-      },
-      "310": {
-        "nome": "Leque Flexível de Gaon",
-        "grade": 5,
-        "enhance": 3,
-        "tier": 1
-      }
-    },
-    "succession_avg_enhance": 4.7,
-    "primeira_tentativa": "2026-07-08T11:34:18.707480+00:00",
-    "ultima_tentativa": "2026-07-09T07:03:06.024725+00:00",
-    "tentativas": 2,
-    "completo_em": "2026-07-08T21:50:23.074004+00:00",
-    "tempo_ate_completar_h": 0.0,
-    "schema_version": 2,
-    "succession_raw_debug": [
-      {
-        "itemIdx": "240120001",
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "enhance": 6,
-        "grade": "5",
-        "tier": "1",
-        "itemType": "24_1",
-        "itemName": "Bastão de Sarmati",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Staff_01.png"
-      },
-      {
-        "itemIdx": "240320001",
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "enhance": 6,
-        "grade": "5",
-        "tier": "1",
-        "itemType": "24_3",
-        "itemName": "Cabaça de Wu Yeogi",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Bottle_01.png"
-      },
-      {
-        "itemIdx": "240220001",
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "enhance": 6,
-        "grade": "5",
-        "tier": "1",
-        "itemType": "24_2",
-        "itemName": "Grampo Ornamental de Jade de Cheonpa",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Hairpin_01.png"
-      },
-      {
-        "itemIdx": "240420001",
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "enhance": 5,
-        "grade": "5",
-        "tier": "1",
-        "itemType": "24_4",
-        "itemName": "Tomo de Bok Yangjeo",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Book_01.png"
-      },
-      {
-        "itemIdx": "240520001",
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "enhance": 5,
-        "grade": "5",
-        "tier": "1",
-        "itemType": "24_5",
-        "itemName": "Agulha Dourada de Dragão Amarelo do Ervanário Hong",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Needlecase_01.png"
-      },
-      {
-        "itemIdx": "240620001",
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "enhance": 6,
-        "grade": "5",
-        "tier": "1",
-        "itemType": "24_6",
-        "itemName": "Porrete de Ferro de Noh Wunjang",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Cudgel_01.png"
-      },
-      {
-        "itemIdx": "240720001",
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "enhance": 4,
-        "grade": "5",
-        "tier": "1",
-        "itemType": "24_7",
-        "itemName": "Pakua de Chogye",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_EightTrigrams_01.png"
-      },
-      {
-        "itemIdx": "240820001",
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "enhance": 3,
-        "grade": "5",
-        "tier": "1",
-        "itemType": "24_8",
-        "itemName": "Ombreira de Sondeok",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_Pauldron_01.png"
-      },
-      {
-        "itemIdx": "240920001",
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "enhance": 3,
-        "grade": "5",
-        "tier": "1",
-        "itemType": "24_9",
-        "itemName": "Vampirismo de Yeoyul",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_AbsorptiveBook_01.png"
-      },
-      {
-        "itemIdx": "241020001",
-        "tranceStep": 0,
-        "RefineStep": 0,
-        "enhance": 3,
-        "grade": "5",
-        "tier": "1",
-        "itemType": "24_10",
-        "itemName": "Leque Flexível de Gaon",
-        "itemPath": "https://file.mir4global.com/xdraco-thumb/Content/UI/Atlas_N_Resource/Icon/Item/Equip/Item_Equip_SpecialEquip_01/Pcc_SpecialEquip_FoldingFan_01.png"
-      }
-    ],
     "_reaproveitado_de_listagem": true
   }
 ]

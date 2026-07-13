@@ -1,15 +1,22 @@
 {
-  "updated_at": "2026-07-13T15:35:57.923345+00:00",
-  "total": 1195,
-  "preco_medio_global": 2502,
+  "updated_at": "2026-07-13T17:35:15.919749+00:00",
+  "total": 1198,
+  "preco_medio_global": 2497,
   "preco_mediano_global": 520,
   "por_classe": {
     "Arbalist": {
-      "media": 2262,
+      "media": 2255,
       "mediana": 650,
       "min": 1,
       "max": 135000,
-      "count": 397
+      "count": 399
+    },
+    "Warrior": {
+      "media": 3575,
+      "mediana": 642,
+      "min": 1,
+      "max": 145000,
+      "count": 166
     },
     "Sorcerer": {
       "media": 1377,
@@ -32,13 +39,6 @@
       "max": 27000,
       "count": 97
     },
-    "Warrior": {
-      "media": 3596,
-      "mediana": 650,
-      "min": 1,
-      "max": 145000,
-      "count": 165
-    },
     "Lancer": {
       "media": 4052,
       "mediana": 530,
@@ -59,9 +59,9 @@
       "count": 35
     },
     "90": {
-      "media": 67,
+      "media": 66,
       "mediana": 55,
-      "count": 56
+      "count": 57
     },
     "100": {
       "media": 111,
@@ -80,8 +80,8 @@
     },
     "130": {
       "media": 260,
-      "mediana": 265,
-      "count": 189
+      "mediana": 262,
+      "count": 190
     },
     "140": {
       "media": 574,
@@ -89,9 +89,9 @@
       "count": 262
     },
     "150": {
-      "media": 1942,
-      "mediana": 1364,
-      "count": 328
+      "media": 1940,
+      "mediana": 1357,
+      "count": 329
     },
     "160": {
       "media": 7567,
@@ -106,14 +106,14 @@
   },
   "por_ps": {
     "100000": {
-      "media": 100,
+      "media": 99,
       "mediana": 75,
-      "count": 207
+      "count": 208
     },
     "200000": {
       "media": 221,
       "mediana": 230,
-      "count": 188
+      "count": 189
     },
     "300000": {
       "media": 518,
@@ -121,9 +121,9 @@
       "count": 363
     },
     "400000": {
-      "media": 2106,
+      "media": 2103,
       "mediana": 1650,
-      "count": 297
+      "count": 298
     },
     "500000": {
       "media": 8151,

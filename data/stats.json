@@ -1,15 +1,29 @@
 {
-  "updated_at": "2026-07-12T23:11:44.759174+00:00",
-  "total": 1162,
-  "preco_medio_global": 2421,
+  "updated_at": "2026-07-13T00:10:00.806851+00:00",
+  "total": 1165,
+  "preco_medio_global": 2420,
   "preco_mediano_global": 520,
   "por_classe": {
+    "Darkist": {
+      "media": 2462,
+      "mediana": 485,
+      "min": 1,
+      "max": 27000,
+      "count": 92
+    },
+    "Lancer": {
+      "media": 4143,
+      "mediana": 530,
+      "min": 1,
+      "max": 277777,
+      "count": 139
+    },
     "Arbalist": {
-      "media": 2290,
+      "media": 2292,
       "mediana": 650,
       "min": 1,
       "max": 135000,
-      "count": 385
+      "count": 386
     },
     "Sorcerer": {
       "media": 1379,
@@ -25,26 +39,12 @@
       "max": 139800,
       "count": 163
     },
-    "Lancer": {
-      "media": 4167,
-      "mediana": 525,
-      "min": 1,
-      "max": 277777,
-      "count": 138
-    },
     "Taoist": {
       "media": 2306,
       "mediana": 437,
       "min": 1,
       "max": 82999,
       "count": 214
-    },
-    "Darkist": {
-      "media": 2464,
-      "mediana": 450,
-      "min": 1,
-      "max": 27000,
-      "count": 91
     }
   },
   "por_nivel": {
@@ -84,14 +84,14 @@
       "count": 183
     },
     "140": {
-      "media": 571,
+      "media": 572,
       "mediana": 520,
-      "count": 254
+      "count": 255
     },
     "150": {
-      "media": 1950,
-      "mediana": 1333,
-      "count": 319
+      "media": 1954,
+      "mediana": 1357,
+      "count": 321
     },
     "160": {
       "media": 7563,
@@ -116,14 +116,14 @@
       "count": 181
     },
     "300000": {
-      "media": 513,
+      "media": 514,
       "mediana": 500,
-      "count": 352
+      "count": 353
     },
     "400000": {
-      "media": 2111,
+      "media": 2115,
       "mediana": 1650,
-      "count": 290
+      "count": 292
     },
     "500000": {
       "media": 8153,
@@ -147,37 +147,37 @@
     }
   },
   "top_spirits": {
-    "Wooska, Príncipe Herdeiro das Trevas": 160,
-    "Darknyan, o Ressuscitador": 159,
-    "Balrog, o Lorde do Fogo": 150,
-    "Reidouro, o Falcão de Fogo": 142,
-    "Lulu, a Felina Encantada": 137,
-    "Drago Ponta de Sangue": 109,
-    "Styx, o Cavaleiro Fantasma": 104,
-    "Setra Radiante": 93,
-    "Imperador da Destruição, o Demônio Infernal Octogonal": 90,
-    "Sumacheon, o Rei Demoníaco do Mar do Norte": 81,
-    "Grifavalo, o Garanhão Sombrio": 69,
+    "Wooska, Príncipe Herdeiro das Trevas": 168,
+    "Darknyan, o Ressuscitador": 165,
+    "Balrog, o Lorde do Fogo": 146,
+    "Lulu, a Felina Encantada": 144,
+    "Reidouro, o Falcão de Fogo": 143,
+    "Drago Ponta de Sangue": 118,
+    "Styx, o Cavaleiro Fantasma": 110,
+    "Setra Radiante": 100,
+    "Imperador da Destruição, o Demônio Infernal Octogonal": 86,
+    "Sumacheon, o Rei Demoníaco do Mar do Norte": 83,
+    "Grifavalo, o Garanhão Sombrio": 70,
+    "Vendavalma, o Invocador do Vento": 66,
     "Toril, o Dragão Divino do Trovão": 65,
-    "Vendavalma, o Invocador do Vento": 62,
-    "Hydra, o Dragão de Três Cabeças": 44,
-    "Lucy, dos Olhos Vermelhos": 41
+    "Lucy, dos Olhos Vermelhos": 45,
+    "Hydra, o Dragão de Três Cabeças": 43
   },
   "top_legendary_items": {
-    "Bastão de Sarmati": 12,
-    "Cabaça de Wu Yeogi": 12,
-    "Grampo Ornamental de Jade de Cheonpa": 12,
-    "Tomo de Bok Yangjeo": 12,
-    "Agulha Dourada de Dragão Amarelo do Ervanário Hong": 12,
-    "Porrete de Ferro de Noh Wunjang": 12,
-    "Pakua de Chogye": 12,
-    "Ombreira de Sondeok": 12,
-    "Vampirismo de Yeoyul": 12,
-    "Leque Flexível de Gaon": 12,
+    "Bastão de Sarmati": 13,
+    "Cabaça de Wu Yeogi": 13,
+    "Grampo Ornamental de Jade de Cheonpa": 13,
+    "Tomo de Bok Yangjeo": 13,
+    "Agulha Dourada de Dragão Amarelo do Ervanário Hong": 13,
+    "Porrete de Ferro de Noh Wunjang": 13,
+    "Pakua de Chogye": 13,
+    "Ombreira de Sondeok": 13,
+    "Vampirismo de Yeoyul": 13,
+    "Leque Flexível de Gaon": 13,
     "Anel de Ligação Celestial": 7,
+    "Brincos de Ligação Celestial": 7,
     "Colar de Ligação Celestial": 7,
     "Pulseira de Ligação Celestial": 6,
-    "Brincos de Ligação Celestial": 6,
     "Berloque do Trovão Celestial": 5
   }
 }

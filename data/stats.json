@@ -1,22 +1,36 @@
 {
-  "updated_at": "2026-07-14T00:07:16.625239+00:00",
-  "total": 1213,
-  "preco_medio_global": 2481,
+  "updated_at": "2026-07-14T03:31:19.230945+00:00",
+  "total": 1219,
+  "preco_medio_global": 2472,
   "preco_mediano_global": 520,
   "por_classe": {
+    "Taoist": {
+      "media": 2254,
+      "mediana": 460,
+      "min": 1,
+      "max": 82999,
+      "count": 227
+    },
+    "Darkist": {
+      "media": 2333,
+      "mediana": 450,
+      "min": 1,
+      "max": 27000,
+      "count": 99
+    },
+    "Arbalist": {
+      "media": 2241,
+      "mediana": 650,
+      "min": 1,
+      "max": 135000,
+      "count": 402
+    },
     "Warrior": {
       "media": 3529,
       "mediana": 650,
       "min": 1,
       "max": 145000,
       "count": 169
-    },
-    "Taoist": {
-      "media": 2269,
-      "mediana": 450,
-      "min": 1,
-      "max": 82999,
-      "count": 225
     },
     "Sorcerer": {
       "media": 1358,
@@ -31,20 +45,6 @@
       "min": 1,
       "max": 277777,
       "count": 144
-    },
-    "Arbalist": {
-      "media": 2249,
-      "mediana": 650,
-      "min": 1,
-      "max": 135000,
-      "count": 400
-    },
-    "Darkist": {
-      "media": 2371,
-      "mediana": 450,
-      "min": 1,
-      "max": 27000,
-      "count": 97
     }
   },
   "por_nivel": {
@@ -54,9 +54,9 @@
       "count": 4
     },
     "80": {
-      "media": 59,
-      "mediana": 43,
-      "count": 35
+      "media": 58,
+      "mediana": 42,
+      "count": 36
     },
     "90": {
       "media": 66,
@@ -86,12 +86,12 @@
     "140": {
       "media": 576,
       "mediana": 520,
-      "count": 265
+      "count": 269
     },
     "150": {
-      "media": 1929,
-      "mediana": 1345,
-      "count": 334
+      "media": 1927,
+      "mediana": 1333,
+      "count": 335
     },
     "160": {
       "media": 7474,
@@ -107,8 +107,8 @@
   "por_ps": {
     "100000": {
       "media": 99,
-      "mediana": 75,
-      "count": 209
+      "mediana": 74,
+      "count": 210
     },
     "200000": {
       "media": 220,
@@ -116,14 +116,14 @@
       "count": 192
     },
     "300000": {
-      "media": 518,
+      "media": 519,
       "mediana": 500,
-      "count": 366
+      "count": 370
     },
     "400000": {
-      "media": 2097,
+      "media": 2093,
       "mediana": 1650,
-      "count": 305
+      "count": 306
     },
     "500000": {
       "media": 8120,
@@ -147,21 +147,21 @@
     }
   },
   "top_spirits": {
-    "Wooska, Príncipe Herdeiro das Trevas": 188,
+    "Wooska, Príncipe Herdeiro das Trevas": 194,
     "Darknyan, o Ressuscitador": 183,
+    "Lulu, a Felina Encantada": 166,
+    "Reidouro, o Falcão de Fogo": 163,
     "Balrog, o Lorde do Fogo": 160,
-    "Reidouro, o Falcão de Fogo": 158,
-    "Lulu, a Felina Encantada": 158,
     "Drago Ponta de Sangue": 132,
-    "Styx, o Cavaleiro Fantasma": 116,
+    "Styx, o Cavaleiro Fantasma": 119,
     "Setra Radiante": 115,
-    "Imperador da Destruição, o Demônio Infernal Octogonal": 99,
+    "Imperador da Destruição, o Demônio Infernal Octogonal": 104,
     "Sumacheon, o Rei Demoníaco do Mar do Norte": 89,
-    "Grifavalo, o Garanhão Sombrio": 86,
-    "Vendavalma, o Invocador do Vento": 78,
-    "Toril, o Dragão Divino do Trovão": 66,
+    "Grifavalo, o Garanhão Sombrio": 87,
+    "Vendavalma, o Invocador do Vento": 79,
+    "Toril, o Dragão Divino do Trovão": 73,
     "Lucy, dos Olhos Vermelhos": 51,
-    "Haeryu, o Elementalista da Cura": 44
+    "Haeryu, o Elementalista da Cura": 49
   },
   "top_legendary_items": {
     "Bastão de Sarmati": 19,

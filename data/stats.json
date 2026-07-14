@@ -1,9 +1,23 @@
 {
-  "updated_at": "2026-07-13T23:11:25.016243+00:00",
-  "total": 1211,
+  "updated_at": "2026-07-14T00:07:16.625239+00:00",
+  "total": 1213,
   "preco_medio_global": 2481,
   "preco_mediano_global": 520,
   "por_classe": {
+    "Warrior": {
+      "media": 3529,
+      "mediana": 650,
+      "min": 1,
+      "max": 145000,
+      "count": 169
+    },
+    "Taoist": {
+      "media": 2269,
+      "mediana": 450,
+      "min": 1,
+      "max": 82999,
+      "count": 225
+    },
     "Sorcerer": {
       "media": 1358,
       "mediana": 282,
@@ -11,26 +25,12 @@
       "max": 10000,
       "count": 126
     },
-    "Taoist": {
-      "media": 2262,
-      "mediana": 449,
-      "min": 1,
-      "max": 82999,
-      "count": 224
-    },
     "Lancer": {
       "media": 4026,
       "mediana": 530,
       "min": 1,
       "max": 277777,
       "count": 144
-    },
-    "Warrior": {
-      "media": 3543,
-      "mediana": 642,
-      "min": 1,
-      "max": 145000,
-      "count": 168
     },
     "Arbalist": {
       "media": 2249,
@@ -89,14 +89,14 @@
       "count": 265
     },
     "150": {
-      "media": 1932,
-      "mediana": 1357,
-      "count": 333
+      "media": 1929,
+      "mediana": 1345,
+      "count": 334
     },
     "160": {
-      "media": 7501,
-      "mediana": 6575,
-      "count": 132
+      "media": 7474,
+      "mediana": 6500,
+      "count": 133
     },
     "170": {
       "media": 51731,
@@ -121,9 +121,9 @@
       "count": 366
     },
     "400000": {
-      "media": 2094,
+      "media": 2097,
       "mediana": 1650,
-      "count": 303
+      "count": 305
     },
     "500000": {
       "media": 8120,
@@ -147,21 +147,21 @@
     }
   },
   "top_spirits": {
-    "Wooska, Príncipe Herdeiro das Trevas": 194,
+    "Wooska, Príncipe Herdeiro das Trevas": 188,
     "Darknyan, o Ressuscitador": 183,
-    "Lulu, a Felina Encantada": 166,
-    "Reidouro, o Falcão de Fogo": 163,
     "Balrog, o Lorde do Fogo": 160,
+    "Reidouro, o Falcão de Fogo": 158,
+    "Lulu, a Felina Encantada": 158,
     "Drago Ponta de Sangue": 132,
-    "Styx, o Cavaleiro Fantasma": 119,
+    "Styx, o Cavaleiro Fantasma": 116,
     "Setra Radiante": 115,
-    "Imperador da Destruição, o Demônio Infernal Octogonal": 104,
+    "Imperador da Destruição, o Demônio Infernal Octogonal": 99,
     "Sumacheon, o Rei Demoníaco do Mar do Norte": 89,
-    "Grifavalo, o Garanhão Sombrio": 87,
-    "Vendavalma, o Invocador do Vento": 79,
-    "Toril, o Dragão Divino do Trovão": 73,
+    "Grifavalo, o Garanhão Sombrio": 86,
+    "Vendavalma, o Invocador do Vento": 78,
+    "Toril, o Dragão Divino do Trovão": 66,
     "Lucy, dos Olhos Vermelhos": 51,
-    "Haeryu, o Elementalista da Cura": 49
+    "Haeryu, o Elementalista da Cura": 44
   },
   "top_legendary_items": {
     "Bastão de Sarmati": 19,

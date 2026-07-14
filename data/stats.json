@@ -1,9 +1,16 @@
 {
-  "updated_at": "2026-07-14T05:49:41.800961+00:00",
-  "total": 1223,
-  "preco_medio_global": 2465,
+  "updated_at": "2026-07-14T07:35:37.516972+00:00",
+  "total": 1224,
+  "preco_medio_global": 2463,
   "preco_mediano_global": 520,
   "por_classe": {
+    "Darkist": {
+      "media": 2289,
+      "mediana": 450,
+      "min": 1,
+      "max": 27000,
+      "count": 101
+    },
     "Lancer": {
       "media": 3999,
       "mediana": 530,
@@ -17,13 +24,6 @@
       "min": 1,
       "max": 145000,
       "count": 170
-    },
-    "Darkist": {
-      "media": 2312,
-      "mediana": 450,
-      "min": 1,
-      "max": 27000,
-      "count": 100
     },
     "Taoist": {
       "media": 2244,
@@ -54,9 +54,9 @@
       "count": 4
     },
     "80": {
-      "media": 58,
-      "mediana": 42,
-      "count": 36
+      "media": 57,
+      "mediana": 40,
+      "count": 37
     },
     "90": {
       "media": 66,
@@ -106,9 +106,9 @@
   },
   "por_ps": {
     "100000": {
-      "media": 99,
-      "mediana": 75,
-      "count": 211
+      "media": 98,
+      "mediana": 74,
+      "count": 212
     },
     "200000": {
       "media": 220,

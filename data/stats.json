@@ -1,22 +1,36 @@
 {
-  "updated_at": "2026-07-16T04:24:20.160128+00:00",
-  "total": 1307,
-  "preco_medio_global": 2378,
-  "preco_mediano_global": 527,
+  "updated_at": "2026-07-16T06:39:12.741202+00:00",
+  "total": 1313,
+  "preco_medio_global": 2371,
+  "preco_mediano_global": 520,
   "por_classe": {
+    "Darkist": {
+      "media": 2205,
+      "mediana": 330,
+      "min": 1,
+      "max": 27000,
+      "count": 105
+    },
+    "Taoist": {
+      "media": 2160,
+      "mediana": 472,
+      "min": 1,
+      "max": 82999,
+      "count": 248
+    },
+    "Arbalist": {
+      "media": 2184,
+      "mediana": 650,
+      "min": 1,
+      "max": 135000,
+      "count": 437
+    },
     "Sorcerer": {
       "media": 1325,
       "mediana": 299,
       "min": 1,
       "max": 10000,
       "count": 133
-    },
-    "Arbalist": {
-      "media": 2186,
-      "mediana": 650,
-      "min": 1,
-      "max": 135000,
-      "count": 435
     },
     "Warrior": {
       "media": 3357,
@@ -31,20 +45,6 @@
       "min": 1,
       "max": 277777,
       "count": 151
-    },
-    "Darkist": {
-      "media": 2245,
-      "mediana": 380,
-      "min": 1,
-      "max": 27000,
-      "count": 103
-    },
-    "Taoist": {
-      "media": 2172,
-      "mediana": 472,
-      "min": 1,
-      "max": 82999,
-      "count": 246
     }
   },
   "por_nivel": {
@@ -61,7 +61,7 @@
     "90": {
       "media": 66,
       "mediana": 55,
-      "count": 58
+      "count": 59
     },
     "100": {
       "media": 108,
@@ -80,8 +80,8 @@
     },
     "130": {
       "media": 261,
-      "mediana": 262,
-      "count": 210
+      "mediana": 265,
+      "count": 213
     },
     "140": {
       "media": 578,
@@ -91,7 +91,7 @@
     "150": {
       "media": 1868,
       "mediana": 1300,
-      "count": 369
+      "count": 371
     },
     "160": {
       "media": 7456,
@@ -107,23 +107,23 @@
   "por_ps": {
     "100000": {
       "media": 98,
-      "mediana": 74,
-      "count": 219
+      "mediana": 73,
+      "count": 220
     },
     "200000": {
       "media": 219,
       "mediana": 230,
-      "count": 208
+      "count": 209
     },
     "300000": {
       "media": 523,
       "mediana": 500,
-      "count": 405
+      "count": 408
     },
     "400000": {
-      "media": 2045,
+      "media": 2048,
       "mediana": 1600,
-      "count": 331
+      "count": 332
     },
     "500000": {
       "media": 8106,
@@ -147,37 +147,37 @@
     }
   },
   "top_spirits": {
-    "Darknyan, o Ressuscitador": 223,
-    "Wooska, Príncipe Herdeiro das Trevas": 220,
-    "Reidouro, o Falcão de Fogo": 196,
-    "Lulu, a Felina Encantada": 193,
+    "Darknyan, o Ressuscitador": 227,
+    "Wooska, Príncipe Herdeiro das Trevas": 223,
+    "Reidouro, o Falcão de Fogo": 201,
+    "Lulu, a Felina Encantada": 197,
     "Balrog, o Lorde do Fogo": 169,
-    "Drago Ponta de Sangue": 155,
+    "Drago Ponta de Sangue": 160,
     "Styx, o Cavaleiro Fantasma": 140,
     "Setra Radiante": 134,
-    "Imperador da Destruição, o Demônio Infernal Octogonal": 110,
+    "Imperador da Destruição, o Demônio Infernal Octogonal": 116,
     "Sumacheon, o Rei Demoníaco do Mar do Norte": 103,
     "Grifavalo, o Garanhão Sombrio": 98,
-    "Vendavalma, o Invocador do Vento": 91,
+    "Vendavalma, o Invocador do Vento": 93,
     "Toril, o Dragão Divino do Trovão": 79,
     "Lucy, dos Olhos Vermelhos": 59,
     "Haeryu, o Elementalista da Cura": 55
   },
   "top_legendary_items": {
-    "Bastão de Sarmati": 27,
-    "Cabaça de Wu Yeogi": 27,
-    "Grampo Ornamental de Jade de Cheonpa": 27,
-    "Tomo de Bok Yangjeo": 27,
-    "Agulha Dourada de Dragão Amarelo do Ervanário Hong": 27,
-    "Porrete de Ferro de Noh Wunjang": 27,
-    "Pakua de Chogye": 27,
-    "Ombreira de Sondeok": 27,
-    "Vampirismo de Yeoyul": 27,
-    "Leque Flexível de Gaon": 27,
-    "Brincos de Ligação Celestial": 19,
-    "Anel de Ligação Celestial": 16,
+    "Bastão de Sarmati": 28,
+    "Cabaça de Wu Yeogi": 28,
+    "Grampo Ornamental de Jade de Cheonpa": 28,
+    "Tomo de Bok Yangjeo": 28,
+    "Agulha Dourada de Dragão Amarelo do Ervanário Hong": 28,
+    "Porrete de Ferro de Noh Wunjang": 28,
+    "Pakua de Chogye": 28,
+    "Ombreira de Sondeok": 28,
+    "Vampirismo de Yeoyul": 28,
+    "Leque Flexível de Gaon": 28,
+    "Brincos de Ligação Celestial": 20,
+    "Anel de Ligação Celestial": 17,
     "Pulseira de Ligação Celestial": 14,
     "Berloque do Trovão Celestial": 13,
-    "Medalha da Graça Celestial": 11
+    "Pulseira Celestial": 11
   }
 }

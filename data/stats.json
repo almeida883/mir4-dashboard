@@ -1,9 +1,23 @@
 {
-  "updated_at": "2026-07-17T16:56:39.779818+00:00",
-  "total": 1382,
-  "preco_medio_global": 2342,
+  "updated_at": "2026-07-17T17:53:55.230231+00:00",
+  "total": 1384,
+  "preco_medio_global": 2340,
   "preco_mediano_global": 535,
   "por_classe": {
+    "Taoist": {
+      "media": 2191,
+      "mediana": 485,
+      "min": 1,
+      "max": 82999,
+      "count": 264
+    },
+    "Arbalist": {
+      "media": 2118,
+      "mediana": 625,
+      "min": 1,
+      "max": 135000,
+      "count": 461
+    },
     "Sorcerer": {
       "media": 1353,
       "mediana": 320,
@@ -18,13 +32,6 @@
       "max": 145000,
       "count": 189
     },
-    "Arbalist": {
-      "media": 2122,
-      "mediana": 625,
-      "min": 1,
-      "max": 135000,
-      "count": 460
-    },
     "Darkist": {
       "media": 2188,
       "mediana": 380,
@@ -38,13 +45,6 @@
       "min": 1,
       "max": 277777,
       "count": 160
-    },
-    "Taoist": {
-      "media": 2194,
-      "mediana": 475,
-      "min": 1,
-      "max": 82999,
-      "count": 263
     }
   },
   "por_nivel": {
@@ -81,7 +81,7 @@
     "130": {
       "media": 261,
       "mediana": 265,
-      "count": 222
+      "count": 223
     },
     "140": {
       "media": 584,
@@ -89,9 +89,9 @@
       "count": 299
     },
     "150": {
-      "media": 1854,
+      "media": 1852,
       "mediana": 1299,
-      "count": 395
+      "count": 396
     },
     "160": {
       "media": 7467,
@@ -113,7 +113,7 @@
     "200000": {
       "media": 220,
       "mediana": 230,
-      "count": 220
+      "count": 221
     },
     "300000": {
       "media": 524,
@@ -121,9 +121,9 @@
       "count": 428
     },
     "400000": {
-      "media": 2061,
+      "media": 2059,
       "mediana": 1600,
-      "count": 358
+      "count": 359
     },
     "500000": {
       "media": 8197,

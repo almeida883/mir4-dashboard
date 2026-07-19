@@ -1,7 +1,7 @@
 {
   "recent": {
     "url": "https://webapi.mir4global.com/nft/lists?listType=recent&page=1&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&languageCode=pt",
-    "timestamp": "2026-07-19T14:42:05.116549+00:00",
+    "timestamp": "2026-07-19T15:39:16.058302+00:00",
     "resposta_bruta": {
       "code": 200,
       "data": {
@@ -11,6 +11,60 @@
         "lists": [
           {
             "seller": {
+              "userAddress": "0xec907afdb3c3e11cad35262635ab226ede4a657e",
+              "characterName": "XDOMEⓟⓡⓘⓜⓔ",
+              "class": 4,
+              "lv": 155,
+              "worldName": "ASIA032"
+            },
+            "info": {
+              "rowID": 1,
+              "seq": 2355671,
+              "transportID": 365719,
+              "nftID": "12035",
+              "characterName": "T2XDrc534skd",
+              "worldName": "ASIA012",
+              "class": 4,
+              "lv": 156,
+              "powerScore": 425746,
+              "price": 1650,
+              "isNew": 1,
+              "tradeDT": 1784472962,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x7ee3d04a6ed96310af29546ad95608d8f32987f6",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 2,
+              "seq": 2355472,
+              "transportID": 365546,
+              "nftID": "3311",
+              "characterName": "NOOBZinn99",
+              "worldName": "NA014",
+              "class": 2,
+              "lv": 153,
+              "powerScore": 413059,
+              "price": 850,
+              "isNew": 1,
+              "tradeDT": 1784472843,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
               "userAddress": "0xc96e6e9f19f9ef34428c21a427dff51d0eae08f7",
               "characterName": "'",
               "class": 0,
@@ -18,7 +72,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 1,
+              "rowID": 3,
               "seq": 2355785,
               "transportID": 366057,
               "nftID": "203004",
@@ -45,7 +99,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 2,
+              "rowID": 4,
               "seq": 2353024,
               "transportID": 359977,
               "nftID": "64648",
@@ -72,7 +126,7 @@
               "worldName": "NA012"
             },
             "info": {
-              "rowID": 3,
+              "rowID": 5,
               "seq": 2355698,
               "transportID": 57391,
               "nftID": "27842",
@@ -99,7 +153,7 @@
               "worldName": "INMENA023"
             },
             "info": {
-              "rowID": 4,
+              "rowID": 6,
               "seq": 2355843,
               "transportID": 366079,
               "nftID": "200592",
@@ -126,7 +180,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 5,
+              "rowID": 7,
               "seq": 2355811,
               "transportID": 365996,
               "nftID": "79795",
@@ -153,7 +207,7 @@
               "worldName": "SA022"
             },
             "info": {
-              "rowID": 6,
+              "rowID": 8,
               "seq": 2355760,
               "transportID": 365964,
               "nftID": "204212",
@@ -180,7 +234,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 7,
+              "rowID": 9,
               "seq": 2355307,
               "transportID": 365815,
               "nftID": "98815",
@@ -207,7 +261,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 8,
+              "rowID": 10,
               "seq": 2354009,
               "transportID": 365418,
               "nftID": "49794",
@@ -234,7 +288,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 9,
+              "rowID": 11,
               "seq": 2355829,
               "transportID": 366053,
               "nftID": "36824",
@@ -261,7 +315,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 10,
+              "rowID": 12,
               "seq": 2355613,
               "transportID": 365991,
               "nftID": "203956",
@@ -288,7 +342,7 @@
               "worldName": "SA031"
             },
             "info": {
-              "rowID": 11,
+              "rowID": 13,
               "seq": 2355784,
               "transportID": 366056,
               "nftID": "36908",
@@ -315,7 +369,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 12,
+              "rowID": 14,
               "seq": 2355773,
               "transportID": 365731,
               "nftID": "202480",
@@ -342,7 +396,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 13,
+              "rowID": 15,
               "seq": 2355815,
               "transportID": 366073,
               "nftID": "200716",
@@ -369,7 +423,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 14,
+              "rowID": 16,
               "seq": 2355759,
               "transportID": 365993,
               "nftID": "204217",
@@ -396,7 +450,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 15,
+              "rowID": 17,
               "seq": 2355786,
               "transportID": 365972,
               "nftID": "78730",
@@ -408,60 +462,6 @@
               "price": 1000,
               "isNew": 1,
               "tradeDT": 1784449682,
-              "MirageScore": 0,
-              "MiraX": 0,
-              "Reinforce": 0,
-              "stat": []
-            }
-          },
-          {
-            "seller": {
-              "userAddress": "0x4fbf6e493c5835f48b339bf66bad515a2cbb832d",
-              "characterName": "'",
-              "class": 0,
-              "lv": 0,
-              "worldName": "ASIA3"
-            },
-            "info": {
-              "rowID": 16,
-              "seq": 2355766,
-              "transportID": 365086,
-              "nftID": "98679",
-              "characterName": "Agatha ツ",
-              "worldName": "SA012",
-              "class": 6,
-              "lv": 126,
-              "powerScore": 253470,
-              "price": 230,
-              "isNew": 1,
-              "tradeDT": 1784446862,
-              "MirageScore": 0,
-              "MiraX": 0,
-              "Reinforce": 0,
-              "stat": []
-            }
-          },
-          {
-            "seller": {
-              "userAddress": "0x8b9dff0f656f01832ba80128e0ad73f8e25d902b",
-              "characterName": "'",
-              "class": 0,
-              "lv": 0,
-              "worldName": "ASIA3"
-            },
-            "info": {
-              "rowID": 17,
-              "seq": 2351588,
-              "transportID": 364686,
-              "nftID": "203607",
-              "characterName": "h1 s1",
-              "worldName": "INMENA022",
-              "class": 3,
-              "lv": 143,
-              "powerScore": 359334,
-              "price": 750,
-              "isNew": 1,
-              "tradeDT": 1784446862,
               "MirageScore": 0,
               "MiraX": 0,
               "Reinforce": 0,
@@ -497,7 +497,7 @@
           },
           {
             "seller": {
-              "userAddress": "0x4af31c66af66bbbab9ce0306ff6997fe3de591db",
+              "userAddress": "0x8b9dff0f656f01832ba80128e0ad73f8e25d902b",
               "characterName": "'",
               "class": 0,
               "lv": 0,
@@ -505,6 +505,60 @@
             },
             "info": {
               "rowID": 19,
+              "seq": 2351588,
+              "transportID": 364686,
+              "nftID": "203607",
+              "characterName": "h1 s1",
+              "worldName": "INMENA022",
+              "class": 3,
+              "lv": 143,
+              "powerScore": 359334,
+              "price": 750,
+              "isNew": 1,
+              "tradeDT": 1784446862,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x4fbf6e493c5835f48b339bf66bad515a2cbb832d",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 20,
+              "seq": 2355766,
+              "transportID": 365086,
+              "nftID": "98679",
+              "characterName": "Agatha ツ",
+              "worldName": "SA012",
+              "class": 6,
+              "lv": 126,
+              "powerScore": 253470,
+              "price": 230,
+              "isNew": 1,
+              "tradeDT": 1784446862,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x4af31c66af66bbbab9ce0306ff6997fe3de591db",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 21,
               "seq": 2355747,
               "transportID": 365865,
               "nftID": "63071",
@@ -531,7 +585,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 20,
+              "rowID": 22,
               "seq": 2355748,
               "transportID": 366039,
               "nftID": "204258",
@@ -558,7 +612,7 @@
               "worldName": "ASIA071"
             },
             "info": {
-              "rowID": 21,
+              "rowID": 23,
               "seq": 2355572,
               "transportID": 365838,
               "nftID": "200228",
@@ -585,7 +639,7 @@
               "worldName": "SA041"
             },
             "info": {
-              "rowID": 22,
+              "rowID": 24,
               "seq": 2355752,
               "transportID": 365839,
               "nftID": "65677",
@@ -612,7 +666,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 23,
+              "rowID": 25,
               "seq": 2355695,
               "transportID": 365728,
               "nftID": "202257",
@@ -639,7 +693,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 24,
+              "rowID": 26,
               "seq": 2355719,
               "transportID": 366023,
               "nftID": "203814",
@@ -666,7 +720,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 25,
+              "rowID": 27,
               "seq": 2355605,
               "transportID": 365785,
               "nftID": "64968",
@@ -693,7 +747,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 26,
+              "rowID": 28,
               "seq": 2355755,
               "transportID": 365920,
               "nftID": "203979",
@@ -720,7 +774,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 27,
+              "rowID": 29,
               "seq": 2355369,
               "transportID": 365587,
               "nftID": "49095",
@@ -747,7 +801,7 @@
               "worldName": "ASIA313"
             },
             "info": {
-              "rowID": 28,
+              "rowID": 30,
               "seq": 2355590,
               "transportID": 365610,
               "nftID": "79147",
@@ -774,7 +828,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 29,
+              "rowID": 31,
               "seq": 2355418,
               "transportID": 365388,
               "nftID": "52158",
@@ -801,7 +855,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 30,
+              "rowID": 32,
               "seq": 2355600,
               "transportID": 365988,
               "nftID": "200542",
@@ -828,7 +882,7 @@
               "worldName": "ASIA012"
             },
             "info": {
-              "rowID": 31,
+              "rowID": 33,
               "seq": 2345852,
               "transportID": 362799,
               "nftID": "7813",
@@ -855,7 +909,7 @@
               "worldName": "ASIA022"
             },
             "info": {
-              "rowID": 32,
+              "rowID": 34,
               "seq": 2355086,
               "transportID": 358981,
               "nftID": "70959",
@@ -882,7 +936,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 33,
+              "rowID": 35,
               "seq": 2355694,
               "transportID": 365887,
               "nftID": "202130",
@@ -909,7 +963,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 34,
+              "rowID": 36,
               "seq": 2355684,
               "transportID": 365995,
               "nftID": "204256",
@@ -936,7 +990,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 35,
+              "rowID": 37,
               "seq": 2355703,
               "transportID": 365948,
               "nftID": "76711",
@@ -963,7 +1017,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 36,
+              "rowID": 38,
               "seq": 2355717,
               "transportID": 366003,
               "nftID": "97202",
@@ -990,7 +1044,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 37,
+              "rowID": 39,
               "seq": 2354993,
               "transportID": 362243,
               "nftID": "203933",
@@ -1017,7 +1071,7 @@
               "worldName": "SA012"
             },
             "info": {
-              "rowID": 38,
+              "rowID": 40,
               "seq": 2355668,
               "transportID": 365653,
               "nftID": "204140",
@@ -1044,7 +1098,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 39,
+              "rowID": 41,
               "seq": 2355334,
               "transportID": 365571,
               "nftID": "1027",
@@ -1071,7 +1125,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 40,
+              "rowID": 42,
               "seq": 2355585,
               "transportID": 364982,
               "nftID": "2902",
@@ -1098,7 +1152,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 41,
+              "rowID": 43,
               "seq": 2355658,
               "transportID": 366006,
               "nftID": "50874",
@@ -1125,7 +1179,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 42,
+              "rowID": 44,
               "seq": 2355471,
               "transportID": 365864,
               "nftID": "203080",
@@ -1152,7 +1206,7 @@
               "worldName": "ASIA082"
             },
             "info": {
-              "rowID": 43,
+              "rowID": 45,
               "seq": 2355636,
               "transportID": 365774,
               "nftID": "13126",
@@ -1179,7 +1233,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 44,
+              "rowID": 46,
               "seq": 2355637,
               "transportID": 365995,
               "nftID": "204256",
@@ -1206,7 +1260,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 45,
+              "rowID": 47,
               "seq": 2355632,
               "transportID": 365943,
               "nftID": "94208",
@@ -1233,7 +1287,7 @@
               "worldName": "ASIA032"
             },
             "info": {
-              "rowID": 46,
+              "rowID": 48,
               "seq": 2355467,
               "transportID": 365078,
               "nftID": "54174",
@@ -1260,7 +1314,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 47,
+              "rowID": 49,
               "seq": 2355569,
               "transportID": 365354,
               "nftID": "42188",
@@ -1287,7 +1341,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 48,
+              "rowID": 50,
               "seq": 2355604,
               "transportID": 365347,
               "nftID": "32478",
@@ -1314,7 +1368,7 @@
               "worldName": "NA031"
             },
             "info": {
-              "rowID": 49,
+              "rowID": 51,
               "seq": 2355578,
               "transportID": 358204,
               "nftID": "95816",
@@ -1341,7 +1395,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 50,
+              "rowID": 52,
               "seq": 2355650,
               "transportID": 366004,
               "nftID": "57818",
@@ -1368,7 +1422,7 @@
               "worldName": "NA012"
             },
             "info": {
-              "rowID": 51,
+              "rowID": 53,
               "seq": 2355616,
               "transportID": 365990,
               "nftID": "91428",
@@ -1395,7 +1449,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 52,
+              "rowID": 54,
               "seq": 2355656,
               "transportID": 366001,
               "nftID": "60826",
@@ -1422,7 +1476,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 53,
+              "rowID": 55,
               "seq": 2355546,
               "transportID": 365974,
               "nftID": "50580",
@@ -1449,7 +1503,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 54,
+              "rowID": 56,
               "seq": 2355655,
               "transportID": 366005,
               "nftID": "12786",
@@ -1476,7 +1530,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 55,
+              "rowID": 57,
               "seq": 2355649,
               "transportID": 366003,
               "nftID": "97202",
@@ -1503,7 +1557,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 56,
+              "rowID": 58,
               "seq": 2355644,
               "transportID": 365998,
               "nftID": "68137",
@@ -1530,7 +1584,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 57,
+              "rowID": 59,
               "seq": 2355641,
               "transportID": 365997,
               "nftID": "58477",
@@ -1557,7 +1611,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 58,
+              "rowID": 60,
               "seq": 2355601,
               "transportID": 365962,
               "nftID": "36676",
@@ -1584,7 +1638,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 59,
+              "rowID": 61,
               "seq": 2355628,
               "transportID": 365993,
               "nftID": "204217",
@@ -1611,7 +1665,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 60,
+              "rowID": 62,
               "seq": 2354357,
               "transportID": 364641,
               "nftID": "203532",
@@ -1638,7 +1692,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 61,
+              "rowID": 63,
               "seq": 2355481,
               "transportID": 365942,
               "nftID": "204250",
@@ -1665,7 +1719,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 62,
+              "rowID": 64,
               "seq": 2355368,
               "transportID": 365639,
               "nftID": "10096",
@@ -1692,7 +1746,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 63,
+              "rowID": 65,
               "seq": 2355479,
               "transportID": 365945,
               "nftID": "5801",
@@ -1719,7 +1773,7 @@
               "worldName": "NA021"
             },
             "info": {
-              "rowID": 64,
+              "rowID": 66,
               "seq": 2355121,
               "transportID": 364524,
               "nftID": "4400",
@@ -1746,7 +1800,7 @@
               "worldName": "ASIA021"
             },
             "info": {
-              "rowID": 65,
+              "rowID": 67,
               "seq": 2355417,
               "transportID": 365529,
               "nftID": "203369",
@@ -1773,7 +1827,7 @@
               "worldName": "EU012"
             },
             "info": {
-              "rowID": 66,
+              "rowID": 68,
               "seq": 2355507,
               "transportID": 365904,
               "nftID": "95331",
@@ -1800,7 +1854,7 @@
               "worldName": "ASIA033"
             },
             "info": {
-              "rowID": 67,
+              "rowID": 69,
               "seq": 2355360,
               "transportID": 365843,
               "nftID": "97114",
@@ -1827,7 +1881,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 68,
+              "rowID": 70,
               "seq": 2355305,
               "transportID": 364189,
               "nftID": "65871",
@@ -1854,7 +1908,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 69,
+              "rowID": 71,
               "seq": 2355580,
               "transportID": 365799,
               "nftID": "105",
@@ -1881,7 +1935,7 @@
               "worldName": "NA013"
             },
             "info": {
-              "rowID": 70,
+              "rowID": 72,
               "seq": 2355263,
               "transportID": 365789,
               "nftID": "35679",
@@ -1908,7 +1962,7 @@
               "worldName": "EU013"
             },
             "info": {
-              "rowID": 71,
+              "rowID": 73,
               "seq": 2352974,
               "transportID": 365110,
               "nftID": "95984",
@@ -1935,7 +1989,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 72,
+              "rowID": 74,
               "seq": 2354889,
               "transportID": 365032,
               "nftID": "99059",
@@ -1962,7 +2016,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 73,
+              "rowID": 75,
               "seq": 2354770,
               "transportID": 364593,
               "nftID": "21160",
@@ -1989,7 +2043,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 74,
+              "rowID": 76,
               "seq": 2355579,
               "transportID": 365983,
               "nftID": "19815",
@@ -2016,7 +2070,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 75,
+              "rowID": 77,
               "seq": 2355583,
               "transportID": 364071,
               "nftID": "80893",
@@ -2043,7 +2097,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 76,
+              "rowID": 78,
               "seq": 2355560,
               "transportID": 364638,
               "nftID": "79428",
@@ -2070,7 +2124,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 77,
+              "rowID": 79,
               "seq": 2355389,
               "transportID": 365884,
               "nftID": "204245",
@@ -2097,7 +2151,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 78,
+              "rowID": 80,
               "seq": 2353997,
               "transportID": 365412,
               "nftID": "204204",
@@ -2124,7 +2178,7 @@
               "worldName": "ASIA031"
             },
             "info": {
-              "rowID": 79,
+              "rowID": 81,
               "seq": 2355532,
               "transportID": 365954,
               "nftID": "36156",
@@ -2151,7 +2205,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 80,
+              "rowID": 82,
               "seq": 2351226,
               "transportID": 363486,
               "nftID": "1615",
@@ -2178,7 +2232,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 81,
+              "rowID": 83,
               "seq": 2355534,
               "transportID": 365962,
               "nftID": "36676",
@@ -2205,7 +2259,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 82,
+              "rowID": 84,
               "seq": 2355523,
               "transportID": 365813,
               "nftID": "40775",
@@ -2232,7 +2286,7 @@
               "worldName": "NA031"
             },
             "info": {
-              "rowID": 83,
+              "rowID": 85,
               "seq": 2355422,
               "transportID": 365690,
               "nftID": "86462",
@@ -2259,7 +2313,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 84,
+              "rowID": 86,
               "seq": 2351865,
               "transportID": 360065,
               "nftID": "201399",
@@ -2286,7 +2340,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 85,
+              "rowID": 87,
               "seq": 2355442,
               "transportID": 365447,
               "nftID": "204206",
@@ -2313,7 +2367,7 @@
               "worldName": "EU021"
             },
             "info": {
-              "rowID": 86,
+              "rowID": 88,
               "seq": 2355503,
               "transportID": 365956,
               "nftID": "203923",
@@ -2340,7 +2394,7 @@
               "worldName": "SA041"
             },
             "info": {
-              "rowID": 87,
+              "rowID": 89,
               "seq": 2353026,
               "transportID": 363872,
               "nftID": "5600",
@@ -2367,7 +2421,7 @@
               "worldName": "NA023"
             },
             "info": {
-              "rowID": 88,
+              "rowID": 90,
               "seq": 2355381,
               "transportID": 365363,
               "nftID": "91316",
@@ -2394,7 +2448,7 @@
               "worldName": "ASIA032"
             },
             "info": {
-              "rowID": 89,
+              "rowID": 91,
               "seq": 2355464,
               "transportID": 365927,
               "nftID": "69500",
@@ -2421,7 +2475,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 90,
+              "rowID": 92,
               "seq": 2355488,
               "transportID": 365949,
               "nftID": "202951",
@@ -2448,7 +2502,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 91,
+              "rowID": 93,
               "seq": 2355396,
               "transportID": 365671,
               "nftID": "16905",
@@ -2475,7 +2529,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 92,
+              "rowID": 94,
               "seq": 2355510,
               "transportID": 365958,
               "nftID": "17885",
@@ -2502,7 +2556,7 @@
               "worldName": "ASIA041"
             },
             "info": {
-              "rowID": 93,
+              "rowID": 95,
               "seq": 2355452,
               "transportID": 362610,
               "nftID": "73736",
@@ -2529,7 +2583,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 94,
+              "rowID": 96,
               "seq": 2351788,
               "transportID": 364730,
               "nftID": "92026",
@@ -2556,7 +2610,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 95,
+              "rowID": 97,
               "seq": 2355419,
               "transportID": 365046,
               "nftID": "90512",
@@ -2583,7 +2637,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 96,
+              "rowID": 98,
               "seq": 2355439,
               "transportID": 365709,
               "nftID": "20212",
@@ -2610,7 +2664,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 97,
+              "rowID": 99,
               "seq": 2355431,
               "transportID": 365688,
               "nftID": "70624",
@@ -2637,7 +2691,7 @@
               "worldName": "ASIA3"
             },
             "info": {
-              "rowID": 98,
+              "rowID": 100,
               "seq": 2355041,
               "transportID": 364999,
               "nftID": "55326",
@@ -2654,60 +2708,6 @@
               "Reinforce": 0,
               "stat": []
             }
-          },
-          {
-            "seller": {
-              "userAddress": "0xb074b0b736d674b8a2b182427abe24cd6b91bb52",
-              "characterName": "'",
-              "class": 0,
-              "lv": 0,
-              "worldName": "ASIA3"
-            },
-            "info": {
-              "rowID": 99,
-              "seq": 2355394,
-              "transportID": 365563,
-              "nftID": "92242",
-              "characterName": "C£cilia ヅ",
-              "worldName": "SA011",
-              "class": 6,
-              "lv": 153,
-              "powerScore": 387784,
-              "price": 600,
-              "isNew": 1,
-              "tradeDT": 1784302562,
-              "MirageScore": 0,
-              "MiraX": 0,
-              "Reinforce": 0,
-              "stat": []
-            }
-          },
-          {
-            "seller": {
-              "userAddress": "0x000a5462f95708c11dce7b2fe55f61ab79249188",
-              "characterName": "'",
-              "class": 0,
-              "lv": 0,
-              "worldName": "ASIA3"
-            },
-            "info": {
-              "rowID": 100,
-              "seq": 2355188,
-              "transportID": 365819,
-              "nftID": "96711",
-              "characterName": "・檬檬・小跟班 ッ",
-              "worldName": "NA041",
-              "class": 1,
-              "lv": 133,
-              "powerScore": 310394,
-              "price": 329,
-              "isNew": 1,
-              "tradeDT": 1784298482,
-              "MirageScore": 0,
-              "MiraX": 0,
-              "Reinforce": 0,
-              "stat": []
-            }
           }
         ]
       }
@@ -2715,7 +2715,7 @@
   },
   "topTraded": {
     "url": "https://webapi.mir4global.com/nft/lists?listType=topTraded&page=1&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&languageCode=pt",
-    "timestamp": "2026-07-19T14:42:16.023945+00:00",
+    "timestamp": "2026-07-19T15:39:24.724086+00:00",
     "resposta_bruta": {
       "code": 200,
       "data": {
@@ -5429,7 +5429,7 @@
   },
   "recommended": {
     "url": "https://webapi.mir4global.com/nft/lists?listType=recommended&page=1&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&languageCode=pt",
-    "timestamp": "2026-07-19T14:42:19.833837+00:00",
+    "timestamp": "2026-07-19T15:39:27.780674+00:00",
     "resposta_bruta": {
       "code": 200,
       "data": {
@@ -5600,16 +5600,394 @@
   },
   "sale": {
     "url": "https://webapi.mir4global.com/nft/lists?listType=sale&page=1&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&languageCode=pt",
-    "timestamp": "2026-07-19T14:47:22.736168+00:00",
+    "timestamp": "2026-07-19T15:43:14.230667+00:00",
     "resposta_bruta": {
       "code": 200,
       "data": {
-        "firstID": 2355863,
-        "totalCount": 621,
+        "firstID": 2355872,
+        "totalCount": 619,
         "more": 1,
         "lists": [
           {
             "rowID": 1,
+            "seq": 2355872,
+            "transportID": 366027,
+            "nftID": "203458",
+            "sealedDT": 1774684379,
+            "characterName": "48KEVAAA",
+            "class": 1,
+            "lv": 151,
+            "powerScore": 401945,
+            "price": 1475,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 166487
+              },
+              {
+                "statName": "MP",
+                "statValue": 22356
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 12262
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 4408
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 8982
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 8066
+              }
+            ]
+          },
+          {
+            "rowID": 2,
+            "seq": 2355871,
+            "transportID": 365851,
+            "nftID": "36449",
+            "sealedDT": 1652232802,
+            "characterName": "Véréderer",
+            "class": 4,
+            "lv": 120,
+            "powerScore": 186064,
+            "price": 159,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 99090
+              },
+              {
+                "statName": "MP",
+                "statValue": 12001
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 6065
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 1879
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 3935
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 3870
+              }
+            ]
+          },
+          {
+            "rowID": 3,
+            "seq": 2355870,
+            "transportID": 366092,
+            "nftID": "204261",
+            "sealedDT": 1784474834,
+            "characterName": "VN メ PTMD",
+            "class": 6,
+            "lv": 100,
+            "powerScore": 134753,
+            "price": 89,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 68791
+              },
+              {
+                "statName": "MP",
+                "statValue": 9591
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 1253
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 4099
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 2574
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 2517
+              }
+            ]
+          },
+          {
+            "rowID": 4,
+            "seq": 2355869,
+            "transportID": 365424,
+            "nftID": "204205",
+            "sealedDT": 1783611079,
+            "characterName": "ⒷⓁⒶⒸⓀⓁⒶⒷⒺⓁ",
+            "class": 6,
+            "lv": 105,
+            "powerScore": 173645,
+            "price": 250,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 75772
+              },
+              {
+                "statName": "MP",
+                "statValue": 11356
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 1661
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 5014
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 3407
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 3166
+              }
+            ]
+          },
+          {
+            "rowID": 5,
+            "seq": 2355868,
+            "transportID": 366029,
+            "nftID": "201115",
+            "sealedDT": 1757646493,
+            "characterName": "CrtEvPvP12Pt",
+            "class": 5,
+            "lv": 156,
+            "powerScore": 496470,
+            "price": 3300,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 193248
+              },
+              {
+                "statName": "MP",
+                "statValue": 27396
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 13226
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 13448
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 10083
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 9944
+              }
+            ]
+          },
+          {
+            "rowID": 6,
+            "seq": 2355867,
+            "transportID": 365973,
+            "nftID": "59184",
+            "sealedDT": 1664845999,
+            "characterName": "63IIIIIIIII",
+            "class": 4,
+            "lv": 160,
+            "powerScore": 481372,
+            "price": 4499,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 171328
+              },
+              {
+                "statName": "MP",
+                "statValue": 27215
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 15497
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 5340
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 10002
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 9147
+              }
+            ]
+          },
+          {
+            "rowID": 7,
+            "seq": 2355866,
+            "transportID": 366089,
+            "nftID": "204259",
+            "sealedDT": 1784472577,
+            "characterName": "xxX Lei Xxx",
+            "class": 4,
+            "lv": 147,
+            "powerScore": 386342,
+            "price": 620,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 173475
+              },
+              {
+                "statName": "MP",
+                "statValue": 23613
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 11661
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 4113
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 7944
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 7316
+              }
+            ]
+          },
+          {
+            "rowID": 8,
+            "seq": 2355865,
+            "transportID": 366090,
+            "nftID": "95098",
+            "sealedDT": 1720765393,
+            "characterName": "ミllさњโӄの彡",
+            "class": 4,
+            "lv": 151,
+            "powerScore": 409432,
+            "price": 1500,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 159700
+              },
+              {
+                "statName": "MP",
+                "statValue": 26325
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 11881
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 4070
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 8175
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 8052
+              }
+            ]
+          },
+          {
+            "rowID": 9,
+            "seq": 2355864,
+            "transportID": 365971,
+            "nftID": "33642",
+            "sealedDT": 1651169095,
+            "characterName": "¤ Moon",
+            "class": 4,
+            "lv": 153,
+            "powerScore": 428110,
+            "price": 1390,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 188339
+              },
+              {
+                "statName": "MP",
+                "statValue": 26001
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 12592
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 4584
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 8983
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 8110
+              }
+            ]
+          },
+          {
+            "rowID": 10,
             "seq": 2355863,
             "transportID": 366088,
             "nftID": "202290",
@@ -5651,7 +6029,7 @@
             ]
           },
           {
-            "rowID": 2,
+            "rowID": 11,
             "seq": 2355862,
             "transportID": 363487,
             "nftID": "93719",
@@ -5693,7 +6071,7 @@
             ]
           },
           {
-            "rowID": 3,
+            "rowID": 12,
             "seq": 2355861,
             "transportID": 366087,
             "nftID": "59468",
@@ -5735,7 +6113,7 @@
             ]
           },
           {
-            "rowID": 4,
+            "rowID": 13,
             "seq": 2355860,
             "transportID": 365689,
             "nftID": "201905",
@@ -5777,7 +6155,7 @@
             ]
           },
           {
-            "rowID": 5,
+            "rowID": 14,
             "seq": 2355859,
             "transportID": 365893,
             "nftID": "93817",
@@ -5819,7 +6197,7 @@
             ]
           },
           {
-            "rowID": 6,
+            "rowID": 15,
             "seq": 2355858,
             "transportID": 365944,
             "nftID": "78395",
@@ -5861,7 +6239,7 @@
             ]
           },
           {
-            "rowID": 7,
+            "rowID": 16,
             "seq": 2355857,
             "transportID": 366086,
             "nftID": "52687",
@@ -5903,7 +6281,7 @@
             ]
           },
           {
-            "rowID": 8,
+            "rowID": 17,
             "seq": 2355856,
             "transportID": 366041,
             "nftID": "87856",
@@ -5945,7 +6323,7 @@
             ]
           },
           {
-            "rowID": 9,
+            "rowID": 18,
             "seq": 2355855,
             "transportID": 366085,
             "nftID": "39923",
@@ -5987,7 +6365,7 @@
             ]
           },
           {
-            "rowID": 10,
+            "rowID": 19,
             "seq": 2355854,
             "transportID": 365872,
             "nftID": "53498",
@@ -6029,7 +6407,7 @@
             ]
           },
           {
-            "rowID": 11,
+            "rowID": 20,
             "seq": 2355853,
             "transportID": 365633,
             "nftID": "47003",
@@ -6067,384 +6445,6 @@
               {
                 "statName": "DEFESA contra feitiços",
                 "statValue": 7795
-              }
-            ]
-          },
-          {
-            "rowID": 12,
-            "seq": 2355852,
-            "transportID": 366064,
-            "nftID": "8124",
-            "sealedDT": 1643230318,
-            "characterName": "루세로",
-            "class": 3,
-            "lv": 153,
-            "powerScore": 402236,
-            "price": 850,
-            "isNew": 1,
-            "MirageScore": 0,
-            "MiraX": 0,
-            "Reinforce": 0,
-            "stat": [
-              {
-                "statName": "HP",
-                "statValue": 177168
-              },
-              {
-                "statName": "MP",
-                "statValue": 26554
-              },
-              {
-                "statName": "ATAQUE FÍSICO",
-                "statValue": 11443
-              },
-              {
-                "statName": "ATAQUE de Feitiço",
-                "statValue": 11463
-              },
-              {
-                "statName": "DEFESA FÍSICA",
-                "statValue": 7900
-              },
-              {
-                "statName": "DEFESA contra feitiços",
-                "statValue": 7949
-              }
-            ]
-          },
-          {
-            "rowID": 13,
-            "seq": 2355851,
-            "transportID": 362649,
-            "nftID": "10900",
-            "sealedDT": 1644210375,
-            "characterName": "Ⓔ Ⓜ ⓘ Ⓔ Ⓜ ⓘ",
-            "class": 4,
-            "lv": 150,
-            "powerScore": 391605,
-            "price": 874,
-            "isNew": 1,
-            "MirageScore": 0,
-            "MiraX": 0,
-            "Reinforce": 0,
-            "stat": [
-              {
-                "statName": "HP",
-                "statValue": 167881
-              },
-              {
-                "statName": "MP",
-                "statValue": 23655
-              },
-              {
-                "statName": "ATAQUE FÍSICO",
-                "statValue": 12133
-              },
-              {
-                "statName": "ATAQUE de Feitiço",
-                "statValue": 4446
-              },
-              {
-                "statName": "DEFESA FÍSICA",
-                "statValue": 7752
-              },
-              {
-                "statName": "DEFESA contra feitiços",
-                "statValue": 7637
-              }
-            ]
-          },
-          {
-            "rowID": 14,
-            "seq": 2355850,
-            "transportID": 365634,
-            "nftID": "200900",
-            "sealedDT": 1755981318,
-            "characterName": "0cd610sk175a",
-            "class": 2,
-            "lv": 150,
-            "powerScore": 394968,
-            "price": 1300,
-            "isNew": 1,
-            "MirageScore": 0,
-            "MiraX": 0,
-            "Reinforce": 0,
-            "stat": [
-              {
-                "statName": "HP",
-                "statValue": 153284
-              },
-              {
-                "statName": "MP",
-                "statValue": 20623
-              },
-              {
-                "statName": "ATAQUE FÍSICO",
-                "statValue": 4106
-              },
-              {
-                "statName": "ATAQUE de Feitiço",
-                "statValue": 12601
-              },
-              {
-                "statName": "DEFESA FÍSICA",
-                "statValue": 8028
-              },
-              {
-                "statName": "DEFESA contra feitiços",
-                "statValue": 7660
-              }
-            ]
-          },
-          {
-            "rowID": 15,
-            "seq": 2355849,
-            "transportID": 365921,
-            "nftID": "42015",
-            "sealedDT": 1654189353,
-            "characterName": "殺戮者 メ Vi乙",
-            "class": 4,
-            "lv": 152,
-            "powerScore": 402540,
-            "price": 950,
-            "isNew": 1,
-            "MirageScore": 1102007,
-            "MiraX": 644,
-            "Reinforce": 0,
-            "stat": [
-              {
-                "statName": "HP",
-                "statValue": 163789
-              },
-              {
-                "statName": "MP",
-                "statValue": 24578
-              },
-              {
-                "statName": "ATAQUE FÍSICO",
-                "statValue": 12255
-              },
-              {
-                "statName": "ATAQUE de Feitiço",
-                "statValue": 4433
-              },
-              {
-                "statName": "DEFESA FÍSICA",
-                "statValue": 8278
-              },
-              {
-                "statName": "DEFESA contra feitiços",
-                "statValue": 7766
-              }
-            ]
-          },
-          {
-            "rowID": 16,
-            "seq": 2355848,
-            "transportID": 362774,
-            "nftID": "74094",
-            "sealedDT": 1680811487,
-            "characterName": "暗いWhoz",
-            "class": 2,
-            "lv": 157,
-            "powerScore": 443803,
-            "price": 3000,
-            "isNew": 1,
-            "MirageScore": 0,
-            "MiraX": 0,
-            "Reinforce": 0,
-            "stat": [
-              {
-                "statName": "HP",
-                "statValue": 171070
-              },
-              {
-                "statName": "MP",
-                "statValue": 23529
-              },
-              {
-                "statName": "ATAQUE FÍSICO",
-                "statValue": 4791
-              },
-              {
-                "statName": "ATAQUE de Feitiço",
-                "statValue": 14512
-              },
-              {
-                "statName": "DEFESA FÍSICA",
-                "statValue": 8764
-              },
-              {
-                "statName": "DEFESA contra feitiços",
-                "statValue": 8515
-              }
-            ]
-          },
-          {
-            "rowID": 17,
-            "seq": 2355847,
-            "transportID": 57391,
-            "nftID": "27842",
-            "sealedDT": 1649360172,
-            "characterName": "qoh",
-            "class": 1,
-            "lv": 83,
-            "powerScore": 112413,
-            "price": 80,
-            "isNew": 1,
-            "MirageScore": 152821,
-            "MiraX": 11208,
-            "Reinforce": 0,
-            "stat": [
-              {
-                "statName": "HP",
-                "statValue": 60130
-              },
-              {
-                "statName": "MP",
-                "statValue": 7728
-              },
-              {
-                "statName": "ATAQUE FÍSICO",
-                "statValue": 3269
-              },
-              {
-                "statName": "ATAQUE de Feitiço",
-                "statValue": 868
-              },
-              {
-                "statName": "DEFESA FÍSICA",
-                "statValue": 2250
-              },
-              {
-                "statName": "DEFESA contra feitiços",
-                "statValue": 2081
-              }
-            ]
-          },
-          {
-            "rowID": 18,
-            "seq": 2355846,
-            "transportID": 357014,
-            "nftID": "202457",
-            "sealedDT": 1767271388,
-            "characterName": "Synchro 火",
-            "class": 3,
-            "lv": 142,
-            "powerScore": 378753,
-            "price": 625,
-            "isNew": 1,
-            "MirageScore": 0,
-            "MiraX": 0,
-            "Reinforce": 0,
-            "stat": [
-              {
-                "statName": "HP",
-                "statValue": 168670
-              },
-              {
-                "statName": "MP",
-                "statValue": 25211
-              },
-              {
-                "statName": "ATAQUE FÍSICO",
-                "statValue": 10588
-              },
-              {
-                "statName": "ATAQUE de Feitiço",
-                "statValue": 10440
-              },
-              {
-                "statName": "DEFESA FÍSICA",
-                "statValue": 8455
-              },
-              {
-                "statName": "DEFESA contra feitiços",
-                "statValue": 7289
-              }
-            ]
-          },
-          {
-            "rowID": 19,
-            "seq": 2355844,
-            "transportID": 366081,
-            "nftID": "203744",
-            "sealedDT": 1777833963,
-            "characterName": "oOOvenOo",
-            "class": 3,
-            "lv": 139,
-            "powerScore": 300869,
-            "price": 310,
-            "isNew": 1,
-            "MirageScore": 0,
-            "MiraX": 0,
-            "Reinforce": 0,
-            "stat": [
-              {
-                "statName": "HP",
-                "statValue": 137140
-              },
-              {
-                "statName": "MP",
-                "statValue": 19007
-              },
-              {
-                "statName": "ATAQUE FÍSICO",
-                "statValue": 9037
-              },
-              {
-                "statName": "ATAQUE de Feitiço",
-                "statValue": 8852
-              },
-              {
-                "statName": "DEFESA FÍSICA",
-                "statValue": 6187
-              },
-              {
-                "statName": "DEFESA contra feitiços",
-                "statValue": 6063
-              }
-            ]
-          },
-          {
-            "rowID": 20,
-            "seq": 2355845,
-            "transportID": 366080,
-            "nftID": "64553",
-            "sealedDT": 1669088985,
-            "characterName": "T4WKDRESGH10",
-            "class": 3,
-            "lv": 148,
-            "powerScore": 405565,
-            "price": 1750,
-            "isNew": 1,
-            "MirageScore": 0,
-            "MiraX": 0,
-            "Reinforce": 0,
-            "stat": [
-              {
-                "statName": "HP",
-                "statValue": 161408
-              },
-              {
-                "statName": "MP",
-                "statValue": 22827
-              },
-              {
-                "statName": "ATAQUE FÍSICO",
-                "statValue": 12146
-              },
-              {
-                "statName": "ATAQUE de Feitiço",
-                "statValue": 11545
-              },
-              {
-                "statName": "DEFESA FÍSICA",
-                "statValue": 9399
-              },
-              {
-                "statName": "DEFESA contra feitiços",
-                "statValue": 8432
               }
             ]
           }

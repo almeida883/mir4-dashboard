@@ -1,30 +1,6455 @@
 {
   "recent": {
     "url": "https://webapi.mir4global.com/nft/lists?listType=recent&page=1&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&languageCode=pt",
-    "timestamp": "2026-07-21T00:09:21.417191+00:00",
+    "timestamp": "2026-07-21T03:38:56.076708+00:00",
     "resposta_bruta": {
-      "code": 69999
+      "code": 200,
+      "data": {
+        "firstID": 0,
+        "totalCount": 0,
+        "more": 0,
+        "lists": [
+          {
+            "seller": {
+              "userAddress": "0x01589e03b99550caafe7bf95ae4d0d085fe17f4e",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 1,
+              "seq": 2355814,
+              "transportID": 365440,
+              "nftID": "68849",
+              "characterName": "FGWPNTRDARM",
+              "worldName": "EU013",
+              "class": 4,
+              "lv": 157,
+              "powerScore": 429753,
+              "price": 2200,
+              "isNew": 1,
+              "tradeDT": 1784601782,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x28605cf4d59cec06570cb61a896bd140d554f131",
+              "characterName": "Hot boy 한국",
+              "class": 6,
+              "lv": 161,
+              "worldName": "ASIA033"
+            },
+            "info": {
+              "rowID": 2,
+              "seq": 2356163,
+              "transportID": 366160,
+              "nftID": "56870",
+              "characterName": "Sooouka2",
+              "worldName": "ASIA053",
+              "class": 4,
+              "lv": 141,
+              "powerScore": 301509,
+              "price": 10,
+              "isNew": 1,
+              "tradeDT": 1784601302,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xbdd4ed351ae70a8122b725872e0bd64014b40a51",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 3,
+              "seq": 2356030,
+              "transportID": 366137,
+              "nftID": "4861",
+              "characterName": "嵐 Pyraxiz",
+              "worldName": "NA012",
+              "class": 2,
+              "lv": 132,
+              "powerScore": 232731,
+              "price": 230,
+              "isNew": 1,
+              "tradeDT": 1784594762,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x21f75d528c660e706b5b2821802e075c72e1c743",
+              "characterName": "LuLuOft3n",
+              "class": 4,
+              "lv": 152,
+              "worldName": "ASIA071"
+            },
+            "info": {
+              "rowID": 4,
+              "seq": 2356115,
+              "transportID": 366173,
+              "nftID": "201425",
+              "characterName": "LuLuOft3n",
+              "worldName": "ASIA071",
+              "class": 4,
+              "lv": 152,
+              "powerScore": 401031,
+              "price": 1050,
+              "isNew": 1,
+              "tradeDT": 1784594463,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x4f88cddee0cc43aff6fd36174f200bf3a475265f",
+              "characterName": "父SunR4k0ng父",
+              "class": 5,
+              "lv": 141,
+              "worldName": "NA021"
+            },
+            "info": {
+              "rowID": 5,
+              "seq": 2356102,
+              "transportID": 366167,
+              "nftID": "95785",
+              "characterName": "父SunR4k0ng父",
+              "worldName": "NA021",
+              "class": 5,
+              "lv": 141,
+              "powerScore": 335408,
+              "price": 400,
+              "isNew": 1,
+              "tradeDT": 1784592062,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xe708d07d610fc245cce0a16d11180356fa9ebf22",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 6,
+              "seq": 2356120,
+              "transportID": 366066,
+              "nftID": "203723",
+              "characterName": "350KDR4k9EVA",
+              "worldName": "ASIA021",
+              "class": 2,
+              "lv": 149,
+              "powerScore": 440293,
+              "price": 1234,
+              "isNew": 1,
+              "tradeDT": 1784586602,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x0637b0103c297f84e59ef6fed5b894e7ab34c8c1",
+              "characterName": "루세로",
+              "class": 3,
+              "lv": 153,
+              "worldName": "SA023"
+            },
+            "info": {
+              "rowID": 7,
+              "seq": 2356065,
+              "transportID": 366126,
+              "nftID": "98780",
+              "characterName": "Puиch",
+              "worldName": "ASIA321",
+              "class": 3,
+              "lv": 148,
+              "powerScore": 380272,
+              "price": 780,
+              "isNew": 1,
+              "tradeDT": 1784581501,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x0fecc9607435a3e42db7c6daf23460d9b8bc8d84",
+              "characterName": "TsuroGL",
+              "class": 6,
+              "lv": 105,
+              "worldName": "SA022"
+            },
+            "info": {
+              "rowID": 8,
+              "seq": 2356125,
+              "transportID": 365982,
+              "nftID": "203630",
+              "characterName": "GlTatsuk",
+              "worldName": "NA041",
+              "class": 7,
+              "lv": 117,
+              "powerScore": 204097,
+              "price": 220,
+              "isNew": 1,
+              "tradeDT": 1784578561,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xe991be09f944aa5029ee4cdc4e22fa8cfa8f56f1",
+              "characterName": "mywarehouse",
+              "class": 3,
+              "lv": 90,
+              "worldName": "INMENA012"
+            },
+            "info": {
+              "rowID": 9,
+              "seq": 2355745,
+              "transportID": 364126,
+              "nftID": "7254",
+              "characterName": "'BERRY'",
+              "worldName": "ASIA014",
+              "class": 4,
+              "lv": 152,
+              "powerScore": 414784,
+              "price": 1100,
+              "isNew": 1,
+              "tradeDT": 1784578022,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xf5359306641a883874ab064a46038e484495b8d4",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 10,
+              "seq": 2356070,
+              "transportID": 366130,
+              "nftID": "204266",
+              "characterName": "Momoeii",
+              "worldName": "ASIA333",
+              "class": 4,
+              "lv": 131,
+              "powerScore": 310612,
+              "price": 300,
+              "isNew": 1,
+              "tradeDT": 1784576403,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x49bafe2f3533b0676937defe66fdcd40c69addfc",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 11,
+              "seq": 2356034,
+              "transportID": 365953,
+              "nftID": "82694",
+              "characterName": "乄 Sinichie ヅ",
+              "worldName": "ASIA034",
+              "class": 4,
+              "lv": 149,
+              "powerScore": 390020,
+              "price": 894,
+              "isNew": 1,
+              "tradeDT": 1784576341,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xce227b774e1ac4a8dd24b97ef4694eaa61a3f2ce",
+              "characterName": "Doxliunax",
+              "class": 4,
+              "lv": 133,
+              "worldName": "ASIA033"
+            },
+            "info": {
+              "rowID": 12,
+              "seq": 2356072,
+              "transportID": 366151,
+              "nftID": "55066",
+              "characterName": "Sofix",
+              "worldName": "ASIA331",
+              "class": 3,
+              "lv": 132,
+              "powerScore": 230771,
+              "price": 150,
+              "isNew": 1,
+              "tradeDT": 1784575802,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xecea30b2509300b1f8a10915f5a094182013adb7",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 13,
+              "seq": 2356083,
+              "transportID": 366155,
+              "nftID": "54414",
+              "characterName": "ⓈⒸⒶⓃⒹⓄⓁⓁ",
+              "worldName": "ASIA322",
+              "class": 3,
+              "lv": 155,
+              "powerScore": 447160,
+              "price": 1500,
+              "isNew": 1,
+              "tradeDT": 1784574842,
+              "MirageScore": 339200,
+              "MiraX": 10,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x5c683542b4c5a818f8689c6e2f0d2c3434fcb67c",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 14,
+              "seq": 2356035,
+              "transportID": 366117,
+              "nftID": "38966",
+              "characterName": "漢Reinhard",
+              "worldName": "ASIA313",
+              "class": 5,
+              "lv": 147,
+              "powerScore": 395842,
+              "price": 680,
+              "isNew": 1,
+              "tradeDT": 1784572981,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x21f75d528c660e706b5b2821802e075c72e1c743",
+              "characterName": "LuLuOft3n",
+              "class": 4,
+              "lv": 152,
+              "worldName": "ASIA071"
+            },
+            "info": {
+              "rowID": 15,
+              "seq": 2356080,
+              "transportID": 365984,
+              "nftID": "73767",
+              "characterName": "火CB10火5deck火",
+              "worldName": "ASIA034",
+              "class": 5,
+              "lv": 150,
+              "powerScore": 395215,
+              "price": 1180,
+              "isNew": 1,
+              "tradeDT": 1784571302,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xabdeced7a910f571c74432cddec08b529edac245",
+              "characterName": "n4maste8",
+              "class": 2,
+              "lv": 81,
+              "worldName": "INMENA012"
+            },
+            "info": {
+              "rowID": 16,
+              "seq": 2355633,
+              "transportID": 365994,
+              "nftID": "204255",
+              "characterName": "n4maste10",
+              "worldName": "INMENA012",
+              "class": 3,
+              "lv": 105,
+              "powerScore": 172072,
+              "price": 158,
+              "isNew": 1,
+              "tradeDT": 1784570461,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xd3be24b7c86f95670f621b7e9860c2f493a5f8a1",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 17,
+              "seq": 2356110,
+              "transportID": 366161,
+              "nftID": "204269",
+              "characterName": "mainvelkoz",
+              "worldName": "SA014",
+              "class": 2,
+              "lv": 133,
+              "powerScore": 261757,
+              "price": 100,
+              "isNew": 1,
+              "tradeDT": 1784570282,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x4f88cddee0cc43aff6fd36174f200bf3a475265f",
+              "characterName": "父SunR4k0ng父",
+              "class": 5,
+              "lv": 141,
+              "worldName": "NA021"
+            },
+            "info": {
+              "rowID": 18,
+              "seq": 2356058,
+              "transportID": 365916,
+              "nftID": "70638",
+              "characterName": "飛 Kaiser ツ",
+              "worldName": "NA021",
+              "class": 5,
+              "lv": 150,
+              "powerScore": 383383,
+              "price": 700,
+              "isNew": 1,
+              "tradeDT": 1784564342,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xc6134eec72b5358537da77d44104e0f4ef80d326",
+              "characterName": "BEARS 북극곰",
+              "class": 1,
+              "lv": 130,
+              "worldName": "EU022"
+            },
+            "info": {
+              "rowID": 19,
+              "seq": 2356051,
+              "transportID": 363275,
+              "nftID": "66628",
+              "characterName": "NckTrdMPinv",
+              "worldName": "SA031",
+              "class": 1,
+              "lv": 156,
+              "powerScore": 484607,
+              "price": 5300,
+              "isNew": 1,
+              "tradeDT": 1784562482,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x4c101ef32c7f743f3a8cf12f6d1ffdc57ce38dcb",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 20,
+              "seq": 2355810,
+              "transportID": 365882,
+              "nftID": "203270",
+              "characterName": "传奇的倔强的罗特",
+              "worldName": "ASIA082",
+              "class": 7,
+              "lv": 115,
+              "powerScore": 204979,
+              "price": 166,
+              "isNew": 1,
+              "tradeDT": 1784559362,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xa19ffe6bfa194e084d837dc9b02d7f5c0d65734e",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 21,
+              "seq": 2356056,
+              "transportID": 366081,
+              "nftID": "203744",
+              "characterName": "oOOvenOo",
+              "worldName": "EU012",
+              "class": 3,
+              "lv": 139,
+              "powerScore": 300869,
+              "price": 295,
+              "isNew": 1,
+              "tradeDT": 1784553121,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xd6052a41de151df2048f0576449eef322278c06f",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 22,
+              "seq": 2356026,
+              "transportID": 366131,
+              "nftID": "34252",
+              "characterName": "Dragonべ 愛珍",
+              "worldName": "EU013",
+              "class": 4,
+              "lv": 152,
+              "powerScore": 421404,
+              "price": 900,
+              "isNew": 1,
+              "tradeDT": 1784552521,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x21948145369193bc0b2945b94934c341ab8eafc3",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 23,
+              "seq": 2356042,
+              "transportID": 366140,
+              "nftID": "204177",
+              "characterName": "BFF 1 VN",
+              "worldName": "ASIA323",
+              "class": 2,
+              "lv": 133,
+              "powerScore": 280078,
+              "price": 260,
+              "isNew": 1,
+              "tradeDT": 1784549882,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x0637b0103c297f84e59ef6fed5b894e7ab34c8c1",
+              "characterName": "루세로",
+              "class": 3,
+              "lv": 153,
+              "worldName": "SA023"
+            },
+            "info": {
+              "rowID": 24,
+              "seq": 2356048,
+              "transportID": 366126,
+              "nftID": "98780",
+              "characterName": "Puиch",
+              "worldName": "ASIA321",
+              "class": 3,
+              "lv": 148,
+              "powerScore": 380272,
+              "price": 780,
+              "isNew": 1,
+              "tradeDT": 1784548442,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x79b42253941187cc6d4cb93f7424a5fb2abb2b2d",
+              "characterName": "PﾑИĐORﾑ ツ",
+              "class": 4,
+              "lv": 140,
+              "worldName": "EU023"
+            },
+            "info": {
+              "rowID": 25,
+              "seq": 2356024,
+              "transportID": 366135,
+              "nftID": "95628",
+              "characterName": "Panda六月ツ",
+              "worldName": "EU023",
+              "class": 4,
+              "lv": 158,
+              "powerScore": 504164,
+              "price": 3000,
+              "isNew": 1,
+              "tradeDT": 1784547062,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x63281a6e0dac176480c0582465e88b302adeb848",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 26,
+              "seq": 2355977,
+              "transportID": 366118,
+              "nftID": "93223",
+              "characterName": "ⓂⒶⒷⓄⓃⓀツ",
+              "worldName": "EU011",
+              "class": 1,
+              "lv": 145,
+              "powerScore": 354170,
+              "price": 500,
+              "isNew": 1,
+              "tradeDT": 1784544122,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x167e37f2f4d0f5ffe5dfd1c5c20cb795df8c27c7",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 27,
+              "seq": 2355986,
+              "transportID": 353957,
+              "nftID": "203198",
+              "characterName": "Rhandon",
+              "worldName": "SA014",
+              "class": 4,
+              "lv": 91,
+              "powerScore": 132301,
+              "price": 20,
+              "isNew": 1,
+              "tradeDT": 1784544062,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x8a7f74803b25ecf9c6447f1de9c56f50c30f9d4e",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 28,
+              "seq": 2355945,
+              "transportID": 365823,
+              "nftID": "203724",
+              "characterName": "DETS丶Bourbon",
+              "worldName": "EU013",
+              "class": 5,
+              "lv": 152,
+              "powerScore": 380083,
+              "price": 990,
+              "isNew": 1,
+              "tradeDT": 1784538602,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x9563a3b1b1fc4e0024aa4c6d55048de296396f21",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 29,
+              "seq": 2356006,
+              "transportID": 366126,
+              "nftID": "98780",
+              "characterName": "Puиch",
+              "worldName": "ASIA321",
+              "class": 3,
+              "lv": 148,
+              "powerScore": 380272,
+              "price": 640,
+              "isNew": 1,
+              "tradeDT": 1784535902,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x446ff6b59e53cb591f04f13b74f344c294ac1401",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 30,
+              "seq": 2355995,
+              "transportID": 362425,
+              "nftID": "200445",
+              "characterName": "支持 SkyWalker",
+              "worldName": "SA014",
+              "class": 3,
+              "lv": 152,
+              "powerScore": 382760,
+              "price": 750,
+              "isNew": 1,
+              "tradeDT": 1784535242,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x284bd796c1dd47f8cec32bd97172444be7b00de2",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 31,
+              "seq": 2355944,
+              "transportID": 366026,
+              "nftID": "16080",
+              "characterName": "NoFearOld",
+              "worldName": "SA032",
+              "class": 4,
+              "lv": 154,
+              "powerScore": 428434,
+              "price": 1400,
+              "isNew": 1,
+              "tradeDT": 1784533682,
+              "MirageScore": 147595,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x208a71efd30ff83f026ecf07413a633f2ecccc4f",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 32,
+              "seq": 2355866,
+              "transportID": 366089,
+              "nftID": "204259",
+              "characterName": "xxX Lei Xxx",
+              "worldName": "ASIA311",
+              "class": 4,
+              "lv": 147,
+              "powerScore": 386342,
+              "price": 620,
+              "isNew": 1,
+              "tradeDT": 1784529541,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xe7fa115e9e99e1badf64057a41740754a895967b",
+              "characterName": "名人堂 メRCヅ",
+              "class": 4,
+              "lv": 145,
+              "worldName": "SA013"
+            },
+            "info": {
+              "rowID": 33,
+              "seq": 2355938,
+              "transportID": 366102,
+              "nftID": "201661",
+              "characterName": "Benぷ",
+              "worldName": "INMENA011",
+              "class": 4,
+              "lv": 147,
+              "powerScore": 377596,
+              "price": 850,
+              "isNew": 1,
+              "tradeDT": 1784525402,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xcec0618889aef4fbf1d658e94d3fe8c171ada7ae",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 34,
+              "seq": 2355989,
+              "transportID": 366081,
+              "nftID": "203744",
+              "characterName": "oOOvenOo",
+              "worldName": "EU012",
+              "class": 3,
+              "lv": 139,
+              "powerScore": 300869,
+              "price": 1,
+              "isNew": 1,
+              "tradeDT": 1784523662,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xe5c8320a22d766a8a74166ccf9162d18d7db5512",
+              "characterName": "J0K3R ヅ",
+              "class": 1,
+              "lv": 142,
+              "worldName": "EU021"
+            },
+            "info": {
+              "rowID": 35,
+              "seq": 2355948,
+              "transportID": 362953,
+              "nftID": "45699",
+              "characterName": "J0K3R ヅ",
+              "worldName": "EU021",
+              "class": 1,
+              "lv": 142,
+              "powerScore": 348664,
+              "price": 449,
+              "isNew": 1,
+              "tradeDT": 1784522342,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x61ac1f507c2930bedd9bc916730750d589e357ec",
+              "characterName": "魂Reapér",
+              "class": 5,
+              "lv": 145,
+              "worldName": "ASIA332"
+            },
+            "info": {
+              "rowID": 36,
+              "seq": 2355981,
+              "transportID": 366119,
+              "nftID": "73685",
+              "characterName": "MadrugaNS",
+              "worldName": "ASIA331",
+              "class": 4,
+              "lv": 151,
+              "powerScore": 380040,
+              "price": 600,
+              "isNew": 1,
+              "tradeDT": 1784521922,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x78e52b22e35aa58ca10bfce86fcb3c71ceb3cc0a",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 37,
+              "seq": 2355900,
+              "transportID": 365964,
+              "nftID": "204212",
+              "characterName": "20312",
+              "worldName": "SA032",
+              "class": 4,
+              "lv": 108,
+              "powerScore": 184915,
+              "price": 113,
+              "isNew": 1,
+              "tradeDT": 1784520902,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x470e0fca96ef292d46b5eab5c9c5f64b73cd63af",
+              "characterName": "4legSkill20",
+              "class": 1,
+              "lv": 151,
+              "worldName": "ASIA332"
+            },
+            "info": {
+              "rowID": 38,
+              "seq": 2355980,
+              "transportID": 366085,
+              "nftID": "39923",
+              "characterName": "4legSkill20",
+              "worldName": "ASIA332",
+              "class": 1,
+              "lv": 151,
+              "powerScore": 381565,
+              "price": 600,
+              "isNew": 1,
+              "tradeDT": 1784519942,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xf8301ab47ae49da2319d4c22ad875dc8eda9f8ee",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 39,
+              "seq": 2355918,
+              "transportID": 366035,
+              "nftID": "75116",
+              "characterName": "AMPINGI",
+              "worldName": "EU011",
+              "class": 4,
+              "lv": 137,
+              "powerScore": 316296,
+              "price": 345,
+              "isNew": 1,
+              "tradeDT": 1784518862,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x0666fc72548af67a8506ada3334622bdd8c5838a",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 40,
+              "seq": 2355979,
+              "transportID": 366113,
+              "nftID": "50437",
+              "characterName": "一擊 Hecate",
+              "worldName": "ASIA031",
+              "class": 3,
+              "lv": 153,
+              "powerScore": 436822,
+              "price": 1050,
+              "isNew": 1,
+              "tradeDT": 1784517901,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x5864a1734ace14a33c6613f61ffa5e6f380ebf58",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 41,
+              "seq": 2355915,
+              "transportID": 366099,
+              "nftID": "44944",
+              "characterName": "Mortyッ",
+              "worldName": "ASIA032",
+              "class": 5,
+              "lv": 149,
+              "powerScore": 415472,
+              "price": 1400,
+              "isNew": 1,
+              "tradeDT": 1784516762,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x5a2bd721ba5e113598b541bb9e2cde79b44dec70",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 42,
+              "seq": 2355951,
+              "transportID": 365825,
+              "nftID": "89046",
+              "characterName": "Dark 乐 乐",
+              "worldName": "SA011",
+              "class": 2,
+              "lv": 168,
+              "powerScore": 515587,
+              "price": 4300,
+              "isNew": 1,
+              "tradeDT": 1784515022,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x17ae2b1de1a85f7414051057f5e8fd19d7796288",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 43,
+              "seq": 2355807,
+              "transportID": 366071,
+              "nftID": "204130",
+              "characterName": "SsO8",
+              "worldName": "ASIA321",
+              "class": 3,
+              "lv": 131,
+              "powerScore": 300551,
+              "price": 434,
+              "isNew": 1,
+              "tradeDT": 1784512922,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xcaafd337bda026514b3e9f44de1461d72f0b0cee",
+              "characterName": "SRApocrifa",
+              "class": 6,
+              "lv": 74,
+              "worldName": "SA031"
+            },
+            "info": {
+              "rowID": 44,
+              "seq": 2355892,
+              "transportID": 289634,
+              "nftID": "52241",
+              "characterName": "YoDais",
+              "worldName": "ASIA061",
+              "class": 5,
+              "lv": 90,
+              "powerScore": 117245,
+              "price": 39,
+              "isNew": 1,
+              "tradeDT": 1784511722,
+              "MirageScore": 145610,
+              "MiraX": 3424,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x584bc3b678113912ff8df11c6aeac67fa7835a4b",
+              "characterName": "yahoo Google",
+              "class": 6,
+              "lv": 55,
+              "worldName": "ASIA073"
+            },
+            "info": {
+              "rowID": 45,
+              "seq": 2353963,
+              "transportID": 365400,
+              "nftID": "73016",
+              "characterName": "Trade2Acceso",
+              "worldName": "ASIA081",
+              "class": 2,
+              "lv": 146,
+              "powerScore": 367445,
+              "price": 650,
+              "isNew": 1,
+              "tradeDT": 1784511362,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xa9dcfbf7ff4aa70170f423e3a1ac46607f69db4b",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 46,
+              "seq": 2355280,
+              "transportID": 362055,
+              "nftID": "10193",
+              "characterName": "난 잘 해봐",
+              "worldName": "ASIA341",
+              "class": 2,
+              "lv": 148,
+              "powerScore": 386545,
+              "price": 680,
+              "isNew": 1,
+              "tradeDT": 1784508962,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x26c08e776aa59219c3237543df92a6171eb6685d",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 47,
+              "seq": 2355916,
+              "transportID": 366003,
+              "nftID": "97202",
+              "characterName": "・2023・",
+              "worldName": "ASIA082",
+              "class": 3,
+              "lv": 135,
+              "powerScore": 305860,
+              "price": 299,
+              "isNew": 1,
+              "tradeDT": 1784504702,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x8be0794e12bd3a0c90901de78f227454c2d30104",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 48,
+              "seq": 2355803,
+              "transportID": 365918,
+              "nftID": "80080",
+              "characterName": "Oohkami",
+              "worldName": "EU023",
+              "class": 2,
+              "lv": 158,
+              "powerScore": 486507,
+              "price": 3000,
+              "isNew": 1,
+              "tradeDT": 1784502182,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xcaafd337bda026514b3e9f44de1461d72f0b0cee",
+              "characterName": "SRApocrifa",
+              "class": 6,
+              "lv": 74,
+              "worldName": "SA031"
+            },
+            "info": {
+              "rowID": 49,
+              "seq": 2355896,
+              "transportID": 335291,
+              "nftID": "32483",
+              "characterName": "Hitosh",
+              "worldName": "NA023",
+              "class": 3,
+              "lv": 90,
+              "powerScore": 132887,
+              "price": 39,
+              "isNew": 1,
+              "tradeDT": 1784500142,
+              "MirageScore": 182960,
+              "MiraX": 2376,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xa5ba77620174c4d9eb734d7d47c2f7c001e2f959",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 50,
+              "seq": 2355903,
+              "transportID": 366061,
+              "nftID": "21723",
+              "characterName": "jan rëy",
+              "worldName": "SA032",
+              "class": 4,
+              "lv": 149,
+              "powerScore": 377777,
+              "price": 550,
+              "isNew": 1,
+              "tradeDT": 1784499662,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x4a449f92b6eb8e3360905dec8c571be0ed98a073",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 51,
+              "seq": 2355860,
+              "transportID": 365689,
+              "nftID": "201905",
+              "characterName": "xXB3LLIOИxX",
+              "worldName": "NA011",
+              "class": 1,
+              "lv": 151,
+              "powerScore": 391420,
+              "price": 750,
+              "isNew": 1,
+              "tradeDT": 1784498762,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x13acda4cee3dffad197ed9d6195d261de2f2ffeb",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 52,
+              "seq": 2355917,
+              "transportID": 366100,
+              "nftID": "204263",
+              "characterName": "AshyTres",
+              "worldName": "ASIA011",
+              "class": 2,
+              "lv": 132,
+              "powerScore": 287013,
+              "price": 320,
+              "isNew": 1,
+              "tradeDT": 1784497982,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x53bdb0533fd29773f5a51793a1d29a3e1d3718f2",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 53,
+              "seq": 2355816,
+              "transportID": 366067,
+              "nftID": "94010",
+              "characterName": "可憐Cloudberry",
+              "worldName": "ASIA321",
+              "class": 5,
+              "lv": 152,
+              "powerScore": 435110,
+              "price": 2300,
+              "isNew": 1,
+              "tradeDT": 1784496782,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xf45599c90b67b0c52697f1ffb01e371141f074ba",
+              "characterName": "盒子之王",
+              "class": 2,
+              "lv": 147,
+              "worldName": "ASIA032"
+            },
+            "info": {
+              "rowID": 54,
+              "seq": 2355465,
+              "transportID": 365367,
+              "nftID": "203953",
+              "characterName": "MRTR",
+              "worldName": "ASIA034",
+              "class": 2,
+              "lv": 150,
+              "powerScore": 388428,
+              "price": 630,
+              "isNew": 1,
+              "tradeDT": 1784496602,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xb78c463582f16cef1b2c6d5fa7763e24dfe2b91e",
+              "characterName": "Abhs4mir",
+              "class": 4,
+              "lv": 96,
+              "worldName": "ASIA053"
+            },
+            "info": {
+              "rowID": 55,
+              "seq": 2355802,
+              "transportID": 366051,
+              "nftID": "73038",
+              "characterName": "ⓁⓘⓥⓔⓎⓞⓤⓡⓁⓘⓕⓔ",
+              "worldName": "ASIA053",
+              "class": 4,
+              "lv": 157,
+              "powerScore": 522790,
+              "price": 7250,
+              "isNew": 1,
+              "tradeDT": 1784494742,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x0efb12924a47d0f07ec2195d3db38291523c0367",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 56,
+              "seq": 2355853,
+              "transportID": 365633,
+              "nftID": "47003",
+              "characterName": "MD G卂爪丨ⓝG",
+              "worldName": "ASIA011",
+              "class": 2,
+              "lv": 152,
+              "powerScore": 410932,
+              "price": 1195,
+              "isNew": 1,
+              "tradeDT": 1784494442,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xcc3056cb1aa5d4a66b73a8bea7f2890dc9b2e619",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 57,
+              "seq": 2355491,
+              "transportID": 365950,
+              "nftID": "201632",
+              "characterName": "tang0z",
+              "worldName": "SA041",
+              "class": 3,
+              "lv": 150,
+              "powerScore": 400656,
+              "price": 790,
+              "isNew": 1,
+              "tradeDT": 1784493602,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x841b681c9e39dd5b98e2304ce2b063805a68be8b",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 58,
+              "seq": 2355871,
+              "transportID": 365851,
+              "nftID": "36449",
+              "characterName": "Véréderer",
+              "worldName": "SA032",
+              "class": 4,
+              "lv": 120,
+              "powerScore": 186064,
+              "price": 159,
+              "isNew": 1,
+              "tradeDT": 1784493362,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x651dc9047df42f8ecfc265021db10fb86b40aaf2",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 59,
+              "seq": 2355635,
+              "transportID": 365408,
+              "nftID": "98562",
+              "characterName": "Duskzzz",
+              "worldName": "SA011",
+              "class": 3,
+              "lv": 140,
+              "powerScore": 324900,
+              "price": 400,
+              "isNew": 1,
+              "tradeDT": 1784493181,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x56b791c6fe408eacbd76e0ef5446c48e0dcbdf51",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 60,
+              "seq": 2355824,
+              "transportID": 366074,
+              "nftID": "39124",
+              "characterName": "スーパーボン",
+              "worldName": "INMENA021",
+              "class": 2,
+              "lv": 156,
+              "powerScore": 446968,
+              "price": 2000,
+              "isNew": 1,
+              "tradeDT": 1784491442,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x78e52b22e35aa58ca10bfce86fcb3c71ceb3cc0a",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 61,
+              "seq": 2355738,
+              "transportID": 366004,
+              "nftID": "57818",
+              "characterName": "6Spirit1Tome",
+              "worldName": "ASIA082",
+              "class": 3,
+              "lv": 140,
+              "powerScore": 284824,
+              "price": 279,
+              "isNew": 1,
+              "tradeDT": 1784491322,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x7d5be0447d37fc1dc5bd418fd8f4d5ede5f55ec6",
+              "characterName": "Oohkami",
+              "class": 2,
+              "lv": 158,
+              "worldName": "EU023"
+            },
+            "info": {
+              "rowID": 62,
+              "seq": 2355868,
+              "transportID": 366029,
+              "nftID": "201115",
+              "characterName": "CrtEvPvP12Pt",
+              "worldName": "EU021",
+              "class": 5,
+              "lv": 156,
+              "powerScore": 496470,
+              "price": 3300,
+              "isNew": 1,
+              "tradeDT": 1784489702,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xa1c568e15b80df4f2f05cef7edf44e90224609d3",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 63,
+              "seq": 2355835,
+              "transportID": 365519,
+              "nftID": "49700",
+              "characterName": "Likethat 悟",
+              "worldName": "ASIA062",
+              "class": 4,
+              "lv": 142,
+              "powerScore": 352411,
+              "price": 420,
+              "isNew": 1,
+              "tradeDT": 1784484842,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x04be66752ea947127ce691d63cc518a54586a2d1",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 64,
+              "seq": 2355852,
+              "transportID": 366064,
+              "nftID": "8124",
+              "characterName": "루세로",
+              "worldName": "SA023",
+              "class": 3,
+              "lv": 153,
+              "powerScore": 402236,
+              "price": 850,
+              "isNew": 1,
+              "tradeDT": 1784482441,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x1b2418b702158ce838ccd2cefd7e996167b5e550",
+              "characterName": "殺戮者 メ Vi乙",
+              "class": 4,
+              "lv": 148,
+              "worldName": "ASIA014"
+            },
+            "info": {
+              "rowID": 65,
+              "seq": 2355849,
+              "transportID": 365921,
+              "nftID": "42015",
+              "characterName": "殺戮者 メ Vi乙",
+              "worldName": "ASIA014",
+              "class": 4,
+              "lv": 152,
+              "powerScore": 402540,
+              "price": 950,
+              "isNew": 1,
+              "tradeDT": 1784482441,
+              "MirageScore": 1102007,
+              "MiraX": 644,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xb875574ef1fbece08f8b9ba225f7f9e8a73be8d1",
+              "characterName": "Tiao 14",
+              "class": 6,
+              "lv": 114,
+              "worldName": "NA033"
+            },
+            "info": {
+              "rowID": 66,
+              "seq": 2355109,
+              "transportID": 365495,
+              "nftID": "96178",
+              "characterName": "Tiao 14",
+              "worldName": "NA033",
+              "class": 6,
+              "lv": 115,
+              "powerScore": 194814,
+              "price": 140,
+              "isNew": 1,
+              "tradeDT": 1784480642,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x6098fdd6927ad8437cedb14ff2433f6f3b1fe479",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 67,
+              "seq": 2355898,
+              "transportID": 365961,
+              "nftID": "204025",
+              "characterName": "4reforgfull",
+              "worldName": "EU011",
+              "class": 6,
+              "lv": 114,
+              "powerScore": 195244,
+              "price": 1,
+              "isNew": 1,
+              "tradeDT": 1784479682,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x5a6a7909dd8c9393f0c3bdc7e72065e8ead550e2",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 68,
+              "seq": 2355870,
+              "transportID": 366092,
+              "nftID": "204261",
+              "characterName": "VN メ PTMD",
+              "worldName": "ASIA324",
+              "class": 6,
+              "lv": 100,
+              "powerScore": 134753,
+              "price": 89,
+              "isNew": 1,
+              "tradeDT": 1784479621,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x1d859a434ccb457c409ce93396677debcc6e99c8",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 69,
+              "seq": 2355779,
+              "transportID": 366002,
+              "nftID": "78294",
+              "characterName": "AsahiZERO 濃厚",
+              "worldName": "ASIA314",
+              "class": 4,
+              "lv": 150,
+              "powerScore": 378482,
+              "price": 685,
+              "isNew": 1,
+              "tradeDT": 1784479562,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x045036298a881349845ffe399b371e060e52000d",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 70,
+              "seq": 2355850,
+              "transportID": 365634,
+              "nftID": "200900",
+              "characterName": "0cd610sk175a",
+              "worldName": "ASIA034",
+              "class": 2,
+              "lv": 150,
+              "powerScore": 394968,
+              "price": 1300,
+              "isNew": 1,
+              "tradeDT": 1784478961,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x5c683542b4c5a818f8689c6e2f0d2c3434fcb67c",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 71,
+              "seq": 2355819,
+              "transportID": 365998,
+              "nftID": "68137",
+              "characterName": "Juuzoo''",
+              "worldName": "ASIA082",
+              "class": 5,
+              "lv": 141,
+              "powerScore": 334225,
+              "price": 410,
+              "isNew": 1,
+              "tradeDT": 1784478482,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x48b2dc0139310406cbb01fdd164404a1cbeca04d",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 72,
+              "seq": 2354850,
+              "transportID": 364933,
+              "nftID": "202585",
+              "characterName": "'Snorlax'",
+              "worldName": "INMENA011",
+              "class": 7,
+              "lv": 146,
+              "powerScore": 376581,
+              "price": 1000,
+              "isNew": 1,
+              "tradeDT": 1784477822,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x3d19f5b33c10d6b5d0cf45e5f54cc7d53c9a2e4b",
+              "characterName": "Lastiсk",
+              "class": 3,
+              "lv": 148,
+              "worldName": "SA011"
+            },
+            "info": {
+              "rowID": 73,
+              "seq": 2355832,
+              "transportID": 365817,
+              "nftID": "78561",
+              "characterName": "Lastiсk",
+              "worldName": "SA011",
+              "class": 3,
+              "lv": 148,
+              "powerScore": 385212,
+              "price": 625,
+              "isNew": 1,
+              "tradeDT": 1784475542,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xec907afdb3c3e11cad35262635ab226ede4a657e",
+              "characterName": "XDOMEⓟⓡⓘⓜⓔ",
+              "class": 4,
+              "lv": 155,
+              "worldName": "ASIA032"
+            },
+            "info": {
+              "rowID": 74,
+              "seq": 2355671,
+              "transportID": 365719,
+              "nftID": "12035",
+              "characterName": "T2XDrc534skd",
+              "worldName": "ASIA012",
+              "class": 4,
+              "lv": 156,
+              "powerScore": 425746,
+              "price": 1650,
+              "isNew": 1,
+              "tradeDT": 1784472962,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x7ee3d04a6ed96310af29546ad95608d8f32987f6",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 75,
+              "seq": 2355472,
+              "transportID": 365546,
+              "nftID": "3311",
+              "characterName": "NOOBZinn99",
+              "worldName": "NA014",
+              "class": 2,
+              "lv": 153,
+              "powerScore": 413059,
+              "price": 850,
+              "isNew": 1,
+              "tradeDT": 1784472843,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xc96e6e9f19f9ef34428c21a427dff51d0eae08f7",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 76,
+              "seq": 2355785,
+              "transportID": 366057,
+              "nftID": "203004",
+              "characterName": "ⒼëⓝⒼⓐⓡ",
+              "worldName": "EU024",
+              "class": 7,
+              "lv": 150,
+              "powerScore": 354287,
+              "price": 600,
+              "isNew": 1,
+              "tradeDT": 1784470921,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x8cdf26af012d8fefdcb0da71a951f1b81f20b0c2",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 77,
+              "seq": 2353024,
+              "transportID": 359977,
+              "nftID": "64648",
+              "characterName": "SpeLL๑Caster",
+              "worldName": "SA022",
+              "class": 2,
+              "lv": 163,
+              "powerScore": 496831,
+              "price": 3990,
+              "isNew": 1,
+              "tradeDT": 1784467382,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xbfcf265ae88692256513ca8ccae16bdf4ba7aa17",
+              "characterName": "Ana Mel",
+              "class": 2,
+              "lv": 131,
+              "worldName": "NA012"
+            },
+            "info": {
+              "rowID": 78,
+              "seq": 2355698,
+              "transportID": 57391,
+              "nftID": "27842",
+              "characterName": "qoh",
+              "worldName": "ASIA081",
+              "class": 1,
+              "lv": 83,
+              "powerScore": 112413,
+              "price": 35,
+              "isNew": 1,
+              "tradeDT": 1784466841,
+              "MirageScore": 152821,
+              "MiraX": 11208,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x0ba881bd2b19c48697dff6d89ad191fe2501f2a6",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 79,
+              "seq": 2355843,
+              "transportID": 366079,
+              "nftID": "200592",
+              "characterName": "・埃斯卡諾爾・",
+              "worldName": "INMENA023",
+              "class": 1,
+              "lv": 157,
+              "powerScore": 418644,
+              "price": 1,
+              "isNew": 1,
+              "tradeDT": 1784466542,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xc960c04aa157010eac8a2c91c68b5071352d484a",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 80,
+              "seq": 2355811,
+              "transportID": 365996,
+              "nftID": "79795",
+              "characterName": "45crtTrdChrm",
+              "worldName": "ASIA024",
+              "class": 4,
+              "lv": 145,
+              "powerScore": 368174,
+              "price": 550,
+              "isNew": 1,
+              "tradeDT": 1784466482,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xf9213cffb1c461aa6f21284c45fe3f04d902d80b",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 81,
+              "seq": 2355307,
+              "transportID": 365815,
+              "nftID": "98815",
+              "characterName": "LadyKyd07",
+              "worldName": "ASIA031",
+              "class": 4,
+              "lv": 146,
+              "powerScore": 371402,
+              "price": 750,
+              "isNew": 1,
+              "tradeDT": 1784465821,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xce3e6d3db75dd20fd0cfeda09cac4a4fa272e60a",
+              "characterName": "Frezzo",
+              "class": 1,
+              "lv": 85,
+              "worldName": "SA022"
+            },
+            "info": {
+              "rowID": 82,
+              "seq": 2355760,
+              "transportID": 365964,
+              "nftID": "204212",
+              "characterName": "20312",
+              "worldName": "SA032",
+              "class": 4,
+              "lv": 108,
+              "powerScore": 184915,
+              "price": 89,
+              "isNew": 1,
+              "tradeDT": 1784465821,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x68224a8d0fc79176042c89a983d1e131af4f5028",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 83,
+              "seq": 2354009,
+              "transportID": 365418,
+              "nftID": "49794",
+              "characterName": "0CD Unli CB",
+              "worldName": "ASIA024",
+              "class": 5,
+              "lv": 150,
+              "powerScore": 410527,
+              "price": 2500,
+              "isNew": 1,
+              "tradeDT": 1784463842,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x2c303d5ab7d8f5251482e8dff878965fd273b20f",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 84,
+              "seq": 2355829,
+              "transportID": 366053,
+              "nftID": "36824",
+              "characterName": "T2tradeBOOTS",
+              "worldName": "ASIA341",
+              "class": 6,
+              "lv": 152,
+              "powerScore": 408320,
+              "price": 1050,
+              "isNew": 1,
+              "tradeDT": 1784461621,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xc39c79048104d4a3ab2e47334c4dea8939fa9952",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 85,
+              "seq": 2355613,
+              "transportID": 365991,
+              "nftID": "203956",
+              "characterName": "T4Weapon",
+              "worldName": "ASIA024",
+              "class": 1,
+              "lv": 137,
+              "powerScore": 313242,
+              "price": 700,
+              "isNew": 1,
+              "tradeDT": 1784459162,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xd5f5710bfba548b983ae23fab18a707e2c4faa02",
+              "characterName": "Kittyy ツ",
+              "class": 3,
+              "lv": 144,
+              "worldName": "SA031"
+            },
+            "info": {
+              "rowID": 86,
+              "seq": 2355784,
+              "transportID": 366056,
+              "nftID": "36908",
+              "characterName": "Cueri7 ツ",
+              "worldName": "ASIA011",
+              "class": 3,
+              "lv": 153,
+              "powerScore": 444157,
+              "price": 1500,
+              "isNew": 1,
+              "tradeDT": 1784458922,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x2ec461733f6cb7c4c2310ae266ede53796c3130b",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 87,
+              "seq": 2355773,
+              "transportID": 365731,
+              "nftID": "202480",
+              "characterName": "战神 Peanut",
+              "worldName": "ASIA013",
+              "class": 1,
+              "lv": 144,
+              "powerScore": 359184,
+              "price": 500,
+              "isNew": 1,
+              "tradeDT": 1784457782,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x751e6ac50e00b546d487fd873a797f19ffd11750",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 88,
+              "seq": 2355815,
+              "transportID": 366073,
+              "nftID": "200716",
+              "characterName": "Cryza･ヮ",
+              "worldName": "ASIA011",
+              "class": 1,
+              "lv": 151,
+              "powerScore": 440906,
+              "price": 1600,
+              "isNew": 1,
+              "tradeDT": 1784457062,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x505062a5149e56bbde76175a55326cc428b2fbd3",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 89,
+              "seq": 2355759,
+              "transportID": 365993,
+              "nftID": "204217",
+              "characterName": "miner2sec",
+              "worldName": "NA041",
+              "class": 6,
+              "lv": 140,
+              "powerScore": 285282,
+              "price": 280,
+              "isNew": 1,
+              "tradeDT": 1784451181,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xff015a068607184f4b22eb8029d1c1315e454120",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 90,
+              "seq": 2355786,
+              "transportID": 365972,
+              "nftID": "78730",
+              "characterName": "ァavaท",
+              "worldName": "NA033",
+              "class": 5,
+              "lv": 151,
+              "powerScore": 410724,
+              "price": 1000,
+              "isNew": 1,
+              "tradeDT": 1784449682,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x8b9dff0f656f01832ba80128e0ad73f8e25d902b",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 91,
+              "seq": 2351588,
+              "transportID": 364686,
+              "nftID": "203607",
+              "characterName": "h1 s1",
+              "worldName": "INMENA022",
+              "class": 3,
+              "lv": 143,
+              "powerScore": 359334,
+              "price": 750,
+              "isNew": 1,
+              "tradeDT": 1784446862,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xbaaf30e9e2021921b570b61c054c4d1b24483c69",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 92,
+              "seq": 2355648,
+              "transportID": 364490,
+              "nftID": "95015",
+              "characterName": "很生气メ",
+              "worldName": "ASIA072",
+              "class": 1,
+              "lv": 148,
+              "powerScore": 416515,
+              "price": 1200,
+              "isNew": 1,
+              "tradeDT": 1784446862,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x4fbf6e493c5835f48b339bf66bad515a2cbb832d",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 93,
+              "seq": 2355766,
+              "transportID": 365086,
+              "nftID": "98679",
+              "characterName": "Agatha ツ",
+              "worldName": "SA012",
+              "class": 6,
+              "lv": 126,
+              "powerScore": 253470,
+              "price": 230,
+              "isNew": 1,
+              "tradeDT": 1784446862,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x4af31c66af66bbbab9ce0306ff6997fe3de591db",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 94,
+              "seq": 2355747,
+              "transportID": 365865,
+              "nftID": "63071",
+              "characterName": "CD0Meva6400",
+              "worldName": "ASIA321",
+              "class": 5,
+              "lv": 152,
+              "powerScore": 431013,
+              "price": 2600,
+              "isNew": 1,
+              "tradeDT": 1784438161,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x09f06c522b4722033ff5df980af849221cbf847f",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 95,
+              "seq": 2355748,
+              "transportID": 366039,
+              "nftID": "204258",
+              "characterName": "Mintz1",
+              "worldName": "SA041",
+              "class": 6,
+              "lv": 121,
+              "powerScore": 225531,
+              "price": 180,
+              "isNew": 1,
+              "tradeDT": 1784437922,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x21f75d528c660e706b5b2821802e075c72e1c743",
+              "characterName": "LuLuOft3n",
+              "class": 4,
+              "lv": 152,
+              "worldName": "ASIA071"
+            },
+            "info": {
+              "rowID": 96,
+              "seq": 2355572,
+              "transportID": 365838,
+              "nftID": "200228",
+              "characterName": "再见什么",
+              "worldName": "INMENA031",
+              "class": 2,
+              "lv": 153,
+              "powerScore": 440356,
+              "price": 1300,
+              "isNew": 1,
+              "tradeDT": 1784435762,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x826353cebb65242edbf4de8f728ffdcac645f7ca",
+              "characterName": "Døn・Ramøn",
+              "class": 4,
+              "lv": 161,
+              "worldName": "SA041"
+            },
+            "info": {
+              "rowID": 97,
+              "seq": 2355752,
+              "transportID": 365839,
+              "nftID": "65677",
+              "characterName": "Døn・Ramøn",
+              "worldName": "SA041",
+              "class": 4,
+              "lv": 161,
+              "powerScore": 565599,
+              "price": 15056,
+              "isNew": 1,
+              "tradeDT": 1784435582,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x26c08e776aa59219c3237543df92a6171eb6685d",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 98,
+              "seq": 2355695,
+              "transportID": 365728,
+              "nftID": "202257",
+              "characterName": "PKLZCC",
+              "worldName": "SA023",
+              "class": 4,
+              "lv": 126,
+              "powerScore": 238697,
+              "price": 200,
+              "isNew": 1,
+              "tradeDT": 1784432282,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xa538315e120aa2c936a8ac3ece4480910a1665c1",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 99,
+              "seq": 2355719,
+              "transportID": 366023,
+              "nftID": "203814",
+              "characterName": "CB10STYX6PET",
+              "worldName": "ASIA332",
+              "class": 5,
+              "lv": 147,
+              "powerScore": 338218,
+              "price": 400,
+              "isNew": 1,
+              "tradeDT": 1784430902,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xe7c899d29cb813e44b666ab8e69e585baf2df8b9",
+              "characterName": "'",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 100,
+              "seq": 2355605,
+              "transportID": 365785,
+              "nftID": "64968",
+              "characterName": "Ⓕ・Ⓤ丨Punch",
+              "worldName": "ASIA322",
+              "class": 3,
+              "lv": 153,
+              "powerScore": 404892,
+              "price": 899,
+              "isNew": 1,
+              "tradeDT": 1784430662,
+              "MirageScore": 1730535,
+              "MiraX": 392,
+              "Reinforce": 0,
+              "stat": []
+            }
+          }
+        ]
+      }
     }
   },
   "topTraded": {
     "url": "https://webapi.mir4global.com/nft/lists?listType=topTraded&page=1&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&languageCode=pt",
-    "timestamp": "2026-07-21T00:09:22.550184+00:00",
+    "timestamp": "2026-07-21T03:39:04.495999+00:00",
     "resposta_bruta": {
-      "code": 69999
+      "code": 200,
+      "data": {
+        "firstID": 0,
+        "totalCount": 0,
+        "more": 0,
+        "lists": [
+          {
+            "seller": {
+              "userAddress": "0xbc9ea372349305dbb3cfadc63c07b05acd570a0f",
+              "characterName": "Finn ヅ",
+              "class": 5,
+              "lv": 162,
+              "worldName": "ASIA081"
+            },
+            "info": {
+              "rowID": 1,
+              "seq": 2355234,
+              "transportID": 363854,
+              "nftID": "88503",
+              "characterName": "Finn ヅ",
+              "worldName": "ASIA014",
+              "class": 5,
+              "lv": 164,
+              "powerScore": 583414,
+              "price": 20000,
+              "isNew": 1,
+              "tradeDT": 1784194321,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x91744c73d12fbcab23caf75c1e994f891d2eed52",
+              "characterName": "911 ICE",
+              "class": 2,
+              "lv": 42,
+              "worldName": "BSA041"
+            },
+            "info": {
+              "rowID": 2,
+              "seq": 2354980,
+              "transportID": 364477,
+              "nftID": "708",
+              "characterName": "77 Matte",
+              "worldName": "SA021",
+              "class": 4,
+              "lv": 167,
+              "powerScore": 616456,
+              "price": 20000,
+              "isNew": 1,
+              "tradeDT": 1784060882,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x339639b8bf52dc49da9bf07f5d02a157fd6f2e69",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 3,
+              "seq": 2346143,
+              "transportID": 357222,
+              "nftID": "203555",
+              "characterName": "刃丨冬至っ",
+              "worldName": "ASIA033",
+              "class": 3,
+              "lv": 170,
+              "powerScore": 598312,
+              "price": 18500,
+              "isNew": 1,
+              "tradeDT": 1782337322,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x7539b8b0de6aeac5a4a6eaea2e7e245fc56d5a2f",
+              "characterName": "MayuU シ",
+              "class": 4,
+              "lv": 162,
+              "worldName": "ASIA021"
+            },
+            "info": {
+              "rowID": 4,
+              "seq": 2352955,
+              "transportID": 364625,
+              "nftID": "1852",
+              "characterName": "D super01990",
+              "worldName": "ASIA072",
+              "class": 4,
+              "lv": 171,
+              "powerScore": 602336,
+              "price": 17030,
+              "isNew": 1,
+              "tradeDT": 1783280341,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x2f75b180a56b8401c1a7a58c1ee865735b5445b7",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 5,
+              "seq": 2355305,
+              "transportID": 364189,
+              "nftID": "65871",
+              "characterName": "Suspeitoツ",
+              "worldName": "EU014",
+              "class": 6,
+              "lv": 168,
+              "powerScore": 609631,
+              "price": 17000,
+              "isNew": 1,
+              "tradeDT": 1784360222,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xe74b6fd09a85c0ee44c149ae36bb41811f18c8a1",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 6,
+              "seq": 2353720,
+              "transportID": 362092,
+              "nftID": "9732",
+              "characterName": "2KCODEX67EVA",
+              "worldName": "EU011",
+              "class": 3,
+              "lv": 172,
+              "powerScore": 619210,
+              "price": 17000,
+              "isNew": 1,
+              "tradeDT": 1783559342,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x0b6645e067e583a8155239c790ab92fa9e811e0d",
+              "characterName": "乡 choco 乡",
+              "class": 3,
+              "lv": 168,
+              "worldName": "NA013"
+            },
+            "info": {
+              "rowID": 7,
+              "seq": 2355437,
+              "transportID": 363777,
+              "nftID": "74938",
+              "characterName": "DC Choco93",
+              "worldName": "EU012",
+              "class": 3,
+              "lv": 170,
+              "powerScore": 609586,
+              "price": 15500,
+              "isNew": 1,
+              "tradeDT": 1784283362,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x826353cebb65242edbf4de8f728ffdcac645f7ca",
+              "characterName": "Døn・Ramøn",
+              "class": 4,
+              "lv": 161,
+              "worldName": "SA041"
+            },
+            "info": {
+              "rowID": 8,
+              "seq": 2355752,
+              "transportID": 365839,
+              "nftID": "65677",
+              "characterName": "Døn・Ramøn",
+              "worldName": "SA041",
+              "class": 4,
+              "lv": 161,
+              "powerScore": 565599,
+              "price": 15056,
+              "isNew": 1,
+              "tradeDT": 1784435582,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x12eb5f2e7a657afcd883494875031db0c447ddce",
+              "characterName": "M丶狮血天",
+              "class": 4,
+              "lv": 163,
+              "worldName": "ASIA082"
+            },
+            "info": {
+              "rowID": 9,
+              "seq": 2353602,
+              "transportID": 364331,
+              "nftID": "99056",
+              "characterName": "神话宠炉子9丶弩装可交易",
+              "worldName": "ASIA071",
+              "class": 5,
+              "lv": 170,
+              "powerScore": 601881,
+              "price": 14200,
+              "isNew": 1,
+              "tradeDT": 1783493461,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xa4c10724d98a7615f14e4ec19f770e0810dfbd2a",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 10,
+              "seq": 2353941,
+              "transportID": 365389,
+              "nftID": "11122",
+              "characterName": "Baba Yaga メ",
+              "worldName": "ASIA053",
+              "class": 6,
+              "lv": 166,
+              "powerScore": 592403,
+              "price": 14000,
+              "isNew": 1,
+              "tradeDT": 1783674661,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x0582025a68264227f29f473a650309e20a367559",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 11,
+              "seq": 2353499,
+              "transportID": 363009,
+              "nftID": "14077",
+              "characterName": "vs112234",
+              "worldName": "EU013",
+              "class": 4,
+              "lv": 170,
+              "powerScore": 601232,
+              "price": 14000,
+              "isNew": 1,
+              "tradeDT": 1783469221,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xd47a6f831360054f116dfe71246dc073fb7e3199",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 12,
+              "seq": 2352775,
+              "transportID": 365050,
+              "nftID": "41248",
+              "characterName": "PacifiKhäNdo",
+              "worldName": "EU014",
+              "class": 4,
+              "lv": 168,
+              "powerScore": 468448,
+              "price": 13626,
+              "isNew": 1,
+              "tradeDT": 1783206062,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xfa8fe498fb4c6a4a7ad975685111f7b69c785efa",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 13,
+              "seq": 2351687,
+              "transportID": 364710,
+              "nftID": "30911",
+              "characterName": "ALLatkMythpt",
+              "worldName": "ASIA033",
+              "class": 4,
+              "lv": 168,
+              "powerScore": 561928,
+              "price": 13500,
+              "isNew": 1,
+              "tradeDT": 1782938762,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x72de9268a476a82654cd65467b242adb6f19d525",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 14,
+              "seq": 2349735,
+              "transportID": 364080,
+              "nftID": "6073",
+              "characterName": "흑 철 왕",
+              "worldName": "ASIA014",
+              "class": 4,
+              "lv": 170,
+              "powerScore": 574879,
+              "price": 13000,
+              "isNew": 1,
+              "tradeDT": 1782115982,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x1b615a95a61d78509abc90f11b6dfcc499393d1d",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 15,
+              "seq": 2354575,
+              "transportID": 365164,
+              "nftID": "24383",
+              "characterName": "李青帝・LiQingTi",
+              "worldName": "ASIA053",
+              "class": 5,
+              "lv": 171,
+              "powerScore": 561506,
+              "price": 12999,
+              "isNew": 1,
+              "tradeDT": 1783865462,
+              "MirageScore": 302575,
+              "MiraX": 14,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x45b3a4d10128718a906343f2ad79b446a19e6530",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 16,
+              "seq": 2352654,
+              "transportID": 365008,
+              "nftID": "51013",
+              "characterName": "6900evacrit",
+              "worldName": "EU013",
+              "class": 3,
+              "lv": 161,
+              "powerScore": 546033,
+              "price": 11538,
+              "isNew": 1,
+              "tradeDT": 1783227422,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xfa09f3f113d0e1ffddbad14712ddb107f0ca8786",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 17,
+              "seq": 2349371,
+              "transportID": 363966,
+              "nftID": "48331",
+              "characterName": "103CDRunli",
+              "worldName": "ASIA072",
+              "class": 5,
+              "lv": 162,
+              "powerScore": 551680,
+              "price": 10500,
+              "isNew": 1,
+              "tradeDT": 1782004682,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x935320e6cc370399309fa12091a1c741bbcaccf7",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 18,
+              "seq": 2349889,
+              "transportID": 364070,
+              "nftID": "55014",
+              "characterName": "LOUCODEMD",
+              "worldName": "ASIA034",
+              "class": 1,
+              "lv": 163,
+              "powerScore": 558390,
+              "price": 10300,
+              "isNew": 1,
+              "tradeDT": 1782182701,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x66b4b7f032678aeebbdfd72c08403ee52103ea83",
+              "characterName": "卂иaKђaJҽЯ",
+              "class": 4,
+              "lv": 167,
+              "worldName": "ASIA034"
+            },
+            "info": {
+              "rowID": 19,
+              "seq": 2353482,
+              "transportID": 364186,
+              "nftID": "88187",
+              "characterName": "DC EspecZin",
+              "worldName": "ASIA341",
+              "class": 4,
+              "lv": 168,
+              "powerScore": 567516,
+              "price": 10000,
+              "isNew": 1,
+              "tradeDT": 1783463822,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xc42654fa342be6a69d1381fd5db781e9d3c259a9",
+              "characterName": "K Ä R M Ä",
+              "class": 4,
+              "lv": 131,
+              "worldName": "ASIA052"
+            },
+            "info": {
+              "rowID": 20,
+              "seq": 2351841,
+              "transportID": 363174,
+              "nftID": "83342",
+              "characterName": "2LGSphreClaw",
+              "worldName": "ASIA024",
+              "class": 5,
+              "lv": 162,
+              "powerScore": 528359,
+              "price": 10000,
+              "isNew": 1,
+              "tradeDT": 1782887642,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x9219d19feee35efc675c355366f9ff9a9d8b5658",
+              "characterName": "SC丶Metadinha",
+              "class": 3,
+              "lv": 160,
+              "worldName": "EU031"
+            },
+            "info": {
+              "rowID": 21,
+              "seq": 2349553,
+              "transportID": 362516,
+              "nftID": "65349",
+              "characterName": "SC丶Metadinha",
+              "worldName": "SA022",
+              "class": 3,
+              "lv": 162,
+              "powerScore": 514989,
+              "price": 10000,
+              "isNew": 1,
+              "tradeDT": 1782837302,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x19fcd36706a4befe8cee0f99c0467d053fbf097d",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 22,
+              "seq": 2351155,
+              "transportID": 364127,
+              "nftID": "75289",
+              "characterName": "許多可交易設備",
+              "worldName": "ASIA021",
+              "class": 2,
+              "lv": 163,
+              "powerScore": 559410,
+              "price": 9785,
+              "isNew": 1,
+              "tradeDT": 1782658022,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x1c470ef790b279fbcb3d56eac26e5c00fbfb8dfd",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 23,
+              "seq": 2350739,
+              "transportID": 363665,
+              "nftID": "7761",
+              "characterName": "Solmarapale2",
+              "worldName": "SA022",
+              "class": 6,
+              "lv": 165,
+              "powerScore": 554548,
+              "price": 9299,
+              "isNew": 1,
+              "tradeDT": 1782553381,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x41c39069ac2d38942ff59a5dba34a5e3ff04fcae",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 24,
+              "seq": 2355604,
+              "transportID": 365347,
+              "nftID": "32478",
+              "characterName": "77 Galdino",
+              "worldName": "EU012",
+              "class": 3,
+              "lv": 164,
+              "powerScore": 557619,
+              "price": 9000,
+              "isNew": 1,
+              "tradeDT": 1784389202,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x1686f3dfbfc533bb036c96f466c24d4c6816b55d",
+              "characterName": "・Castiel ・",
+              "class": 3,
+              "lv": 166,
+              "worldName": "ASIA053"
+            },
+            "info": {
+              "rowID": 25,
+              "seq": 2355211,
+              "transportID": 365096,
+              "nftID": "67120",
+              "characterName": "Relax Time",
+              "worldName": "ASIA053",
+              "class": 3,
+              "lv": 165,
+              "powerScore": 553967,
+              "price": 9000,
+              "isNew": 1,
+              "tradeDT": 1784183641,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x1791b0e1fe9f9211f8c6c52631ed81059138e0fa",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 26,
+              "seq": 2351165,
+              "transportID": 364398,
+              "nftID": "201640",
+              "characterName": "Ⓕ・Ⓤ丨Meow",
+              "worldName": "ASIA024",
+              "class": 1,
+              "lv": 165,
+              "powerScore": 551252,
+              "price": 8999,
+              "isNew": 1,
+              "tradeDT": 1782756422,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x29ad6edcff5b6e4bb08bd23271b619029677de86",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 27,
+              "seq": 2353006,
+              "transportID": 364903,
+              "nftID": "15255",
+              "characterName": "dc gzimpire",
+              "worldName": "NA011",
+              "class": 3,
+              "lv": 161,
+              "powerScore": 559699,
+              "price": 8800,
+              "isNew": 1,
+              "tradeDT": 1783304162,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x52ccbff1450f2e44c519d856aee71669c64df197",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 28,
+              "seq": 2352552,
+              "transportID": 363936,
+              "nftID": "33512",
+              "characterName": "xFYBx",
+              "worldName": "EU012",
+              "class": 1,
+              "lv": 161,
+              "powerScore": 560768,
+              "price": 8800,
+              "isNew": 1,
+              "tradeDT": 1783182002,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x674bdc01e280fc29b82ea8470bcc204491291ef1",
+              "characterName": "亗TeePéeメ",
+              "class": 4,
+              "lv": 135,
+              "worldName": "ASIA333"
+            },
+            "info": {
+              "rowID": 29,
+              "seq": 2352005,
+              "transportID": 364124,
+              "nftID": "203551",
+              "characterName": "TrdBrchckBag",
+              "worldName": "ASIA024",
+              "class": 2,
+              "lv": 170,
+              "powerScore": 546905,
+              "price": 8500,
+              "isNew": 1,
+              "tradeDT": 1783372621,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x456d9fa1fd896eceb6ec55f49704e5497c58c146",
+              "characterName": "ⓈⒸⓄⓊⓉⒺⓇツ",
+              "class": 4,
+              "lv": 157,
+              "worldName": "EU022"
+            },
+            "info": {
+              "rowID": 30,
+              "seq": 2353544,
+              "transportID": 363425,
+              "nftID": "5250",
+              "characterName": "Ⓚⓐⓣⓐⓒⓛⓘⓢⓜⓐ",
+              "worldName": "NA022",
+              "class": 3,
+              "lv": 162,
+              "powerScore": 496869,
+              "price": 8400,
+              "isNew": 1,
+              "tradeDT": 1784185622,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x8c04eff2be79e9889c891fbac88ba8f0212c7b0f",
+              "characterName": "・Castiel ・",
+              "class": 3,
+              "lv": 166,
+              "worldName": "ASIA053"
+            },
+            "info": {
+              "rowID": 31,
+              "seq": 2349734,
+              "transportID": 364007,
+              "nftID": "26072",
+              "characterName": "CE64CRdct14",
+              "worldName": "SA032",
+              "class": 3,
+              "lv": 162,
+              "powerScore": 520184,
+              "price": 8300,
+              "isNew": 1,
+              "tradeDT": 1782194282,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x0c277169a2ab142783de5f59b9f6d09e4cb103c5",
+              "characterName": "Lordzera乡",
+              "class": 4,
+              "lv": 153,
+              "worldName": "SA011"
+            },
+            "info": {
+              "rowID": 32,
+              "seq": 2353695,
+              "transportID": 363953,
+              "nftID": "70981",
+              "characterName": "Hardzera乡",
+              "worldName": "SA032",
+              "class": 4,
+              "lv": 161,
+              "powerScore": 530325,
+              "price": 8000,
+              "isNew": 1,
+              "tradeDT": 1783918562,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xac9c0fd6fd27a1ce70eb2f9a71584fd55b82504a",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 33,
+              "seq": 2351707,
+              "transportID": 364704,
+              "nftID": "55014",
+              "characterName": "Panda六月",
+              "worldName": "ASIA034",
+              "class": 1,
+              "lv": 163,
+              "powerScore": 563860,
+              "price": 7999,
+              "isNew": 1,
+              "tradeDT": 1782849842,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x2042612a870c20d02852f1a27f86ab5ad2936acc",
+              "characterName": "AngryArcherヅ",
+              "class": 4,
+              "lv": 166,
+              "worldName": "EU014"
+            },
+            "info": {
+              "rowID": 34,
+              "seq": 2351453,
+              "transportID": 364392,
+              "nftID": "3631",
+              "characterName": "AngryArcherヅ",
+              "worldName": "EU014",
+              "class": 4,
+              "lv": 166,
+              "powerScore": 543818,
+              "price": 7999,
+              "isNew": 1,
+              "tradeDT": 1782792842,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xee3a3c94e0c3df19ea01e8631014e8b97e8b1b6e",
+              "characterName": "TW Ondine",
+              "class": 6,
+              "lv": 163,
+              "worldName": "ASIA034"
+            },
+            "info": {
+              "rowID": 35,
+              "seq": 2352079,
+              "transportID": 363439,
+              "nftID": "98506",
+              "characterName": "175spl850skl",
+              "worldName": "EU021",
+              "class": 6,
+              "lv": 162,
+              "powerScore": 529230,
+              "price": 7777,
+              "isNew": 1,
+              "tradeDT": 1782966422,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xaf0924b0050a92189bf4b5c3760051e143127c57",
+              "characterName": "主人 0TEN 丨堂",
+              "class": 4,
+              "lv": 130,
+              "worldName": "ASIA063"
+            },
+            "info": {
+              "rowID": 36,
+              "seq": 2352896,
+              "transportID": 364659,
+              "nftID": "79981",
+              "characterName": "月亮 l Akemi",
+              "worldName": "ASIA334",
+              "class": 4,
+              "lv": 159,
+              "powerScore": 526916,
+              "price": 7767,
+              "isNew": 1,
+              "tradeDT": 1783391701,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x2310d040dbdc0f88842333afec9f968d10a1826e",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 37,
+              "seq": 2354845,
+              "transportID": 365603,
+              "nftID": "3631",
+              "characterName": "AngryArcherヅ",
+              "worldName": "SA012",
+              "class": 4,
+              "lv": 166,
+              "powerScore": 545343,
+              "price": 7500,
+              "isNew": 1,
+              "tradeDT": 1784029322,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x0aaeaada1d142b4e02c2ccc8fc18e5ea2fceb1d4",
+              "characterName": "乂Fabian乂",
+              "class": 6,
+              "lv": 166,
+              "worldName": "ASIA053"
+            },
+            "info": {
+              "rowID": 38,
+              "seq": 2353391,
+              "transportID": 365188,
+              "nftID": "203121",
+              "characterName": "乂Lara乂",
+              "worldName": "EU014",
+              "class": 6,
+              "lv": 169,
+              "powerScore": 542946,
+              "price": 7500,
+              "isNew": 1,
+              "tradeDT": 1783463642,
+              "MirageScore": 2571118,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x69cdb261482a8c77541418ec496aab0a483a0bb8",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 39,
+              "seq": 2348689,
+              "transportID": 363678,
+              "nftID": "78188",
+              "characterName": "Mpet62EvaAcu",
+              "worldName": "ASIA033",
+              "class": 5,
+              "lv": 158,
+              "powerScore": 511948,
+              "price": 7499,
+              "isNew": 1,
+              "tradeDT": 1782095042,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xb77ccbe03c11b38d73d7e34bee3947b0682464c0",
+              "characterName": "亗 Lüna 亗",
+              "class": 4,
+              "lv": 151,
+              "worldName": "EU011"
+            },
+            "info": {
+              "rowID": 40,
+              "seq": 2354000,
+              "transportID": 364892,
+              "nftID": "201008",
+              "characterName": "T4TRADENCK",
+              "worldName": "EU011",
+              "class": 4,
+              "lv": 158,
+              "powerScore": 517811,
+              "price": 7490,
+              "isNew": 1,
+              "tradeDT": 1783616161,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xb78c463582f16cef1b2c6d5fa7763e24dfe2b91e",
+              "characterName": "Abhs4mir",
+              "class": 4,
+              "lv": 96,
+              "worldName": "ASIA053"
+            },
+            "info": {
+              "rowID": 41,
+              "seq": 2355802,
+              "transportID": 366051,
+              "nftID": "73038",
+              "characterName": "ⓁⓘⓥⓔⓎⓞⓤⓡⓁⓘⓕⓔ",
+              "worldName": "ASIA053",
+              "class": 4,
+              "lv": 157,
+              "powerScore": 522790,
+              "price": 7250,
+              "isNew": 1,
+              "tradeDT": 1784494742,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xd54d6723fe8e604f0f04cded599aa6d88b5d8374",
+              "characterName": "愛 Kyu 乂",
+              "class": 4,
+              "lv": 168,
+              "worldName": "EU011"
+            },
+            "info": {
+              "rowID": 42,
+              "seq": 2352043,
+              "transportID": 364122,
+              "nftID": "59666",
+              "characterName": "DC KYYUMI",
+              "worldName": "ASIA341",
+              "class": 4,
+              "lv": 163,
+              "powerScore": 518844,
+              "price": 7200,
+              "isNew": 1,
+              "tradeDT": 1782943502,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xf41bd0c994d85de50494d361d97f794cb7f1ae4b",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 43,
+              "seq": 2354571,
+              "transportID": 365593,
+              "nftID": "67503",
+              "characterName": "ⓂⒶⒼⒺ②②",
+              "worldName": "EU013",
+              "class": 3,
+              "lv": 158,
+              "powerScore": 512154,
+              "price": 7000,
+              "isNew": 1,
+              "tradeDT": 1784057702,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x8292fa3ae25c07bcd0a920d6bb0e31bc83c5e1a6",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 44,
+              "seq": 2348483,
+              "transportID": 359126,
+              "nftID": "2452",
+              "characterName": "HotFox",
+              "worldName": "ASIA034",
+              "class": 2,
+              "lv": 167,
+              "powerScore": 540501,
+              "price": 7000,
+              "isNew": 1,
+              "tradeDT": 1782160442,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xf85c7caa6e94df99c493ca7fb9b657f086af6ee3",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 45,
+              "seq": 2355313,
+              "transportID": 365221,
+              "nftID": "27768",
+              "characterName": "メSylvanaSメ",
+              "worldName": "EU012",
+              "class": 4,
+              "lv": 165,
+              "powerScore": 531535,
+              "price": 6950,
+              "isNew": 1,
+              "tradeDT": 1784224382,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x10d62b2cce2504aafd19f769367afc198b3c7d0d",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 46,
+              "seq": 2347093,
+              "transportID": 363019,
+              "nftID": "203275",
+              "characterName": "77 Galdino 運",
+              "worldName": "SA013",
+              "class": 2,
+              "lv": 161,
+              "powerScore": 512112,
+              "price": 6950,
+              "isNew": 1,
+              "tradeDT": 1782204542,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x39e4568db2dc377fe152acaf20feb5479bc0e43b",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 47,
+              "seq": 2344752,
+              "transportID": 358536,
+              "nftID": "5014",
+              "characterName": "顾影自怜丶",
+              "worldName": "ASIA052",
+              "class": 4,
+              "lv": 170,
+              "powerScore": 503489,
+              "price": 6799,
+              "isNew": 1,
+              "tradeDT": 1782008342,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x769df92d313cfea087bc973685780f87d76c0b26",
+              "characterName": "・ⒼⒶⓂⓏ・",
+              "class": 6,
+              "lv": 160,
+              "worldName": "ASIA014"
+            },
+            "info": {
+              "rowID": 48,
+              "seq": 2352470,
+              "transportID": 364854,
+              "nftID": "57033",
+              "characterName": "乂 Abuzado",
+              "worldName": "ASIA034",
+              "class": 1,
+              "lv": 160,
+              "powerScore": 526543,
+              "price": 6650,
+              "isNew": 1,
+              "tradeDT": 1783120802,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xe39504e3b61b91bdef5e2571ff2aa99b3d0ad6bc",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 49,
+              "seq": 2350656,
+              "transportID": 364164,
+              "nftID": "57033",
+              "characterName": "TW Ondine",
+              "worldName": "ASIA034",
+              "class": 1,
+              "lv": 160,
+              "powerScore": 513670,
+              "price": 6500,
+              "isNew": 1,
+              "tradeDT": 1782550501,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x3ef41846e96d977529fa6416a5dfb3a0a45b4f29",
+              "characterName": "Lucart 义",
+              "class": 4,
+              "lv": 162,
+              "worldName": "SA023"
+            },
+            "info": {
+              "rowID": 50,
+              "seq": 2350879,
+              "transportID": 362780,
+              "nftID": "1097",
+              "characterName": "ÐARK EÐINHO",
+              "worldName": "SA012",
+              "class": 4,
+              "lv": 162,
+              "powerScore": 520619,
+              "price": 6200,
+              "isNew": 1,
+              "tradeDT": 1782532262,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x00748f9a73297a8c6f8a463af7af769ba089d2fa",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 51,
+              "seq": 2354379,
+              "transportID": 365081,
+              "nftID": "99117",
+              "characterName": "trdTOPnBTzCD",
+              "worldName": "ASIA072",
+              "class": 5,
+              "lv": 157,
+              "powerScore": 486171,
+              "price": 6199,
+              "isNew": 1,
+              "tradeDT": 1783781582,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xade9021091c4da5c4b46b4f617c548d2ac8d5584",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 52,
+              "seq": 2352877,
+              "transportID": 364068,
+              "nftID": "95656",
+              "characterName": "730SKT250ATK",
+              "worldName": "EU014",
+              "class": 4,
+              "lv": 160,
+              "powerScore": 510073,
+              "price": 6000,
+              "isNew": 1,
+              "tradeDT": 1783260722,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x221553355710fef5091a142dece22ecafd7adeb7",
+              "characterName": "911・LadyBoy",
+              "class": 1,
+              "lv": 165,
+              "worldName": "SA041"
+            },
+            "info": {
+              "rowID": 53,
+              "seq": 2353026,
+              "transportID": 363872,
+              "nftID": "5600",
+              "characterName": "Soul Devourメ",
+              "worldName": "NA032",
+              "class": 2,
+              "lv": 162,
+              "powerScore": 530066,
+              "price": 5990,
+              "isNew": 1,
+              "tradeDT": 1784327882,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x20600c72a3800284ebee8d3f99cff09127c73c05",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 54,
+              "seq": 2355546,
+              "transportID": 365974,
+              "nftID": "50580",
+              "characterName": "GoodStatsDMG",
+              "worldName": "EU011",
+              "class": 1,
+              "lv": 155,
+              "powerScore": 532192,
+              "price": 5800,
+              "isNew": 1,
+              "tradeDT": 1784385122,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x32f86461efc1c02bbd52438eb2b3c9c366a7f342",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 55,
+              "seq": 2351763,
+              "transportID": 364072,
+              "nftID": "94621",
+              "characterName": "Wen'T",
+              "worldName": "EU013",
+              "class": 4,
+              "lv": 158,
+              "powerScore": 489076,
+              "price": 5800,
+              "isNew": 1,
+              "tradeDT": 1782999962,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xe145bf1af9acb8a1c7f8001c3c271d5161c60e67",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 56,
+              "seq": 2352359,
+              "transportID": 364912,
+              "nftID": "18199",
+              "characterName": "MytPetDebres",
+              "worldName": "EU022",
+              "class": 3,
+              "lv": 165,
+              "powerScore": 559130,
+              "price": 5750,
+              "isNew": 1,
+              "tradeDT": 1783095902,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xbd47ad90e22114db696570bb893ffe87203bda75",
+              "characterName": "敌进我退 敌退我进",
+              "class": 5,
+              "lv": 154,
+              "worldName": "ASIA041"
+            },
+            "info": {
+              "rowID": 57,
+              "seq": 2350279,
+              "transportID": 362671,
+              "nftID": "25965",
+              "characterName": "Laupe2",
+              "worldName": "EU024",
+              "class": 4,
+              "lv": 155,
+              "powerScore": 481513,
+              "price": 5700,
+              "isNew": 1,
+              "tradeDT": 1782439502,
+              "MirageScore": 302888,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x33c2c5b8fafed773b711f50cc560bac996d19511",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 58,
+              "seq": 2352297,
+              "transportID": 364895,
+              "nftID": "89367",
+              "characterName": "SOLO TURCO",
+              "worldName": "EU012",
+              "class": 1,
+              "lv": 162,
+              "powerScore": 526684,
+              "price": 5500,
+              "isNew": 1,
+              "tradeDT": 1783100941,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xf4365dabf15c0bd593e7c3b337a83919c94b90b1",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 59,
+              "seq": 2352024,
+              "transportID": 364191,
+              "nftID": "20612",
+              "characterName": "PetArma14",
+              "worldName": "SA032",
+              "class": 4,
+              "lv": 162,
+              "powerScore": 509366,
+              "price": 5500,
+              "isNew": 1,
+              "tradeDT": 1783043102,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x769df92d313cfea087bc973685780f87d76c0b26",
+              "characterName": "・ⒼⒶⓂⓏ・",
+              "class": 6,
+              "lv": 160,
+              "worldName": "ASIA014"
+            },
+            "info": {
+              "rowID": 60,
+              "seq": 2349813,
+              "transportID": 364051,
+              "nftID": "74332",
+              "characterName": "・ⒼⒶⓂⓏ・",
+              "worldName": "INMENA011",
+              "class": 6,
+              "lv": 160,
+              "powerScore": 499593,
+              "price": 5500,
+              "isNew": 1,
+              "tradeDT": 1782166682,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x3a30faeb72fa3fd2e98391cebe5c931a68ad3b4d",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 61,
+              "seq": 2349608,
+              "transportID": 363465,
+              "nftID": "1610",
+              "characterName": "P I K O L",
+              "worldName": "ASIA024",
+              "class": 5,
+              "lv": 155,
+              "powerScore": 494078,
+              "price": 5500,
+              "isNew": 1,
+              "tradeDT": 1782049922,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xc6134eec72b5358537da77d44104e0f4ef80d326",
+              "characterName": "BEARS 북극곰",
+              "class": 1,
+              "lv": 130,
+              "worldName": "EU022"
+            },
+            "info": {
+              "rowID": 62,
+              "seq": 2356051,
+              "transportID": 363275,
+              "nftID": "66628",
+              "characterName": "NckTrdMPinv",
+              "worldName": "SA031",
+              "class": 1,
+              "lv": 156,
+              "powerScore": 484607,
+              "price": 5300,
+              "isNew": 1,
+              "tradeDT": 1784562482,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x735f8bca467f844a7251bcd8be8632f331af0e14",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 63,
+              "seq": 2354328,
+              "transportID": 365507,
+              "nftID": "49454",
+              "characterName": "Eya ヅ",
+              "worldName": "ASIA034",
+              "class": 4,
+              "lv": 161,
+              "powerScore": 462983,
+              "price": 5249,
+              "isNew": 1,
+              "tradeDT": 1783745883,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x09d5baed065fb8a8d8e4ae83fedfe2f1b3bac5fa",
+              "characterName": "KolNuba メ",
+              "class": 4,
+              "lv": 157,
+              "worldName": "INMENA024"
+            },
+            "info": {
+              "rowID": 64,
+              "seq": 2350828,
+              "transportID": 364118,
+              "nftID": "19445",
+              "characterName": "T4WPTRD630S",
+              "worldName": "ASIA024",
+              "class": 4,
+              "lv": 160,
+              "powerScore": 469777,
+              "price": 5200,
+              "isNew": 1,
+              "tradeDT": 1782554342,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x53fd3b396124e9e56f231eddeada6b5a9e100c9b",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 65,
+              "seq": 2351381,
+              "transportID": 363818,
+              "nftID": "20394",
+              "characterName": "3T3PETForge2",
+              "worldName": "ASIA024",
+              "class": 1,
+              "lv": 158,
+              "powerScore": 506532,
+              "price": 5100,
+              "isNew": 1,
+              "tradeDT": 1782736321,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x7b194f6755fea9ee5a9dc178e7f031e429a7d3dd",
+              "characterName": "UUU丨丶6IX9INE",
+              "class": 5,
+              "lv": 152,
+              "worldName": "ASIA081"
+            },
+            "info": {
+              "rowID": 66,
+              "seq": 2351849,
+              "transportID": 364418,
+              "nftID": "200062",
+              "characterName": "UUU丨丶6IX9INE",
+              "worldName": "ASIA072",
+              "class": 5,
+              "lv": 155,
+              "powerScore": 476851,
+              "price": 5000,
+              "isNew": 1,
+              "tradeDT": 1782889862,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x0259c45136554a45a6ffc831629c4c0086ea3fba",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 67,
+              "seq": 2352215,
+              "transportID": 364831,
+              "nftID": "66712",
+              "characterName": "Lørah",
+              "worldName": "SA014",
+              "class": 4,
+              "lv": 161,
+              "powerScore": 500032,
+              "price": 4800,
+              "isNew": 1,
+              "tradeDT": 1783057562,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x2bb208f53f491c7df099f3d1f788d7bf679cbd1f",
+              "characterName": "Frost ス",
+              "class": 4,
+              "lv": 155,
+              "worldName": "SA022"
+            },
+            "info": {
+              "rowID": 68,
+              "seq": 2354373,
+              "transportID": 365362,
+              "nftID": "57033",
+              "characterName": "乂 Abuzado",
+              "worldName": "ASIA034",
+              "class": 1,
+              "lv": 160,
+              "powerScore": 526890,
+              "price": 4700,
+              "isNew": 1,
+              "tradeDT": 1783776302,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xb98e6997015bcbdb29da836a391f6f85179f09ee",
+              "characterName": "Pink Ⓣännyメ",
+              "class": 3,
+              "lv": 155,
+              "worldName": "ASIA024"
+            },
+            "info": {
+              "rowID": 69,
+              "seq": 2355140,
+              "transportID": 364536,
+              "nftID": "17690",
+              "characterName": "Ⓕ・Ⓤ丨7thson 水",
+              "worldName": "ASIA024",
+              "class": 2,
+              "lv": 158,
+              "powerScore": 489793,
+              "price": 4500,
+              "isNew": 1,
+              "tradeDT": 1784254141,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xde5bf6fb34caf848a16d77947b77f12a079cf0d7",
+              "characterName": "itspaU",
+              "class": 4,
+              "lv": 160,
+              "worldName": "EU012"
+            },
+            "info": {
+              "rowID": 70,
+              "seq": 2352382,
+              "transportID": 364603,
+              "nftID": "18915",
+              "characterName": "Siииiиho ツ",
+              "worldName": "EU012",
+              "class": 4,
+              "lv": 160,
+              "powerScore": 513767,
+              "price": 4500,
+              "isNew": 1,
+              "tradeDT": 1783317242,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xf23766f4ba7cb53bbd76db1fce371b164ed77488",
+              "characterName": "T4WF2nck5k5A",
+              "class": 5,
+              "lv": 155,
+              "worldName": "ASIA313"
+            },
+            "info": {
+              "rowID": 71,
+              "seq": 2351128,
+              "transportID": 364185,
+              "nftID": "50261",
+              "characterName": "Tedz ・痛み",
+              "worldName": "SA041",
+              "class": 1,
+              "lv": 155,
+              "powerScore": 480414,
+              "price": 4400,
+              "isNew": 1,
+              "tradeDT": 1782778621,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x55e16efa6e2b25c9c5506005f84ad92c200f25a6",
+              "characterName": "英俊的 Morriz",
+              "class": 1,
+              "lv": 155,
+              "worldName": "ASIA082"
+            },
+            "info": {
+              "rowID": 72,
+              "seq": 2355636,
+              "transportID": 365774,
+              "nftID": "13126",
+              "characterName": "Frg2SecWpTrd",
+              "worldName": "ASIA082",
+              "class": 1,
+              "lv": 155,
+              "powerScore": 481890,
+              "price": 4350,
+              "isNew": 1,
+              "tradeDT": 1784394302,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x5a2bd721ba5e113598b541bb9e2cde79b44dec70",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 73,
+              "seq": 2355951,
+              "transportID": 365825,
+              "nftID": "89046",
+              "characterName": "Dark 乐 乐",
+              "worldName": "SA011",
+              "class": 2,
+              "lv": 168,
+              "powerScore": 515587,
+              "price": 4300,
+              "isNew": 1,
+              "tradeDT": 1784515022,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xf23766f4ba7cb53bbd76db1fce371b164ed77488",
+              "characterName": "T4WF2nck5k5A",
+              "class": 5,
+              "lv": 155,
+              "worldName": "ASIA313"
+            },
+            "info": {
+              "rowID": 74,
+              "seq": 2355590,
+              "transportID": 365610,
+              "nftID": "79147",
+              "characterName": "T4WF2nck5k5A",
+              "worldName": "ASIA313",
+              "class": 5,
+              "lv": 155,
+              "powerScore": 484004,
+              "price": 4300,
+              "isNew": 1,
+              "tradeDT": 1784423822,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x8da4b4f23a06a9a07267a8fdd27dad240f222fd1",
+              "characterName": "PVP CRIT DMG",
+              "class": 4,
+              "lv": 155,
+              "worldName": "SA021"
+            },
+            "info": {
+              "rowID": 75,
+              "seq": 2351793,
+              "transportID": 364243,
+              "nftID": "203172",
+              "characterName": "BuмBuмTaмTaм",
+              "worldName": "ASIA014",
+              "class": 4,
+              "lv": 160,
+              "powerScore": 505353,
+              "price": 4300,
+              "isNew": 1,
+              "tradeDT": 1782880741,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xa29dc1cb7cae6eaf766befd846a5970e95b1cfa0",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 76,
+              "seq": 2354804,
+              "transportID": 365489,
+              "nftID": "4648",
+              "characterName": "Kylerツ",
+              "worldName": "SA014",
+              "class": 3,
+              "lv": 160,
+              "powerScore": 503147,
+              "price": 4290,
+              "isNew": 1,
+              "tradeDT": 1783980542,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xea40c8cc27fcf4491e86e3be96cd3aaa16b9947b",
+              "characterName": "6kevaMpet",
+              "class": 4,
+              "lv": 152,
+              "worldName": "ASIA021"
+            },
+            "info": {
+              "rowID": 77,
+              "seq": 2354866,
+              "transportID": 365540,
+              "nftID": "2172",
+              "characterName": "Ⓜ・Midnight ヅ",
+              "worldName": "ASIA083",
+              "class": 6,
+              "lv": 158,
+              "powerScore": 484451,
+              "price": 4200,
+              "isNew": 1,
+              "tradeDT": 1784232482,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x3cbd0e52e337900ac0d82ae14413e9afd5d32100",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 78,
+              "seq": 2353570,
+              "transportID": 364200,
+              "nftID": "58037",
+              "characterName": "AllReduc6EVA",
+              "worldName": "NA022",
+              "class": 3,
+              "lv": 161,
+              "powerScore": 515728,
+              "price": 4200,
+              "isNew": 1,
+              "tradeDT": 1783518242,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xd951e6fb99d8b82e4add27b3c636176a83f3b4ce",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 79,
+              "seq": 2353916,
+              "transportID": 363082,
+              "nftID": "831",
+              "characterName": "DCtheuss3265",
+              "worldName": "SA031",
+              "class": 3,
+              "lv": 162,
+              "powerScore": 501459,
+              "price": 4199,
+              "isNew": 1,
+              "tradeDT": 1783594262,
+              "MirageScore": 567640,
+              "MiraX": 100,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xfffc09b0a8924f600e1e65dfe57d5eae58a67ad1",
+              "characterName": "Ⓡⓐⓥⓔⓝⓝⓐ",
+              "class": 6,
+              "lv": 153,
+              "worldName": "INMENA031"
+            },
+            "info": {
+              "rowID": 80,
+              "seq": 2350230,
+              "transportID": 364114,
+              "nftID": "3741",
+              "characterName": "Goodstatspvp",
+              "worldName": "ASIA072",
+              "class": 1,
+              "lv": 154,
+              "powerScore": 498816,
+              "price": 4150,
+              "isNew": 1,
+              "tradeDT": 1782293462,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xd9cd209c017c8c8d285dbc136a971955b5c1c5c8",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 81,
+              "seq": 2353915,
+              "transportID": 362613,
+              "nftID": "5474",
+              "characterName": "MangkukulaM中",
+              "worldName": "ASIA312",
+              "class": 3,
+              "lv": 157,
+              "powerScore": 503068,
+              "price": 4100,
+              "isNew": 1,
+              "tradeDT": 1783587722,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x8494fc1f0211f0e06bd5433ea285449007a67d53",
+              "characterName": "AllMap1Kbag",
+              "class": 3,
+              "lv": 160,
+              "worldName": "SA014"
+            },
+            "info": {
+              "rowID": 82,
+              "seq": 2351612,
+              "transportID": 364395,
+              "nftID": "2827",
+              "characterName": "全地图解锁",
+              "worldName": "NA023",
+              "class": 4,
+              "lv": 160,
+              "powerScore": 476128,
+              "price": 4050,
+              "isNew": 1,
+              "tradeDT": 1782839522,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xcb3441659f8aebc8f5209139d50ccba448581bca",
+              "characterName": "Myt681SkCb10",
+              "class": 5,
+              "lv": 155,
+              "worldName": "ASIA031"
+            },
+            "info": {
+              "rowID": 83,
+              "seq": 2355532,
+              "transportID": 365954,
+              "nftID": "36156",
+              "characterName": "67CEvaAllMap",
+              "worldName": "ASIA013",
+              "class": 1,
+              "lv": 158,
+              "powerScore": 492150,
+              "price": 4000,
+              "isNew": 1,
+              "tradeDT": 1784343602,
+              "MirageScore": 1221446,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x13997c2be6103da5bc21138f7821d22c84e2e2f5",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 84,
+              "seq": 2353871,
+              "transportID": 365142,
+              "nftID": "2895",
+              "characterName": "600SKLTOPTRD",
+              "worldName": "ASIA021",
+              "class": 4,
+              "lv": 156,
+              "powerScore": 482115,
+              "price": 4000,
+              "isNew": 1,
+              "tradeDT": 1783573321,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xe519eaae1e9100e87a905d0e49c69195fc7bf0b0",
+              "characterName": "' ELLë ' ヅ",
+              "class": 3,
+              "lv": 159,
+              "worldName": "ASIA312"
+            },
+            "info": {
+              "rowID": 85,
+              "seq": 2352386,
+              "transportID": 364918,
+              "nftID": "204137",
+              "characterName": "빛과 어둠 ツ",
+              "worldName": "ASIA312",
+              "class": 3,
+              "lv": 159,
+              "powerScore": 493087,
+              "price": 4000,
+              "isNew": 1,
+              "tradeDT": 1783241222,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xc96665ab64b7986c4310a1fb0dba12590633d658",
+              "characterName": "Smile0fDeath",
+              "class": 4,
+              "lv": 160,
+              "worldName": "INMENA021"
+            },
+            "info": {
+              "rowID": 86,
+              "seq": 2351791,
+              "transportID": 364195,
+              "nftID": "20420",
+              "characterName": "黑暗 ⓈⒶⓈⒽⒶⒶⓄ",
+              "worldName": "EU013",
+              "class": 4,
+              "lv": 160,
+              "powerScore": 509567,
+              "price": 4000,
+              "isNew": 1,
+              "tradeDT": 1782893941,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x2b2ec113966618b740f4a120797ac5694754bd52",
+              "characterName": "駆逐艦RESBECK",
+              "class": 3,
+              "lv": 165,
+              "worldName": "ASIA053"
+            },
+            "info": {
+              "rowID": 87,
+              "seq": 2349601,
+              "transportID": 362286,
+              "nftID": "70624",
+              "characterName": "MytPeTWEPT4",
+              "worldName": "ASIA082",
+              "class": 1,
+              "lv": 155,
+              "powerScore": 481753,
+              "price": 4000,
+              "isNew": 1,
+              "tradeDT": 1782140402,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x0af8074a471bf98b5cc7f2e278bf67b509462d1f",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 88,
+              "seq": 2348311,
+              "transportID": 362279,
+              "nftID": "99376",
+              "characterName": "5KEv500rsDEB",
+              "worldName": "NA031",
+              "class": 3,
+              "lv": 166,
+              "powerScore": 493150,
+              "price": 4000,
+              "isNew": 1,
+              "tradeDT": 1782077102,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x8cdf26af012d8fefdcb0da71a951f1b81f20b0c2",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 89,
+              "seq": 2353024,
+              "transportID": 359977,
+              "nftID": "64648",
+              "characterName": "SpeLL๑Caster",
+              "worldName": "SA022",
+              "class": 2,
+              "lv": 163,
+              "powerScore": 496831,
+              "price": 3990,
+              "isNew": 1,
+              "tradeDT": 1784467382,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x5590f51d793c90a7b09b64f86660b5f9a1eed03b",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 90,
+              "seq": 2353945,
+              "transportID": 365392,
+              "nftID": "4927",
+              "characterName": "807sklrd6kce",
+              "worldName": "ASIA053",
+              "class": 3,
+              "lv": 165,
+              "powerScore": 530296,
+              "price": 3950,
+              "isNew": 1,
+              "tradeDT": 1783592461,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x02d73b9ca838d23113c046461d8318cbf3309624",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 91,
+              "seq": 2352014,
+              "transportID": 364457,
+              "nftID": "47039",
+              "characterName": "父 YuTBaツ",
+              "worldName": "EU012",
+              "class": 4,
+              "lv": 160,
+              "powerScore": 491947,
+              "price": 3950,
+              "isNew": 1,
+              "tradeDT": 1782935942,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x093192ac293f9c3f1df4406bafd8f20e3d5f09a9",
+              "characterName": "Ⓤ・Ⓣ丨Kaasher",
+              "class": 3,
+              "lv": 158,
+              "worldName": "NA014"
+            },
+            "info": {
+              "rowID": 92,
+              "seq": 2350530,
+              "transportID": 361901,
+              "nftID": "200636",
+              "characterName": "Ⓕ・Ⓤ丨Achin",
+              "worldName": "ASIA024",
+              "class": 3,
+              "lv": 157,
+              "powerScore": 464432,
+              "price": 3900,
+              "isNew": 1,
+              "tradeDT": 1782402842,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xf0affba636f4a7776dd4a4c3675d823c65c4e68d",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 93,
+              "seq": 2355431,
+              "transportID": 365688,
+              "nftID": "70624",
+              "characterName": "MythicReduct",
+              "worldName": "ASIA034",
+              "class": 1,
+              "lv": 155,
+              "powerScore": 473946,
+              "price": 3800,
+              "isNew": 1,
+              "tradeDT": 1784305862,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x1188b37c5f45ae300a0f608cae7592b320869839",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 94,
+              "seq": 2352530,
+              "transportID": 363610,
+              "nftID": "69660",
+              "characterName": "6K3 EVA CRIT",
+              "worldName": "ASIA341",
+              "class": 3,
+              "lv": 160,
+              "powerScore": 479339,
+              "price": 3800,
+              "isNew": 1,
+              "tradeDT": 1784257021,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x5b0296d70d681957c0a00cfffd5d6e9d12f4f839",
+              "characterName": "Duio13",
+              "class": 2,
+              "lv": 127,
+              "worldName": "SA014"
+            },
+            "info": {
+              "rowID": 95,
+              "seq": 2346355,
+              "transportID": 362996,
+              "nftID": "88917",
+              "characterName": "Duiio13",
+              "worldName": "EU021",
+              "class": 4,
+              "lv": 161,
+              "powerScore": 467214,
+              "price": 3800,
+              "isNew": 1,
+              "tradeDT": 1782379982,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xcde2da01ce3b9930ff0987544255e0215603af89",
+              "characterName": "",
+              "class": 0,
+              "lv": 0,
+              "worldName": "ASIA3"
+            },
+            "info": {
+              "rowID": 96,
+              "seq": 2355369,
+              "transportID": 365587,
+              "nftID": "49095",
+              "characterName": "15Katk 600Sk",
+              "worldName": "ASIA021",
+              "class": 4,
+              "lv": 155,
+              "powerScore": 474229,
+              "price": 3799,
+              "isNew": 1,
+              "tradeDT": 1784425442,
+              "MirageScore": 274313,
+              "MiraX": 203,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x6636f0673a1dc561a4183c574a174790107856fe",
+              "characterName": "SÄLLET",
+              "class": 4,
+              "lv": 100,
+              "worldName": "NA031"
+            },
+            "info": {
+              "rowID": 97,
+              "seq": 2353578,
+              "transportID": 365176,
+              "nftID": "47039",
+              "characterName": "Joew・",
+              "worldName": "EU012",
+              "class": 4,
+              "lv": 160,
+              "powerScore": 492151,
+              "price": 3750,
+              "isNew": 1,
+              "tradeDT": 1783494241,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x2ea91f1062f9362ae601613a303a6618633f6700",
+              "characterName": "xSugarBabyx",
+              "class": 6,
+              "lv": 55,
+              "worldName": "NA031"
+            },
+            "info": {
+              "rowID": 98,
+              "seq": 2351714,
+              "transportID": 359008,
+              "nftID": "29091",
+              "characterName": "HoneylDeep",
+              "worldName": "SA014",
+              "class": 6,
+              "lv": 156,
+              "powerScore": 480132,
+              "price": 3750,
+              "isNew": 1,
+              "tradeDT": 1782873422,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0xb1ff618d1f6613ed420f83b355afdf255a165e00",
+              "characterName": "・葬送のフリーレン・",
+              "class": 3,
+              "lv": 161,
+              "worldName": "ASIA014"
+            },
+            "info": {
+              "rowID": 99,
+              "seq": 2350551,
+              "transportID": 364369,
+              "nftID": "66023",
+              "characterName": "・葬送のフリーレン・",
+              "worldName": "ASIA014",
+              "class": 3,
+              "lv": 161,
+              "powerScore": 486129,
+              "price": 3750,
+              "isNew": 1,
+              "tradeDT": 1782421442,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          },
+          {
+            "seller": {
+              "userAddress": "0x78358ac30c1138b117e5f277b5893112310ff29c",
+              "characterName": "亗 WickeD 亗",
+              "class": 4,
+              "lv": 161,
+              "worldName": "NA021"
+            },
+            "info": {
+              "rowID": 100,
+              "seq": 2352847,
+              "transportID": 364987,
+              "nftID": "66927",
+              "characterName": "亗 WickeD 亗",
+              "worldName": "NA021",
+              "class": 3,
+              "lv": 162,
+              "powerScore": 494773,
+              "price": 3600,
+              "isNew": 1,
+              "tradeDT": 1783640402,
+              "MirageScore": 0,
+              "MiraX": 0,
+              "Reinforce": 0,
+              "stat": []
+            }
+          }
+        ]
+      }
     }
   },
   "recommended": {
     "url": "https://webapi.mir4global.com/nft/lists?listType=recommended&page=1&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&languageCode=pt",
-    "timestamp": "2026-07-21T00:09:23.473144+00:00",
+    "timestamp": "2026-07-21T03:39:07.586832+00:00",
     "resposta_bruta": {
-      "code": 69999
+      "code": 200,
+      "data": {
+        "lists": [
+          {
+            "seq": 2354756,
+            "transportID": 364063,
+            "nftID": "36519",
+            "characterName": "Ving BIank",
+            "class": 1,
+            "lv": 178,
+            "powerScore": 837405,
+            "price": 145000,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 331434
+              },
+              {
+                "statName": "MP",
+                "statValue": 47577
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 23293
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 10328
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 16017
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 13589
+              }
+            ]
+          },
+          {
+            "seq": 2352275,
+            "transportID": 363641,
+            "nftID": "37751",
+            "characterName": "倔强的罗特",
+            "class": 4,
+            "lv": 179,
+            "powerScore": 816657,
+            "price": 135000,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 317329
+              },
+              {
+                "statName": "MP",
+                "statValue": 47714
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 23180
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 9912
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 13662
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 13510
+              }
+            ]
+          },
+          {
+            "seq": 2346465,
+            "transportID": 363027,
+            "nftID": "27723",
+            "characterName": "Uotc丶Star",
+            "class": 5,
+            "lv": 178,
+            "powerScore": 765069,
+            "price": 277777,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 296772
+              },
+              {
+                "statName": "MP",
+                "statValue": 39154
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 21595
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 21103
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 15781
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 14966
+              }
+            ]
+          },
+          {
+            "seq": 2353993,
+            "transportID": 360530,
+            "nftID": "15620",
+            "characterName": "SC TiLTaO",
+            "class": 3,
+            "lv": 177,
+            "powerScore": 760786,
+            "price": 79999,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 286667
+              },
+              {
+                "statName": "MP",
+                "statValue": 44403
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 18635
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 17659
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 16176
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 15460
+              }
+            ]
+          }
+        ]
+      }
     }
   },
   "sale": {
     "url": "https://webapi.mir4global.com/nft/lists?listType=sale&page=1&class=0&levMin=0&levMax=0&powerMin=0&powerMax=0&priceMin=0&priceMax=0&sort=latest&languageCode=pt",
-    "timestamp": "2026-07-21T00:14:36.526776+00:00",
+    "timestamp": "2026-07-21T03:43:50.014315+00:00",
     "resposta_bruta": {
-      "code": 69999
+      "code": 200,
+      "data": {
+        "firstID": 2356185,
+        "totalCount": 629,
+        "more": 1,
+        "lists": [
+          {
+            "rowID": 1,
+            "seq": 2356185,
+            "transportID": 366133,
+            "nftID": "72099",
+            "sealedDT": 1678200871,
+            "characterName": "AzahToth",
+            "class": 5,
+            "lv": 159,
+            "powerScore": 471831,
+            "price": 3700,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 177017
+              },
+              {
+                "statName": "MP",
+                "statValue": 29152
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 13381
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 13114
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 8921
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 9061
+              }
+            ]
+          },
+          {
+            "rowID": 2,
+            "seq": 2356184,
+            "transportID": 359177,
+            "nftID": "79124",
+            "sealedDT": 1686588761,
+            "characterName": "CB10MythcPet",
+            "class": 5,
+            "lv": 146,
+            "powerScore": 427166,
+            "price": 2300,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 183105
+              },
+              {
+                "statName": "MP",
+                "statValue": 27475
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 12421
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 11991
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 8461
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 8062
+              }
+            ]
+          },
+          {
+            "rowID": 3,
+            "seq": 2356183,
+            "transportID": 365999,
+            "nftID": "58179",
+            "sealedDT": 1664092470,
+            "characterName": "haisnty dc",
+            "class": 2,
+            "lv": 164,
+            "powerScore": 579962,
+            "price": 12000,
+            "isNew": 1,
+            "MirageScore": 544265,
+            "MiraX": 171,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 219929
+              },
+              {
+                "statName": "MP",
+                "statValue": 36665
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 6262
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 18089
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 11075
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 11156
+              }
+            ]
+          },
+          {
+            "rowID": 4,
+            "seq": 2356182,
+            "transportID": 366141,
+            "nftID": "92278",
+            "sealedDT": 1711172054,
+            "characterName": "Schorr",
+            "class": 3,
+            "lv": 143,
+            "powerScore": 342619,
+            "price": 485,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 166113
+              },
+              {
+                "statName": "MP",
+                "statValue": 23796
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 9826
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 9671
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 7276
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 6801
+              }
+            ]
+          },
+          {
+            "rowID": 5,
+            "seq": 2356181,
+            "transportID": 366192,
+            "nftID": "204277",
+            "sealedDT": 1784603896,
+            "characterName": "Luckyhydes",
+            "class": 3,
+            "lv": 124,
+            "powerScore": 246818,
+            "price": 1,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 118828
+              },
+              {
+                "statName": "MP",
+                "statValue": 18637
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 7369
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 7732
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 5513
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 5206
+              }
+            ]
+          },
+          {
+            "rowID": 6,
+            "seq": 2356180,
+            "transportID": 363961,
+            "nftID": "88387",
+            "sealedDT": 1702579810,
+            "characterName": "宝石龙 Mythic",
+            "class": 4,
+            "lv": 140,
+            "powerScore": 335781,
+            "price": 890,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 139189
+              },
+              {
+                "statName": "MP",
+                "statValue": 23557
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 10716
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 3976
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 6750
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 6521
+              }
+            ]
+          },
+          {
+            "rowID": 7,
+            "seq": 2356179,
+            "transportID": 365886,
+            "nftID": "66335",
+            "sealedDT": 1671308099,
+            "characterName": "シ Silence シ",
+            "class": 4,
+            "lv": 151,
+            "powerScore": 396120,
+            "price": 1150,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 170133
+              },
+              {
+                "statName": "MP",
+                "statValue": 22348
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 13140
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 4600
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 7714
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 7588
+              }
+            ]
+          },
+          {
+            "rowID": 8,
+            "seq": 2356178,
+            "transportID": 366156,
+            "nftID": "204233",
+            "sealedDT": 1784012864,
+            "characterName": "Neutral20",
+            "class": 4,
+            "lv": 125,
+            "powerScore": 240741,
+            "price": 350,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 102606
+              },
+              {
+                "statName": "MP",
+                "statValue": 14356
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 8512
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 2781
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 5698
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 5577
+              }
+            ]
+          },
+          {
+            "rowID": 9,
+            "seq": 2356177,
+            "transportID": 366148,
+            "nftID": "204270",
+            "sealedDT": 1784553298,
+            "characterName": "メKrimsツ",
+            "class": 2,
+            "lv": 101,
+            "powerScore": 133538,
+            "price": 89,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 63207
+              },
+              {
+                "statName": "MP",
+                "statValue": 9249
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 1319
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 4267
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 2765
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 2647
+              }
+            ]
+          },
+          {
+            "rowID": 10,
+            "seq": 2356176,
+            "transportID": 366144,
+            "nftID": "886",
+            "sealedDT": 1640065451,
+            "characterName": "Chibi DX",
+            "class": 4,
+            "lv": 153,
+            "powerScore": 410648,
+            "price": 900,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 165155
+              },
+              {
+                "statName": "MP",
+                "statValue": 25746
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 12712
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 4774
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 8197
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 7666
+              }
+            ]
+          },
+          {
+            "rowID": 11,
+            "seq": 2356175,
+            "transportID": 366189,
+            "nftID": "39855",
+            "sealedDT": 1653496585,
+            "characterName": "快乐的沙尔纳克",
+            "class": 4,
+            "lv": 151,
+            "powerScore": 387581,
+            "price": 779,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 178440
+              },
+              {
+                "statName": "MP",
+                "statValue": 23127
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 11655
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 4440
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 7516
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 8000
+              }
+            ]
+          },
+          {
+            "rowID": 12,
+            "seq": 2356174,
+            "transportID": 365917,
+            "nftID": "2590",
+            "sealedDT": 1640256691,
+            "characterName": "Game Out",
+            "class": 4,
+            "lv": 166,
+            "powerScore": 497970,
+            "price": 6116,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 206992
+              },
+              {
+                "statName": "MP",
+                "statValue": 30128
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 14826
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 5104
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 10082
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 9311
+              }
+            ]
+          },
+          {
+            "rowID": 13,
+            "seq": 2356173,
+            "transportID": 366103,
+            "nftID": "60600",
+            "sealedDT": 1665870001,
+            "characterName": "メDebby4メ",
+            "class": 2,
+            "lv": 156,
+            "powerScore": 404870,
+            "price": 940,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 174918
+              },
+              {
+                "statName": "MP",
+                "statValue": 25103
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 4474
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 11862
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 8253
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 8157
+              }
+            ]
+          },
+          {
+            "rowID": 14,
+            "seq": 2356172,
+            "transportID": 365971,
+            "nftID": "33642",
+            "sealedDT": 1651169095,
+            "characterName": "¤ Moon",
+            "class": 4,
+            "lv": 153,
+            "powerScore": 428110,
+            "price": 1290,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 188339
+              },
+              {
+                "statName": "MP",
+                "statValue": 26001
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 12592
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 4584
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 8983
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 8110
+              }
+            ]
+          },
+          {
+            "rowID": 15,
+            "seq": 2356171,
+            "transportID": 366188,
+            "nftID": "77858",
+            "sealedDT": 1684891981,
+            "characterName": "100Calcinhaa",
+            "class": 1,
+            "lv": 144,
+            "powerScore": 360804,
+            "price": 600,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 155872
+              },
+              {
+                "statName": "MP",
+                "statValue": 20126
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 11722
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 3907
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 7871
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 7148
+              }
+            ]
+          },
+          {
+            "rowID": 16,
+            "seq": 2356170,
+            "transportID": 366187,
+            "nftID": "18616",
+            "sealedDT": 1646379802,
+            "characterName": "Willzedx",
+            "class": 3,
+            "lv": 153,
+            "powerScore": 454545,
+            "price": 2500,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 173834
+              },
+              {
+                "statName": "MP",
+                "statValue": 26511
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 12366
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 12230
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 9608
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 8861
+              }
+            ]
+          },
+          {
+            "rowID": 17,
+            "seq": 2356169,
+            "transportID": 366114,
+            "nftID": "203837",
+            "sealedDT": 1778937880,
+            "characterName": "侍 HERO",
+            "class": 1,
+            "lv": 148,
+            "powerScore": 401719,
+            "price": 850,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 164869
+              },
+              {
+                "statName": "MP",
+                "statValue": 21651
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 12245
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 4134
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 8549
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 7797
+              }
+            ]
+          },
+          {
+            "rowID": 18,
+            "seq": 2356167,
+            "transportID": 366163,
+            "nftID": "204110",
+            "sealedDT": 1782431042,
+            "characterName": "Ingatttttttt",
+            "class": 4,
+            "lv": 140,
+            "powerScore": 320767,
+            "price": 350,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 134759
+              },
+              {
+                "statName": "MP",
+                "statValue": 22748
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 10371
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 3450
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 6449
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 6328
+              }
+            ]
+          },
+          {
+            "rowID": 19,
+            "seq": 2356166,
+            "transportID": 366098,
+            "nftID": "30934",
+            "sealedDT": 1650333745,
+            "characterName": "3LgBookinbag",
+            "class": 5,
+            "lv": 158,
+            "powerScore": 469563,
+            "price": 3099,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 184814
+              },
+              {
+                "statName": "MP",
+                "statValue": 28576
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 13084
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 12851
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 9708
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 9374
+              }
+            ]
+          },
+          {
+            "rowID": 20,
+            "seq": 2356165,
+            "transportID": 366184,
+            "nftID": "204272",
+            "sealedDT": 1784599002,
+            "characterName": "8legTrade",
+            "class": 2,
+            "lv": 146,
+            "powerScore": 370993,
+            "price": 3899,
+            "isNew": 1,
+            "MirageScore": 0,
+            "MiraX": 0,
+            "Reinforce": 0,
+            "stat": [
+              {
+                "statName": "HP",
+                "statValue": 155381
+              },
+              {
+                "statName": "MP",
+                "statValue": 24295
+              },
+              {
+                "statName": "ATAQUE FÍSICO",
+                "statValue": 4323
+              },
+              {
+                "statName": "ATAQUE de Feitiço",
+                "statValue": 10839
+              },
+              {
+                "statName": "DEFESA FÍSICA",
+                "statValue": 7232
+              },
+              {
+                "statName": "DEFESA contra feitiços",
+                "statValue": 7104
+              }
+            ]
+          }
+        ]
+      }
     }
   }
 }

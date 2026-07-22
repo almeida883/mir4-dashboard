@@ -216,7 +216,12 @@ function buildCharts(s){
 
 // Critério fixo de comparabilidade — sem tentar forçar um número mínimo de resultados.
 // Se não houver vendas que cumpram isto, não há comparáveis e pronto (mostra "sem dados").
-const PS_TOL=0.05, NV_TOL=8, POT_TOL=0.30;
+// Tolerâncias de equivalência. O filtro estrutural passou de Potencial para SCRIPTURE:
+// a análise de 333 vendas reais mostrou que o Salão das Escrituras é o discriminador de preço
+// mais forte (dentro da MESMA faixa de PS 350-450k, o preço mediano vai de 570D no quartil
+// baixo de Scripture para 1150D no quartil alto — duplica). O Potencial passou a redundante
+// (correlaciona 0.66 com Scripture e a sua contribuição única cai a ~0).
+const PS_TOL=0.05, NV_TOL=8, SCRIPT_TOL=0.35;
 const MIN_SIM_INCLUIR=65; // abaixo disto, não conta como comparável de todo
 const MAX_COMPARAVEIS=10;
 
@@ -226,24 +231,22 @@ function dadosCompletos(x){
   return (x.potencial_total||0)>0||(x.constituicao_lv||0)>0;
 }
 
-// Similaridade: PS+Nível sempre; Spirits/Potencial/Succession só quando AMBOS têm dados completos
+// Similaridade — pesos derivados da contribuição REAL de cada factor para o preço, medida por
+// comparação de modelos com validação cruzada (R² sobe de 0.672 para 0.810 ao juntar atributos).
+// Ordem de contribuição única medida: Scripture >> Enhance da arma > Spirits > Soquetes > Tier.
+// Ficaram DE FORA por contribuição nula ou negativa: Potencial, Codex, Itens lend./épicos,
+// Primal Force (dragão), Succession, Constituição, Mina, Heaven, Antiguidade.
 function calcSimilaridade(nft,r){
-  const pd=Math.abs((r.power_score||0)-(nft.power_score||0))/Math.max(nft.power_score||1,1);
+  const rel=(a,b)=>Math.abs((a||0)-(b||0))/Math.max(a||0,b||0,1);
+  const pd=rel(r.power_score,nft.power_score);
   const nd=Math.abs((r.nivel||0)-(nft.nivel||0))/Math.max(nft.nivel||1,1);
   if(dadosCompletos(nft)&&dadosCompletos(r)){
-    const spA=nft.spirits_lend_count||0, spB=r.spirits_lend_count||0;
-    const spDiff=Math.abs(spA-spB)/Math.max(spA,spB,1);
-    const potA=nft.potencial_total||0, potB=r.potencial_total||0;
-    const potDiff=Math.abs(potA-potB)/Math.max(potA,potB,1);
-    const pfA=nft.dragon_total_count||0, pfB=r.dragon_total_count||0;
-    const pfDiff=Math.abs(pfA-pfB)/Math.max(pfA,pfB,1);
-    const sucA=nft.succession_avg_enhance||0, sucB=r.succession_avg_enhance||0;
-    const sucDiff=Math.abs(sucA-sucB)/Math.max(sucA,sucB,1);
-    const tierA=nft.gear_max_tier||0, tierB=r.gear_max_tier||0;
-    const tierDiff=Math.abs(tierA-tierB)/Math.max(tierA,tierB,1);
-    // Enhance removido do cálculo (decisão confirmada: dados próprios apontam pouca correlação
-    // com o preço). Potencial Total, Tier e Primal Force sobem de peso por serem os factores mais fortes.
-    return 1-(pd*0.25+nd*0.10+potDiff*0.25+tierDiff*0.20+pfDiff*0.10+spDiff*0.07+sucDiff*0.03);
+    const scriptDiff=rel(nft.scripture_total_completed,r.scripture_total_completed);
+    const enhDiff=rel(nft.weapon_enhance,r.weapon_enhance);
+    const spDiff=rel(nft.spirits_lend_count,r.spirits_lend_count);
+    const holeDiff=rel(nft.gear_total_holecount,r.gear_total_holecount);
+    const tierDiff=rel(nft.gear_avg_tier,r.gear_avg_tier);
+    return 1-(pd*0.30+nd*0.05+scriptDiff*0.33+enhDiff*0.14+spDiff*0.11+holeDiff*0.06+tierDiff*0.01);
   }
   return 1-(pd*0.7+nd*0.3);
 }
@@ -260,19 +263,19 @@ function pesoRecencia(r){
 // final. Se não houver nenhum, a lista fica vazia — sem forçar nada.
 function findComparables(nft,pool,{maxN=MAX_COMPARAVEIS}={}){
   const nftCompleto=dadosCompletos(nft);
-  const nftTemPotencial=nftCompleto&&(nft.potencial_total||0)>0;
+  const nftTemScripture=nftCompleto&&(nft.scripture_total_completed||0)>0;
   // Se o alvo tem dados verificados (mesmo que o Potencial em si seja 0 — ex: personagem de
   // nível baixo que ainda não investiu nada), um comparável SEM dados verificados é excluído
   // por completo — não entra "à mesma" só marcado com aviso.
   const candidatos=pool.filter(r=>r.preco_draco>50&&r.classe===nft.classe&&r.seq!==nft.seq&&(!nftCompleto||dadosCompletos(r)));
   const dentroPS=c=>Math.abs((c.power_score||0)-(nft.power_score||0))/Math.max(nft.power_score||1,1)<=PS_TOL;
   const dentroNv=c=>Math.abs((c.nivel||0)-(nft.nivel||0))<=NV_TOL;
-  const dentroPotencial=c=>{
-    if(!nftTemPotencial)return true; // Potencial do alvo é 0 ou desconhecido — não dá para filtrar por diferença
-    const diff=Math.abs((c.potencial_total||0)-nft.potencial_total)/Math.max(nft.potencial_total,1);
-    return diff<=POT_TOL;
+  const dentroScripture=c=>{
+    if(!nftTemScripture)return true; // Scripture do alvo é 0 ou desconhecido — não dá para filtrar por diferença
+    const diff=Math.abs((c.scripture_total_completed||0)-nft.scripture_total_completed)/Math.max(nft.scripture_total_completed,1);
+    return diff<=SCRIPT_TOL;
   };
-  return candidatos.filter(c=>dentroPS(c)&&dentroNv(c)&&dentroPotencial(c))
+  return candidatos.filter(c=>dentroPS(c)&&dentroNv(c)&&dentroScripture(c))
     .map(c=>({...c,_sim:Math.round(calcSimilaridade(nft,c)*100)}))
     .filter(c=>c._sim>=MIN_SIM_INCLUIR)
     .sort((a,b)=>b._sim-a._sim)
@@ -528,7 +531,7 @@ function renderSideBySide(a,b){
   const compA=dadosCompletos(a),compB=dadosCompletos(b);
   const val=(nft,completo,field)=>completo?(nft[field]??0):null;
 
-  const row=(label,va,vb,fmt='int')=>{
+  const row=(label,peso,va,vb,fmt='int')=>{
     const hasA=va!==null&&va!==undefined,hasB=vb!==null&&vb!==undefined;
     const fa=hasA?(fmt==='int'?(va||0).toLocaleString():(+va).toFixed(1)):semDados;
     const fb=hasB?(fmt==='int'?(vb||0).toLocaleString():(+vb).toFixed(1)):semDados;
@@ -538,9 +541,9 @@ function renderSideBySide(a,b){
       if(na>nb+0.01){ca='diff-pos';cb='diff-neg';}
       else if(nb>na+0.01){cb='diff-pos';ca='diff-neg';}
     }
-    return`<tr><td>${label}</td><td class="${ca}">${fa}</td><td class="${cb}">${fb}</td></tr>`;
+    return`<tr><td>${label}</td><td style="color:#8b949e;font-size:11px">${peso||''}</td><td class="${ca}">${fa}</td><td class="${cb}">${fb}</td></tr>`;
   };
-  const textRow=(label,va,vb)=>`<tr><td>${label}</td><td>${va}</td><td>${vb}</td></tr>`;
+  const textRow=(label,va,vb)=>`<tr><td>${label}</td><td></td><td>${va}</td><td>${vb}</td></tr>`;
   const pills=(arr,cls)=>(arr&&arr.length)?arr.map(s=>`<span class="item-pill ${cls||''}">${s}</span>`).join(''):'<span style="color:#8b949e;font-size:12px">nenhum</span>';
 
   const sA=new Set(a.spirits_lend||[]),sB=new Set(b.spirits_lend||[]);
@@ -551,32 +554,29 @@ function renderSideBySide(a,b){
   document.getElementById('modal-subtitle').textContent=`${nomeA} vs ${nomeB}`;
   document.getElementById('modal-body').innerHTML=`
     <button class="btn-sm" style="margin-bottom:1rem" onclick="renderComparacaoModal(window._lastAnaliseNFT,false)">← Voltar à análise</button>
-    <table class="diff-table"><thead><tr><th>Atributo</th><th>${nomeA}</th><th>${nomeB}</th></tr></thead><tbody>
+    <table class="diff-table"><thead><tr><th>Atributo</th><th>Peso</th><th>${nomeA}</th><th>${nomeB}</th></tr></thead><tbody>
       ${textRow('Classe / Nível',`${a.classe||'?'} Nv${a.nivel||'—'}`,`${b.classe||'?'} Nv${b.nivel||'—'}`)}
       ${textRow('Preço',`${(a.preco_draco||0).toLocaleString()} D`,`${(b.preco_draco||0).toLocaleString()} D`)}
       ${textRow('Data',a.data_venda||'—',b.data_venda||'—')}
-      ${row('Power Score',a.power_score,b.power_score)}
-      ${row('Potencial total',val(a,compA,'potencial_total'),val(b,compB,'potencial_total'))}
-      ${row('Tier máx. equip.',val(a,compA,'gear_max_tier'),val(b,compB,'gear_max_tier'),'float')}
-      ${row('Primal Force (pontos)',val(a,compA,'dragon_total_count'),val(b,compB,'dragon_total_count'),'float')}
-      ${row('Itens lendários',val(a,compA,'legendary_count'),val(b,compB,'legendary_count'))}
-      ${row('Itens épicos',val(a,compA,'epic_count'),val(b,compB,'epic_count'))}
+      ${row('Power Score','30%',a.power_score,b.power_score)}
+      ${row('Scripture (Salão Escrituras)','33%',val(a,compA,'scripture_total_completed'),val(b,compB,'scripture_total_completed'))}
+      ${row('Enhance da arma','14%',val(a,compA,'weapon_enhance'),val(b,compB,'weapon_enhance'),'float')}
+      ${row('Spirits lendários','11%',val(a,compA,'spirits_lend_count'),val(b,compB,'spirits_lend_count'))}
+      ${row('Soquetes nos itens','6%',val(a,compA,'gear_total_holecount'),val(b,compB,'gear_total_holecount'),'float')}
+      ${row('Tier médio equip.','1%',val(a,compA,'gear_avg_tier'),val(b,compB,'gear_avg_tier'),'float')}
     </tbody></table>
-    <details style="margin-top:.8rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Detalhes secundários <span style="font-weight:400;text-transform:none;color:#8b949e">(menor correlação com o preço, segundo a nossa análise)</span></summary>
-    <table class="diff-table" style="margin-top:.5rem"><thead><tr><th>Atributo</th><th>${nomeA}</th><th>${nomeB}</th></tr></thead><tbody>
-      ${row('Spirits lend.',val(a,compA,'spirits_lend_count'),val(b,compB,'spirits_lend_count'))}
-      ${row('Mina nível',val(a,compA,'mina_lv'),val(b,compB,'mina_lv'),'float')}
-      ${row('Constituição',val(a,compA,'constituicao_lv'),val(b,compB,'constituicao_lv'),'float')}
-      ${row('Heaven max lv',val(a,compA,'heaven_max_lv'),val(b,compB,'heaven_max_lv'),'float')}
-      ${row('Succession enh.',val(a,compA,'succession_avg_enhance'),val(b,compB,'succession_avg_enhance'),'float')}
-      ${row('Enhance da arma',val(a,compA,'weapon_enhance'),val(b,compB,'weapon_enhance'),'float')}
-      ${row('Enhance médio equip.',val(a,compA,'gear_avg_enhance'),val(b,compB,'gear_avg_enhance'),'float')}
-      ${row('Enhance máx. equip.',val(a,compA,'gear_max_enhance'),val(b,compB,'gear_max_enhance'),'float')}
-      ${row('Dragão grade máx.',val(a,compA,'dragon_max_grade'),val(b,compB,'dragon_max_grade'),'float')}
-      ${row('Tier médio equip.',val(a,compA,'gear_avg_tier'),val(b,compB,'gear_avg_tier'),'float')}
-      ${row('Soquetes por item (total)',val(a,compA,'gear_total_holecount'),val(b,compB,'gear_total_holecount'),'float')}
-      ${row('Scripture completadas',val(a,compA,'scripture_total_completed'),val(b,compB,'scripture_total_completed'),'float')}
-      ${row('Antiguidade grade máx.',val(a,compA,'antiguidade_max_grade'),val(b,compB,'antiguidade_max_grade'),'float')}
+    <details style="margin-top:.8rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Contexto <span style="font-weight:400;text-transform:none;color:#8b949e">(sem efeito mensurável no preço — informativo apenas)</span></summary>
+    <table class="diff-table" style="margin-top:.5rem"><thead><tr><th>Atributo</th><th></th><th>${nomeA}</th><th>${nomeB}</th></tr></thead><tbody>
+      ${row('Potencial total','',val(a,compA,'potencial_total'),val(b,compB,'potencial_total'))}
+      ${row('Codex completos','',val(a,compA,'codex_total_completed'),val(b,compB,'codex_total_completed'))}
+      ${row('Itens lendários','',val(a,compA,'legendary_count'),val(b,compB,'legendary_count'))}
+      ${row('Itens épicos','',val(a,compA,'epic_count'),val(b,compB,'epic_count'))}
+      ${row('Primal Force (dragão)','',val(a,compA,'dragon_total_count'),val(b,compB,'dragon_total_count'),'float')}
+      ${row('Mina nível','',val(a,compA,'mina_lv'),val(b,compB,'mina_lv'),'float')}
+      ${row('Constituição','',val(a,compA,'constituicao_lv'),val(b,compB,'constituicao_lv'),'float')}
+      ${row('Heaven max lv','',val(a,compA,'heaven_max_lv'),val(b,compB,'heaven_max_lv'),'float')}
+      ${row('Succession enh.','',val(a,compA,'succession_avg_enhance'),val(b,compB,'succession_avg_enhance'),'float')}
+      ${row('Antiguidade grade máx.','',val(a,compA,'antiguidade_max_grade'),val(b,compB,'antiguidade_max_grade'),'float')}
     </tbody></table></details>
     <details style="margin-top:1rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Spirits lendários — ${nomeA} vs ${nomeB}</summary>
       <div style="margin-top:.5rem">
@@ -630,7 +630,7 @@ function renderComparacaoModal(nft,loading){
   const nftCompleto=dadosCompletos(nft);
 
   const semDados='<span style="color:#8b949e">sem dados</span>';
-  const diffRow=(label,val_nft,val_med,fmt='int')=>{
+  const diffRow=(label,peso,val_nft,val_med,fmt='int')=>{
     const nftTxt=val_nft===null?semDados:(fmt==='int'?(val_nft||0).toLocaleString():(+val_nft).toFixed(1));
     const medTxt=val_med===null?semDados:(fmt==='int'?(val_med||0).toLocaleString():(+val_med).toFixed(1));
     let diffTxt='<span class="diff-neu">—</span>';
@@ -641,7 +641,7 @@ function renderComparacaoModal(nft,loading){
       const sign=diff>0?'+':'';
       diffTxt=`<span class="${cls}">${sign}${fmt==='int'?Math.round(diff):diff.toFixed(1)} (${sign}${pct}%)</span>`;
     }
-    return`<tr><td>${label}</td><td>${nftTxt}</td><td>${medTxt}</td><td>${diffTxt}</td></tr>`;
+    return`<tr><td>${label}</td><td style="color:#8b949e;font-size:11px">${peso||''}</td><td>${nftTxt}</td><td>${medTxt}</td><td>${diffTxt}</td></tr>`;
   };
 
   const sb=new Set(nft.spirits_lend||[]);
@@ -673,30 +673,27 @@ function renderComparacaoModal(nft,loading){
       :nft._live?`<div style="background:#0d2818;border:1px solid #7ee78755;color:#7ee787;padding:.5rem 1rem;border-radius:6px;font-size:12px;margin-bottom:1rem">📡 Dados obtidos ao vivo agora mesmo (este NFT está à venda, o scraper nunca o detalha).</div>`
       :!nftCompleto?`<div style="background:#3d3200;border:1px solid #e3b34155;color:#e3b341;padding:.7rem 1rem;border-radius:6px;font-size:12px;margin-bottom:1rem">⚠️ Este NFT ainda não tem dados de detalhe confirmados (potencial, mina, constituição, heaven, succession, itens, dragão). Só Power Score, Nível e Preço são fiáveis nesta comparação — o resto aparece como "sem dados", não como zero real.</div>`:''}
     ${sim.length?`
-    <p class="section-title">Factores de equivalência${n<sim.length?` <span style="font-weight:400;text-transform:none;color:#8b949e">(média sobre ${n}/${sim.length} com dados completos)</span>`:''}</p>
-    <table class="diff-table"><thead><tr><th>Atributo</th><th>Este NFT</th><th>Média similares</th><th>Diferença</th></tr></thead><tbody>
-      ${diffRow('Power Score',nft.power_score,avg(r=>r.power_score||0))}
-      ${diffRow('Potencial total',nftCompleto?nft.potencial_total||0:null,avg(r=>r.potencial_total||0))}
-      ${diffRow('Tier máx. equip.',nftCompleto?nft.gear_max_tier||0:null,avgF(r=>r.gear_max_tier||0),'float')}
-      ${diffRow('Primal Force (pontos)',nftCompleto?nft.dragon_total_count||0:null,avgF(r=>r.dragon_total_count||0),'float')}
-      ${diffRow('Itens lendários',nftCompleto?nft.legendary_count||0:null,avg(r=>r.legendary_count||0))}
-      ${diffRow('Itens épicos',nftCompleto?nft.epic_count||0:null,avg(r=>r.epic_count||0))}
+    <p class="section-title">O que determina o preço${n<sim.length?` <span style="font-weight:400;text-transform:none;color:#8b949e">(média sobre ${n}/${sim.length} com dados completos)</span>`:''}</p>
+    <table class="diff-table"><thead><tr><th>Atributo</th><th>Peso</th><th>Este NFT</th><th>Média similares</th><th>Diferença</th></tr></thead><tbody>
+      ${diffRow('Power Score','30%',nft.power_score,avg(r=>r.power_score||0))}
+      ${diffRow('Scripture (Salão Escrituras)','33%',nftCompleto?nft.scripture_total_completed||0:null,avg(r=>r.scripture_total_completed||0))}
+      ${diffRow('Enhance da arma','14%',nftCompleto?nft.weapon_enhance||0:null,avgF(r=>r.weapon_enhance||0),'float')}
+      ${diffRow('Spirits lendários','11%',nftCompleto?nft.spirits_lend_count||0:null,avg(r=>r.spirits_lend_count||0))}
+      ${diffRow('Soquetes nos itens','6%',nftCompleto?nft.gear_total_holecount||0:null,avgF(r=>r.gear_total_holecount||0),'float')}
+      ${diffRow('Tier médio equip.','1%',nftCompleto?nft.gear_avg_tier||0:null,avgF(r=>r.gear_avg_tier||0),'float')}
     </tbody></table>
-    <details style="margin-top:.8rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Detalhes secundários <span style="font-weight:400;text-transform:none;color:#8b949e">(menor correlação com o preço, segundo a nossa análise)</span></summary>
-    <table class="diff-table" style="margin-top:.5rem"><thead><tr><th>Atributo</th><th>Este NFT</th><th>Média similares</th><th>Diferença</th></tr></thead><tbody>
-      ${diffRow('Spirits lend.',nftCompleto?nft.spirits_lend_count||0:null,avg(r=>r.spirits_lend_count||0))}
-      ${diffRow('Mina nível',nftCompleto?nft.mina_lv||0:null,avgF(r=>r.mina_lv||0),'float')}
-      ${diffRow('Constituição',nftCompleto?nft.constituicao_lv||0:null,avgF(r=>r.constituicao_lv||0),'float')}
-      ${diffRow('Heaven max lv',nftCompleto?nft.heaven_max_lv||0:null,avgF(r=>r.heaven_max_lv||0),'float')}
-      ${diffRow('Succession enh.',nftCompleto?nft.succession_avg_enhance||0:null,avgF(r=>r.succession_avg_enhance||0),'float')}
-      ${diffRow('Enhance da arma',nftCompleto?nft.weapon_enhance||0:null,avgF(r=>r.weapon_enhance||0),'float')}
-      ${diffRow('Enhance médio equip.',nftCompleto?nft.gear_avg_enhance||0:null,avgF(r=>r.gear_avg_enhance||0),'float')}
-      ${diffRow('Enhance máx. equip.',nftCompleto?nft.gear_max_enhance||0:null,avgF(r=>r.gear_max_enhance||0),'float')}
-      ${diffRow('Dragão grade máx.',nftCompleto?nft.dragon_max_grade||0:null,avgF(r=>r.dragon_max_grade||0),'float')}
-      ${diffRow('Tier médio equip.',nftCompleto?nft.gear_avg_tier||0:null,avgF(r=>r.gear_avg_tier||0),'float')}
-      ${diffRow('Soquetes por item (total)',nftCompleto?nft.gear_total_holecount||0:null,avgF(r=>r.gear_total_holecount||0),'float')}
-      ${diffRow('Scripture completadas',nftCompleto?nft.scripture_total_completed||0:null,avgF(r=>r.scripture_total_completed||0),'float')}
-      ${diffRow('Antiguidade grade máx.',nftCompleto?nft.antiguidade_max_grade||0:null,avgF(r=>r.antiguidade_max_grade||0),'float')}
+    <details style="margin-top:.8rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Contexto <span style="font-weight:400;text-transform:none;color:#8b949e">(sem efeito mensurável no preço — informativo apenas)</span></summary>
+    <table class="diff-table" style="margin-top:.5rem"><thead><tr><th>Atributo</th><th></th><th>Este NFT</th><th>Média similares</th><th>Diferença</th></tr></thead><tbody>
+      ${diffRow('Potencial total','',nftCompleto?nft.potencial_total||0:null,avg(r=>r.potencial_total||0))}
+      ${diffRow('Codex completos','',nftCompleto?nft.codex_total_completed||0:null,avg(r=>r.codex_total_completed||0))}
+      ${diffRow('Itens lendários','',nftCompleto?nft.legendary_count||0:null,avg(r=>r.legendary_count||0))}
+      ${diffRow('Itens épicos','',nftCompleto?nft.epic_count||0:null,avg(r=>r.epic_count||0))}
+      ${diffRow('Primal Force (dragão)','',nftCompleto?nft.dragon_total_count||0:null,avgF(r=>r.dragon_total_count||0),'float')}
+      ${diffRow('Mina nível','',nftCompleto?nft.mina_lv||0:null,avgF(r=>r.mina_lv||0),'float')}
+      ${diffRow('Constituição','',nftCompleto?nft.constituicao_lv||0:null,avgF(r=>r.constituicao_lv||0),'float')}
+      ${diffRow('Heaven max lv','',nftCompleto?nft.heaven_max_lv||0:null,avgF(r=>r.heaven_max_lv||0),'float')}
+      ${diffRow('Succession enh.','',nftCompleto?nft.succession_avg_enhance||0:null,avgF(r=>r.succession_avg_enhance||0),'float')}
+      ${diffRow('Antiguidade grade máx.','',nftCompleto?nft.antiguidade_max_grade||0:null,avgF(r=>r.antiguidade_max_grade||0),'float')}
     </tbody></table></details>
         ${soNFT.length||soSim.length?`<details style="margin-top:.8rem"><summary class="section-title" style="cursor:pointer;display:inline-block">Spirits — diferenças vs similares (${soNFT.length} exclusivos, ${soSim.length} em falta)</summary>
       <div style="margin-top:.5rem">

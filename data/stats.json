@@ -1,9 +1,23 @@
 {
-  "updated_at": "2026-07-25T20:32:09.735772+00:00",
-  "total": 1830,
-  "preco_medio_global": 2210,
+  "updated_at": "2026-07-25T21:18:51.579967+00:00",
+  "total": 1833,
+  "preco_medio_global": 2208,
   "preco_mediano_global": 550,
   "por_classe": {
+    "Lancer": {
+      "media": 3420,
+      "mediana": 600,
+      "min": 1,
+      "max": 277777,
+      "count": 211
+    },
+    "Arbalist": {
+      "media": 2194,
+      "mediana": 650,
+      "min": 1,
+      "max": 135000,
+      "count": 610
+    },
     "Taoist": {
       "media": 2018,
       "mediana": 470,
@@ -17,20 +31,6 @@
       "min": 1,
       "max": 10000,
       "count": 193
-    },
-    "Lancer": {
-      "media": 3434,
-      "mediana": 600,
-      "min": 1,
-      "max": 277777,
-      "count": 210
-    },
-    "Arbalist": {
-      "media": 2197,
-      "mediana": 650,
-      "min": 1,
-      "max": 135000,
-      "count": 608
     },
     "Warrior": {
       "media": 2898,
@@ -81,7 +81,7 @@
     "130": {
       "media": 253,
       "mediana": 260,
-      "count": 286
+      "count": 287
     },
     "140": {
       "media": 598,
@@ -89,9 +89,9 @@
       "count": 410
     },
     "150": {
-      "media": 1870,
+      "media": 1868,
       "mediana": 1300,
-      "count": 546
+      "count": 548
     },
     "160": {
       "media": 7462,
@@ -118,12 +118,12 @@
     "300000": {
       "media": 543,
       "mediana": 520,
-      "count": 569
+      "count": 570
     },
     "400000": {
-      "media": 2027,
+      "media": 2024,
       "mediana": 1650,
-      "count": 492
+      "count": 494
     },
     "500000": {
       "media": 8054,

@@ -1,15 +1,22 @@
 {
-  "updated_at": "2026-08-19T05:11:33.127369+00:00",
+  "updated_at": "2026-08-19T05:37:43.662573+00:00",
   "total": 2000,
-  "preco_medio_global": 2430,
-  "preco_mediano_global": 568,
+  "preco_medio_global": 2428,
+  "preco_mediano_global": 566,
   "por_classe": {
+    "Sorcerer": {
+      "media": 1527,
+      "mediana": 420,
+      "min": 1,
+      "max": 33000,
+      "count": 207
+    },
     "Taoist": {
-      "media": 2138,
+      "media": 2131,
       "mediana": 500,
       "min": 1,
       "max": 82999,
-      "count": 399
+      "count": 398
     },
     "Arbalist": {
       "media": 2426,
@@ -38,13 +45,6 @@
       "min": 1,
       "max": 66000,
       "count": 155
-    },
-    "Sorcerer": {
-      "media": 1533,
-      "mediana": 435,
-      "min": 1,
-      "max": 33000,
-      "count": 206
     }
   },
   "por_nivel": {
@@ -81,7 +81,7 @@
     "130": {
       "media": 257,
       "mediana": 260,
-      "count": 304
+      "count": 305
     },
     "140": {
       "media": 607,
@@ -89,9 +89,9 @@
       "count": 453
     },
     "150": {
-      "media": 1830,
+      "media": 1825,
       "mediana": 1300,
-      "count": 594
+      "count": 593
     },
     "160": {
       "media": 7515,
@@ -113,7 +113,7 @@
     "200000": {
       "media": 211,
       "mediana": 220,
-      "count": 323
+      "count": 324
     },
     "300000": {
       "media": 547,
@@ -121,9 +121,9 @@
       "count": 618
     },
     "400000": {
-      "media": 1992,
+      "media": 1986,
       "mediana": 1600,
-      "count": 547
+      "count": 546
     },
     "500000": {
       "media": 8281,
@@ -147,16 +147,16 @@
     }
   },
   "top_spirits": {
-    "Darknyan, o Ressuscitador": 771,
-    "Wooska, Príncipe Herdeiro das Trevas": 663,
-    "Reidouro, o Falcão de Fogo": 600,
+    "Darknyan, o Ressuscitador": 777,
+    "Wooska, Príncipe Herdeiro das Trevas": 667,
+    "Reidouro, o Falcão de Fogo": 605,
     "Lulu, a Felina Encantada": 526,
-    "Styx, o Cavaleiro Fantasma": 482,
-    "Balrog, o Lorde do Fogo": 446,
+    "Styx, o Cavaleiro Fantasma": 485,
+    "Balrog, o Lorde do Fogo": 450,
     "Setra Radiante": 436,
-    "Drago Ponta de Sangue": 414,
-    "Vendavalma, o Invocador do Vento": 304,
-    "Imperador da Destruição, o Demônio Infernal Octogonal": 302,
+    "Drago Ponta de Sangue": 415,
+    "Vendavalma, o Invocador do Vento": 307,
+    "Imperador da Destruição, o Demônio Infernal Octogonal": 306,
     "Sumacheon, o Rei Demoníaco do Mar do Norte": 264,
     "Grifavalo, o Garanhão Sombrio": 260,
     "Lucy, dos Olhos Vermelhos": 206,
@@ -164,20 +164,20 @@
     "Candela, a Imperatriz Radiante": 159
   },
   "top_legendary_items": {
-    "Bastão de Sarmati": 159,
-    "Cabaça de Wu Yeogi": 159,
-    "Grampo Ornamental de Jade de Cheonpa": 159,
-    "Tomo de Bok Yangjeo": 159,
-    "Agulha Dourada de Dragão Amarelo do Ervanário Hong": 159,
-    "Porrete de Ferro de Noh Wunjang": 159,
-    "Pakua de Chogye": 159,
-    "Ombreira de Sondeok": 159,
-    "Vampirismo de Yeoyul": 159,
-    "Leque Flexível de Gaon": 159,
-    "Brincos de Ligação Celestial": 104,
-    "Pulseira de Ligação Celestial": 78,
+    "Bastão de Sarmati": 160,
+    "Cabaça de Wu Yeogi": 160,
+    "Grampo Ornamental de Jade de Cheonpa": 160,
+    "Tomo de Bok Yangjeo": 160,
+    "Agulha Dourada de Dragão Amarelo do Ervanário Hong": 160,
+    "Porrete de Ferro de Noh Wunjang": 160,
+    "Pakua de Chogye": 160,
+    "Ombreira de Sondeok": 160,
+    "Vampirismo de Yeoyul": 160,
+    "Leque Flexível de Gaon": 160,
+    "Brincos de Ligação Celestial": 105,
+    "Pulseira de Ligação Celestial": 79,
     "Berloque do Trovão Celestial": 75,
-    "Anel de Ligação Celestial": 74,
+    "Anel de Ligação Celestial": 75,
     "Medalha da Graça Celestial": 68
   }
 }
